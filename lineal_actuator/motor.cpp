@@ -1,36 +1,62 @@
-// Sensor.cpp
+// Motor.cpp
 
-#include "Sensor.h"
+#include "Motor.h"
 #include "Config.h"
 
-Sensor::Sensor(uint8_t trigPin, uint8_t echoPin)
-  : trigPin_(trigPin), echoPin_(echoPin) {}
+Motor::Motor(uint8_t pulPin, uint8_t dirPin)
+  : pulPin_(pulPin), dirPin_(dirPin), isMoving_(false),
+    pulseState_(LOW), previousMicros_(0),
+    pulseInterval_(PULSE_INTERVAL_DEFAULT_US) {}
 
-void Sensor::initialize() {
-  pinMode(trigPin_, OUTPUT);
-  pinMode(echoPin_, INPUT);
-  LOG_INFO("Sensor ultrasónico inicializado.");
+void Motor::initialize() {
+  pinMode(pulPin_, OUTPUT);
+  pinMode(dirPin_, OUTPUT);
+  digitalWrite(pulPin_, LOW);
+  digitalWrite(dirPin_, LOW);
+  LOG_INFO("Motor inicializado.");
 }
 
-float Sensor::readDistance() {
-  // Enviar pulso de Trigger
-  digitalWrite(trigPin_, LOW);
-  delayMicroseconds(2);
-  digitalWrite(trigPin_, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(trigPin_, LOW);
+void Motor::moveUp() {
+  digitalWrite(dirPin_, LOW); // LOW para subir
+  isMoving_ = true;
+  previousMicros_ = micros();
+  togglePulse(); // Enviar el primer pulso
+  LOG_INFO("Moviendo hacia arriba.");
+}
 
-  // Leer la duración del pulso de Echo con timeout
-  long duration = pulseIn(echoPin_, HIGH, ULTRASONIC_TIMEOUT_US);
+void Motor::moveDown() {
+  digitalWrite(dirPin_, HIGH); // HIGH para bajar
+  isMoving_ = true;
+  previousMicros_ = micros();
+  togglePulse(); // Enviar el primer pulso
+  LOG_INFO("Moviendo hacia abajo.");
+}
 
-  // Verificar si se recibió un eco
-  if (duration == 0) {
-    LOG_ERROR("Timeout en la lectura del sensor ultrasónico.");
-    return -1.0; // Indicar error
+void Motor::stop() {
+  if (isMoving_) {
+    isMoving_ = false;
+    digitalWrite(pulPin_, LOW); // Asegurar que el pulso esté bajo
+    LOG_INFO("Motor detenido.");
   }
+}
 
-  // Conversión a centímetros
-  float distance = (duration * 0.0343) / 2.0;
-  LOG_DEBUG("Distancia leída: " + String(distance) + " cm.");
-  return distance;
+void Motor::update() {
+  if (isMoving_) {
+    unsigned long currentMicros = micros();
+    if (currentMicros - previousMicros_ >= pulseInterval_) {
+      previousMicros_ = currentMicros;
+      togglePulse();
+    }
+  }
+}
+
+void Motor::setPulseInterval(unsigned long interval) {
+  pulseInterval_ = interval;
+  LOG_INFO("Intervalo de pulsos ajustado.");
+}
+
+void Motor::togglePulse() {
+  pulseState_ = !pulseState_;
+  digitalWrite(pulPin_, pulseState_);
+  LOG_DEBUG("Pulso alternado.");
 }
