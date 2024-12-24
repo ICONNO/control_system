@@ -1,0 +1,1241 @@
+2024-12-19 17:05:18,492 [INFO] Seleccionado modo real en puerto COM3.
+2024-12-19 17:05:18,496 [INFO] Conectado al puerto COM3 a 9600 baud.
+2024-12-19 17:05:18,553 [INFO] Callback para datos recibidos registrado.
+2024-12-19 17:05:18,554 [INFO] Inicializando la interfaz GUI.
+2024-12-19 17:05:18,730 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:18,732 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:18,843 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:18,844 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:18,853 [INFO] Widgets de la GUI creados y organizados.
+2024-12-19 17:05:18,854 [INFO] Interfaz GUI inicializada correctamente.
+2024-12-19 17:05:18,976 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:18,978 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:19,000 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:19,002 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,232 [INFO] Mensaje recibido: Sistema de control de cabezal iniciado.
+2024-12-19 17:05:20,234 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:20,255 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,258 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,309 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,311 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,443 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,444 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,445 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:20,446 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:20,488 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,489 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,542 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,543 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,548 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:20,580 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,588 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,635 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,636 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,667 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:20,686 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,688 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,735 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,736 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,780 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,782 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,796 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:20,834 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,836 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,884 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,884 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,905 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:20,925 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,927 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,963 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:20,964 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,005 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,006 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,009 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:21,057 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,058 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,100 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,101 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,113 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:21,143 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,143 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,182 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,184 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,222 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,222 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,226 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:21,265 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,267 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,313 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,314 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,328 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:21,361 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,362 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,403 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,405 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,445 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,445 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,447 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:21,489 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,490 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,528 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,528 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,554 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:21,574 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,575 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,616 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,617 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,669 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,670 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,672 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:21,724 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,725 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,762 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,764 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,777 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:21,778 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:21,799 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,800 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,841 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,842 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,883 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,884 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,887 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:21,924 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,925 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,963 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:21,964 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,006 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,007 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,009 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:22,054 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,057 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,108 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,109 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,111 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:22,146 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,147 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,194 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,196 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,213 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:22,241 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,243 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,291 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,292 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,327 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:22,343 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,344 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,386 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,387 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,433 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,434 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,437 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:22,473 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,474 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,515 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,517 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,550 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:22,570 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,571 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,614 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,615 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,654 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,654 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,656 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:22,699 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,701 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,742 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,744 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,758 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:22,786 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,787 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,837 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,838 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,867 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:22,887 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,889 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,927 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,928 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,976 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,977 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:22,979 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:23,024 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,025 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,081 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,083 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,085 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:23,121 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,122 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,160 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,161 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,207 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,208 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,210 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:23,250 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,252 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,294 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,294 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,317 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:23,337 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,339 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,376 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,378 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,421 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,422 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,424 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:23,461 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,462 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,509 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,511 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,527 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:23,553 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,554 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,601 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,603 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,653 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,654 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,656 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:23,657 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:23,698 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,700 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,743 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,745 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,761 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:23,784 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,786 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,822 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,823 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,875 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,876 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,878 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:23,912 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,914 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,959 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,960 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:23,993 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:24,008 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,009 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,050 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,053 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,097 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,098 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,101 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:24,144 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,145 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,192 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,193 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,211 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:24,230 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,232 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,271 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,272 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,314 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,315 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,317 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:24,361 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,363 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,408 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,409 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,420 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:24,453 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,454 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,499 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,500 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,528 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:24,544 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,544 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,594 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,595 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,629 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,630 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,632 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:24,676 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,677 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,717 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,718 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,738 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:24,758 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,759 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,795 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,796 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,844 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,845 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,847 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:24,891 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,893 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,931 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,932 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,949 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:24,972 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:24,973 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,013 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,014 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,060 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,062 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,064 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:25,098 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,099 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,145 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,147 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,167 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:25,184 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,186 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,226 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,228 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,263 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,264 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,282 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:25,309 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,309 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,348 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,350 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,404 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,406 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,409 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:25,411 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:25,447 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,447 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,496 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,497 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,515 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:25,537 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,538 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,576 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,577 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,613 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,614 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,618 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:25,677 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,679 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,745 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,746 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,749 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:25,805 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,805 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,854 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,857 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,860 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:25,913 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,914 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,979 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,980 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:25,984 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:26,037 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,037 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,072 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,073 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,091 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:26,112 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,112 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,162 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,163 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,206 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,206 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,209 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:26,248 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,249 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,293 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,301 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,324 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:26,338 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,339 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,376 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,377 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,416 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,417 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,430 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:26,464 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,464 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,505 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,506 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,542 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,543 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,546 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:26,589 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,591 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,631 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,632 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,650 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:26,675 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,676 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,727 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,728 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,776 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,777 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,780 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:26,781 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:26,821 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,822 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,859 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,860 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,894 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:26,911 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,912 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,954 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:26,955 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,000 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,001 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,005 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:27,047 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,049 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,095 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,096 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,109 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:27,130 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,133 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,173 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,174 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,212 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,214 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,219 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:27,260 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,261 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,311 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,312 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,322 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:27,353 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,354 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,397 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,398 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,438 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,439 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,442 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:27,492 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,493 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,534 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,535 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,550 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:27,578 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,579 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,632 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,634 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,640 [INFO] Comando 'DOWN' enviado.
+2024-12-19 17:05:27,643 [INFO] Comando 'DOWN' enviado.
+2024-12-19 17:05:27,655 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:27,670 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,671 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,719 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,720 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,778 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,780 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,782 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:27,813 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,816 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,859 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,860 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,887 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,887 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,900 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:27,940 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,942 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,988 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:27,989 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,007 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:28,009 [INFO] Distancia actualizada a 19.71 cm.
+2024-12-19 17:05:28,024 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,025 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,071 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,072 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,114 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,115 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,118 [INFO] Mensaje recibido: Comando recibido: DOWN
+2024-12-19 17:05:28,151 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,153 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,204 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,205 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,221 [INFO] Mensaje recibido: Modo manual: Moviendo hacia abajo.
+2024-12-19 17:05:28,245 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,246 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,294 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,295 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,335 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,336 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,339 [INFO] Mensaje recibido: Moviendo hacia abajo.
+2024-12-19 17:05:28,380 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,382 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,416 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,416 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,443 [INFO] Distancia actualizada a 19.59 cm.
+2024-12-19 17:05:28,462 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,463 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,502 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,503 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,544 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,545 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,548 [INFO] Distancia actualizada a 19.72 cm.
+2024-12-19 17:05:28,596 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,596 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,637 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,638 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,653 [INFO] Distancia actualizada a 19.64 cm.
+2024-12-19 17:05:28,675 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,676 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,717 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,717 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,754 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,755 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,758 [INFO] Distancia actualizada a 19.62 cm.
+2024-12-19 17:05:28,803 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,804 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,857 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,858 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,862 [INFO] Distancia actualizada a 19.64 cm.
+2024-12-19 17:05:28,897 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,898 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,935 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,936 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,986 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,987 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:28,990 [INFO] Distancia actualizada a 19.62 cm.
+2024-12-19 17:05:29,027 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,028 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,077 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,078 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,094 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:29,114 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,115 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,162 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,163 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,206 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,207 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,210 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:29,252 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,253 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,299 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,301 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,319 [INFO] Distancia actualizada a 19.19 cm.
+2024-12-19 17:05:29,343 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,343 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,389 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,390 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,421 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,421 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,431 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:29,477 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,478 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,520 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,521 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,539 [INFO] Distancia actualizada a 19.64 cm.
+2024-12-19 17:05:29,561 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,563 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,604 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,605 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,640 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,641 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,644 [INFO] Distancia actualizada a 19.64 cm.
+2024-12-19 17:05:29,691 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,692 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,733 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,734 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,754 [INFO] Distancia actualizada a 19.55 cm.
+2024-12-19 17:05:29,777 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,778 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,813 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,814 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,858 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,858 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,858 [INFO] Distancia actualizada a 19.55 cm.
+2024-12-19 17:05:29,895 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,896 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,935 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,936 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,976 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,977 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:29,981 [INFO] Distancia actualizada a 19.53 cm.
+2024-12-19 17:05:29,984 [INFO] Distancia actualizada a 19.53 cm.
+2024-12-19 17:05:30,026 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,027 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,070 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,070 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,089 [INFO] Distancia actualizada a 19.53 cm.
+2024-12-19 17:05:30,109 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,111 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,148 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,150 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,194 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,195 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,198 [INFO] Distancia actualizada a 19.55 cm.
+2024-12-19 17:05:30,237 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,238 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,279 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,280 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,311 [INFO] Distancia actualizada a 19.12 cm.
+2024-12-19 17:05:30,329 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,331 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,381 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,382 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,421 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,421 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,421 [INFO] Distancia actualizada a 19.12 cm.
+2024-12-19 17:05:30,465 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,467 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,509 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,510 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,530 [INFO] Distancia actualizada a 19.12 cm.
+2024-12-19 17:05:30,547 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,549 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,594 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,595 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,633 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,634 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,637 [INFO] Distancia actualizada a 19.55 cm.
+2024-12-19 17:05:30,681 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,683 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,722 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,723 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,741 [INFO] Distancia actualizada a 19.55 cm.
+2024-12-19 17:05:30,759 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,760 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,799 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,799 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,843 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,845 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,848 [INFO] Distancia actualizada a 19.53 cm.
+2024-12-19 17:05:30,885 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,886 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,922 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,922 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,962 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,964 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:30,967 [INFO] Distancia actualizada a 19.47 cm.
+2024-12-19 17:05:31,009 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,009 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,052 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,053 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,072 [INFO] Distancia actualizada a 19.45 cm.
+2024-12-19 17:05:31,092 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,093 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,137 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,138 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,173 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,174 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,176 [INFO] Distancia actualizada a 19.45 cm.
+2024-12-19 17:05:31,228 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,229 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,265 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,265 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,287 [INFO] Distancia actualizada a 19.47 cm.
+2024-12-19 17:05:31,307 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,308 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,354 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,355 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,391 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,392 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,395 [INFO] Distancia actualizada a 19.02 cm.
+2024-12-19 17:05:31,437 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,438 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,473 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,474 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,508 [INFO] Distancia actualizada a 19.02 cm.
+2024-12-19 17:05:31,522 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,522 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,569 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,571 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,609 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,610 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,612 [INFO] Distancia actualizada a 19.04 cm.
+2024-12-19 17:05:31,663 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,665 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,710 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,712 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,715 [INFO] Distancia actualizada a 19.45 cm.
+2024-12-19 17:05:31,754 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,755 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,801 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,802 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,821 [INFO] Distancia actualizada a 19.45 cm.
+2024-12-19 17:05:31,845 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,846 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,894 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,896 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,931 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,933 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,938 [INFO] Distancia actualizada a 19.47 cm.
+2024-12-19 17:05:31,971 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:31,972 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,011 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,012 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,052 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,054 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,057 [INFO] Distancia actualizada a 19.38 cm.
+2024-12-19 17:05:32,058 [INFO] Distancia actualizada a 19.38 cm.
+2024-12-19 17:05:32,102 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,104 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,143 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,144 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,160 [INFO] Distancia actualizada a 19.38 cm.
+2024-12-19 17:05:32,181 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,182 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,221 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,223 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,266 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,267 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,269 [INFO] Distancia actualizada a 19.38 cm.
+2024-12-19 17:05:32,309 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,311 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,353 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,354 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,371 [INFO] Distancia actualizada a 18.95 cm.
+2024-12-19 17:05:32,393 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,394 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,447 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,448 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,487 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,488 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,492 [INFO] Distancia actualizada a 18.95 cm.
+2024-12-19 17:05:32,539 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,540 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,580 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,581 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,596 [INFO] Distancia actualizada a 18.95 cm.
+2024-12-19 17:05:32,620 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,621 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,659 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,661 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,707 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,709 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,712 [INFO] Distancia actualizada a 18.95 cm.
+2024-12-19 17:05:32,749 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,750 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,801 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,802 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,816 [INFO] Distancia actualizada a 18.95 cm.
+2024-12-19 17:05:32,841 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,842 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,879 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,880 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,919 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,919 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,919 [INFO] Distancia actualizada a 19.38 cm.
+2024-12-19 17:05:32,965 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:32,966 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,012 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,013 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,030 [INFO] Distancia actualizada a 19.36 cm.
+2024-12-19 17:05:33,054 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,055 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,113 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,114 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,133 [INFO] Distancia actualizada a 19.38 cm.
+2024-12-19 17:05:33,155 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,156 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,194 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,194 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,239 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,240 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,243 [INFO] Distancia actualizada a 19.29 cm.
+2024-12-19 17:05:33,277 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,278 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,317 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,318 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,359 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,360 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,365 [INFO] Distancia actualizada a 19.29 cm.
+2024-12-19 17:05:33,403 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,404 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,451 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,452 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,469 [INFO] Distancia actualizada a 19.28 cm.
+2024-12-19 17:05:33,489 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,490 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,539 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,540 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,582 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,583 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,587 [INFO] Distancia actualizada a 19.28 cm.
+2024-12-19 17:05:33,627 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,628 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,630 [INFO] Comando 'STOP' enviado.
+2024-12-19 17:05:33,633 [INFO] Comando 'STOP' enviado.
+2024-12-19 17:05:33,672 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,673 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,689 [INFO] Distancia actualizada a 19.28 cm.
+2024-12-19 17:05:33,710 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,711 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,757 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,758 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,803 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,804 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,807 [INFO] Distancia actualizada a 19.29 cm.
+2024-12-19 17:05:33,851 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,851 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,889 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,890 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,913 [INFO] Distancia actualizada a 18.86 cm.
+2024-12-19 17:05:33,927 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,927 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,970 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:33,971 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,009 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,010 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,020 [INFO] Distancia actualizada a 18.86 cm.
+2024-12-19 17:05:34,049 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,051 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,090 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,091 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,141 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,142 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,144 [INFO] Distancia actualizada a 18.86 cm.
+2024-12-19 17:05:34,147 [INFO] Distancia actualizada a 18.86 cm.
+2024-12-19 17:05:34,189 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,191 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,235 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,236 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,252 [INFO] Distancia actualizada a 19.29 cm.
+2024-12-19 17:05:34,271 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,272 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,308 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,310 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,351 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,353 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,356 [INFO] Distancia actualizada a 19.29 cm.
+2024-12-19 17:05:34,392 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,394 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,440 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,441 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,461 [INFO] Distancia actualizada a 19.29 cm.
+2024-12-19 17:05:34,482 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,484 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,525 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,526 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,570 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,571 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,575 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:34,608 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,609 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,644 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,645 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,687 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,688 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,692 [INFO] Mensaje recibido: Comando recibido: STOP
+2024-12-19 17:05:34,725 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,726 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,779 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,779 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,800 [INFO] Mensaje recibido: Deteniendo motor y desactivando modo automático.
+2024-12-19 17:05:34,821 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,822 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,873 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,874 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,918 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,919 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,923 [INFO] Motor detenido por Arduino.
+2024-12-19 17:05:34,957 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,959 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,995 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:34,997 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,044 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,046 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,049 [INFO] Distancia actualizada a 19.07 cm.
+2024-12-19 17:05:35,085 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,086 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,124 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,125 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,173 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,173 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,176 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:35,217 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,218 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,256 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,258 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,286 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:35,289 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:35,305 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,307 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,343 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,345 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,400 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,400 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,404 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:35,443 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,444 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,489 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,490 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,506 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:35,534 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,535 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,581 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,582 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,619 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,621 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,625 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:35,658 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,660 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,699 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,699 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,740 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,741 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,745 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:35,784 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,785 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,825 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,827 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,847 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:35,861 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,862 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,920 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,921 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,961 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,962 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:35,965 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:36,008 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,010 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,048 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,049 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,068 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:36,092 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,093 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,135 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,137 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,178 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,179 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,183 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:36,224 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,226 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,267 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,269 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,287 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:36,308 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,309 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,350 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,350 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,393 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,394 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,397 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:36,442 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,443 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,573 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,574 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,576 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:36,579 [INFO] Distancia actualizada a 19.19 cm.
+2024-12-19 17:05:36,635 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,636 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,687 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,688 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,690 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:36,758 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,759 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,803 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,804 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,807 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:36,853 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,854 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,894 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,895 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,913 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:36,937 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,939 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,987 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:36,988 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,037 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,039 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,041 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:37,075 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,076 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,123 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,124 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,156 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:37,158 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:37,172 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,173 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,220 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,221 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,259 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,260 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,263 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:37,302 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,303 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,346 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,347 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,367 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:37,395 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,396 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,435 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,435 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,477 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,478 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,483 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:37,514 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,516 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,561 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,562 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,597 [INFO] Distancia actualizada a 19.19 cm.
+2024-12-19 17:05:37,614 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,615 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,656 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,657 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,714 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,715 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,720 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:37,781 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,782 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,829 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,830 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,835 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:37,880 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,882 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,929 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,930 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,938 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:37,974 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:37,975 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,014 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,016 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,061 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,062 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,065 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:38,112 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,113 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,152 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,153 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,169 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:38,190 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,192 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,238 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,239 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,276 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,278 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,282 [INFO] Distancia actualizada a 19.19 cm.
+2024-12-19 17:05:38,316 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,317 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,365 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,367 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,385 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:38,408 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,409 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,459 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,460 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,504 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,505 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,509 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:38,511 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:38,553 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,555 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,592 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,593 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,626 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:38,640 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,641 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,676 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,677 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,711 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,713 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,733 [INFO] Distancia actualizada a 19.19 cm.
+2024-12-19 17:05:38,755 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,755 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,795 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,796 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,832 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,833 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,838 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:38,881 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,882 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,924 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,924 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,944 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:38,963 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:38,964 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,007 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,008 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,055 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,055 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,058 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:39,098 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,098 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,135 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,136 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,173 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,174 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,177 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:39,214 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,214 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,252 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,253 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,290 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,291 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,296 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:39,331 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,332 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,373 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,374 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,415 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,417 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,420 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:39,456 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,456 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,490 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,491 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,526 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,526 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,530 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:39,534 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:39,579 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,581 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,616 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,618 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,637 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:39,656 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,656 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,696 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,697 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,732 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,734 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,743 [INFO] Distancia actualizada a 19.19 cm.
+2024-12-19 17:05:39,773 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,774 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,810 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,812 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,852 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,853 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,857 [INFO] Distancia actualizada a 19.19 cm.
+2024-12-19 17:05:39,895 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,897 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,942 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,943 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,959 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:39,987 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:39,987 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,037 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,038 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,070 [INFO] Distancia actualizada a 19.19 cm.
+2024-12-19 17:05:40,084 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,084 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,122 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,123 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,168 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,168 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,172 [INFO] Distancia actualizada a 19.19 cm.
+2024-12-19 17:05:40,212 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,213 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,258 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,258 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,275 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:40,293 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,295 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,334 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,335 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,375 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,376 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,378 [INFO] Distancia actualizada a 19.19 cm.
+2024-12-19 17:05:40,421 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,422 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,468 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,469 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,493 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:40,507 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,508 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,550 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,551 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,596 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,597 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,600 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:40,641 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,642 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,690 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,692 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,708 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:40,728 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,729 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,771 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,772 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,813 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,813 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,816 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:40,858 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,859 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,906 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,907 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,925 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:40,944 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,946 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,984 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:40,985 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,028 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,029 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,032 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:41,077 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,078 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,124 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,126 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,144 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:41,241 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,242 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,249 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:41,281 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,282 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,319 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,320 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,362 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,363 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,383 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:41,384 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:41,414 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,415 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,461 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,462 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,506 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,507 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,510 [INFO] Distancia actualizada a 19.19 cm.
+2024-12-19 17:05:41,549 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,550 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,592 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,593 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,614 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:41,636 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,637 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,684 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,685 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,723 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,725 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,729 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:41,763 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,764 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,802 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,803 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,853 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,854 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,856 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:41,895 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,897 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,950 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,951 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,981 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:41,998 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:41,998 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,038 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,039 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,088 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,089 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,109 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:42,112 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:42,153 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,154 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,205 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,206 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,223 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:42,258 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,260 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,303 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,304 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,347 [INFO] Distancia actualizada a 19.19 cm.
+2024-12-19 17:05:42,362 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,363 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,407 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,408 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,453 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,454 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,471 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:42,514 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,515 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,554 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,555 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,581 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:42,595 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,596 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,640 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,649 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,705 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,706 [WARNING] posx and posy should be finite values
+2024-12-19 17:05:42,709 [INFO] Distancia actualizada a 19.21 cm.
+2024-12-19 17:05:42,725 [INFO] Comando 'STOP' enviado.
+2024-12-19 17:05:42,817 [INFO] Desconectado del puerto COM3.
+2024-12-19 17:05:42,817 [INFO] Aplicación cerrada por el usuario.
