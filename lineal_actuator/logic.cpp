@@ -162,3 +162,6 @@ void Logic::adjustSpeed(unsigned long newInterval) {
   pulseInterval = newInterval;
   motor_.setPulseInterval(newInterval);
 }
+
+
+{}
