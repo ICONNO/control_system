@@ -1,7 +1,5 @@
-<<<<<<< HEAD
 # Advanced Automated Control System for NEMA 17 Stepper Motor with Ultrasonic Feedback and Python GUI
 
-![Project Logo](https://example.com/logo.png) <!-- Replace with your project logo -->
 
 ## Table of Contents
 
