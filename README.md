@@ -1,124 +1,117 @@
-# Control System for NEMA 17 Stepper Motor with TB6560 Driver and HC-SR04 Ultrasonic Sensor
+# Advanced Automated Control System for NEMA 17 Stepper Motor with Ultrasonic Feedback and Python GUI
 
-![Project Banner](https://example.com/banner.png) <!-- Replace with an actual image URL if available -->
+![Project Logo](https://example.com/logo.png) <!-- Replace with your project logo -->
 
 ## Table of Contents
 
-1. [Project Overview](#project-overview)
-2. [Features](#features)
-3. [Hardware Components](#hardware-components)
-4. [Software Components](#software-components)
-5. [Installation](#installation)
+1. [Introduction](#introduction)
+2. [Project Background](#project-background)
+3. [Features](#features)
+4. [System Architecture](#system-architecture)
+5. [Hardware Components](#hardware-components)
+6. [Software Components](#software-components)
+7. [Installation](#installation)
     - [Prerequisites](#prerequisites)
     - [Hardware Setup](#hardware-setup)
-    - [Arduino Code Setup](#arduino-code-setup)
+    - [Arduino Firmware Setup](#arduino-firmware-setup)
     - [Python Environment Setup](#python-environment-setup)
-6. [Usage](#usage)
-    - [Uploading Code to Arduino](#uploading-code-to-arduino)
-    - [Running the Python GUI](#running-the-python-gui)
-    - [Interacting with the System](#interacting-with-the-system)
-7. [Configuration](#configuration)
+8. [Configuration](#configuration)
     - [Arduino Configuration](#arduino-configuration)
     - [Python Configuration](#python-configuration)
-8. [Logging and Debugging](#logging-and-debugging)
-9. [Troubleshooting](#troubleshooting)
-10. [Contributing](#contributing)
-11. [License](#license)
-12. [Acknowledgments](#acknowledgments)
-13. [Contact](#contact)
+9. [Usage](#usage)
+    - [Uploading Firmware to Arduino](#uploading-firmware-to-arduino)
+    - [Launching the Python GUI](#launching-the-python-gui)
+    - [Interacting with the System](#interacting-with-the-system)
+10. [Logging and Monitoring](#logging-and-monitoring)
+11. [Troubleshooting](#troubleshooting)
+12. [Contributing](#contributing)
+13. [License](#license)
+14. [Acknowledgments](#acknowledgments)
+15. [Contact](#contact)
 
 ---
 
-## Project Overview
+## Introduction
 
-This project implements a comprehensive control system for a **NEMA 17 Stepper Motor** using an **TB6560 Driver** and an **HC-SR04 Ultrasonic Sensor**. The system facilitates both automatic and manual control modes, allowing precise motor movements based on real-time distance measurements. A **Python-based Graphical User Interface (GUI)** provides an intuitive platform for users to interact with the system, monitor sensor data, and issue control commands seamlessly.
+Welcome to the **Advanced Automated Control System for NEMA 17 Stepper Motor** project. This system integrates a **NEMA 17 Stepper Motor** with a **TB6560 Driver** and an **HC-SR04 Ultrasonic Sensor** to provide precise, automated control based on real-time distance measurements. A **Python-based Graphical User Interface (GUI)** offers an intuitive platform for monitoring and commanding the motor, making the system suitable for applications in robotics, automation, and educational environments.
 
-**Key Objectives:**
+## Project Background
 
-- Automate motor movements between predefined positions using sensor feedback.
-- Enable manual control of motor direction and speed via a user-friendly GUI.
-- Implement robust error handling and logging mechanisms for reliable operation.
-- Maintain a modular and scalable codebase for easy maintenance and future enhancements.
+In the realm of automation and robotics, precise control over actuators is paramount. Traditional systems often lack real-time feedback mechanisms, leading to inefficiencies and inaccuracies. This project aims to bridge that gap by combining robust hardware with an intelligent software interface. By leveraging the capabilities of Arduino for hardware control and Python for software interfacing, we create a versatile system that can adapt to various use cases, from simple motor control to complex automated tasks.
 
 ## Features
 
-- **Automatic Mode**: Motor moves downward until a distance of 7 cm is detected, then moves upward until a distance of 35 cm is reached, repeating this cycle indefinitely.
-- **Manual Mode**: Users can manually command the motor to move up, down, or stop via the Python GUI or serial commands.
-- **Real-Time Monitoring**: Live distance measurements are displayed on the GUI using visual gauges.
-- **Adjustable Motor Speed**: Users can modify the motor's speed dynamically through the GUI.
-- **Error Handling**: The system gracefully handles sensor read failures and communication issues.
-- **Logging System**: Comprehensive logging for both Arduino and Python components to facilitate debugging and monitoring.
-- **Modular Architecture**: Well-organized codebase with separate modules for motor control, sensor management, system logic, and GUI operations.
-- **Extensible Design**: Easy integration of additional sensors, actuators, or features in the future.
+- **Dual Operation Modes**: Seamlessly switch between automatic and manual control of the stepper motor.
+- **Real-Time Ultrasonic Feedback**: Utilize the HC-SR04 sensor to monitor distances and adjust motor actions accordingly.
+- **Dynamic Speed Adjustment**: Modify the motor's speed in real-time through the GUI.
+- **Comprehensive Logging**: Maintain detailed logs for system operations and debugging purposes.
+- **Modular Codebase**: Structured with separate modules for motor control, sensor management, system logic, and GUI operations.
+- **Robust Error Handling**: Gracefully manage sensor failures, communication issues, and hardware anomalies.
+- **Extensible Design**: Easily integrate additional sensors, actuators, or features in future iterations.
+
+## System Architecture
+
+![System Architecture](https://example.com/architecture.png) <!-- Replace with an actual architecture diagram -->
+
+The system is divided into two main components:
+
+1. **Hardware Component (Arduino-based)**
+    - **Motor Control Module**: Manages the NEMA 17 stepper motor via the TB6560 driver.
+    - **Sensor Module**: Interfaces with the HC-SR04 ultrasonic sensor to measure distances.
+    - **Logic Module**: Implements the state machine controlling motor movements based on sensor input and user commands.
+    - **Communication Module**: Handles serial communication with the Python GUI.
+
+2. **Software Component (Python-based GUI)**
+    - **User Interface**: Provides an intuitive GUI for monitoring sensor data and controlling motor operations.
+    - **Serial Communication**: Facilitates command transmission and data reception between the GUI and Arduino.
+    - **Data Visualization**: Utilizes gauges and plots to represent real-time sensor data.
+    - **Logging System**: Records events, errors, and system statuses for analysis and debugging.
 
 ## Hardware Components
 
-1. **Arduino Board**: [Arduino Uno](https://store.arduino.cc/products/arduino-uno-rev3) (or compatible)
-2. **Stepper Motor**: [NEMA 17 Stepper Motor](https://www.adafruit.com/product/1688)
-3. **Stepper Motor Driver**: [TB6560 Driver](https://www.amazon.com/dp/B07F7V5MQT) (compatible)
-4. **Ultrasonic Sensor**: [HC-SR04](https://www.sparkfun.com/products/15569)
-5. **Power Supply**: Suitable for TB6560 and stepper motor (e.g., 12V DC, 2A)
-6. **Connecting Wires and Breadboard**
+1. **Arduino Uno**: The microcontroller board acts as the central hub for interfacing with sensors and actuators.
+2. **NEMA 17 Stepper Motor**: Provides precise rotational control for various applications.
+3. **TB6560 Stepper Motor Driver**: Interfaces between the Arduino and the stepper motor, handling high current requirements.
+4. **HC-SR04 Ultrasonic Sensor**: Measures distances by emitting ultrasonic waves and calculating the time taken for echoes to return.
+5. **Power Supply**: A stable 12V DC power source to drive the stepper motor via the TB6560 driver.
+6. **Connecting Wires and Breadboard**: For establishing connections between components.
 7. **Optional Components**:
-    - **Current Sensor**: [ACS712](https://www.sparkfun.com/products/3013) for overcurrent protection
-    - **Resistors, Capacitors**: As required by your specific setup
+    - **ACS712 Current Sensor**: For monitoring and protecting against overcurrent situations.
+    - **Resistors, Capacitors**: As required for sensor stabilization and noise reduction.
 
 ## Software Components
 
-1. **Arduino IDE**: For writing, compiling, and uploading Arduino code.
-2. **Visual Studio Code (VSCode)**: Integrated development environment with extensions for Arduino and Python.
-3. **Python 3.6+**: Programming language for the GUI and serial communication.
+1. **Arduino IDE**: For writing, compiling, and uploading firmware to the Arduino Uno.
+2. **Visual Studio Code (VSCode)**: Enhanced code editing with extensions for Arduino and Python development.
+3. **Python 3.6+**: Programming language for developing the GUI and handling serial communication.
 4. **Python Libraries**:
-    - `pyserial`: For serial communication.
-    - `matplotlib`: For data visualization.
-    - `Tkinter` or `PyQt`: For building the GUI.
-    - `logging`: For logging system events.
-    - Other dependencies as specified in `requirements.txt`.
-
-## File Structure
-
-
-### Description of Key Files and Folders
-
-- **`.vscode/`**: Configuration files for VSCode, including settings for Arduino and debugging.
-- **`gui/`**: Contains all Python scripts related to the GUI, serial communication, logging, and visualization.
-    - **`serial_comm.py`**: Handles serial communication between Python and Arduino.
-    - **`matplotlib_gauge.py`**: Responsible for visualizing sensor data using gauges.
-    - **`gui.py`**: Main GUI application script.
-    - **`styles.py`**: Defines styles and themes for the GUI.
-    - **`logs/`**: Stores log files generated by the GUI.
-- **`lineal_actuator/`**: Contains Arduino code modules.
-    - **`Config.h`**: Centralized configuration file with constants and settings.
-    - **`Motor.h` & `Motor.cpp`**: Module for motor control functionalities.
-    - **`Sensor.h` & `Sensor.cpp`**: Module for ultrasonic sensor management.
-    - **`Logic.h` & `Logic.cpp`**: Module containing system logic and state management.
-    - **`lineal_actuator.ino`**: Main Arduino sketch that integrates all modules.
-- **`logging_config.py`**: Python script configuring the logging system.
-- **`logs/`**: Contains global log files.
-- **`motor_control_gui.py` & `run_gui.py`**: Scripts to initialize and run the GUI application.
-- **`__pycache__/`**: Compiled Python bytecode for faster execution.
+    - `pyserial`: Enables serial communication between Python and Arduino.
+    - `matplotlib`: Facilitates data visualization within the GUI.
+    - `Tkinter` or `PyQt`: Frameworks for building the graphical user interface.
+    - `logging`: Implements logging mechanisms for monitoring and debugging.
 
 ## Installation
 
 ### Prerequisites
 
-- **Arduino IDE**: Download and install from [Arduino Official Site](https://www.arduino.cc/en/software).
-- **Visual Studio Code (VSCode)**: Download and install from [VSCode Official Site](https://code.visualstudio.com/).
-- **Python 3.6+**: Download and install from [Python Official Site](https://www.python.org/downloads/).
-- **Python Libraries**: Install required libraries using `pip`.
+- **Arduino IDE**: [Download Here](https://www.arduino.cc/en/software)
+- **Visual Studio Code (VSCode)**: [Download Here](https://code.visualstudio.com/)
+- **Python 3.6+**: [Download Here](https://www.python.org/downloads/)
+- **Python Libraries**: Install via `pip`
     ```bash
     pip install -r requirements.txt
     ```
-    *(Create a `requirements.txt` file if not already present with the necessary dependencies)*
+- **VSCode Extensions**:
+    - **Arduino for VSCode**
+    - **Python**
+    - **C/C++**
 
 ### Hardware Setup
 
-1. **Connect the NEMA 17 Stepper Motor to TB6560 Driver**:
-    - **Motor Wires**: Connect the motor wires to the TB6560 driver according to the motor's datasheet.
-    - **Power Supply**: Connect an appropriate power supply to the TB6560 driver (e.g., 12V DC, 2A).
-    - **Control Pins**: Connect the driver’s control pins (Pulse and Direction) to the Arduino.
-        - **Pulse Pin**: Connect to Arduino Digital Pin 3.
-        - **Direction Pin**: Connect to Arduino Digital Pin 4.
+1. **Connect the Stepper Motor to TB6560 Driver**:
+    - **Motor Wires**: Connect according to the motor's datasheet.
+    - **Power Supply**: Ensure the TB6560 is connected to a stable 12V DC power source.
+    - **Control Pins**: Connect the TB6560's Pulse and Direction pins to Arduino Digital Pins 3 and 4, respectively.
 
 2. **Connect HC-SR04 Ultrasonic Sensor to Arduino**:
     - **VCC**: Connect to 5V on Arduino.
@@ -126,27 +119,26 @@ This project implements a comprehensive control system for a **NEMA 17 Stepper M
     - **Trig**: Connect to Digital Pin 9 on Arduino.
     - **Echo**: Connect to Digital Pin 10 on Arduino.
 
-3. **Optional: Connect Current Sensor for Overcurrent Protection**:
+3. **Optional: Connect ACS712 Current Sensor**:
     - **VCC**: Connect to 5V on Arduino.
     - **GND**: Connect to GND on Arduino.
-    - **OUT**: Connect to an Analog Pin on Arduino (e.g., A0).
+    - **OUT**: Connect to Analog Pin A0 on Arduino.
 
 4. **Finalize Connections**:
-    - Ensure all connections are secure.
-    - Double-check pin assignments against `Config.h`.
+    - Double-check all wiring against the `Config.h` pin definitions.
+    - Ensure all connections are secure to prevent short circuits.
 
-### Arduino Code Setup
+### Arduino Firmware Setup
 
 1. **Open the Project in VSCode**:
-    - Launch VSCode.
-    - Open the `control_system/` folder.
+    - Launch VSCode and open the `control_system/` directory.
 
 2. **Configure VSCode for Arduino**:
-    - Ensure the Arduino extension is installed.
-    - Open `.vscode/arduino.json` and verify the following:
+    - Ensure the Arduino extension is installed and properly configured.
+    - Open `.vscode/arduino.json` and verify:
         - `"sketch"` points to `lineal_actuator/lineal_actuator.ino`.
         - `"board"` is set to your Arduino model (e.g., `"arduino:avr:uno"`).
-        - `"port"` matches the port your Arduino is connected to (e.g., `"COM3"` on Windows or `"/dev/ttyACM0"` on Linux).
+        - `"port"` matches your Arduino's serial port (e.g., `"COM3"` on Windows or `"/dev/ttyACM0"` on Linux).
 
 3. **Configure `c_cpp_properties.json`**:
     - Ensure the `includePath` includes `"${workspaceFolder}/**"` to allow VSCode to find all header files.
@@ -173,13 +165,11 @@ This project implements a comprehensive control system for a **NEMA 17 Stepper M
         }
         ```
 
-4. **Verify the Code**:
+4. **Verify and Upload Firmware**:
     - Click the `Verify` (✓) button in the Arduino toolbar within VSCode.
     - Ensure there are no compilation errors.
-
-5. **Upload the Code to Arduino**:
-    - Click the `Upload` (→) button in the Arduino toolbar.
-    - Wait for the upload to complete successfully.
+    - Click the `Upload` (→) button to upload the firmware to the Arduino Uno.
+    - Monitor the output for any compilation or upload errors.
 
 ### Python Environment Setup
 
@@ -188,7 +178,7 @@ This project implements a comprehensive control system for a **NEMA 17 Stepper M
     cd path/to/control_system/
     ```
 
-2. **Create a Virtual Environment (Optional but Recommended)**:
+2. **Create and Activate a Virtual Environment (Optional but Recommended)**:
     ```bash
     python -m venv venv
     source venv/bin/activate  # On Windows: venv\Scripts\activate
@@ -198,86 +188,31 @@ This project implements a comprehensive control system for a **NEMA 17 Stepper M
     ```bash
     pip install -r requirements.txt
     ```
-    *(Ensure that all necessary libraries are listed in `requirements.txt`)*
+    *(Ensure all dependencies are listed in `requirements.txt`)*
 
 4. **Configure `serial_comm.py`**:
     - Open `gui/serial_comm.py`.
-    - Set the correct serial port (e.g., `COM3` for Windows or `/dev/ttyACM0` for Linux).
-
+    - Set the correct serial port matching your Arduino's connection.
     ```python
-    # Example
-    serial_port = 'COM3'  # Replace with your Arduino's serial port
+    # serial_comm.py
+
+    serial_port = 'COM3'  # Replace with your Arduino's serial port (e.g., '/dev/ttyACM0' on Linux)
+    baudrate = 9600
+    timeout = 1
     ```
-
-## Usage
-
-### Uploading Code to Arduino
-
-1. **Connect Arduino to PC**:
-    - Use a USB cable to connect your Arduino board to your computer.
-
-2. **Open VSCode and Project**:
-    - Launch VSCode.
-    - Open the `control_system/` folder.
-
-3. **Verify and Upload**:
-    - Click `Verify` to compile the code.
-    - Click `Upload` to send the code to the Arduino.
-    - Monitor the output for any errors.
-
-4. **Monitor Serial Output (Optional)**:
-    - Open the Serial Monitor in VSCode or use an external tool like `PuTTY` or `minicom` to view Arduino logs.
-    - Ensure the baud rate is set to `9600`.
-
-### Running the Python GUI
-
-1. **Ensure Arduino is Connected and Code is Uploaded**:
-    - The Arduino should be running the `lineal_actuator.ino` sketch.
-
-2. **Open Terminal in VSCode**:
-    - Navigate to the `control_system/` directory.
-
-3. **Activate Virtual Environment (If Created)**:
-    ```bash
-    source venv/bin/activate  # On Windows: venv\Scripts\activate
-    ```
-
-4. **Run the GUI Application**:
-    ```bash
-    python run_gui.py
-    ```
-    - Alternatively, if `motor_control_gui.py` is the main GUI script, run:
-    ```bash
-    python motor_control_gui.py
-    ```
-
-5. **Interact with the GUI**:
-    - Use the provided buttons and controls to send commands to the Arduino.
-    - Monitor real-time data and logs within the GUI.
-
-### Interacting with the System
-
-- **Automatic Mode**:
-    - Activate via GUI button or send the `AUTO` command.
-    - Motor moves between 7 cm and 35 cm based on sensor readings.
-
-- **Manual Control**:
-    - Use GUI buttons or send `UP`, `DOWN`, `STOP` commands to control motor direction.
-
-- **Adjusting Motor Speed**:
-    - Send `SET_SPEED <value_in_microseconds>` command via GUI or Python scripts to adjust the pulse interval, thus controlling motor speed.
-
-- **Monitoring Logs**:
-    - View real-time logs within the GUI or check `logs/app.log` for detailed logs.
 
 ## Configuration
 
 ### Arduino Configuration
 
-All configurable parameters are centralized in the `Config.h` file within the `lineal_actuator/` directory. Adjust the following as needed:
+All configurable parameters are centralized in the `Config.h` file located in the `lineal_actuator/` directory. Adjust these parameters as needed to match your hardware setup and operational requirements.
+
+#### Key Configuration Parameters
 
 - **Pin Definitions**:
     ```cpp
+    // Config.h
+
     // Pines del Motor Paso a Paso con TB6560
     const uint8_t MOTOR_PUL_PIN = 3;        // Pin para el pulso
     const uint8_t MOTOR_DIR_PIN = 4;        // Pin para la dirección
@@ -332,18 +267,20 @@ All configurable parameters are centralized in the `Config.h` file within the `l
 
 Configuration settings for the Python GUI and serial communication are managed within the Python scripts, primarily in `serial_comm.py` and `run_gui.py`.
 
-- **Serial Port Configuration**:
-    - Edit `serial_comm.py` to specify the correct serial port.
+#### Serial Communication Configuration
+
+- **Serial Port**: Ensure `serial_port` in `serial_comm.py` matches your Arduino's connection.
     ```python
     # serial_comm.py
 
-    serial_port = 'COM3'  # Replace with your Arduino's serial port (e.g., 'COM3' on Windows or '/dev/ttyACM0' on Linux)
+    serial_port = 'COM3'  # Replace with your Arduino's serial port (e.g., '/dev/ttyACM0' on Linux)
     baudrate = 9600
     timeout = 1
     ```
 
-- **Logging Configuration**:
-    - Adjust logging levels and log file paths in `logging_config.py`.
+#### Logging Configuration
+
+- **Logging Levels**: Adjust logging levels in `logging_config.py` to control the verbosity of logs.
     ```python
     # logging_config.py
 
@@ -351,50 +288,105 @@ Configuration settings for the Python GUI and serial communication are managed w
 
     logging.basicConfig(
         filename='logs/app.log',
-        level=logging.DEBUG,  # Adjust as needed: DEBUG, INFO, WARNING, ERROR, CRITICAL
+        level=logging.DEBUG,  # Options: DEBUG, INFO, WARNING, ERROR, CRITICAL
         format='%(asctime)s - %(levelname)s - %(message)s'
     )
     ```
 
-- **GUI Customization**:
-    - Modify `styles.py` to change the appearance of the GUI.
-    - Update `matplotlib_gauge.py` for different gauge styles or additional visualizations.
+#### GUI Customization
 
-## Logging and Debugging
+- **Styles**: Modify `styles.py` to change the appearance of the GUI elements.
+- **Visualization**: Adjust `matplotlib_gauge.py` to alter gauge styles or add new visual components.
+
+## Usage
+
+### Uploading Firmware to Arduino
+
+1. **Connect Arduino to PC**:
+    - Use a USB cable to connect your Arduino Uno to your computer.
+
+2. **Open VSCode and Project**:
+    - Launch VSCode.
+    - Open the `control_system/` directory.
+
+3. **Verify and Upload**:
+    - Click the `Verify` (✓) button in the Arduino toolbar to compile the firmware.
+    - Ensure there are no compilation errors.
+    - Click the `Upload` (→) button to upload the firmware to the Arduino Uno.
+    - Monitor the output for any compilation or upload errors.
+
+4. **Monitor Serial Output (Optional)**:
+    - Open the Serial Monitor in VSCode or use an external tool like `PuTTY` or `minicom`.
+    - Ensure the baud rate is set to `9600` to view real-time logs from Arduino.
+
+### Launching the Python GUI
+
+1. **Ensure Arduino is Running**:
+    - Confirm that the Arduino is powered on and the firmware is uploaded.
+
+2. **Open Terminal in VSCode**:
+    - Navigate to the `control_system/` directory.
+
+3. **Activate Virtual Environment (If Created)**:
+    ```bash
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
+    ```
+
+4. **Run the GUI Application**:
+    ```bash
+    python run_gui.py
+    ```
+    - Alternatively, if `motor_control_gui.py` is the main GUI script, execute:
+    ```bash
+    python motor_control_gui.py
+    ```
+
+5. **Interact with the GUI**:
+    - **Automatic Mode**: Click the `AUTO` button to start automatic motor movements based on sensor input.
+    - **Manual Control**: Use the `UP`, `DOWN`, and `STOP` buttons to control motor direction manually.
+    - **Adjust Speed**: Input a value in the `SET_SPEED` field and apply to modify motor speed dynamically.
+    - **Monitor Distance**: View real-time distance measurements displayed on visual gauges within the GUI.
+
+### Interacting with the System
+
+- **Sending Commands via GUI**:
+    - Use the GUI buttons and input fields to send commands directly to the Arduino.
+    - Commands include `AUTO`, `UP`, `DOWN`, `STOP`, and `SET_SPEED <value>`.
+
+- **Sending Commands via Serial**:
+    - Use the Serial Monitor or other serial communication tools to send text-based commands.
+    - Ensure commands are terminated with a newline character (`\n`).
+
+- **Receiving Feedback**:
+    - The system provides real-time feedback through logs displayed in the GUI and recorded in log files.
+    - Monitor logs to verify system behavior and debug issues.
+
+## Logging and Monitoring
 
 ### Arduino Logging
 
-- **Logging Levels**:
-    - **ERROR**: Critical issues that need immediate attention.
-    - **INFO**: General information about system operations.
-    - **DEBUG**: Detailed debugging information for development purposes.
-
-- **Adjusting Verbosity**:
-    - Set `LOG_VERBOSITY` in `Config.h` to control the level of logging:
-        ```cpp
-        #define LOG_VERBOSITY 2 // 0: Off, 1: Error, 2: Info, 3: Debug
-        ```
-
-- **Viewing Logs**:
-    - Use the Serial Monitor in Arduino IDE or VSCode to view real-time logs.
-    - Ensure the baud rate is set to `9600`.
+- **Log Messages**: Arduino sends log messages via Serial at a baud rate of `9600`.
+- **Log Levels**:
+    - **ERROR**: Critical issues requiring immediate attention.
+    - **INFO**: General system information and status updates.
+    - **DEBUG**: Detailed information useful for debugging.
+- **Adjusting Verbosity**: Set `LOG_VERBOSITY` in `Config.h` to control the level of log messages.
+    ```cpp
+    #define LOG_VERBOSITY 2 // 0: Off, 1: Error, 2: Info, 3: Debug
+    ```
 
 ### Python Logging
 
-- **Logging Configuration**:
-    - Configured in `logging_config.py` using Python's `logging` module.
-    - Logs are stored in `logs/app.log`.
-
+- **Log Files**: All Python logs are stored in `logs/app.log`.
 - **Log Levels**:
-    - **DEBUG**: Detailed information, typically of interest only when diagnosing problems.
+    - **DEBUG**: Detailed information for debugging.
     - **INFO**: Confirmation that things are working as expected.
-    - **WARNING**: An indication that something unexpected happened, or indicative of some problem in the near future.
-    - **ERROR**: Due to a more serious problem, the software has not been able to perform some function.
-    - **CRITICAL**: A very serious error, indicating that the program itself may be unable to continue running.
-
+    - **WARNING**: Indications of potential issues.
+    - **ERROR**: Serious problems preventing some functionality.
+    - **CRITICAL**: Severe errors causing program termination.
 - **Viewing Logs**:
-    - Open `logs/app.log` to review historical logs.
-    - Logs are also output to the console during runtime.
+    - Open `logs/app.log` with any text editor to review historical logs.
+    - Logs are also output to the console during runtime for real-time monitoring.
 
 ## Troubleshooting
 
@@ -406,83 +398,59 @@ Configuration settings for the Python GUI and serial communication are managed w
 
 2. **Serial Communication Issues**:
     - **Cause**: Incorrect serial port or baud rate settings.
-    - **Solution**: Verify that `serial_comm.py` points to the correct serial port and matches the baud rate set in `lineal_actuator.ino`.
+    - **Solution**:
+        - Verify that `serial_comm.py` points to the correct serial port.
+        - Ensure the baud rate in `serial_comm.py` matches the Arduino's baud rate (`9600`).
+        - Check that no other application is using the serial port.
 
 3. **GUI Not Responding or Crashing**:
     - **Cause**: Unhandled exceptions or incorrect GUI configurations.
-    - **Solution**: Check `logs/app.log` for error messages. Ensure all required Python libraries are installed and up-to-date.
+    - **Solution**:
+        - Check `logs/app.log` for error messages.
+        - Ensure all required Python libraries are installed and up-to-date.
+        - Verify that the Python scripts are free of syntax errors.
 
 4. **Motor Not Moving**:
     - **Cause**: Incorrect wiring, insufficient power, or code issues.
-    - **Solution**: Double-check all hardware connections, ensure the power supply is adequate, and verify motor control logic in Arduino code.
+    - **Solution**:
+        - Double-check all motor and driver connections.
+        - Ensure the power supply provides adequate current.
+        - Review motor control logic in the Arduino code.
 
 5. **Ultrasonic Sensor Not Reading Correctly**:
     - **Cause**: Incorrect sensor placement, wiring issues, or environmental factors.
-    - **Solution**: Ensure the sensor is properly connected and mounted. Test the sensor independently using a simple Arduino sketch to verify functionality.
+    - **Solution**:
+        - Ensure the sensor is properly connected and mounted.
+        - Test the sensor independently using a simple Arduino sketch to verify functionality.
+        - Check for obstacles or interference in the sensor's environment.
 
 6. **Overcurrent Protection Not Triggering**:
     - **Cause**: Faulty current sensor or incorrect integration.
-    - **Solution**: Verify the current sensor connections and functionality. Ensure the current thresholds are correctly set in the Arduino code.
+    - **Solution**:
+        - Verify the current sensor connections.
+        - Ensure the current thresholds are correctly set in the Arduino code.
+        - Test the current sensor separately to confirm functionality.
 
 ### Debugging Steps
 
 1. **Isolate Components**:
-    - Test the motor and driver with a simple stepper motor sketch.
-    - Test the ultrasonic sensor with a standalone distance measurement sketch.
+    - Test each component (motor, sensor, GUI) individually to identify the source of the problem.
 
 2. **Use Serial Logs**:
-    - Utilize Arduino's Serial Monitor to view real-time logs and identify where the system may be failing.
+    - Utilize Arduino's Serial Monitor to view real-time logs and identify issues.
 
 3. **Check Power Supply**:
-    - Ensure the power supply can handle the motor's current requirements. Use a multimeter to verify voltage levels.
+    - Ensure the power supply is stable and meets the current requirements of the motor and driver.
 
 4. **Review Wiring**:
-    - Double-check all connections against the `Config.h` pin definitions.
+    - Double-check all physical connections against the pin definitions in `Config.h`.
 
 5. **Update Firmware and Libraries**:
-    - Ensure the Arduino IDE and all libraries are up-to-date.
+    - Ensure both Arduino firmware and Python libraries are up-to-date to avoid compatibility issues.
 
-## Contributing
+6. **Monitor Log Files**:
+    - Review `logs/app.log` for detailed error messages and system statuses.
 
-Contributions are welcome! Whether it's reporting bugs, suggesting features, or submitting pull requests, your input helps improve the project.
-
-### How to Contribute
-
-1. **Fork the Repository**: Click the "Fork" button on the repository page.
-2. **Clone Your Fork**:
-    ```bash
-    git clone https://github.com/your-username/control_system.git
-    ```
-3. **Create a New Branch**:
-    ```bash
-    git checkout -b feature/your-feature-name
-    ```
-4. **Make Your Changes**: Implement your feature or fix.
-5. **Commit Your Changes**:
-    ```bash
-    git commit -m "Add feature: your feature description"
-    ```
-6. **Push to Your Fork**:
-    ```bash
-    git push origin feature/your-feature-name
-    ```
-7. **Create a Pull Request**: Navigate to the original repository and submit a pull request with a detailed description of your changes.
-
-### Code of Conduct
-
-Please adhere to the [Code of Conduct](CODE_OF_CONDUCT.md) when contributing to this project.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-- **Arduino Community**: For providing comprehensive resources and support.
-- **OpenAI**: For assistance in code structuring and documentation.
-- **Python Developers**: For creating powerful libraries that facilitate GUI development and serial communication.
-- **Manufacturers of Hardware Components**: Providing reliable and high-quality components essential for the project.
-- **VSCode Extensions**: For enhancing the development experience with powerful tools for Arduino and Python.
 
 ---
 
