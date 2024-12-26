@@ -29,7 +29,7 @@ class MotorControlGUI:
         self.mode = tk.StringVar(value="Manual")
         self.current_distance = tk.StringVar(value="Desconocida")
         self.pulse_interval = tk.IntVar(value=800)
-        self.system_status = tk.StringVar(value="Operando en Modo Real" if serial_comm.is_connected else "Modo Simulación")
+        self.system_status = tk.StringVar(value="Operando en Modo Real" if serial_comm.disconnect else "Modo Simulación")
 
         # Variables para rastrear el estado de los botones
         self.up_pressed = False
