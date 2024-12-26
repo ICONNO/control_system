@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Advanced Automated Control System for NEMA 17 Stepper Motor with Ultrasonic Feedback and Python GUI
 
 ![Project Logo](https://example.com/logo.png) <!-- Replace with your project logo -->
@@ -29,6 +30,11 @@
 14. [Acknowledgments](#acknowledgments)
 15. [Contact](#contact)
 
+=======
+# Control System for NEMA 17 Stepper Motor with TB6560 Driver and HC-SR04 Ultrasonic Sensor
+## Table of Contents
+
+>>>>>>> e32da3fb947edebd4f0b71f4c34437d189456b79
 ---
 
 ## Introduction
@@ -67,6 +73,7 @@ The system is divided into two main components:
     - **Data Visualization**: Utilizes gauges and plots to represent real-time sensor data.
     - **Logging System**: Records events, errors, and system statuses for analysis and debugging.
 
+<<<<<<< HEAD
 ## Hardware Components
 
 1. **Arduino Uno**: The microcontroller board acts as the central hub for interfacing with sensors and actuators.
@@ -203,6 +210,8 @@ The system is divided into two main components:
 
 ## Configuration
 
+=======
+>>>>>>> e32da3fb947edebd4f0b71f4c34437d189456b79
 ### Arduino Configuration
 
 All configurable parameters are centralized in the `Config.h` file located in the `lineal_actuator/` directory. Adjust these parameters as needed to match your hardware setup and operational requirements.
@@ -293,6 +302,7 @@ Configuration settings for the Python GUI and serial communication are managed w
     )
     ```
 
+<<<<<<< HEAD
 #### GUI Customization
 
 - **Styles**: Modify `styles.py` to change the appearance of the GUI elements.
@@ -455,3 +465,8 @@ Configuration settings for the Python GUI and serial communication are managed w
 ---
 
 *This project is a work in progress. Contributions and feedback are highly appreciated to improve its functionality and robustness.*
+=======
+- **GUI Customization**:
+    - Modify `styles.py` to change the appearance of the GUI.
+    - Update `matplotlib_gauge.py` for different gauge styles or additional visualizations.
+>>>>>>> e32da3fb947edebd4f0b71f4c34437d189456b79
