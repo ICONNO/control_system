@@ -1,7 +1,4 @@
 # Control System for NEMA 17 Stepper Motor with TB6560 Driver and HC-SR04 Ultrasonic Sensor
-
-![Project Banner](https://example.com/banner.png) <!-- Replace with an actual image URL if available -->
-
 ## Table of Contents
 
 1. [Project Overview](#project-overview)
