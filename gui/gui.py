@@ -45,6 +45,25 @@ class MotorControlGUI:
         self.master.after(100, self.process_queue)
 
         logging.info("Interfaz GUI inicializada correctamente.")
+        
+        # Add command queue and thread safety
+        self.command_queue = queue.PriorityQueue()
+        self.command_lock = threading.Lock()
+        self.last_command_time = 0
+        self.command_throttle = 0.1  # seconds
+        
+        # Add system monitoring
+        self.system_health = 100.0
+        self.error_count = 0
+        self.last_error_time = 0
+        self.reconnect_attempts = 0
+        
+        # Start command processor thread
+        self.command_thread = threading.Thread(target=self.process_command_queue, daemon=True)
+        self.command_thread.start()
+        
+        # Add periodic health check
+        self.master.after(5000, self.check_system_health)
 
     def create_widgets(self):
         """
@@ -272,7 +291,7 @@ class MotorControlGUI:
         """
         Activa el modo automático enviando el comando correspondiente al Arduino.
         """
-        success = self.serial.send_command("AUTO")
+        success = self.send_command("AUTO")
         if success:
             self.mode.set("Automático")
             self.system_status.set("Modo Automático Activado")
@@ -284,7 +303,7 @@ class MotorControlGUI:
         """
         Activa el modo manual enviando el comando correspondiente al Arduino.
         """
-        success = self.serial.send_command("STOP")
+        success = self.send_command("STOP")
         if success:
             self.mode.set("Manual")
             self.system_status.set("Modo Manual Activado")
@@ -296,7 +315,7 @@ class MotorControlGUI:
         """
         Envía el comando para mover el motor hacia arriba.
         """
-        success = self.serial.send_command("UP")
+        success = self.send_command("UP")
         if success:
             self.mode.set("Manual")
             self.log_message("Moviendo hacia arriba.", color="cyan")
@@ -306,7 +325,7 @@ class MotorControlGUI:
         """
         Envía el comando para mover el motor hacia abajo.
         """
-        success = self.serial.send_command("DOWN")
+        success = self.send_command("DOWN")
         if success:
             self.mode.set("Manual")
             self.log_message("Moviendo hacia abajo.", color="cyan")
@@ -316,7 +335,7 @@ class MotorControlGUI:
         """
         Envía el comando para detener el motor.
         """
-        success = self.serial.send_command("STOP")
+        success = self.send_command("STOP")
         if success:
             self.mode.set("Manual")
             self.log_message("Motor detenido.", color="white")
@@ -330,7 +349,7 @@ class MotorControlGUI:
         speed = self.pulse_interval.get()
         self.speed_display.config(text=f"{int(speed)} μs")
         self.speed_gauge.update_value(int(speed))
-        success = self.serial.send_command(f"SET_SPEED {int(speed)}")
+        success = self.send_command(f"SET_SPEED {int(speed)}")
         if success:
             self.log_message(f"Ajustando velocidad a {int(speed)} μs.", color="white")
             logging.info(f"Comando 'SET_SPEED {int(speed)}' enviado.")
@@ -414,7 +433,7 @@ class MotorControlGUI:
         """
         Envía el comando para encender la bomba de vacío.
         """
-        success = self.serial.send_command("PUMP_ON")
+        success = self.send_command("PUMP_ON")
         if success:
             self.log_message("Encendiendo bomba de vacío.", color="lime")
             logging.info("Comando 'PUMP_ON' enviado.")
@@ -423,7 +442,7 @@ class MotorControlGUI:
         """
         Envía el comando para apagar la bomba de vacío.
         """
-        success = self.serial.send_command("PUMP_OFF")
+        success = self.send_command("PUMP_OFF")
         if success:
             self.log_message("Apagando bomba de vacío.", color="red")
             logging.info("Comando 'PUMP_OFF' enviado.")
@@ -438,3 +457,81 @@ class MotorControlGUI:
             self.serial.disconnect()
             logging.info("Aplicación cerrada por el usuario.")
             self.master.destroy()
+            
+    def send_command(self, command, priority=1):
+        """
+        Encola un comando con prioridad (1-5, menor número es mayor prioridad)
+        """
+        current_time = time.time()
+        if current_time - self.last_command_time < self.command_throttle:
+            return False
+            
+        with self.command_lock:
+            self.command_queue.put((priority, current_time, command))
+            self.last_command_time = current_time
+        return True
+        
+    def process_command_queue(self):
+        """
+        Procesa la cola de comandos y maneja los errores
+        """
+        while True:
+            try:
+                priority, timestamp, command = self.command_queue.get()
+                if time.time() - timestamp > 5.0:  # Command too old
+                    continue
+                    
+                success = self.serial.send_command(command)
+                if not success:
+                    self.handle_command_error(command)
+                    
+            except Exception as e:
+                self.log_message(f"Error processing command: {e}", color="red")
+                logging.error(f"Command processing error: {e}")
+            time.sleep(0.01)
+            
+    def check_system_health(self):
+        """
+        Monitorea la salud del sistema e intenta recuperarse si es necesario
+        """
+        if self.error_count > 5:
+            self.system_health = max(0, self.system_health - 10)
+            self.attempt_system_recovery()
+        
+        if not self.serial.is_connected():
+            self.attempt_reconnect()
+            
+        self.master.after(5000, self.check_system_health)
+        
+    def attempt_system_recovery(self):
+        """
+        Intenta recuperar el sistema de errores
+        """
+        self.log_message("Intentando recuperar el sistema...", color="yellow")
+        self.stop_motor()
+        self.error_count = 0
+        self.system_health = min(100, self.system_health + 20)
+        
+    def attempt_reconnect(self):
+        """
+        Intenta reconectarse al dispositivo serial
+        """
+        if self.reconnect_attempts < 3:
+            self.log_message("Intentando reconectar...", color="yellow")
+            success = self.serial.connect()
+            if success:
+                self.reconnect_attempts = 0
+                self.log_message("¡Reconexión exitosa!", color="green")
+            else:
+                self.reconnect_attempts += 1
+                
+    def handle_command_error(self, command):
+        """
+        Handle failed commands and implement retry logic
+        """
+        self.error_count += 1
+        self.last_error_time = time.time()
+        self.log_message(f"Command failed: {command}", color="red")
+        
+        if self.error_count <= 3:
+            self.send_command(command, priority=5)  # Retry with lower priority
