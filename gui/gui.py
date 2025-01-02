@@ -535,3 +535,5 @@ class MotorControlGUI:
         
         if self.error_count <= 3:
             self.send_command(command, priority=5)  # Retry with lower priority
+        
+        
