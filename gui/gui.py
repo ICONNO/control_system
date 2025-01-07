@@ -10,6 +10,7 @@ import logging
 from ttkbootstrap import Style
 import queue
 from .matplotlib_gauge import MatplotlibGauge  # Asegúrate de usar importaciones relativas
+import psutil
 
 class MotorControlGUI:
     """
@@ -28,7 +29,7 @@ class MotorControlGUI:
         # Variables de estado
         self.mode = tk.StringVar(value="Manual")
         self.current_distance = tk.StringVar(value="Desconocida")
-        self.pulse_interval = tk.IntVar(value=800)
+        self.pulse_interval = tk.IntVar(value=100)
         self.system_status = tk.StringVar(value="Operando en Modo Real" if serial_comm.disconnect else "Modo Simulación")
 
         # Variables para rastrear el estado de los botones
@@ -492,8 +493,15 @@ class MotorControlGUI:
             
     def check_system_health(self):
         """
-        Monitorea la salud del sistema e intenta recuperarse si es necesario
+        Monitor system health and attempt recovery if needed
         """
+        cpu_usage = psutil.cpu_percent()
+        memory_info = psutil.virtual_memory()
+        
+        if cpu_usage > 80 or memory_info.percent > 80:
+            self.system_health = max(0, self.system_health - 10)
+            self.log_message(f"High resource usage detected: CPU {cpu_usage}%, Memory {memory_info.percent}%", color="red")
+        
         if self.error_count > 5:
             self.system_health = max(0, self.system_health - 10)
             self.attempt_system_recovery()
@@ -535,5 +543,4 @@ class MotorControlGUI:
         
         if self.error_count <= 3:
             self.send_command(command, priority=5)  # Retry with lower priority
-        
-        
+
