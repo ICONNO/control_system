@@ -23,7 +23,7 @@ const float DISTANCE_UPPER_TARGET = 35.0;    // Distancia para detenerse al subi
 const float DISTANCE_MARGIN = 0.5;           // Margen para evitar oscilaciones
 
 // Velocidad del Motor
-const unsigned long PULSE_INTERVAL_DEFAULT_US = 800; // Intervalo entre pulsos en micros (ajustar para la velocidad)
+const unsigned long PULSE_INTERVAL_DEFAULT_US = 100; // Intervalo entre pulsos en micros (ajustar para la velocidad)
 unsigned long pulseInterval = PULSE_INTERVAL_DEFAULT_US;
 
 // Intervalo de lectura del sensor ultrasónico

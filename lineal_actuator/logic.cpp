@@ -25,38 +25,31 @@ void Logic::initialize() {
 void Logic::update() {
   unsigned long currentMillis = millis();
 
-  // Lectura del Sensor Ultrasónico a Intervalos Regulares
   if (currentMillis - previousDistanceMillis_ >= SENSOR_READ_INTERVAL_MS) {
     previousDistanceMillis_ = currentMillis;
     currentDistance_ = sensor_.readDistance();
 
-    // Mostrar la distancia en el monitor serial
     if (currentDistance_ >= 0.0) {
       Serial.print("Distancia actual: ");
       Serial.print(currentDistance_);
       Serial.println(" cm");
     } else {
       Serial.println("Error en la lectura del sensor ultrasónico.");
-      // Implementar lógica de manejo de errores si es necesario
     }
 
-    // Controlar el movimiento del motor basado en la distancia y el estado actual
     processState();
   }
 
-  // Actualizar el motor de manera no bloqueante
   motor_.update();
 }
 
 void Logic::handleSerialCommands() {
   while (Serial.available() > 0) {
     String command = Serial.readStringUntil('\n');
-    command.trim(); // Eliminar espacios en blanco y saltos de línea
-
+    command.trim();
     LOG_INFO("Comando recibido: " + command);
 
     if (command.equalsIgnoreCase(CMD_AUTO)) {
-      // Activar modo automático
       LOG_INFO("Activando modo automático.");
       setAutoMode(true);
       motor_.moveDown();
@@ -64,7 +57,6 @@ void Logic::handleSerialCommands() {
       previousState_ = MotorState::MOVING_DOWN;
     }
     else if (command.equalsIgnoreCase(CMD_UP)) {
-      // Mover manualmente hacia arriba
       LOG_INFO("Modo manual: Moviendo hacia arriba.");
       setAutoMode(false);
       motor_.moveUp();
@@ -72,7 +64,6 @@ void Logic::handleSerialCommands() {
       previousState_ = MotorState::MOVING_UP;
     }
     else if (command.equalsIgnoreCase(CMD_DOWN)) {
-      // Mover manualmente hacia abajo
       LOG_INFO("Modo manual: Moviendo hacia abajo.");
       setAutoMode(false);
       motor_.moveDown();
@@ -80,15 +71,12 @@ void Logic::handleSerialCommands() {
       previousState_ = MotorState::MOVING_DOWN;
     }
     else if (command.equalsIgnoreCase(CMD_STOP)) {
-      // Detener el motor y desactivar modo automático
       LOG_INFO("Deteniendo motor y desactivando modo automático.");
       setAutoMode(false);
       motor_.stop();
       currentState_ = MotorState::IDLE;
     }
     else if (command.startsWith(CMD_SET_SPEED)) {
-      // Comando para ajustar la velocidad del motor
-      // Formato esperado: SET_SPEED <valor_en_micros>
       int spaceIndex = command.indexOf(' ');
       if (spaceIndex != -1) {
         String valueStr = command.substring(spaceIndex + 1);
@@ -134,13 +122,11 @@ void Logic::transitionState() {
     case MotorState::IDLE:
       if (autoMode_) {
         if (previousState_ == MotorState::MOVING_DOWN) {
-          // Cambiar a subir después de detenerse
           motor_.moveUp();
           currentState_ = MotorState::MOVING_UP;
           previousState_ = MotorState::MOVING_UP;
         }
         else if (previousState_ == MotorState::MOVING_UP) {
-          // Cambiar a bajar después de detenerse
           motor_.moveDown();
           currentState_ = MotorState::MOVING_DOWN;
           previousState_ = MotorState::MOVING_DOWN;
@@ -162,6 +148,4 @@ void Logic::adjustSpeed(unsigned long newInterval) {
   pulseInterval = newInterval;
   motor_.setPulseInterval(newInterval);
 }
-
-
 {}

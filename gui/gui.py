@@ -445,7 +445,7 @@ class MotorControlGUI:
         """
         success = self.send_command("PUMP_OFF")
         if success:
-            self.log_message("Apagando bomba de vacío.", color="red")
+            self.log_message|("Apagando bomba de vacío.", color="red")
             logging.info("Comando 'PUMP_OFF' enviado.")
 
     def on_closing(self):

@@ -1,15 +1,12 @@
 import psutil
+import threading
 
 class RaspberryController:
     def __init__(self):
-        # ...existing code...
-        
-        # Add system monitoring
         self.system_health = 100.0
         self.error_count = 0
         self.last_error_time = 0
         
-        # Add periodic health check
         self.check_system_health()
         
     def check_system_health(self):
@@ -27,7 +24,5 @@ class RaspberryController:
             self.system_health = max(0, self.system_health - 10)
             self.attempt_system_recovery()
         
-        # Schedule next health check
         threading.Timer(5.0, self.check_system_health).start()
         
-    # ...existing code...
