@@ -101,7 +101,8 @@ class MatplotlibGauge(ttk.Frame):
             self.redraw_needle()
 
         # Programar la siguiente actualización
-        self.after(100, self.update_needle)  # Cambiar de 20 ms a 100 ms
+        self.after(100, self.update_needle)  # 100 ms para una animación más ligera
+
     def redraw_needle(self):
         """
         Redibuja la aguja y la lectura digital.
@@ -123,6 +124,6 @@ class MatplotlibGauge(ttk.Frame):
             self.digital_display.set_text(f"{int(self.value)}")
 
             # Redibujar el canvas
-            self.canvas.draw()
+            self.canvas.draw_idle()
         except Exception as e:
             logging.error(f"Error al redibujar la aguja: {e}")
