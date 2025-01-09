@@ -5,11 +5,10 @@ from tkinter import messagebox, ttk
 import threading
 import time
 from .serial_comm import SerialInterface, MockSerialComm  # Importación relativa
-import math
 import logging
-from ttkbootstrap import Style
 import queue
-from .matplotlib_gauge import MatplotlibGauge  # Asegúrate de usar importaciones relativas
+from .matplotlib_gauge import MatplotlibGauge  # Importación relativa
+from .styles import set_styles  # Importar la función de estilos
 import psutil
 
 class MotorControlGUI:
@@ -29,8 +28,8 @@ class MotorControlGUI:
         # Variables de estado
         self.mode = tk.StringVar(value="Manual")
         self.current_distance = tk.StringVar(value="Desconocida")
-        self.pulse_interval = tk.IntVar(value=100)
-        self.system_status = tk.StringVar(value="Operando en Modo Real" if serial_comm.disconnect else "Modo Simulación")
+        self.pulse_interval = tk.IntVar(value=800)  # Valor inicial coherente con la etiqueta
+        self.system_status = tk.StringVar(value="Operando en Modo Real" if self.serial.is_connected else "Modo Simulación")
 
         # Variables para rastrear el estado de los botones
         self.up_pressed = False
@@ -38,6 +37,9 @@ class MotorControlGUI:
 
         # Cola para comunicación entre hilos
         self.queue = queue.Queue()
+
+        # Aplicar estilos personalizados
+        set_styles()
 
         # Crear Widgets de la GUI
         self.create_widgets()
@@ -47,13 +49,13 @@ class MotorControlGUI:
 
         logging.info("Interfaz GUI inicializada correctamente.")
         
-        # Add command queue and thread safety
+        # Command queue and thread safety
         self.command_queue = queue.PriorityQueue()
         self.command_lock = threading.Lock()
         self.last_command_time = 0
         self.command_throttle = 0.1  # seconds
         
-        # Add system monitoring
+        # System monitoring variables
         self.system_health = 100.0
         self.error_count = 0
         self.last_error_time = 0
@@ -63,16 +65,16 @@ class MotorControlGUI:
         self.command_thread = threading.Thread(target=self.process_command_queue, daemon=True)
         self.command_thread.start()
         
-        # Add periodic health check
+        # Start periodic health check
         self.master.after(5000, self.check_system_health)
+        
+        # Manejar el cierre de la ventana
+        self.master.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def create_widgets(self):
         """
         Crea y organiza todos los widgets de la interfaz gráfica.
         """
-        # Establecer estilo con ttkbootstrap
-        style = Style(theme='darkly')  # Utilizar un tema oscuro como 'darkly'
-
         # Marco Principal Dividido en Izquierda y Derecha
         main_frame = ttk.Frame(self.master)
         main_frame.pack(fill="both", expand=True, padx=20, pady=10)
@@ -82,8 +84,8 @@ class MotorControlGUI:
         left_frame.pack(side="left", fill="both", expand=True, padx=(0,10))
 
         # Marco Derecho para Logs
-        right_frame = ttk.Frame(main_frame, width=400)
-        right_frame.pack(side="right", fill="both", expand=False)
+        right_frame = ttk.Frame(main_frame, width=400)  # Establecer ancho aquí
+        right_frame.pack(side="right", fill="both", expand=False)  # Eliminar width de pack
 
         # ------------------ Marco Izquierdo ------------------ #
 
@@ -147,7 +149,7 @@ class MotorControlGUI:
         self.speed_slider.pack(side="left", fill="x", expand=True, padx=10, pady=10)
 
         # Etiqueta para Mostrar el Valor Actual del Control Deslizante
-        self.speed_display = ttk.Label(speed_frame, text="800 μs")
+        self.speed_display = ttk.Label(speed_frame, text=f"{self.pulse_interval.get()} μs")
         self.speed_display.pack(side="left", padx=10, pady=10)
 
         # Frame de Gauges
@@ -160,7 +162,7 @@ class MotorControlGUI:
         self.distance_gauge = distance_gauge
 
         # Gauge para Velocidad
-        speed_gauge = MatplotlibGauge(gauges_frame, label="Velocidad (μs)", min_value=200, max_value=2000, initial_value=800)
+        speed_gauge = MatplotlibGauge(gauges_frame, label="Velocidad (μs)", min_value=200, max_value=2000, initial_value=self.pulse_interval.get())
         speed_gauge.pack(side="left", padx=20, pady=20)
         self.speed_gauge = speed_gauge
 
@@ -381,6 +383,8 @@ class MotorControlGUI:
                 speed = int(speed_str)
                 speed = self.speed_gauge.clamp(speed)  # Asegura que esté dentro del rango
                 self.speed_gauge.update_value(speed)
+                self.pulse_interval.set(speed)  # Sincronizar el control deslizante
+                self.speed_display.config(text=f"{speed} μs")
                 self.log_message(f"Velocidad: {speed} μs", color="white")
                 logging.info(f"Velocidad actualizada a {speed} μs.")
             except ValueError:
@@ -421,6 +425,14 @@ class MotorControlGUI:
         """
         self.text_log.configure(state='normal')
         self.text_log.insert(tk.END, f"{message}\n")
+        
+        # Limitar el número de líneas en el log para optimizar el rendimiento
+        max_lines = 1000
+        current_lines = int(self.text_log.index('end-1c').split('.')[0])
+        if current_lines > max_lines:
+            # Eliminar las primeras 100 líneas para evitar el crecimiento indefinido
+            self.text_log.delete('1.0', f"{100}.0")
+        
         # Obtener la última línea añadida
         last_line = int(self.text_log.index("end-1c").split('.')[0])
         tag_name = f"log_{last_line}"
@@ -445,7 +457,7 @@ class MotorControlGUI:
         """
         success = self.send_command("PUMP_OFF")
         if success:
-            self.log_message|("Apagando bomba de vacío.", color="red")
+            self.log_message("Apagando bomba de vacío.", color="red")  # Corrección del error tipográfico
             logging.info("Comando 'PUMP_OFF' enviado.")
 
     def on_closing(self):
@@ -454,7 +466,7 @@ class MotorControlGUI:
         Envía el comando 'STOP' y cierra la comunicación serial.
         """
         if messagebox.askokcancel("Salir", "¿Quieres salir de la aplicación?"):
-            self.serial.send_command("STOP")
+            self.send_command("STOP")
             self.serial.disconnect()
             logging.info("Aplicación cerrada por el usuario.")
             self.master.destroy()
@@ -465,6 +477,7 @@ class MotorControlGUI:
         """
         current_time = time.time()
         if current_time - self.last_command_time < self.command_throttle:
+            logging.warning(f"Comando '{command}' descartado por throttle.")
             return False
             
         with self.command_lock:
@@ -480,6 +493,7 @@ class MotorControlGUI:
             try:
                 priority, timestamp, command = self.command_queue.get()
                 if time.time() - timestamp > 5.0:  # Command too old
+                    logging.warning(f"Comando '{command}' descartado por antigüedad.")
                     continue
                     
                 success = self.serial.send_command(command)
@@ -489,8 +503,8 @@ class MotorControlGUI:
             except Exception as e:
                 self.log_message(f"Error processing command: {e}", color="red")
                 logging.error(f"Command processing error: {e}")
-            time.sleep(0.01)
-            
+            time.sleep(0.05)  # Reducir el sleep para evitar sobrecarga
+
     def check_system_health(self):
         """
         Monitor system health and attempt recovery if needed
@@ -501,24 +515,28 @@ class MotorControlGUI:
         if cpu_usage > 80 or memory_info.percent > 80:
             self.system_health = max(0, self.system_health - 10)
             self.log_message(f"High resource usage detected: CPU {cpu_usage}%, Memory {memory_info.percent}%", color="red")
+            logging.warning(f"High resource usage: CPU {cpu_usage}%, Memory {memory_info.percent}%")
         
         if self.error_count > 5:
             self.system_health = max(0, self.system_health - 10)
             self.attempt_system_recovery()
         
-        if not self.serial.is_connected():
+        if not self.serial.is_connected:
             self.attempt_reconnect()
             
         self.master.after(5000, self.check_system_health)
-        
+
     def attempt_system_recovery(self):
         """
         Intenta recuperar el sistema de errores
         """
         self.log_message("Intentando recuperar el sistema...", color="yellow")
+        logging.info("Intentando recuperar el sistema.")
         self.stop_motor()
         self.error_count = 0
         self.system_health = min(100, self.system_health + 20)
+        self.log_message("Recuperación exitosa.", color="green")
+        logging.info("Recuperación del sistema exitosa.")
         
     def attempt_reconnect(self):
         """
@@ -526,21 +544,69 @@ class MotorControlGUI:
         """
         if self.reconnect_attempts < 3:
             self.log_message("Intentando reconectar...", color="yellow")
+            logging.info("Intentando reconectar al dispositivo serial.")
             success = self.serial.connect()
             if success:
                 self.reconnect_attempts = 0
                 self.log_message("¡Reconexión exitosa!", color="green")
+                logging.info("Reconexión exitosa al dispositivo serial.")
+                # Actualizar el estado del sistema
+                self.system_status.set("Operando en Modo Real")
+                self.system_status_label.config(foreground="magenta")
             else:
                 self.reconnect_attempts += 1
-                
+                self.log_message(f"Reconexión fallida. Intento {self.reconnect_attempts}/3.", color="red")
+                logging.warning(f"Reconexión fallida. Intento {self.reconnect_attempts}/3.")
+        else:
+            self.log_message("Máximo de intentos de reconexión alcanzado.", color="red")
+            logging.error("Máximo de intentos de reconexión alcanzado.")
+        
     def handle_command_error(self, command):
         """
-        Handle failed commands and implement retry logic
+        Maneja comandos fallidos e implementa lógica de reintento
         """
         self.error_count += 1
         self.last_error_time = time.time()
-        self.log_message(f"Command failed: {command}", color="red")
+        self.log_message(f"Comando fallido: {command}", color="red")
+        logging.error(f"Comando fallido: {command}")
         
         if self.error_count <= 3:
-            self.send_command(command, priority=5)  # Retry with lower priority
+            retry_priority = 5  # Lower priority
+            self.send_command(command, priority=retry_priority)
+            self.log_message(f"Reintentando comando: {command}", color="yellow")
+            logging.info(f"Reintentando comando: {command}")
+        else:
+            self.log_message("Se alcanzó el límite de reintentos para comandos.", color="red")
+            logging.error("Se alcanzó el límite de reintentos para comandos.")
 
+# Ejemplo de cómo iniciar la aplicación
+if __name__ == "__main__":
+    import sys
+    from .serial_comm import SerialInterface, MockSerialComm  # Asegúrate de tener estos módulos implementados
+
+    def main():
+        root = tk.Tk()
+        root.title("Control de Motor y Bomba de Vacío")
+
+        # Seleccionar la interfaz serial adecuada (real o mock)
+        use_mock = False  # Cambia a True para usar MockSerialComm
+        if use_mock:
+            serial_comm = MockSerialComm()
+            serial_comm.connect()
+            logging.info("Modo simulación activado.")
+        else:
+            serial_comm = SerialInterface(port='COM3', baudrate=9600)  # Ajusta el puerto y baudrate según tu configuración
+            logging.info(f"Seleccionado modo real en puerto {serial_comm.port}.")
+            if not serial_comm.connect():
+                logging.error("No se pudo establecer conexión serial. Cambiando a modo simulación.")
+                serial_comm = MockSerialComm()
+                serial_comm.connect()
+
+        app = MotorControlGUI(root, serial_comm)
+        root.mainloop()
+
+        # Cerrar conexión serial al cerrar la aplicación
+        serial_comm.disconnect()
+        logging.info("Aplicación cerrada correctamente.")
+
+    main()

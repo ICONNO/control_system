@@ -20,15 +20,15 @@ class MatplotlibGauge(ttk.Frame):
         self.target_value = self.value
 
         # Configuración de la figura de matplotlib con fondo oscuro
-        self.fig, self.ax = plt.subplots(figsize=(3, 1.5), subplot_kw={'projection': 'polar'})
+        self.fig, self.ax = plt.subplots(figsize=(4, 2), subplot_kw={'projection': 'polar'})
         self.fig.patch.set_facecolor('#2e2e2e')  # Fondo oscuro
         self.ax.set_facecolor('#2e2e2e')        # Fondo oscuro del subplot
         self.fig.subplots_adjust(top=1, bottom=0, left=0, right=1)
 
         # Configuración del gauge
-        self.ax.set_theta_offset(math.pi / 2)
-        self.ax.set_theta_direction(-1)
-        self.ax.set_ylim(0, 1)
+        self.ax.set_theta_offset(math.pi / 2)  # Iniciar desde la parte superior
+        self.ax.set_theta_direction(-1)        # Sentido de las agujas de reloj
+        self.ax.set_ylim(0, 1.2)               # Ampliar para acomodar etiquetas
         self.ax.axis('off')
 
         # Dibujar los ticks
@@ -38,10 +38,14 @@ class MatplotlibGauge(ttk.Frame):
         self.needle, = self.ax.plot([0, 0], [0, 0.8], lw=3, color='red')
 
         # Agregar la etiqueta
-        self.ax.text(0, -0.2, self.label, horizontalalignment='center', verticalalignment='center', fontsize=12, color='white')
+        self.ax.text(0, -0.4, self.label, horizontalalignment='center',
+                     verticalalignment='center', fontsize=12, color='white')
 
         # Agregar la lectura digital
-        self.digital_display = self.ax.text(0, -0.3, f"{int(self.value)}", horizontalalignment='center', verticalalignment='center', fontsize=14, color='cyan')
+        self.digital_display = self.ax.text(0, -0.6, f"{int(self.value)}",
+                                            horizontalalignment='center',
+                                            verticalalignment='center',
+                                            fontsize=14, color='cyan')
 
         # Integrar matplotlib con Tkinter
         self.canvas = FigureCanvasTkAgg(self.fig, master=self)
@@ -64,14 +68,16 @@ class MatplotlibGauge(ttk.Frame):
         num_major_ticks = 10
         num_minor_ticks = 5
         for i in range(num_major_ticks + 1):
-            angle = math.radians(270 * i / num_major_ticks)
+            # Cálculo del ángulo considerando el offset y la dirección
+            angle = (math.pi / 2) - (math.radians(270 * i / num_major_ticks))
             self.ax.plot([angle, angle], [0.9, 1], lw=2, color='white')
             tick_value = self.min_value + (self.max_value - self.min_value) * i / num_major_ticks
             self.ax.text(angle, 1.1, f"{int(tick_value)}", 
-                         horizontalalignment='center', verticalalignment='center', fontsize=10, color='white')
+                         horizontalalignment='center', verticalalignment='center',
+                         fontsize=10, color='white')
 
         for i in range(num_major_ticks * num_minor_ticks + 1):
-            angle = math.radians(270 * i / (num_major_ticks * num_minor_ticks))
+            angle = (math.pi / 2) - (math.radians(270 * i / (num_major_ticks * num_minor_ticks)))
             self.ax.plot([angle, angle], [0.95, 1], lw=1, color='lightgray')
 
     def update_value(self, new_value):
@@ -95,28 +101,23 @@ class MatplotlibGauge(ttk.Frame):
             self.redraw_needle()
 
         # Programar la siguiente actualización
-        self.after(20, self.update_needle)  # 20 ms para una animación suave
-
+        self.after(100, self.update_needle)  # Cambiar de 20 ms a 100 ms
     def redraw_needle(self):
         """
         Redibuja la aguja y la lectura digital.
         """
         try:
-            # Calcular ángulo de la aguja
-            angle_range = 270  # Grados
-            value_range = self.max_value - self.min_value
-            if value_range == 0:
-                angle = 0
-            else:
-                angle = 270 * (self.value - self.min_value) / value_range
-            angle_rad = math.radians(angle)
+            # Calcular ángulo de la aguja considerando el offset y la dirección
+            angle = 270 * (self.value - self.min_value) / (self.max_value - self.min_value)
+            angle_rad = (math.pi / 2) - math.radians(angle)
 
             # Verificar si el ángulo es finito
             if not math.isfinite(angle_rad):
                 raise ValueError(f"Ángulo no finito calculado: {angle_rad}")
 
             # Actualizar la posición de la aguja
-            self.needle.set_data([angle_rad, angle_rad], [0, 0.8])
+            self.needle.set_xdata([angle_rad, angle_rad])
+            self.needle.set_ydata([0, 0.8])
 
             # Actualizar la lectura digital
             self.digital_display.set_text(f"{int(self.value)}")

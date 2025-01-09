@@ -19,7 +19,7 @@ class SerialInterface:
         self.running = False
         self.callback = None
         self.lock = threading.Lock()
-        self.is_connected = False
+        self.is_connected = False  # Atributo para verificar conexión
 
     def connect(self):
         """
@@ -52,11 +52,13 @@ class SerialInterface:
             except SerialException as e:
                 logging.error(f"Error al leer del puerto serial: {e}")
                 self.running = False
+                self.is_connected = False
                 if self.callback:
                     self.callback(f"Error en la comunicación serial: {e}")
             except Exception as e:
                 logging.error(f"Error inesperado en el hilo serial: {e}")
                 self.running = False
+                self.is_connected = False
                 if self.callback:
                     self.callback(f"Error inesperado en el hilo serial: {e}")
 
@@ -75,6 +77,7 @@ class SerialInterface:
                     return False
             except SerialException as e:
                 logging.error(f"Error al enviar comando '{command}': {e}")
+                self.is_connected = False
                 return False
 
     def register_callback(self, callback):
@@ -105,6 +108,7 @@ class MockSerialComm:
         self.callback = None
         self.running = False
         self.thread = None
+        self.is_connected = False  # Agregado para simular conexión
 
     def connect(self):
         """
@@ -113,6 +117,7 @@ class MockSerialComm:
         self.running = True
         self.thread = threading.Thread(target=self.simulate_data, daemon=True)
         self.thread.start()
+        self.is_connected = True
         logging.info("Modo simulación activado.")
         return True
 
@@ -173,4 +178,5 @@ class MockSerialComm:
         self.running = False
         if self.thread and self.thread.is_alive():
             self.thread.join()
+        self.is_connected = False
         logging.info("Modo simulación desactivado.")
