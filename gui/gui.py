@@ -1,15 +1,69 @@
 # gui/gui.py
 
 import tkinter as tk
-from tkinter import messagebox, ttk
+from tkinter import messagebox
+import ttkbootstrap as ttkb
+from ttkbootstrap.constants import *
 import threading
 import time
-from .serial_comm import SerialInterface, MockSerialComm  # Importación relativa
+from .serial_comm import SerialInterface, MockSerialComm  # Asegúrate de tener estos módulos implementados
 import logging
 import queue
-from .matplotlib_gauge import MatplotlibGauge  # Importación relativa
-from .styles import set_styles  # Importar la función de estilos
+from .styles import set_styles  # Importar la función de estilos si la tienes
 import psutil
+
+class CreateToolTip(object):
+    """
+    Crea un tooltip para un widget dado.
+    """
+    def __init__(self, widget, text='widget info'):
+        self.waittime = 500  # milisegundos
+        self.wraplength = 180  # longitud del texto
+        self.widget = widget
+        self.text = text
+        self.widget.bind("<Enter>", self.enter)
+        self.widget.bind("<Leave>", self.leave)
+        self.widget.bind("<ButtonPress>", self.leave)
+        self.id = None
+        self.tw = None
+
+    def enter(self, event=None):
+        self.schedule()
+
+    def leave(self, event=None):
+        self.unschedule()
+        self.hidetip()
+
+    def schedule(self):
+        self.unschedule()
+        self.id = self.widget.after(self.waittime, self.showtip)
+
+    def unschedule(self):
+        id_ = self.id
+        self.id = None
+        if id_:
+            self.widget.after_cancel(id_)
+
+    def showtip(self, event=None):
+        x = y = 0
+        x, y, cx, cy = self.widget.bbox("insert")
+        x += self.widget.winfo_rootx() + 25
+        y += self.widget.winfo_rooty() + 20
+        # Crear una ventana Toplevel
+        self.tw = tk.Toplevel(self.widget)
+        self.tw.wm_overrideredirect(True)  # Sin bordes
+        self.tw.wm_geometry(f"+{x}+{y}")
+        label = tk.Label(self.tw, text=self.text, justify='left',
+                         background="#2e2e2e", foreground="#ffffff",
+                         relief='solid', borderwidth=1,
+                         wraplength=self.wraplength)
+        label.pack(ipadx=1)
+
+    def hidetip(self):
+        tw = self.tw
+        self.tw= None
+        if tw:
+            tw.destroy()
 
 class MotorControlGUI:
     """
@@ -19,6 +73,9 @@ class MotorControlGUI:
         self.master = master
         self.serial = serial_comm
         self.serial.register_callback(self.enqueue_serial_data)
+
+        # Aplicar tema de ttkbootstrap
+        self.style = ttkb.Style(theme='superhero')  # Puedes elegir otros temas como 'darkly', 'cyborg', etc.
 
         # Configuración de logging
         logging.basicConfig(filename='logs/app.log', level=logging.INFO,
@@ -38,7 +95,7 @@ class MotorControlGUI:
         # Cola para comunicación entre hilos
         self.queue = queue.Queue()
 
-        # Aplicar estilos personalizados
+        # Aplicar estilos personalizados (si tienes estilos adicionales)
         set_styles()
 
         # Crear Widgets de la GUI
@@ -76,71 +133,78 @@ class MotorControlGUI:
         Crea y organiza todos los widgets de la interfaz gráfica.
         """
         # Marco Principal Dividido en Izquierda y Derecha
-        main_frame = ttk.Frame(self.master)
-        main_frame.pack(fill="both", expand=True, padx=20, pady=10)
+        main_frame = ttkb.Frame(self.master, padding=10)
+        main_frame.pack(fill="both", expand=True)
 
-        # Marco Izquierdo para Controles y Gauges
-        left_frame = ttk.Frame(main_frame)
+        # Marco Izquierdo para Controles
+        left_frame = ttkb.Frame(main_frame, padding=10)
         left_frame.pack(side="left", fill="both", expand=True, padx=(0,10))
 
         # Marco Derecho para Logs
-        right_frame = ttk.Frame(main_frame, width=400)  # Establecer ancho aquí
-        right_frame.pack(side="right", fill="both", expand=False)  # Eliminar width de pack
+        right_frame = ttkb.Frame(main_frame, width=400, padding=10)
+        right_frame.pack(side="right", fill="both", expand=False)
 
         # ------------------ Marco Izquierdo ------------------ #
 
         # Frame de Controles
-        control_frame = ttk.LabelFrame(left_frame, text="Controles del Motor", padding=20)
+        control_frame = ttkb.LabelFrame(left_frame, text="Controles del Motor", padding=20)
         control_frame.pack(padx=10, pady=10, fill="x")
 
         # Botón para Modo Automático
-        btn_auto = ttk.Button(control_frame, text="Modo Automático", command=self.activate_auto)
+        btn_auto = ttkb.Button(control_frame, text="Modo Automático", command=self.activate_auto)
         btn_auto.grid(row=0, column=0, padx=10, pady=10, sticky="ew")
+        CreateToolTip(btn_auto, "Activa el modo automático del motor.")
 
         # Botón para Modo Manual
-        btn_manual = ttk.Button(control_frame, text="Modo Manual", command=self.activate_manual)
+        btn_manual = ttkb.Button(control_frame, text="Modo Manual", command=self.activate_manual)
         btn_manual.grid(row=0, column=1, padx=10, pady=10, sticky="ew")
+        CreateToolTip(btn_manual, "Activa el modo manual del motor.")
 
         # Botón para Mover hacia Arriba
-        btn_up = ttk.Button(control_frame, text="Subir")
+        btn_up = ttkb.Button(control_frame, text="Subir")
         btn_up.grid(row=1, column=0, padx=10, pady=10, sticky="ew")
         btn_up.bind('<ButtonPress>', self.on_up_press)
         btn_up.bind('<ButtonRelease>', self.on_up_release)
+        CreateToolTip(btn_up, "Mueve el motor hacia arriba mientras se mantenga presionado.")
 
         # Botón para Mover hacia Abajo
-        btn_down = ttk.Button(control_frame, text="Bajar")
+        btn_down = ttkb.Button(control_frame, text="Bajar")
         btn_down.grid(row=1, column=1, padx=10, pady=10, sticky="ew")
         btn_down.bind('<ButtonPress>', self.on_down_press)
         btn_down.bind('<ButtonRelease>', self.on_down_release)
+        CreateToolTip(btn_down, "Mueve el motor hacia abajo mientras se mantenga presionado.")
 
         # Botón para Detener el Motor
-        btn_stop = ttk.Button(control_frame, text="Detener", command=self.stop_motor)
+        btn_stop = ttkb.Button(control_frame, text="Detener", command=self.stop_motor)
         btn_stop.grid(row=2, column=0, columnspan=2, padx=10, pady=10, sticky="ew")
+        CreateToolTip(btn_stop, "Detiene el motor inmediatamente.")
 
         # Botón para Encender la Bomba de Vacío
-        btn_pump_on = ttk.Button(control_frame, text="Encender Bomba", command=self.pump_on)
+        btn_pump_on = ttkb.Button(control_frame, text="Encender Bomba", command=self.pump_on)
         btn_pump_on.grid(row=3, column=0, padx=10, pady=10, sticky="ew")
+        CreateToolTip(btn_pump_on, "Enciende la bomba de vacío.")
 
         # Botón para Apagar la Bomba de Vacío
-        btn_pump_off = ttk.Button(control_frame, text="Apagar Bomba", command=self.pump_off)
+        btn_pump_off = ttkb.Button(control_frame, text="Apagar Bomba", command=self.pump_off)
         btn_pump_off.grid(row=3, column=1, padx=10, pady=10, sticky="ew")
+        CreateToolTip(btn_pump_off, "Apaga la bomba de vacío.")
 
         # Configurar columnas para que los botones se expandan equitativamente
         control_frame.columnconfigure(0, weight=1)
         control_frame.columnconfigure(1, weight=1)
 
         # Frame de Velocidad
-        speed_frame = ttk.LabelFrame(left_frame, text="Ajuste de Velocidad", padding=20)
+        speed_frame = ttkb.LabelFrame(left_frame, text="Ajuste de Velocidad", padding=20)
         speed_frame.pack(padx=10, pady=10, fill="x")
 
         # Etiqueta para el Control Deslizante de Velocidad
-        speed_label = ttk.Label(speed_frame, text="Intervalo de Pulsos (μs):")
+        speed_label = ttkb.Label(speed_frame, text="Intervalo de Pulsos (μs):")
         speed_label.pack(side="left", padx=10, pady=10)
 
         # Control Deslizante para Ajustar la Velocidad
-        self.speed_slider = ttk.Scale(
+        self.speed_slider = ttkb.Scale(
             speed_frame, 
-            from_=200, 
+            from_=20,    # Mínimo actualizado
             to=2000, 
             orient="horizontal",
             variable=self.pulse_interval, 
@@ -149,66 +213,53 @@ class MotorControlGUI:
         self.speed_slider.pack(side="left", fill="x", expand=True, padx=10, pady=10)
 
         # Etiqueta para Mostrar el Valor Actual del Control Deslizante
-        self.speed_display = ttk.Label(speed_frame, text=f"{self.pulse_interval.get()} μs")
+        self.speed_display = ttkb.Label(speed_frame, text=f"{self.pulse_interval.get()} μs")
         self.speed_display.pack(side="left", padx=10, pady=10)
 
-        # Frame de Gauges
-        gauges_frame = ttk.LabelFrame(left_frame, text="Indicadores de Rendimiento", padding=20)
-        gauges_frame.pack(padx=10, pady=10, fill="x")
-
-        # Gauge para Distancia
-        distance_gauge = MatplotlibGauge(gauges_frame, label="Distancia (cm)", min_value=0, max_value=50, initial_value=0)
-        distance_gauge.pack(side="left", padx=20, pady=20)
-        self.distance_gauge = distance_gauge
-
-        # Gauge para Velocidad
-        speed_gauge = MatplotlibGauge(gauges_frame, label="Velocidad (μs)", min_value=200, max_value=2000, initial_value=self.pulse_interval.get())
-        speed_gauge.pack(side="left", padx=20, pady=20)
-        self.speed_gauge = speed_gauge
-
         # Frame de Información del Sistema
-        info_frame = ttk.LabelFrame(left_frame, text="Información del Sistema", padding=20)
+        info_frame = ttkb.LabelFrame(left_frame, text="Información del Sistema", padding=20)
         info_frame.pack(padx=10, pady=10, fill="x")
 
         # Indicadores de Estado
-        status_frame = ttk.Frame(info_frame)
+        status_frame = ttkb.Frame(info_frame)
         status_frame.pack(pady=10, fill="x")
 
         # Etiqueta y Valor para Modo Actual
-        mode_label = ttk.Label(status_frame, text="Modo Actual:")
+        mode_label = ttkb.Label(status_frame, text="Modo Actual:")
         mode_label.grid(row=0, column=0, padx=10, pady=5, sticky="w")
 
-        mode_value = ttk.Label(status_frame, textvariable=self.mode, foreground="cyan", font=("Arial", 12, "bold"))
+        mode_value = ttkb.Label(status_frame, textvariable=self.mode, foreground="#a020f0", font=("Consolas", 12, "bold"))
         mode_value.grid(row=0, column=1, padx=10, pady=5, sticky="w")
 
         # Etiqueta y Valor para Distancia Actual
-        distance_label = ttk.Label(status_frame, text="Distancia Actual:")
+        distance_label = ttkb.Label(status_frame, text="Distancia Actual:")
         distance_label.grid(row=1, column=0, padx=10, pady=5, sticky="w")
 
-        distance_value = ttk.Label(status_frame, textvariable=self.current_distance, foreground="lime", font=("Arial", 12, "bold"))
+        distance_value = ttkb.Label(status_frame, textvariable=self.current_distance, foreground="#00ff00", font=("Consolas", 12, "bold"))
         distance_value.grid(row=1, column=1, padx=10, pady=5, sticky="w")
 
         # Frame de Estado del Sistema
-        system_status_frame = ttk.Frame(info_frame)
+        system_status_frame = ttkb.Frame(info_frame)
         system_status_frame.pack(pady=10, fill="x")
 
-        status_label = ttk.Label(system_status_frame, text="Estado del Sistema:", font=("Arial", 12, "bold"))
+        status_label = ttkb.Label(system_status_frame, text="Estado del Sistema:", font=("Consolas", 12, "bold"))
         status_label.grid(row=0, column=0, padx=10, pady=5, sticky="w")
 
-        self.system_status_label = ttk.Label(system_status_frame, textvariable=self.system_status, foreground="magenta", font=("Arial", 12, "bold"))
+        self.system_status_label = ttkb.Label(system_status_frame, textvariable=self.system_status, foreground="#ff00ff", font=("Consolas", 12, "bold"))
         self.system_status_label.grid(row=0, column=1, padx=10, pady=5, sticky="w")
 
         # ------------------ Marco Derecho ------------------ #
 
         # Área de Texto para Logs
-        log_frame = ttk.LabelFrame(right_frame, text="Logs del Sistema", padding=10)
+        log_frame = ttkb.LabelFrame(right_frame, text="Logs del Sistema", padding=10)
         log_frame.pack(fill="both", expand=True, padx=10, pady=10)
 
-        self.text_log = tk.Text(log_frame, state='disabled', wrap='word', height=30, bg="#2e2e2e", fg="white")
+        self.text_log = tk.Text(log_frame, state='disabled', wrap='word', height=30, bg="#1e1e1e", fg="#ffffff",
+                                font=("Consolas", 10, "bold"))  # Fuente monoespaciada y negrita
         self.text_log.pack(side="left", fill="both", expand=True)
 
         # Scrollbar para el Área de Texto
-        scrollbar = ttk.Scrollbar(log_frame, orient="vertical", command=self.text_log.yview)
+        scrollbar = ttkb.Scrollbar(log_frame, orient="vertical", command=self.text_log.yview)
         scrollbar.pack(side="right", fill="y")
         self.text_log.configure(yscrollcommand=scrollbar.set)
 
@@ -298,8 +349,8 @@ class MotorControlGUI:
         if success:
             self.mode.set("Automático")
             self.system_status.set("Modo Automático Activado")
-            self.system_status_label.config(foreground="orange")
-            self.log_message("Activando modo automático.", color="blue")
+            self.system_status_label.config(foreground="#a020f0")  # Morado oscuro
+            self.log_message("Activando modo automático.", level="INFO")
             logging.info("Modo automático activado.")
 
     def activate_manual(self):
@@ -310,8 +361,8 @@ class MotorControlGUI:
         if success:
             self.mode.set("Manual")
             self.system_status.set("Modo Manual Activado")
-            self.system_status_label.config(foreground="cyan")
-            self.log_message("Modo manual activado. Motor detenido.", color="white")
+            self.system_status_label.config(foreground="#00ffff")  # Cian
+            self.log_message("Modo manual activado. Motor detenido.", level="INFO")
             logging.info("Modo manual activado.")
 
     def move_up(self):
@@ -321,7 +372,7 @@ class MotorControlGUI:
         success = self.send_command("UP")
         if success:
             self.mode.set("Manual")
-            self.log_message("Moviendo hacia arriba.", color="cyan")
+            self.log_message("Moviendo hacia arriba.", level="INFO")
             logging.info("Comando 'UP' enviado.")
 
     def move_down(self):
@@ -331,7 +382,7 @@ class MotorControlGUI:
         success = self.send_command("DOWN")
         if success:
             self.mode.set("Manual")
-            self.log_message("Moviendo hacia abajo.", color="cyan")
+            self.log_message("Moviendo hacia abajo.", level="INFO")
             logging.info("Comando 'DOWN' enviado.")
 
     def stop_motor(self):
@@ -341,7 +392,7 @@ class MotorControlGUI:
         success = self.send_command("STOP")
         if success:
             self.mode.set("Manual")
-            self.log_message("Motor detenido.", color="white")
+            self.log_message("Motor detenido.", level="INFO")
             logging.info("Comando 'STOP' enviado.")
 
     def update_speed(self, event):
@@ -351,10 +402,9 @@ class MotorControlGUI:
         """
         speed = self.pulse_interval.get()
         self.speed_display.config(text=f"{int(speed)} μs")
-        self.speed_gauge.update_value(int(speed))
         success = self.send_command(f"SET_SPEED {int(speed)}")
         if success:
-            self.log_message(f"Ajustando velocidad a {int(speed)} μs.", color="white")
+            self.log_message(f"Ajustando velocidad a {int(speed)} μs.", level="INFO")
             logging.info(f"Comando 'SET_SPEED {int(speed)}' enviado.")
 
     def handle_serial_data(self, data):
@@ -369,60 +419,63 @@ class MotorControlGUI:
             try:
                 distance_str = data.split(":")[-1].strip().replace(" cm", "")
                 distance = float(distance_str)
-                distance = self.distance_gauge.clamp(distance)  # Asegura que esté dentro del rango
                 self.current_distance.set(f"{distance} cm")
-                self.distance_gauge.update_value(distance)
-                self.log_message(f"Distancia: {distance} cm", color="white")
+                self.log_message(f"Distancia: {distance} cm", level="INFO")
                 logging.info(f"Distancia actualizada a {distance} cm.")
             except ValueError:
-                self.log_message(f"Error al parsear distancia: {data}", color="red")
+                self.log_message(f"Error al parsear distancia: {data}", level="ERROR")
                 logging.error(f"Error al parsear distancia: {data}")
         elif "Velocidad actual" in data:
             try:
                 speed_str = data.split(":")[-1].strip().replace(" μs", "")
                 speed = int(speed_str)
-                speed = self.speed_gauge.clamp(speed)  # Asegura que esté dentro del rango
-                self.speed_gauge.update_value(speed)
                 self.pulse_interval.set(speed)  # Sincronizar el control deslizante
                 self.speed_display.config(text=f"{speed} μs")
-                self.log_message(f"Velocidad: {speed} μs", color="white")
+                self.log_message(f"Velocidad: {speed} μs", level="INFO")
                 logging.info(f"Velocidad actualizada a {speed} μs.")
             except ValueError:
-                self.log_message(f"Error al parsear velocidad: {data}", color="red")
+                self.log_message(f"Error al parsear velocidad: {data}", level="ERROR")
                 logging.error(f"Error al parsear velocidad: {data}")
         elif "Motor detenido" in data:
             self.mode.set("Manual")
-            self.log_message("Motor detenido por Arduino.", color="white")
+            self.log_message("Motor detenido por Arduino.", level="INFO")
             logging.info("Motor detenido por Arduino.")
         elif "Activando modo automático" in data:
             self.mode.set("Automático")
             self.system_status.set("Modo Automático Activado")
-            self.system_status_label.config(foreground="orange")
-            self.log_message("Modo automático activado por Arduino.", color="blue")
+            self.system_status_label.config(foreground="#a020f0")  # Morado oscuro
+            self.log_message("Modo automático activado por Arduino.", level="INFO")
             logging.info("Modo automático activado por Arduino.")
         elif "Desactivando modo automático" in data:
             self.mode.set("Manual")
             self.system_status.set("Modo Manual Activado")
-            self.system_status_label.config(foreground="cyan")
-            self.log_message("Modo automático desactivado por Arduino.", color="white")
+            self.system_status_label.config(foreground="#00ffff")  # Cian
+            self.log_message("Modo automático desactivado por Arduino.", level="INFO")
             logging.info("Modo automático desactivado por Arduino.")
         elif "Bomba de vacío encendida." in data:
-            self.log_message("Bomba de vacío encendida.", color="lime")
+            self.log_message("Bomba de vacío encendida.", level="INFO")
             logging.info("Bomba de vacío encendida.")
         elif "Bomba de vacío apagada." in data:
-            self.log_message("Bomba de vacío apagada.", color="red")
+            self.log_message("Bomba de vacío apagada.", level="INFO")
             logging.info("Bomba de vacío apagada.")
         else:
-            self.log_message(data, color="white")
+            self.log_message(data, level="DEBUG")
             logging.info(f"Mensaje recibido: {data}")
 
-    def log_message(self, message, color="white"):
+    def log_message(self, message, level="INFO"):
         """
-        Añade un mensaje al área de logs con un color específico.
+        Añade un mensaje al área de logs con un color específico basado en el nivel.
         
         :param message: Mensaje a mostrar.
-        :param color: Color del texto.
+        :param level: Nivel del mensaje ('INFO', 'DEBUG', 'WARNING', 'ERROR').
         """
+        color = {
+            "INFO": "#ffffff",     # Blanco
+            "DEBUG": "#a9a9a9",    # Gris
+            "WARNING": "#ffa500",  # Naranja
+            "ERROR": "#ff0000"     # Rojo
+        }.get(level, "#ffffff")  # Default a white si el nivel no está definido
+
         self.text_log.configure(state='normal')
         self.text_log.insert(tk.END, f"{message}\n")
         
@@ -448,7 +501,7 @@ class MotorControlGUI:
         """
         success = self.send_command("PUMP_ON")
         if success:
-            self.log_message("Encendiendo bomba de vacío.", color="lime")
+            self.log_message("Encendiendo bomba de vacío.", level="INFO")
             logging.info("Comando 'PUMP_ON' enviado.")
 
     def pump_off(self):
@@ -457,7 +510,7 @@ class MotorControlGUI:
         """
         success = self.send_command("PUMP_OFF")
         if success:
-            self.log_message("Apagando bomba de vacío.", color="red")  # Corrección del error tipográfico
+            self.log_message("Apagando bomba de vacío.", level="INFO")  # Corrección del error tipográfico
             logging.info("Comando 'PUMP_OFF' enviado.")
 
     def on_closing(self):
@@ -478,6 +531,7 @@ class MotorControlGUI:
         current_time = time.time()
         if current_time - self.last_command_time < self.command_throttle:
             logging.warning(f"Comando '{command}' descartado por throttle.")
+            self.log_message(f"Comando '{command}' descartado por throttle.", level="WARNING")
             return False
             
         with self.command_lock:
@@ -494,6 +548,7 @@ class MotorControlGUI:
                 priority, timestamp, command = self.command_queue.get()
                 if time.time() - timestamp > 5.0:  # Command too old
                     logging.warning(f"Comando '{command}' descartado por antigüedad.")
+                    self.log_message(f"Comando '{command}' descartado por antigüedad.", level="WARNING")
                     continue
                     
                 success = self.serial.send_command(command)
@@ -501,7 +556,7 @@ class MotorControlGUI:
                     self.handle_command_error(command)
                     
             except Exception as e:
-                self.log_message(f"Error processing command: {e}", color="red")
+                self.log_message(f"Error processing command: {e}", level="ERROR")
                 logging.error(f"Command processing error: {e}")
             time.sleep(0.05)  # Reducir el sleep para evitar sobrecarga
 
@@ -514,7 +569,7 @@ class MotorControlGUI:
         
         if cpu_usage > 80 or memory_info.percent > 80:
             self.system_health = max(0, self.system_health - 10)
-            self.log_message(f"High resource usage detected: CPU {cpu_usage}%, Memory {memory_info.percent}%", color="red")
+            self.log_message(f"High resource usage detected: CPU {cpu_usage}%, Memory {memory_info.percent}%", level="WARNING")
             logging.warning(f"High resource usage: CPU {cpu_usage}%, Memory {memory_info.percent}%")
         
         if self.error_count > 5:
@@ -530,12 +585,12 @@ class MotorControlGUI:
         """
         Intenta recuperar el sistema de errores
         """
-        self.log_message("Intentando recuperar el sistema...", color="yellow")
+        self.log_message("Intentando recuperar el sistema...", level="WARNING")
         logging.info("Intentando recuperar el sistema.")
         self.stop_motor()
         self.error_count = 0
         self.system_health = min(100, self.system_health + 20)
-        self.log_message("Recuperación exitosa.", color="green")
+        self.log_message("Recuperación exitosa.", level="INFO")
         logging.info("Recuperación del sistema exitosa.")
         
     def attempt_reconnect(self):
@@ -543,70 +598,38 @@ class MotorControlGUI:
         Intenta reconectarse al dispositivo serial
         """
         if self.reconnect_attempts < 3:
-            self.log_message("Intentando reconectar...", color="yellow")
+            self.log_message("Intentando reconectar...", level="WARNING")
             logging.info("Intentando reconectar al dispositivo serial.")
             success = self.serial.connect()
             if success:
                 self.reconnect_attempts = 0
-                self.log_message("¡Reconexión exitosa!", color="green")
+                self.log_message("¡Reconexión exitosa!", level="INFO")
                 logging.info("Reconexión exitosa al dispositivo serial.")
                 # Actualizar el estado del sistema
                 self.system_status.set("Operando en Modo Real")
-                self.system_status_label.config(foreground="magenta")
+                self.system_status_label.config(foreground="#ff00ff")  # Magenta
             else:
                 self.reconnect_attempts += 1
-                self.log_message(f"Reconexión fallida. Intento {self.reconnect_attempts}/3.", color="red")
+                self.log_message(f"Reconexión fallida. Intento {self.reconnect_attempts}/3.", level="ERROR")
                 logging.warning(f"Reconexión fallida. Intento {self.reconnect_attempts}/3.")
         else:
-            self.log_message("Máximo de intentos de reconexión alcanzado.", color="red")
+            self.log_message("Máximo de intentos de reconexión alcanzado.", level="ERROR")
             logging.error("Máximo de intentos de reconexión alcanzado.")
-        
+            
     def handle_command_error(self, command):
         """
         Maneja comandos fallidos e implementa lógica de reintento
         """
         self.error_count += 1
         self.last_error_time = time.time()
-        self.log_message(f"Comando fallido: {command}", color="red")
+        self.log_message(f"Comando fallido: {command}", level="ERROR")
         logging.error(f"Comando fallido: {command}")
         
         if self.error_count <= 3:
             retry_priority = 5  # Lower priority
             self.send_command(command, priority=retry_priority)
-            self.log_message(f"Reintentando comando: {command}", color="yellow")
+            self.log_message(f"Reintentando comando: {command}", level="WARNING")
             logging.info(f"Reintentando comando: {command}")
         else:
-            self.log_message("Se alcanzó el límite de reintentos para comandos.", color="red")
+            self.log_message("Se alcanzó el límite de reintentos para comandos.", level="ERROR")
             logging.error("Se alcanzó el límite de reintentos para comandos.")
-
-# Ejemplo de cómo iniciar la aplicación
-if __name__ == "__main__":
-    import sys
-    from .serial_comm import SerialInterface, MockSerialComm  # Asegúrate de tener estos módulos implementados
-
-    def main():
-        root = tk.Tk()
-        root.title("Control de Motor y Bomba de Vacío")
-
-        # Seleccionar la interfaz serial adecuada (real o mock)
-        use_mock = False  # Cambia a True para usar MockSerialComm
-        if use_mock:
-            serial_comm = MockSerialComm()
-            serial_comm.connect()
-            logging.info("Modo simulación activado.")
-        else:
-            serial_comm = SerialInterface(port='COM3', baudrate=9600)  # Ajusta el puerto y baudrate según tu configuración
-            logging.info(f"Seleccionado modo real en puerto {serial_comm.port}.")
-            if not serial_comm.connect():
-                logging.error("No se pudo establecer conexión serial. Cambiando a modo simulación.")
-                serial_comm = MockSerialComm()
-                serial_comm.connect()
-
-        app = MotorControlGUI(root, serial_comm)
-        root.mainloop()
-
-        # Cerrar conexión serial al cerrar la aplicación
-        serial_comm.disconnect()
-        logging.info("Aplicación cerrada correctamente.")
-
-    main()

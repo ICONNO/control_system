@@ -3,6 +3,7 @@
 import argparse
 import sys
 import tkinter as tk
+import ttkbootstrap as ttkb
 from gui import MotorControlGUI
 from gui.serial_comm import SerialInterface, MockSerialComm
 import logging
@@ -16,14 +17,21 @@ def setup_logging():
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
     
-    logging.basicConfig(
-        level=logging.INFO,
-        format='%(asctime)s [%(levelname)s] %(message)s',
-        handlers=[
-            logging.FileHandler("logs/app.log"),
-            logging.StreamHandler(sys.stdout)
-        ]
-    )
+    logger = logging.getLogger()
+    logger.setLevel(logging.INFO)
+
+    formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s')
+
+    # RotatingFileHandler para manejar archivos de log grandes
+    from logging.handlers import RotatingFileHandler
+    handler = RotatingFileHandler("logs/app.log", maxBytes=5*1024*1024, backupCount=5)  # 5 MB por archivo, 5 backups
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
+
+    # También puedes agregar StreamHandler si deseas ver los logs en la consola
+    stream_handler = logging.StreamHandler(sys.stdout)
+    stream_handler.setFormatter(formatter)
+    logger.addHandler(stream_handler)
 
 def main():
     # Configurar logging
@@ -38,7 +46,7 @@ def main():
     # Seleccionar el tipo de comunicación serial
     if args.mode == 'real':
         serial_comm = SerialInterface(port=args.port)
-        logging.info(f"Seleccionado modo real en puerto {args.port}.")
+        logging.info(f"Seleccionado modo real en puerto {serial_comm.port}.")
     else:
         serial_comm = MockSerialComm()
         logging.info("Seleccionado modo simulación.")
@@ -50,7 +58,7 @@ def main():
         serial_comm.connect()
 
     # Inicializar la GUI
-    root = tk.Tk()
+    root = ttkb.Window(themename="superhero")  # Utilizar ttkbootstrap Window con tema 'superhero'
     root.title("Control de Motor y Bomba de Vacío")
     app = MotorControlGUI(root, serial_comm)
     root.protocol("WM_DELETE_WINDOW", app.on_closing)  # Asegurar que on_closing se llama al cerrar
