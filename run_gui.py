@@ -22,28 +22,23 @@ def setup_logging():
 
     formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s')
 
-    # RotatingFileHandler para manejar archivos de log grandes
     from logging.handlers import RotatingFileHandler
     handler = RotatingFileHandler("logs/app.log", maxBytes=5*1024*1024, backupCount=5)  # 5 MB por archivo, 5 backups
     handler.setFormatter(formatter)
     logger.addHandler(handler)
 
-    # También puedes agregar StreamHandler si deseas ver los logs en la consola
     stream_handler = logging.StreamHandler(sys.stdout)
     stream_handler.setFormatter(formatter)
     logger.addHandler(stream_handler)
 
 def main():
-    # Configurar logging
     setup_logging()
 
-    # Configuración de Argumentos de Línea de Comandos
     parser = argparse.ArgumentParser(description="Control de Motor Paso a Paso con GUI")
     parser.add_argument('--mode', choices=['real', 'mock'], default='real', help="Modo de operación: real o mock (simulación)")
     parser.add_argument('--port', type=str, default='COM3', help="Puerto serial al que está conectado el Arduino (ej. COM3)")
     args = parser.parse_args()
 
-    # Seleccionar el tipo de comunicación serial
     if args.mode == 'real':
         serial_comm = SerialInterface(port=args.port)
         logging.info(f"Seleccionado modo real en puerto {serial_comm.port}.")
