@@ -850,3 +850,4 @@ class MotorControlGUI:
             self.command_thread.join(timeout=1)
             self.master.destroy()
 
+#hello
