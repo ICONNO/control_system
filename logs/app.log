@@ -20601,3 +20601,86 @@
 2025-01-09 12:29:10,272 [INFO] Conexión serial COM3 cerrada.
 2025-01-09 12:29:10,273 [INFO] Aplicación cerrada por el usuario.
 2025-01-09 12:29:10,305 [INFO] Aplicación cerrada correctamente.
+2025-01-28 17:14:22,800 - INFO - Seleccionado modo real en puerto COM3.
+2025-01-28 17:14:22,800 [INFO] Seleccionado modo real en puerto COM3.
+2025-01-28 17:14:22,802 - ERROR - Error al conectar al puerto serial COM3: could not open port 'COM3': FileNotFoundError(2, 'El sistema no puede encontrar el archivo especificado.', None, 2)
+2025-01-28 17:14:22,802 [ERROR] Error al conectar al puerto serial COM3: could not open port 'COM3': FileNotFoundError(2, 'El sistema no puede encontrar el archivo especificado.', None, 2)
+2025-01-28 17:14:22,802 - ERROR - No se pudo establecer conexión serial. Cambiando a modo simulación.
+2025-01-28 17:14:22,802 [ERROR] No se pudo establecer conexión serial. Cambiando a modo simulación.
+2025-01-28 17:14:22,803 - INFO - Modo simulación: Conexión mock establecida.
+2025-01-28 17:14:22,803 [INFO] Modo simulación: Conexión mock establecida.
+2025-01-28 17:14:23,408 - INFO - Initializing the GUI interface.
+2025-01-28 17:14:23,408 [INFO] Initializing the GUI interface.
+2025-01-28 17:14:23,490 - INFO - GUI widgets created and organized.
+2025-01-28 17:14:23,490 [INFO] GUI widgets created and organized.
+2025-01-28 17:14:23,491 - INFO - GUI interface initialized successfully.
+2025-01-28 17:14:23,491 [INFO] GUI interface initialized successfully.
+2025-01-28 17:14:28,503 - WARNING - High resource usage: CPU 5.1%, Memory 97.1%
+2025-01-28 17:14:28,503 [WARNING] High resource usage: CPU 5.1%, Memory 97.1%
+2025-01-28 17:14:33,515 - WARNING - High resource usage: CPU 3.9%, Memory 95.5%
+2025-01-28 17:14:33,515 [WARNING] High resource usage: CPU 3.9%, Memory 95.5%
+2025-01-28 17:14:38,530 - WARNING - High resource usage: CPU 1.7%, Memory 96.0%
+2025-01-28 17:14:38,530 [WARNING] High resource usage: CPU 1.7%, Memory 96.0%
+2025-01-28 17:14:39,058 - INFO - Automatic mode activated.
+2025-01-28 17:14:39,058 [INFO] Automatic mode activated.
+2025-01-28 17:14:39,085 - INFO - Modo simulación: Comando recibido 'AUTO'
+2025-01-28 17:14:39,085 [INFO] Modo simulación: Comando recibido 'AUTO'
+2025-01-28 17:14:39,120 - INFO - Automatic mode activated by Arduino.
+2025-01-28 17:14:39,120 [INFO] Automatic mode activated by Arduino.
+2025-01-28 17:14:41,750 - INFO - Command 'DOWN' sent.
+2025-01-28 17:14:41,750 [INFO] Command 'DOWN' sent.
+2025-01-28 17:14:41,765 - INFO - Modo simulación: Comando recibido 'DOWN'
+2025-01-28 17:14:41,765 [INFO] Modo simulación: Comando recibido 'DOWN'
+2025-01-28 17:14:41,781 - INFO - Received message: Moviendo hacia abajo.
+2025-01-28 17:14:41,781 [INFO] Received message: Moviendo hacia abajo.
+2025-01-28 17:14:41,798 - WARNING - Command 'UP' discarded due to throttle.
+2025-01-28 17:14:41,798 [WARNING] Command 'UP' discarded due to throttle.
+2025-01-28 17:14:41,842 - WARNING - Command 'STOP' discarded due to throttle.
+2025-01-28 17:14:41,842 [WARNING] Command 'STOP' discarded due to throttle.
+2025-01-28 17:14:42,143 - INFO - Command 'STOP' sent.
+2025-01-28 17:14:42,143 [INFO] Command 'STOP' sent.
+2025-01-28 17:14:42,170 - INFO - Modo simulación: Comando recibido 'STOP'
+2025-01-28 17:14:42,170 [INFO] Modo simulación: Comando recibido 'STOP'
+2025-01-28 17:14:42,212 - INFO - Automatic mode deactivated by Arduino.
+2025-01-28 17:14:42,212 [INFO] Automatic mode deactivated by Arduino.
+2025-01-28 17:14:42,213 - INFO - Motor stopped by Arduino.
+2025-01-28 17:14:42,213 [INFO] Motor stopped by Arduino.
+2025-01-28 17:14:42,291 - INFO - Command 'DOWN' sent.
+2025-01-28 17:14:42,291 [INFO] Command 'DOWN' sent.
+2025-01-28 17:14:42,322 - INFO - Modo simulación: Comando recibido 'DOWN'
+2025-01-28 17:14:42,322 [INFO] Modo simulación: Comando recibido 'DOWN'
+2025-01-28 17:14:42,428 - INFO - Received message: Moviendo hacia abajo.
+2025-01-28 17:14:42,428 [INFO] Received message: Moviendo hacia abajo.
+2025-01-28 17:14:42,463 - INFO - Command 'STOP' sent.
+2025-01-28 17:14:42,463 [INFO] Command 'STOP' sent.
+2025-01-28 17:14:42,473 - INFO - Modo simulación: Comando recibido 'STOP'
+2025-01-28 17:14:42,473 [INFO] Modo simulación: Comando recibido 'STOP'
+2025-01-28 17:14:42,531 - INFO - Automatic mode deactivated by Arduino.
+2025-01-28 17:14:42,531 [INFO] Automatic mode deactivated by Arduino.
+2025-01-28 17:14:42,532 - INFO - Motor stopped by Arduino.
+2025-01-28 17:14:42,532 [INFO] Motor stopped by Arduino.
+2025-01-28 17:14:42,740 - INFO - Command 'UP' sent.
+2025-01-28 17:14:42,740 [INFO] Command 'UP' sent.
+2025-01-28 17:14:42,776 - INFO - Modo simulación: Comando recibido 'UP'
+2025-01-28 17:14:42,776 [INFO] Modo simulación: Comando recibido 'UP'
+2025-01-28 17:14:42,847 - INFO - Received message: Moviendo hacia arriba.
+2025-01-28 17:14:42,847 [INFO] Received message: Moviendo hacia arriba.
+2025-01-28 17:14:42,946 - INFO - Command 'STOP' sent.
+2025-01-28 17:14:42,946 [INFO] Command 'STOP' sent.
+2025-01-28 17:14:42,978 - INFO - Modo simulación: Comando recibido 'STOP'
+2025-01-28 17:14:42,978 [INFO] Modo simulación: Comando recibido 'STOP'
+2025-01-28 17:14:43,062 - INFO - Automatic mode deactivated by Arduino.
+2025-01-28 17:14:43,062 [INFO] Automatic mode deactivated by Arduino.
+2025-01-28 17:14:43,064 - INFO - Motor stopped by Arduino.
+2025-01-28 17:14:43,064 [INFO] Motor stopped by Arduino.
+2025-01-28 17:14:43,537 - WARNING - High resource usage: CPU 1.9%, Memory 95.2%
+2025-01-28 17:14:43,537 [WARNING] High resource usage: CPU 1.9%, Memory 95.2%
+2025-01-28 17:14:46,059 - INFO - Modo simulación: Conexión mock cerrada.
+2025-01-28 17:14:46,059 [INFO] Modo simulación: Conexión mock cerrada.
+2025-01-28 17:14:46,060 - INFO - Modo simulación: Comando recibido 'STOP'
+2025-01-28 17:14:46,060 [INFO] Modo simulación: Comando recibido 'STOP'
+2025-01-28 17:14:46,060 [INFO] Application closed by the user.
+2025-01-28 17:14:46,152 - INFO - Modo simulación: Conexión mock cerrada.
+2025-01-28 17:14:46,152 [INFO] Modo simulación: Conexión mock cerrada.
+2025-01-28 17:14:46,153 - INFO - Aplicación cerrada correctamente.
+2025-01-28 17:14:46,153 [INFO] Aplicación cerrada correctamente.
