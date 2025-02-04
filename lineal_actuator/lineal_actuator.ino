@@ -1,5 +1,3 @@
-// lineal_actuator.ino
-
 #include <Arduino.h>
 #include "Config.h"
 #include "Motor.h"
@@ -11,23 +9,15 @@ Motor motor(MOTOR_PUL_PIN, MOTOR_DIR_PIN);
 Sensor sensor(SENSOR_TRIG_PIN, SENSOR_ECHO_PIN);
 Logic logic(motor, sensor);
 
-// === Función de Configuración ===
 void setup() {
-  // Inicializar Monitor Serial
   Serial.begin(9600);
   LOG_INFO("Sistema de control de cabezal iniciado.");
-
-  // Inicializar módulos
   motor.initialize();
   sensor.initialize();
   logic.initialize();
 }
 
-// === Función Principal ===
 void loop() {
-  // Manejo de comandos seriales
   logic.handleSerialCommands();
-
-  // Actualizar lógica del sistema
   logic.update();
 }

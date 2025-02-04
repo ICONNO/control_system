@@ -1,5 +1,5 @@
 /* 
-  Controlador de Motor Paso a Paso NEMA 17 con TB6560 y Sensor Ultrasónico HC-SR04
+  Controlador de Motor Paso a Paso NEMA 17 con TB6560 y nsor Ultrasónico HC-SR04
   Funcionalidad:
     - Mueve el motor hacia abajo hasta alcanzar una distancia de 7 cm.
     - Luego, mueve el motor hacia arriba hasta alcanzar una distancia de 35 cm.

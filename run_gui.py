@@ -1,5 +1,3 @@
-# run_gui.py
-
 import argparse
 import sys
 import tkinter as tk
@@ -10,9 +8,6 @@ import logging
 import os
 
 def setup_logging():
-    """
-    Configura el sistema de logging para la aplicación.
-    """
     log_dir = "logs"
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
@@ -23,7 +18,7 @@ def setup_logging():
     formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s')
 
     from logging.handlers import RotatingFileHandler
-    handler = RotatingFileHandler("logs/app.log", maxBytes=5*1024*1024, backupCount=5)  # 5 MB por archivo, 5 backups
+    handler = RotatingFileHandler("logs/app.log", maxBytes=5*1024*1024, backupCount=5)
     handler.setFormatter(formatter)
     logger.addHandler(handler)
 
@@ -46,20 +41,17 @@ def main():
         serial_comm = MockSerialComm()
         logging.info("Seleccionado modo simulación.")
 
-    # Intentar conectar en modo real
     if args.mode == 'real' and not serial_comm.connect():
         logging.error("No se pudo establecer conexión serial. Cambiando a modo simulación.")
         serial_comm = MockSerialComm()
         serial_comm.connect()
 
-    # Inicializar la GUI
-    root = ttkb.Window(themename="superhero")  # Utilizar ttkbootstrap Window con tema 'superhero'
+    root = ttkb.Window(themename="superhero")
     root.title("Control de Motor y Bomba de Vacío")
     app = MotorControlGUI(root, serial_comm)
-    root.protocol("WM_DELETE_WINDOW", app.on_closing)  # Asegurar que on_closing se llama al cerrar
+    root.protocol("WM_DELETE_WINDOW", app.on_closing)
     root.mainloop()
 
-    # Cerrar conexión serial al cerrar la aplicación
     serial_comm.disconnect()
     logging.info("Aplicación cerrada correctamente.")
 

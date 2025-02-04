@@ -1,5 +1,3 @@
-// Motor.cpp
-
 #include "Motor.h"
 #include "Config.h"
 
@@ -20,7 +18,7 @@ void Motor::moveUp() {
   digitalWrite(dirPin_, LOW); // LOW para subir
   isMoving_ = true;
   previousMicros_ = micros();
-  togglePulse(); // Enviar el primer pulso
+  togglePulse();
   LOG_INFO("Moviendo hacia arriba.");
 }
 
@@ -28,14 +26,14 @@ void Motor::moveDown() {
   digitalWrite(dirPin_, HIGH); // HIGH para bajar
   isMoving_ = true;
   previousMicros_ = micros();
-  togglePulse(); // Enviar el primer pulso
+  togglePulse();
   LOG_INFO("Moviendo hacia abajo.");
 }
 
 void Motor::stop() {
   if (isMoving_) {
     isMoving_ = false;
-    digitalWrite(pulPin_, LOW); // Asegurar que el pulso esté bajo
+    digitalWrite(pulPin_, LOW);
     LOG_INFO("Motor detenido.");
   }
 }

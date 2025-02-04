@@ -1,5 +1,3 @@
-# gui/serial_comm.py
-
 import serial
 import serial.tools.list_ports
 import threading
@@ -84,7 +82,7 @@ class SerialInterface:
                 self.is_connected = False
                 return False
         else:
-            logging.error("Intento de enviar comando mientras no hay conexión serial.")
+            logging.error("Intento de enviar comando sin conexión serial.")
             return False
 
 class MockSerialComm:
@@ -129,19 +127,18 @@ class MockSerialComm:
         Simula la lectura de datos desde el Arduino.
         """
         while not self.stop_thread:
-            # Simular datos de distancia y velocidad
-            simulated_distance = 25  # Valor fijo o variable
-            simulated_speed = 800  # Valor fijo o variable
-            self.callback(f"Distancia actual: {simulated_distance} cm")
-            self.callback(f"Velocidad actual: {simulated_speed} μs")
-            time.sleep(2)  # Simular intervalo de actualización
+            simulated_distance = 25
+            simulated_speed = 800
+            if self.callback:
+                self.callback(f"Distancia actual: {simulated_distance} cm")
+                self.callback(f"Velocidad actual: {simulated_speed} μs")
+            time.sleep(2)
 
     def send_command(self, command):
         """
         Simula el envío de un comando al Arduino.
         """
         logging.info(f"Modo simulación: Comando recibido '{command}'")
-        # Simular respuesta basada en el comando
         if self.callback:
             if command == "AUTO":
                 self.callback("Activando modo automático.")

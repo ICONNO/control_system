@@ -1,9 +1,6 @@
-// Logic.cpp
-
 #include "Logic.h"
 #include "Config.h"
 
-// Comandos Seriales
 const String CMD_AUTO = "AUTO";
 const String CMD_UP = "UP";
 const String CMD_DOWN = "DOWN";
@@ -47,7 +44,7 @@ void Logic::handleSerialCommands() {
   while (Serial.available() > 0) {
     String command = Serial.readStringUntil('\n');
     command.trim();
-    LOG_INFO("Comando recibido: " + command);
+    LOG_INFO(("Comando recibido: " + command).c_str());
 
     if (command.equalsIgnoreCase(CMD_AUTO)) {
       LOG_INFO("Activando modo automático.");
@@ -81,7 +78,7 @@ void Logic::handleSerialCommands() {
       if (spaceIndex != -1) {
         String valueStr = command.substring(spaceIndex + 1);
         unsigned long newInterval = valueStr.toInt();
-        if (newInterval > 0 && newInterval < 1000000) { // Validar rango
+        if (newInterval > 0 && newInterval < 1000000) {
           adjustSpeed(newInterval);
           Serial.print("Intervalo de pulsos ajustado a: ");
           Serial.print(pulseInterval);
@@ -102,25 +99,24 @@ void Logic::handleSerialCommands() {
 }
 
 void Logic::transitionState() {
-  switch (currentState_) {
-    case MotorState::MOVING_DOWN:
-      if (currentDistance_ <= DISTANCE_LOWER_TARGET + DISTANCE_MARGIN) {
-        motor_.stop();
-        LOG_INFO("¡Distancia de 7 cm alcanzada! Deteniendo motor.");
-        currentState_ = MotorState::IDLE;
-      }
-      break;
-
-    case MotorState::MOVING_UP:
-      if (currentDistance_ >= DISTANCE_UPPER_TARGET - DISTANCE_MARGIN) {
-        motor_.stop();
-        LOG_INFO("¡Distancia de 35 cm alcanzada! Deteniendo motor.");
-        currentState_ = MotorState::IDLE;
-      }
-      break;
-
-    case MotorState::IDLE:
-      if (autoMode_) {
+  // Solo ejecutar transición automática en modo AUTO
+  if (autoMode_) {
+    switch (currentState_) {
+      case MotorState::MOVING_DOWN:
+        if (currentDistance_ <= DISTANCE_LOWER_TARGET + DISTANCE_MARGIN) {
+          motor_.stop();
+          LOG_INFO("¡Distancia de 7 cm alcanzada en modo automático! Deteniendo motor.");
+          currentState_ = MotorState::IDLE;
+        }
+        break;
+      case MotorState::MOVING_UP:
+        if (currentDistance_ >= DISTANCE_UPPER_TARGET - DISTANCE_MARGIN) {
+          motor_.stop();
+          LOG_INFO("¡Distancia de 35 cm alcanzada en modo automático! Deteniendo motor.");
+          currentState_ = MotorState::IDLE;
+        }
+        break;
+      case MotorState::IDLE:
         if (previousState_ == MotorState::MOVING_DOWN) {
           motor_.moveUp();
           currentState_ = MotorState::MOVING_UP;
@@ -131,9 +127,10 @@ void Logic::transitionState() {
           currentState_ = MotorState::MOVING_DOWN;
           previousState_ = MotorState::MOVING_DOWN;
         }
-      }
-      break;
+        break;
+    }
   }
+  // En modo manual, el operador controla cuándo detener el motor.
 }
 
 void Logic::processState() {
@@ -148,4 +145,32 @@ void Logic::adjustSpeed(unsigned long newInterval) {
   pulseInterval = newInterval;
   motor_.setPulseInterval(newInterval);
 }
-{}
+
+// Métodos adicionales (stubs) para cumplir con la interfaz de Logic.h
+void Logic::emergencyStop() {
+    motor_.stop();
+}
+
+void Logic::resetSystem() {
+    // Implementar reinicio del sistema si es necesario
+}
+
+bool Logic::isSafe() const {
+    return true;
+}
+
+SystemStatus Logic::getStatus() const {
+    return SystemStatus::OK;
+}
+
+void Logic::calibrate() {
+    // Implementar calibración si es necesario
+}
+
+void Logic::setMaintenanceMode(bool enabled) {
+    // Implementar modo de mantenimiento si es necesario
+}
+
+float Logic::getSystemHealth() const {
+    return 100.0;
+}
