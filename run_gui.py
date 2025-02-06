@@ -11,38 +11,33 @@ def setup_logging():
     log_dir = "logs"
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
-    
     logger = logging.getLogger()
-    logger.setLevel(logging.INFO)
-
+    logger.setLevel(logging.DEBUG)
     formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s')
-
     from logging.handlers import RotatingFileHandler
-    handler = RotatingFileHandler("logs/app.log", maxBytes=5*1024*1024, backupCount=5)
+    handler = RotatingFileHandler(os.path.join(log_dir, 'app.log'), maxBytes=5*1024*1024, backupCount=5)
     handler.setFormatter(formatter)
     logger.addHandler(handler)
-
     stream_handler = logging.StreamHandler(sys.stdout)
     stream_handler.setFormatter(formatter)
     logger.addHandler(stream_handler)
 
 def main():
     setup_logging()
-
-    parser = argparse.ArgumentParser(description="Control de Motor Paso a Paso con GUI")
-    parser.add_argument('--mode', choices=['real', 'mock'], default='real', help="Modo de operación: real o mock (simulación)")
-    parser.add_argument('--port', type=str, default='COM3', help="Puerto serial al que está conectado el Arduino (ej. COM3)")
+    parser = argparse.ArgumentParser(description="Control de Motor y Bomba de Vacío con GUI")
+    parser.add_argument('--mode', choices=['real', 'mock'], default='real', help="Modo de operación")
+    parser.add_argument('--port', type=str, default='COM3', help="Puerto serial (ej. COM3)")
     args = parser.parse_args()
 
     if args.mode == 'real':
-        serial_comm = SerialInterface(port=args.port)
-        logging.info(f"Seleccionado modo real en puerto {serial_comm.port}.")
+        serial_comm = SerialInterface(port=args.port, baudrate=115200)
+        logging.info(f"Modo real en puerto {serial_comm.port}.")
     else:
         serial_comm = MockSerialComm()
-        logging.info("Seleccionado modo simulación.")
+        logging.info("Modo simulación seleccionado.")
 
     if args.mode == 'real' and not serial_comm.connect():
-        logging.error("No se pudo establecer conexión serial. Cambiando a modo simulación.")
+        logging.error("No se pudo conectar; cambiando a modo mock.")
         serial_comm = MockSerialComm()
         serial_comm.connect()
 
@@ -51,7 +46,6 @@ def main():
     app = MotorControlGUI(root, serial_comm)
     root.protocol("WM_DELETE_WINDOW", app.on_closing)
     root.mainloop()
-
     serial_comm.disconnect()
     logging.info("Aplicación cerrada correctamente.")
 
