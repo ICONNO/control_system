@@ -25,11 +25,10 @@ def setup_logging():
 def main():
     setup_logging()
     parser = argparse.ArgumentParser(description="Control de Motor y Bomba de Vacío con GUI")
-    parser.add_argument('--mode', choices=['real', 'mock'], default='real', help="Modo de operación (solo real se usará)")
+    parser.add_argument('--mode', choices=['real'], default='real', help="Modo de operación (solo real se usará)")
     parser.add_argument('--port', type=str, default='COM3', help="Puerto serial (ej. COM3)")
     args = parser.parse_args()
 
-    # En modo real, siempre usamos SerialInterface con 115200 baudios
     serial_comm = SerialInterface(port=args.port, baudrate=115200)
     logging.info(f"Modo real en puerto {serial_comm.port}.")
     
