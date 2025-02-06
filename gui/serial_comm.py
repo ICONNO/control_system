@@ -6,7 +6,7 @@ import logging
 
 class SerialInterface:
     """
-    Maneja la comunicación serial con el Arduino utilizando el protocolo binario.
+    Maneja la comunicación serial con el Arduino usando protocolo binario.
     """
     def __init__(self, port='COM3', baudrate=115200):
         self.port = port
@@ -46,15 +46,13 @@ class SerialInterface:
     def read_from_port(self):
         while not self.stop_thread:
             try:
-                # Para el protocolo binario leemos 2 bytes a la vez
                 if self.serial_conn.in_waiting >= 2:
                     packet = self.serial_conn.read(2)
                     if self.callback:
-                        # La callback recibe el paquete en formato bytes
                         self.callback(packet)
                 time.sleep(0.05)
             except Exception as e:
-                logging.error(f"Error al leer puerto serial: {e}")
+                logging.error(f"Error al leer el puerto serial: {e}")
                 self.is_connected = False
                 break
 
@@ -72,44 +70,3 @@ class SerialInterface:
         else:
             logging.error("No hay conexión serial para enviar comando.")
             return False
-
-class MockSerialComm:
-    """
-    Simula la comunicación serial (modo mock).
-    """
-    def __init__(self):
-        self.is_connected = False
-        self.callback = None
-        self.thread = None
-        self.stop_thread = False
-
-    def connect(self):
-        self.is_connected = True
-        self.stop_thread = False
-        self.thread = threading.Thread(target=self.mock_read, daemon=True)
-        self.thread.start()
-        logging.info("Modo mock: Conexión establecida.")
-        return True
-
-    def disconnect(self):
-        self.stop_thread = True
-        if self.thread and self.thread.is_alive():
-            self.thread.join()
-        self.is_connected = False
-        logging.info("Modo mock: Conexión cerrada.")
-
-    def register_callback(self, callback):
-        self.callback = callback
-
-    def mock_read(self):
-        while not self.stop_thread:
-            if self.callback:
-                # Simula un mensaje (en este caso, simplemente enviamos 2 bytes de ejemplo)
-                self.callback(bytes([0x00, 0x00]))
-            time.sleep(2)
-
-    def send_command(self, cmd_byte, payload_byte):
-        logging.info(f"(Mock) Enviado: {[hex(cmd_byte), hex(payload_byte)]}")
-        if self.callback:
-            self.callback(bytes([cmd_byte, payload_byte]))
-        return True

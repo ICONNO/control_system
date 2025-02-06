@@ -8,7 +8,7 @@ import logging
 import queue
 import psutil
 from typing import Optional
-from .serial_comm import SerialInterface, MockSerialComm
+from .serial_comm import SerialInterface
 from .styles import set_styles
 
 logging.basicConfig(
@@ -18,8 +18,14 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Definición de códigos de comando (deben coincidir con el firmware)
+CMD_AUTO      = 0xA0
+CMD_UP        = 0xA1
+CMD_DOWN      = 0xA2
+CMD_STOP      = 0xA3
+CMD_SET_SPEED = 0xA4
+
 class CreateToolTip:
-    # (Mantén la misma implementación que ya tienes)
     def __init__(self, widget: tk.Widget, text: str = 'widget info') -> None:
         self.waittime = 500
         self.wraplength = 180
@@ -116,6 +122,7 @@ class MotorControlGUI:
         right_frame = ttkb.Frame(main_frame, width=400, padding=10)
         right_frame.pack(side="right", fill="both", expand=False)
 
+        # Controles del Motor
         control_frame = ttkb.LabelFrame(left_frame, text="Controles del Motor", padding=20)
         control_frame.pack(padx=10, pady=10, fill="x")
         btn_auto = ttkb.Button(control_frame, text="Modo Automático", command=self.activate_auto)
@@ -137,11 +144,11 @@ class MotorControlGUI:
         btn_stop = ttkb.Button(control_frame, text="Detener", command=self.stop_motor)
         btn_stop.grid(row=2, column=0, columnspan=2, padx=10, pady=10, sticky="ew")
         CreateToolTip(btn_stop, "Detiene el motor inmediatamente.")
-        # (Si se desea, se pueden agregar botones para otros comandos como PUMP_ON, PUMP_OFF)
 
         control_frame.columnconfigure(0, weight=1)
         control_frame.columnconfigure(1, weight=1)
 
+        # Ajuste de Velocidad
         speed_frame = ttkb.LabelFrame(left_frame, text="Ajuste de Velocidad", padding=20)
         speed_frame.pack(padx=10, pady=10, fill="x")
         speed_label = ttkb.Label(speed_frame, text="Intervalo de Pulsos (μs):")
@@ -153,6 +160,7 @@ class MotorControlGUI:
         self.speed_display = ttkb.Label(speed_frame, text="800 μs")
         self.speed_display.pack(side="left", padx=10, pady=10)
 
+        # Información del Sistema
         info_frame = ttkb.LabelFrame(left_frame, text="Información del Sistema", padding=20)
         info_frame.pack(padx=10, pady=10, fill="x")
         status_frame = ttkb.Frame(info_frame)
@@ -176,6 +184,7 @@ class MotorControlGUI:
                                               foreground="#ff00ff", font=("Consolas", 12, "bold"))
         self.system_status_label.grid(row=0, column=1, padx=10, pady=5, sticky="w")
 
+        # Logs del Sistema
         log_frame = ttkb.LabelFrame(right_frame, text="Logs del Sistema", padding=10)
         log_frame.pack(fill="both", expand=True, padx=10, pady=10)
         self.text_log = tk.Text(log_frame, state='disabled', wrap='word',
@@ -188,7 +197,6 @@ class MotorControlGUI:
         logger.info("Widgets creados.")
 
     def enqueue_serial_data(self, data: bytes) -> None:
-        # Aquí recibimos el paquete binario (2 bytes). Convertimos a cadena para el log
         self.queue.put(data)
 
     def process_queue(self) -> None:
@@ -201,7 +209,6 @@ class MotorControlGUI:
         finally:
             self.master.after(100, self.process_queue)
 
-    # --- Manejo de teclas para repetición ---
     def on_up_press(self, event: Optional[tk.Event] = None) -> None:
         if not self.up_pressed:
             self.up_pressed = True
@@ -242,41 +249,39 @@ class MotorControlGUI:
             logger.debug("Tecla 'Bajar' liberada.")
             self.stop_motor()
 
-    # --- Funciones de comando ---
+    # Funciones de comando: se envían comandos binarios
     def activate_auto(self) -> None:
-        if self.send_command(0xA0, 0x00):
+        if self.send_command(CMD_AUTO, 0x00):
             self.mode.set("Automático")
             self.system_status.set("Modo Automático Activado")
 
     def activate_manual(self) -> None:
-        if self.send_command(0xA3, 0x00):
+        if self.send_command(CMD_STOP, 0x00):
             self.mode.set("Manual")
             self.system_status.set("Modo Manual Activado")
 
     def move_up(self) -> None:
-        if self.send_command(0xA1, 0x00):
+        if self.send_command(CMD_UP, 0x00):
             self.mode.set("Manual")
 
     def move_down(self) -> None:
-        if self.send_command(0xA2, 0x00):
+        if self.send_command(CMD_DOWN, 0x00):
             self.mode.set("Manual")
 
     def stop_motor(self) -> None:
-        if self.send_command(0xA3, 0x00):
+        if self.send_command(CMD_STOP, 0x00):
             self.mode.set("Manual")
 
     def update_speed(self, event: Optional[tk.Event] = None) -> None:
         speed = self.pulse_interval.get()
         self.speed_display.config(text=f"{int(speed)} μs")
-        if self.send_command(0xA4, int(speed)):
-            logger.info(f"Comando 'SET_SPEED {int(speed)}' enviado.")
+        if self.send_command(CMD_SET_SPEED, int(speed)):
+            logger.info(f"Comando SET_SPEED {int(speed)} enviado.")
 
     def handle_serial_data(self, data: bytes) -> None:
-        # Interpretamos el paquete recibido (2 bytes)
         if len(data) != 2:
             logger.error("Paquete recibido con longitud incorrecta.")
             return
-        # Ejemplo simple: mostramos ambos bytes en hexadecimal
         msg = f"Recibido: {data[0]:02X} {data[1]:02X}"
         logger.info(msg)
         self.text_log.configure(state='normal')
@@ -296,13 +301,13 @@ class MotorControlGUI:
 
     def on_closing(self) -> None:
         if messagebox.askokcancel("Salir", "¿Quieres salir de la aplicación?"):
-            self.send_command(0xA3, 0x00)  # Detener motor
+            self.send_command(CMD_STOP, 0x00)
             self.serial.disconnect()
             self.master.destroy()
 
 def main():
     root = tk.Tk()
-    app = MotorControlGUI(root, SerialInterface())  # O MockSerialComm() según el modo
+    app = MotorControlGUI(root, SerialInterface())
     root.protocol("WM_DELETE_WINDOW", app.on_closing)
     root.mainloop()
 

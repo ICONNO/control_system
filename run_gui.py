@@ -3,7 +3,7 @@ import sys
 import tkinter as tk
 import ttkbootstrap as ttkb
 from gui import MotorControlGUI
-from gui.serial_comm import SerialInterface, MockSerialComm
+from gui.serial_comm import SerialInterface
 import logging
 import os
 
@@ -25,22 +25,18 @@ def setup_logging():
 def main():
     setup_logging()
     parser = argparse.ArgumentParser(description="Control de Motor y Bomba de Vacío con GUI")
-    parser.add_argument('--mode', choices=['real', 'mock'], default='real', help="Modo de operación")
+    parser.add_argument('--mode', choices=['real', 'mock'], default='real', help="Modo de operación (solo real se usará)")
     parser.add_argument('--port', type=str, default='COM3', help="Puerto serial (ej. COM3)")
     args = parser.parse_args()
 
-    if args.mode == 'real':
-        serial_comm = SerialInterface(port=args.port, baudrate=115200)
-        logging.info(f"Modo real en puerto {serial_comm.port}.")
-    else:
-        serial_comm = MockSerialComm()
-        logging.info("Modo simulación seleccionado.")
-
-    if args.mode == 'real' and not serial_comm.connect():
-        logging.error("No se pudo conectar; cambiando a modo mock.")
-        serial_comm = MockSerialComm()
-        serial_comm.connect()
-
+    # En modo real, siempre usamos SerialInterface con 115200 baudios
+    serial_comm = SerialInterface(port=args.port, baudrate=115200)
+    logging.info(f"Modo real en puerto {serial_comm.port}.")
+    
+    if not serial_comm.connect():
+        logging.error("No se pudo establecer conexión serial. Finalizando.")
+        sys.exit(1)
+    
     root = ttkb.Window(themename="superhero")
     root.title("Control de Motor y Bomba de Vacío")
     app = MotorControlGUI(root, serial_comm)

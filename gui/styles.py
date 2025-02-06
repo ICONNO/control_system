@@ -2,9 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 
 def set_styles():
-    """
-    Define y aplica estilos personalizados a los widgets de la GUI.
-    """
     style = ttk.Style()
     style.theme_use('clam')
     style.configure('TButton', font=('Helvetica', 12), padding=10)
