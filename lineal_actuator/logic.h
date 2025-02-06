@@ -5,6 +5,13 @@
 #include "Motor.h"
 #include "Sensor.h"
 
+// Declaración de estados (ya definidos en Config.h, pero se pueden incluir aquí para la lógica)
+enum class MotorState {
+  MOVING_DOWN,
+  MOVING_UP,
+  IDLE
+};
+
 enum class SystemStatus {
     OK,
     ERROR,
@@ -17,7 +24,10 @@ class Logic {
 public:
     Logic(Motor& motor, Sensor& sensor);
     void initialize();
+    // Ahora update() solo se encargará de actualizar el motor
     void update();
+    // Nueva función para leer el sensor y procesar el estado
+    void updateSensor();
     void handleSerialCommands();
     
     // Métodos de seguridad (stubs)
