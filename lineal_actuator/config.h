@@ -12,8 +12,8 @@ const uint8_t SENSOR_ECHO_PIN = 10;     // Pin de Echo
 
 // === Parámetros del Sistema ===
 const float DISTANCE_LOWER_TARGET = 7.0;     // Distancia para detenerse al bajar
-const float DISTANCE_UPPER_TARGET = 35.0;    // Distancia para detenerse al subir
-const float DISTANCE_MARGIN = 0.5;           // Margen para evitar oscilaciones
+const float DISTANCE_UPPER_TARGET = 35.0;      // Distancia para detenerse al subir
+const float DISTANCE_MARGIN = 0.5;             // Margen para evitar oscilaciones
 
 const unsigned long PULSE_INTERVAL_DEFAULT_US = 100; // Intervalo por defecto en μs
 unsigned long pulseInterval = PULSE_INTERVAL_DEFAULT_US;

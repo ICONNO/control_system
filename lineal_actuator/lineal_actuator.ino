@@ -8,23 +8,26 @@
     - Byte 2: Payload (por ejemplo, 0x00 para comandos UP/DOWN/STOP o el nuevo retardo para SET_SPEED)
   
   Comandos definidos:
-    0xA0: CMD_AUTO      - Activa modo automático (baja hasta el límite medido)
+    0xA0: CMD_AUTO      - Modo automático (baja hasta el límite medido)
     0xA1: CMD_UP        - Mueve el motor hacia arriba
     0xA2: CMD_DOWN      - Mueve el motor hacia abajo
     0xA3: CMD_STOP      - Detiene el motor
-    0xA4: CMD_SET_SPEED - Ajusta la velocidad (payload = nuevo delay en μs)
+    0xA4: CMD_SET_SPEED - Ajusta la velocidad (payload = nuevo delay en µs)
   
-  NOTA: Se utiliza delayMicroseconds() para generar pulsos; en un futuro se recomienda migrar a
-        un sistema no bloqueante (máquina de estados o interrupciones) para evitar saturar el Arduino.
+  NOTA: Se utiliza delayMicroseconds() para generar los pulsos. Para evitar bloqueos,
+        se recomienda en el futuro migrar a una máquina de estados o usar interrupciones.
 */
 
 #include <Arduino.h>
 #include "Config.h"
 
+// Agregamos el pin de Sleep/Enable para el TB6560
+#define SLEEP_PIN 8
+
 // ==================== VARIABLES Y CONSTANTES ====================
 const unsigned long BAUD_RATE = 115200;
 
-// Estados del motor
+// Estados del motor (para la lógica interna)
 enum class MotorState {
   MOVING_DOWN,
   MOVING_UP,
@@ -59,10 +62,10 @@ public:
   }
 
   void moveUp() {
-    setDirection(LOW);  // LOW para subir
+    setDirection(LOW);  // LOW para subir (verifica si esto coincide con tu TB6560)
     isMoving_ = true;
     previousMicros_ = micros();
-    togglePulse();
+    togglePulse();  // Envía el primer pulso
     LOG_INFO("Moviendo hacia arriba.");
   }
 
@@ -70,7 +73,7 @@ public:
     setDirection(HIGH); // HIGH para bajar
     isMoving_ = true;
     previousMicros_ = micros();
-    togglePulse();
+    togglePulse();  // Envía el primer pulso
     LOG_INFO("Moviendo hacia abajo.");
   }
 
@@ -97,7 +100,6 @@ public:
     LOG_INFO("Intervalo de pulsos ajustado.");
   }
 
-  // Permite ejecutar un paso puntual
   void step() {
     togglePulse();
   }
@@ -172,7 +174,7 @@ public:
     LOG_INFO("Lógica del sistema inicializada.");
   }
 
-  // Actualiza el motor (se llama en cada loop)
+  // Actualiza el motor (se llama cada ciclo)
   void update() {
     motor_.update();
   }
@@ -241,7 +243,7 @@ public:
     }
   }
 
-  // En modo automático, detiene el motor cuando la distancia alcanza un límite
+  // En modo automático, detiene el motor cuando se alcanza el límite de distancia
   void processState() {
     if (autoMode_) {
       switch (currentState_) {
@@ -271,7 +273,7 @@ public:
     motor_.setPulseInterval(newInterval);
   }
   
-  // Stubs para funciones de seguridad y control
+  // Funciones stub de seguridad y control
   void emergencyStop() { motor_.stop(); }
   void resetSystem() { }
   bool isSafe() const { return true; }
@@ -290,7 +292,8 @@ private:
   float currentDistance_;
 };
 
-// ==================== OBJETOS GLOBALES Y LOOP ====================
+// ==================== OBJETOS GLOBALES Y LOOP PRINCIPAL ====================
+
 Motor motor(MOTOR_PUL_PIN, MOTOR_DIR_PIN);
 Sensor sensor(SENSOR_TRIG_PIN, SENSOR_ECHO_PIN);
 Logic logic(motor, sensor);
@@ -298,8 +301,13 @@ Logic logic(motor, sensor);
 unsigned long lastSensorUpdate = 0;
 
 void setup() {
-  Serial.begin(115200);
+  // Configuración del pin de Sleep para habilitar el TB6560
+  pinMode(SLEEP_PIN, OUTPUT);
+  digitalWrite(SLEEP_PIN, HIGH);  // Habilita el driver
+
+  Serial.begin(BAUD_RATE);
   LOG_INFO("Sistema de control de cabezal iniciado.");
+  
   motor.initialize();
   sensor.initialize();
   logic.initialize();

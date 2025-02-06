@@ -18,7 +18,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Definición de códigos de comando (deben coincidir con el firmware)
+# Códigos de comando (deben coincidir con el firmware)
 CMD_AUTO      = 0xA0
 CMD_UP        = 0xA1
 CMD_DOWN      = 0xA2
@@ -249,7 +249,7 @@ class MotorControlGUI:
             logger.debug("Tecla 'Bajar' liberada.")
             self.stop_motor()
 
-    # Funciones de comando: se envían comandos binarios
+    # Funciones de comando (se envían como 2 bytes)
     def activate_auto(self) -> None:
         if self.send_command(CMD_AUTO, 0x00):
             self.mode.set("Automático")
