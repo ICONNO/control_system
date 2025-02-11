@@ -6,20 +6,24 @@
 // === Definición de Pines ===
 const uint8_t MOTOR_PUL_PIN = 3;        // Pin para el pulso
 const uint8_t MOTOR_DIR_PIN = 4;        // Pin para la dirección
-
+const uint8_t ENABLE_PIN = 5;           // Pin para habilitar el motor
 const uint8_t SENSOR_TRIG_PIN = 9;      // Pin de Trigger
 const uint8_t SENSOR_ECHO_PIN = 10;     // Pin de Echo
 
 // === Parámetros del Sistema ===
-const float DISTANCE_LOWER_TARGET = 7.0;     // Distancia para detenerse al bajar
-const float DISTANCE_UPPER_TARGET = 35.0;      // Distancia para detenerse al subir
-const float DISTANCE_MARGIN = 0.5;             // Margen para evitar oscilaciones
+// Distancias objetivo (en centímetros)
+const float DISTANCE_LOWER_TARGET = 7.0;     
+const float DISTANCE_UPPER_TARGET = 35.0;    
+const float DISTANCE_MARGIN = 0.5;           
 
-const unsigned long PULSE_INTERVAL_DEFAULT_US = 100; // Intervalo por defecto en μs
-unsigned long pulseInterval = PULSE_INTERVAL_DEFAULT_US;
+// Velocidad del Motor
+const unsigned long PULSE_INTERVAL_DEFAULT_US = 100; // Intervalo entre pulsos en micros
 
-const unsigned long SENSOR_READ_INTERVAL_MS = 100;   // Intervalo de lectura del sensor
-const unsigned long ULTRASONIC_TIMEOUT_US = 30000;    // Timeout en micros
+// Intervalo de lectura del sensor ultrasónico
+const unsigned long SENSOR_READ_INTERVAL_MS = 100; // Intervalo entre mediciones en milisegundos
+
+// Timeout para la lectura del sensor ultrasónico
+const unsigned long ULTRASONIC_TIMEOUT_US = 30000; // Timeout en micros (30 ms)
 
 // === Definición de Estados ===
 enum class MotorState {
