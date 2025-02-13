@@ -8,6 +8,7 @@ const uint8_t MOTOR_PUL_PIN = 3;        // Pin de STEP (para el motor)
 const uint8_t MOTOR_DIR_PIN = 4;        // Pin de DIR (para el motor)
 const uint8_t SENSOR_TRIG_PIN = 9;      // Pin de Trigger del sensor ultrasónico
 const uint8_t SENSOR_ECHO_PIN = 10;     // Pin de Echo del sensor ultrasónico
+// No se usa ENABLE_PIN
 
 // === Parámetros del Sistema ===
 // Distancias objetivo (en centímetros)

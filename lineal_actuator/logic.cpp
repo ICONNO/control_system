@@ -66,6 +66,7 @@ void Logic::handleSerialCommands() {
     if (command.equalsIgnoreCase(CMD_AUTO)) {
       LOG_INFO("Activando modo automático.");
       setAutoMode(true);
+      // En modo automático se ejecuta un ciclo predefinido
       motor_.moveToBlocking(10000);
       currentState_ = MotorState::MOVING_DOWN;
       previousState_ = MotorState::MOVING_DOWN;
@@ -101,7 +102,7 @@ void Logic::handleSerialCommands() {
         String valueStr = command.substring(spaceIndex + 1);
         float newMaxSpeed = valueStr.toFloat();
         if (newMaxSpeed > 0) {
-          // Se mantiene la aceleración predeterminada (MOTOR_ACCELERATION)
+          // Se mantiene la aceleración predeterminada
           adjustSpeed(newMaxSpeed, MOTOR_ACCELERATION);
           Serial.print(F("Velocidad máxima ajustada a: "));
           Serial.print(newMaxSpeed);
@@ -121,6 +122,7 @@ void Logic::handleSerialCommands() {
 }
 
 void Logic::transitionState() {
+  // Para modo automático
   switch (currentState_) {
     case MotorState::MOVING_DOWN:
       if (currentDistance_ <= DISTANCE_LOWER_TARGET + DISTANCE_MARGIN) {
