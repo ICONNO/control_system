@@ -14,7 +14,6 @@ Logic::Logic(Motor& motor, Sensor& sensor)
     currentDistance_(0.0),
     movingUp(false), movingDown(false), targetPosition(0)
 {
-    // Inicializamos targetPosition con la posición actual del motor
     targetPosition = motor_.currentPosition();
 }
 
@@ -36,7 +35,6 @@ void Logic::update() {
     } else {
       Serial.println(F("Error en la lectura del sensor ultrasónico."));
     }
-    // Si no estamos en modo automático, no usamos la transición de estados automáticos
     if (autoMode_) {
       processState();
     }
@@ -68,11 +66,9 @@ void Logic::handleSerialCommands() {
     if (command.equalsIgnoreCase(CMD_AUTO)) {
       LOG_INFO("Activando modo automático.");
       setAutoMode(true);
-      // En modo automático, se puede definir un movimiento de ciclo
       motor_.moveToBlocking(10000);
       currentState_ = MotorState::MOVING_DOWN;
       previousState_ = MotorState::MOVING_DOWN;
-      // Desactivar cualquier bandera manual
       movingUp = false;
       movingDown = false;
       targetPosition = motor_.currentPosition();
@@ -99,21 +95,19 @@ void Logic::handleSerialCommands() {
       currentState_ = MotorState::IDLE;
     }
     else if (command.startsWith(CMD_SET_SPEED)) {
+      // Se espera un solo parámetro: la nueva velocidad máxima (en pasos/s)
       int spaceIndex = command.indexOf(' ');
       if (spaceIndex != -1) {
         String valueStr = command.substring(spaceIndex + 1);
-        int separator = valueStr.indexOf(' ');
-        if (separator != -1) {
-          float newMaxSpeed = valueStr.substring(0, separator).toFloat();
-          float newAcceleration = valueStr.substring(separator + 1).toFloat();
-          adjustSpeed(newMaxSpeed, newAcceleration);
+        float newMaxSpeed = valueStr.toFloat();
+        if (newMaxSpeed > 0) {
+          // Se mantiene la aceleración predeterminada (MOTOR_ACCELERATION)
+          adjustSpeed(newMaxSpeed, MOTOR_ACCELERATION);
           Serial.print(F("Velocidad máxima ajustada a: "));
           Serial.print(newMaxSpeed);
-          Serial.print(F(" pasos/s, aceleración: "));
-          Serial.print(newAcceleration);
-          Serial.println(F(" pasos/s^2."));
+          Serial.println(F(" pasos/s."));
         } else {
-          LOG_ERROR("Formato de comando incorrecto para SET_SPEED.");
+          LOG_ERROR("Valor de velocidad inválido.");
         }
       }
       else {
@@ -127,7 +121,6 @@ void Logic::handleSerialCommands() {
 }
 
 void Logic::transitionState() {
-  // Esta función se mantiene para el modo automático
   switch (currentState_) {
     case MotorState::MOVING_DOWN:
       if (currentDistance_ <= DISTANCE_LOWER_TARGET + DISTANCE_MARGIN) {
@@ -136,7 +129,6 @@ void Logic::transitionState() {
         currentState_ = MotorState::IDLE;
       }
       break;
-
     case MotorState::MOVING_UP:
       if (currentDistance_ >= DISTANCE_UPPER_TARGET - DISTANCE_MARGIN) {
         motor_.stop();
@@ -144,7 +136,6 @@ void Logic::transitionState() {
         currentState_ = MotorState::IDLE;
       }
       break;
-
     case MotorState::IDLE:
       if (autoMode_) {
         if (previousState_ == MotorState::MOVING_DOWN) {
@@ -170,7 +161,6 @@ void Logic::processState() {
 
 void Logic::setAutoMode(bool mode) {
   autoMode_ = mode;
-  // Al cambiar el modo, se desactivan los movimientos manuales
   if (mode) {
     movingUp = false;
     movingDown = false;
