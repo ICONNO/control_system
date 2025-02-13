@@ -1,5 +1,4 @@
 #include "Logic.h"
-#include "Config.h"
 
 // Comandos Seriales
 const String CMD_AUTO = "AUTO";
@@ -12,7 +11,12 @@ Logic::Logic(Motor& motor, Sensor& sensor)
   : motor_(motor), sensor_(sensor),
     currentState_(MotorState::IDLE), previousState_(MotorState::IDLE),
     autoMode_(false), previousDistanceMillis_(0),
-    currentDistance_(0.0) {}
+    currentDistance_(0.0),
+    movingUp(false), movingDown(false), targetPosition(0)
+{
+    // Inicializamos targetPosition con la posición actual del motor
+    targetPosition = motor_.currentPosition();
+}
 
 void Logic::initialize() {
   currentState_ = MotorState::IDLE;
@@ -22,11 +26,9 @@ void Logic::initialize() {
 
 void Logic::update() {
   unsigned long currentMillis = millis();
-
   if (currentMillis - previousDistanceMillis_ >= SENSOR_READ_INTERVAL_MS) {
     previousDistanceMillis_ = currentMillis;
     currentDistance_ = sensor_.readDistance();
-
     if (currentDistance_ >= 0.0) {
       Serial.print(F("Distancia actual: "));
       Serial.print(currentDistance_);
@@ -34,10 +36,25 @@ void Logic::update() {
     } else {
       Serial.println(F("Error en la lectura del sensor ultrasónico."));
     }
-
-    processState();
+    // Si no estamos en modo automático, no usamos la transición de estados automáticos
+    if (autoMode_) {
+      processState();
+    }
   }
-
+  
+  // Movimiento manual continuo
+  const int deltaSteps = 10;  // Ajusta este valor según el comportamiento deseado
+  if (!autoMode_) {
+    if (movingUp) {
+      targetPosition += deltaSteps;
+      motor_.moveTo(targetPosition);
+    }
+    else if (movingDown) {
+      targetPosition -= deltaSteps;
+      motor_.moveTo(targetPosition);
+    }
+  }
+  
   motor_.update();
 }
 
@@ -45,35 +62,39 @@ void Logic::handleSerialCommands() {
   while (Serial.available() > 0) {
     String command = Serial.readStringUntil('\n');
     command.trim();
-    
-    // Avoid concatenating F() macro literals with dynamic strings:
     Serial.print(F("Comando recibido: "));
     Serial.println(command);
 
     if (command.equalsIgnoreCase(CMD_AUTO)) {
       LOG_INFO("Activando modo automático.");
       setAutoMode(true);
-      motor_.moveDown();
+      // En modo automático, se puede definir un movimiento de ciclo
+      motor_.moveToBlocking(10000);
       currentState_ = MotorState::MOVING_DOWN;
       previousState_ = MotorState::MOVING_DOWN;
+      // Desactivar cualquier bandera manual
+      movingUp = false;
+      movingDown = false;
+      targetPosition = motor_.currentPosition();
     }
     else if (command.equalsIgnoreCase(CMD_UP)) {
-      LOG_INFO("Modo manual: Moviendo hacia arriba.");
+      LOG_INFO("Modo manual: Activando subida continua.");
       setAutoMode(false);
-      motor_.moveUp();
-      currentState_ = MotorState::MOVING_UP;
-      previousState_ = MotorState::MOVING_UP;
+      movingUp = true;
+      movingDown = false;
+      targetPosition = motor_.currentPosition();
     }
     else if (command.equalsIgnoreCase(CMD_DOWN)) {
-      LOG_INFO("Modo manual: Moviendo hacia abajo.");
+      LOG_INFO("Modo manual: Activando bajada continua.");
       setAutoMode(false);
-      motor_.moveDown();
-      currentState_ = MotorState::MOVING_DOWN;
-      previousState_ = MotorState::MOVING_DOWN;
+      movingDown = true;
+      movingUp = false;
+      targetPosition = motor_.currentPosition();
     }
     else if (command.equalsIgnoreCase(CMD_STOP)) {
-      LOG_INFO("Deteniendo motor y desactivando modo automático.");
-      setAutoMode(false);
+      LOG_INFO("Deteniendo movimiento manual.");
+      movingUp = false;
+      movingDown = false;
       motor_.stop();
       currentState_ = MotorState::IDLE;
     }
@@ -81,15 +102,18 @@ void Logic::handleSerialCommands() {
       int spaceIndex = command.indexOf(' ');
       if (spaceIndex != -1) {
         String valueStr = command.substring(spaceIndex + 1);
-        unsigned long newInterval = valueStr.toInt();
-        if (newInterval > 0 && newInterval < 1000000) { // Validar rango
-          adjustSpeed(newInterval);
-          Serial.print(F("Intervalo de pulsos ajustado a: "));
-          Serial.print(newInterval);
-          Serial.println(F(" micros."));
-        }
-        else {
-          LOG_ERROR("Valor de velocidad inválido.");
+        int separator = valueStr.indexOf(' ');
+        if (separator != -1) {
+          float newMaxSpeed = valueStr.substring(0, separator).toFloat();
+          float newAcceleration = valueStr.substring(separator + 1).toFloat();
+          adjustSpeed(newMaxSpeed, newAcceleration);
+          Serial.print(F("Velocidad máxima ajustada a: "));
+          Serial.print(newMaxSpeed);
+          Serial.print(F(" pasos/s, aceleración: "));
+          Serial.print(newAcceleration);
+          Serial.println(F(" pasos/s^2."));
+        } else {
+          LOG_ERROR("Formato de comando incorrecto para SET_SPEED.");
         }
       }
       else {
@@ -103,11 +127,12 @@ void Logic::handleSerialCommands() {
 }
 
 void Logic::transitionState() {
+  // Esta función se mantiene para el modo automático
   switch (currentState_) {
     case MotorState::MOVING_DOWN:
       if (currentDistance_ <= DISTANCE_LOWER_TARGET + DISTANCE_MARGIN) {
         motor_.stop();
-        LOG_INFO("¡Distancia de 7 cm alcanzada! Deteniendo motor.");
+        LOG_INFO("¡Distancia inferior alcanzada! Deteniendo motor.");
         currentState_ = MotorState::IDLE;
       }
       break;
@@ -115,7 +140,7 @@ void Logic::transitionState() {
     case MotorState::MOVING_UP:
       if (currentDistance_ >= DISTANCE_UPPER_TARGET - DISTANCE_MARGIN) {
         motor_.stop();
-        LOG_INFO("¡Distancia de 35 cm alcanzada! Deteniendo motor.");
+        LOG_INFO("¡Distancia superior alcanzada! Deteniendo motor.");
         currentState_ = MotorState::IDLE;
       }
       break;
@@ -123,12 +148,12 @@ void Logic::transitionState() {
     case MotorState::IDLE:
       if (autoMode_) {
         if (previousState_ == MotorState::MOVING_DOWN) {
-          motor_.moveUp();
+          motor_.moveToBlocking(motor_.currentPosition() + 200);
           currentState_ = MotorState::MOVING_UP;
           previousState_ = MotorState::MOVING_UP;
         }
         else if (previousState_ == MotorState::MOVING_UP) {
-          motor_.moveDown();
+          motor_.moveToBlocking(motor_.currentPosition() - 200);
           currentState_ = MotorState::MOVING_DOWN;
           previousState_ = MotorState::MOVING_DOWN;
         }
@@ -138,14 +163,26 @@ void Logic::transitionState() {
 }
 
 void Logic::processState() {
-  transitionState();
+  if (autoMode_) {
+    transitionState();
+  }
 }
 
 void Logic::setAutoMode(bool mode) {
   autoMode_ = mode;
+  // Al cambiar el modo, se desactivan los movimientos manuales
+  if (mode) {
+    movingUp = false;
+    movingDown = false;
+  }
 }
 
-void Logic::adjustSpeed(unsigned long newInterval) {
-  // Removed assignment to global 'pulseInterval' since it no longer exists.
-  motor_.setPulseInterval(newInterval);
+void Logic::adjustSpeed(float maxSpeed, float acceleration) {
+  motor_.setMaxSpeed(maxSpeed);
+  motor_.setAcceleration(acceleration);
+}
+
+bool Logic::move_to(long pos) {
+  motor_.moveToBlocking(pos);
+  return true;
 }

@@ -1,62 +1,50 @@
-// Motor.cpp
-
 #include "Motor.h"
 #include "Config.h"
 
-Motor::Motor(uint8_t pulPin, uint8_t dirPin)
-  : pulPin_(pulPin), dirPin_(dirPin), isMoving_(false),
-    pulseState_(LOW), previousMicros_(0),
-    pulseInterval_(PULSE_INTERVAL_DEFAULT_US) {}
+Motor::Motor(uint8_t stepPin, uint8_t dirPin)
+  : stepper(AccelStepper::DRIVER, stepPin, dirPin)
+{
+}
 
 void Motor::initialize() {
-  pinMode(pulPin_, OUTPUT);
-  pinMode(dirPin_, OUTPUT);
-  digitalWrite(pulPin_, LOW);
-  digitalWrite(dirPin_, LOW);
-  LOG_INFO("Motor inicializado.");
+  stepper.setAcceleration(MOTOR_ACCELERATION);
+  stepper.setMaxSpeed(MOTOR_MAX_SPEED);
+  stepper.setCurrentPosition(0);
+  LOG_INFO("Motor inicializado con aceleración y velocidad máximas.");
 }
 
-void Motor::moveUp() {
-  digitalWrite(dirPin_, LOW); // LOW para subir
-  isMoving_ = true;
-  previousMicros_ = micros();
-  togglePulse(); // Enviar el primer pulso
-  LOG_INFO("Moviendo hacia arriba.");
+void Motor::moveTo(long absolutePosition) {
+  stepper.moveTo(absolutePosition);
 }
 
-void Motor::moveDown() {
-  digitalWrite(dirPin_, HIGH); // HIGH para bajar
-  isMoving_ = true;
-  previousMicros_ = micros();
-  togglePulse(); // Enviar el primer pulso
-  LOG_INFO("Moviendo hacia abajo.");
+void Motor::moveToBlocking(long absolutePosition) {
+  moveTo(absolutePosition);
+  while (stepper.distanceToGo() != 0) {
+    update();
+  }
+}
+
+void Motor::moveStepsBlocking(long steps) {
+  long target = stepper.currentPosition() + steps;
+  moveToBlocking(target);
 }
 
 void Motor::stop() {
-  if (isMoving_) {
-    isMoving_ = false;
-    digitalWrite(pulPin_, LOW); // Asegurar que el pulso esté bajo
-    LOG_INFO("Motor detenido.");
-  }
+  stepper.stop();
 }
 
 void Motor::update() {
-  if (isMoving_) {
-    unsigned long currentMicros = micros();
-    if (currentMicros - previousMicros_ >= pulseInterval_) {
-      previousMicros_ = currentMicros;
-      togglePulse();
-    }
-  }
+  stepper.run();
 }
 
-void Motor::setPulseInterval(unsigned long interval) {
-  pulseInterval_ = interval;
-  LOG_INFO("Intervalo de pulsos ajustado.");
+void Motor::setAcceleration(float acceleration) {
+  stepper.setAcceleration(acceleration);
 }
 
-void Motor::togglePulse() {
-  pulseState_ = !pulseState_;
-  digitalWrite(pulPin_, pulseState_);
-  LOG_DEBUG("Pulso alternado.");
+void Motor::setMaxSpeed(float speed) {
+  stepper.setMaxSpeed(speed);
+}
+
+long Motor::currentPosition() {
+  return stepper.currentPosition();
 }

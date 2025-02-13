@@ -1,5 +1,3 @@
-// Sensor.h
-
 #ifndef SENSOR_H
 #define SENSOR_H
 
@@ -10,7 +8,6 @@ public:
   Sensor(uint8_t trigPin, uint8_t echoPin);
   void initialize();
   float readDistance();
-
 private:
   uint8_t trigPin_;
   uint8_t echoPin_;

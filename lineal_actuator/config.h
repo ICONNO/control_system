@@ -4,11 +4,10 @@
 #include <Arduino.h>
 
 // === Definición de Pines ===
-const uint8_t MOTOR_PUL_PIN = 3;        // Pin para el pulso
-const uint8_t MOTOR_DIR_PIN = 4;        // Pin para la dirección
-const uint8_t ENABLE_PIN = 5;           // Pin para habilitar el motor
-const uint8_t SENSOR_TRIG_PIN = 9;      // Pin de Trigger
-const uint8_t SENSOR_ECHO_PIN = 10;     // Pin de Echo
+const uint8_t MOTOR_PUL_PIN = 3;        // Pin de STEP (para el motor)
+const uint8_t MOTOR_DIR_PIN = 4;        // Pin de DIR (para el motor)
+const uint8_t SENSOR_TRIG_PIN = 9;      // Pin de Trigger del sensor ultrasónico
+const uint8_t SENSOR_ECHO_PIN = 10;     // Pin de Echo del sensor ultrasónico
 
 // === Parámetros del Sistema ===
 // Distancias objetivo (en centímetros)
@@ -16,14 +15,15 @@ const float DISTANCE_LOWER_TARGET = 7.0;
 const float DISTANCE_UPPER_TARGET = 35.0;    
 const float DISTANCE_MARGIN = 0.5;           
 
-// Velocidad del Motor
-const unsigned long PULSE_INTERVAL_DEFAULT_US = 100; // Intervalo entre pulsos en micros
+// Parámetros para aceleración del motor (usados con AccelStepper)
+const float MOTOR_ACCELERATION = 500.0;   // pasos/s² (ajusta según tu hardware)
+const float MOTOR_MAX_SPEED = 1000.0;       // pasos/s (ajusta según tu sistema)
 
-// Intervalo de lectura del sensor ultrasónico
-const unsigned long SENSOR_READ_INTERVAL_MS = 100; // Intervalo entre mediciones en milisegundos
+// Intervalo de lectura del sensor ultrasónico (ms)
+const unsigned long SENSOR_READ_INTERVAL_MS = 100;
 
-// Timeout para la lectura del sensor ultrasónico
-const unsigned long ULTRASONIC_TIMEOUT_US = 30000; // Timeout en micros (30 ms)
+// Timeout para la lectura del sensor ultrasónico (us)
+const unsigned long ULTRASONIC_TIMEOUT_US = 30000;
 
 // === Definición de Estados ===
 enum class MotorState {

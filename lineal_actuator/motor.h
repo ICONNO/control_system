@@ -1,29 +1,41 @@
-// Motor.h
-
 #ifndef MOTOR_H
 #define MOTOR_H
 
 #include <Arduino.h>
+#include <AccelStepper.h>
 
 class Motor {
 public:
-  Motor(uint8_t pulPin, uint8_t dirPin);
+  // Constructor: usa el modo DRIVER (STEP/DIR)
+  Motor(uint8_t stepPin, uint8_t dirPin);
+
+  // Inicializa el hardware y configura aceleración y velocidad máxima
   void initialize();
-  void moveUp();
-  void moveDown();
+
+  // Mueve el motor a una posición absoluta (no bloqueante)
+  void moveTo(long absolutePosition);
+
+  // Movimiento bloqueante hacia una posición
+  void moveToBlocking(long absolutePosition);
+
+  // Movimiento relativo bloqueante (en pasos)
+  void moveStepsBlocking(long steps);
+
+  // Detiene el movimiento
   void stop();
+
+  // Actualiza el motor (llamar periódicamente desde loop)
   void update();
-  void setPulseInterval(unsigned long interval);
+
+  // Configura aceleración y velocidad máxima
+  void setAcceleration(float acceleration);
+  void setMaxSpeed(float speed);
+
+  // Devuelve la posición actual (en pasos)
+  long currentPosition();
 
 private:
-  uint8_t pulPin_;
-  uint8_t dirPin_;
-  bool isMoving_;
-  bool pulseState_;
-  unsigned long previousMicros_;
-  unsigned long pulseInterval_;
-
-  void togglePulse();
+  AccelStepper stepper;
 };
 
 #endif // MOTOR_H
