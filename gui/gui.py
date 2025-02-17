@@ -295,7 +295,6 @@ class MotorControlGUI:
         finally:
             self.master.after(100, self.process_queue)
 
-    # Invertimos los eventos: la tecla Up => down_pressed
     def on_down_press(self, event: Optional[tk.Event] = None) -> None:
         if not self.down_pressed:
             self.down_pressed = True
@@ -308,7 +307,6 @@ class MotorControlGUI:
             logger.debug("Down button released (via Up key).")
             self.stop_motor()
 
-    # Invertimos los eventos: la tecla Down => up_pressed
     def on_up_press(self, event: Optional[tk.Event] = None) -> None:
         if not self.up_pressed:
             self.up_pressed = True
@@ -371,7 +369,6 @@ class MotorControlGUI:
             pulse_interval = 1  # avoid division by zero
         steps_per_second = int(1_000_000 / pulse_interval)
 
-        # Update label to show the microseconds
         self.speed_display.config(text=f"{int(pulse_interval)} μs")
 
         success = self.send_command(f"SET_SPEED {steps_per_second}")
@@ -393,7 +390,6 @@ class MotorControlGUI:
                 logger.error(f"Error parsing distance: {data}")
         elif "Velocidad actual" in data:
             try:
-                # Si en algún momento Arduino llega a reportar la velocidad, se podría parsear aquí.
                 speed_str = data.split(":")[-1].strip().replace(" μs", "")
                 speed = int(speed_str)
                 self.pulse_interval.set(speed)

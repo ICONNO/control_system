@@ -40,7 +40,6 @@ void Logic::update() {
     }
   }
   
-  // Movimiento manual continuo
   const int deltaSteps = 10;  // Ajusta este valor según el comportamiento deseado
   if (!autoMode_) {
     if (movingUp) {
@@ -66,7 +65,6 @@ void Logic::handleSerialCommands() {
     if (command.equalsIgnoreCase(CMD_AUTO)) {
       LOG_INFO("Activando modo automático.");
       setAutoMode(true);
-      // En modo automático se ejecuta un ciclo predefinido
       motor_.moveToBlocking(10000);
       currentState_ = MotorState::MOVING_DOWN;
       previousState_ = MotorState::MOVING_DOWN;
