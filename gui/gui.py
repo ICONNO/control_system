@@ -8,8 +8,8 @@ import logging
 import queue
 import psutil
 from typing import Callable, Optional
-from .serial_comm import SerialInterface  # Se elimina MockSerialComm
-from .styles import set_styles  # Importa la función de estilos
+from .serial_comm import SerialInterface
+from .styles import set_styles
 
 # ------------------- Logging Configuration -------------------
 logging.basicConfig(
@@ -78,6 +78,7 @@ class CreateToolTip:
 class MotorControlGUI:
     """
     The main class for the motor control graphical user interface.
+
     This class creates the GUI, handles user interactions, communicates with the serial device,
     manages command queues, and monitors system health.
     """
@@ -94,9 +95,9 @@ class MotorControlGUI:
         # State variables
         self.mode = tk.StringVar(value="Manual")
         self.current_distance = tk.StringVar(value="Desconocida")
-        self.pulse_interval = tk.IntVar(value=800)  # Initial value consistent with label
+        self.pulse_interval = tk.IntVar(value=800)  # Initial slider value in microseconds
         self.system_status = tk.StringVar(
-            value="Operando en Modo Real" if self.serial.is_connected else "Modo Simulación"
+            value="Operando en Modo Real" if self.serial.is_connected else "Desconectado"
         )
 
         # Button state tracking
@@ -143,7 +144,6 @@ class MotorControlGUI:
         self.master.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def create_widgets(self) -> None:
-        # Main frame divided into left and right
         main_frame = ttkb.Frame(self.master, padding=10)
         main_frame.pack(fill="both", expand=True)
 
@@ -153,7 +153,7 @@ class MotorControlGUI:
         right_frame = ttkb.Frame(main_frame, width=400, padding=10)
         right_frame.pack(side="right", fill="both", expand=False)
 
-        # ------------------ Left Frame ------------------ #
+        # --- Control Frame ---
         control_frame = ttkb.LabelFrame(left_frame, text="Controles del Motor", padding=20)
         control_frame.pack(padx=10, pady=10, fill="x")
 
@@ -167,14 +167,14 @@ class MotorControlGUI:
 
         btn_up = ttkb.Button(control_frame, text="Subir")
         btn_up.grid(row=1, column=0, padx=10, pady=10, sticky="ew")
-        # Invertimos las teclas: la flecha arriba hará lo que normalmente hacía la tecla de bajar.
+        # Invertimos: la tecla Up llama a on_down_press
         btn_up.bind('<ButtonPress>', self.on_down_press)
         btn_up.bind('<ButtonRelease>', self.on_down_release)
         CreateToolTip(btn_up, "Mueve el motor hacia abajo mientras se mantenga presionado.")
 
         btn_down = ttkb.Button(control_frame, text="Bajar")
         btn_down.grid(row=1, column=1, padx=10, pady=10, sticky="ew")
-        # La flecha abajo ahora hará lo que normalmente hacía la tecla de subir.
+        # La tecla Down llama a on_up_press
         btn_down.bind('<ButtonPress>', self.on_up_press)
         btn_down.bind('<ButtonRelease>', self.on_up_release)
         CreateToolTip(btn_down, "Mueve el motor hacia arriba mientras se mantenga presionado.")
@@ -194,6 +194,7 @@ class MotorControlGUI:
         control_frame.columnconfigure(0, weight=1)
         control_frame.columnconfigure(1, weight=1)
 
+        # --- Speed Adjustment Frame ---
         speed_frame = ttkb.LabelFrame(left_frame, text="Ajuste de Velocidad", padding=20)
         speed_frame.pack(padx=10, pady=10, fill="x")
 
@@ -213,6 +214,7 @@ class MotorControlGUI:
         self.speed_display = ttkb.Label(speed_frame, text=f"{self.pulse_interval.get()} μs")
         self.speed_display.pack(side="left", padx=10, pady=10)
 
+        # --- System Info ---
         info_frame = ttkb.LabelFrame(left_frame, text="Información del Sistema", padding=20)
         info_frame.pack(padx=10, pady=10, fill="x")
 
@@ -221,31 +223,54 @@ class MotorControlGUI:
 
         mode_label = ttkb.Label(status_frame, text="Modo Actual:")
         mode_label.grid(row=0, column=0, padx=10, pady=5, sticky="w")
-        mode_value = ttkb.Label(status_frame, textvariable=self.mode, foreground="#a020f0", font=("Consolas", 12, "bold"))
+        mode_value = ttkb.Label(
+            status_frame, textvariable=self.mode, foreground="#a020f0", font=("Consolas", 12, "bold")
+        )
         mode_value.grid(row=0, column=1, padx=10, pady=5, sticky="w")
 
         distance_label = ttkb.Label(status_frame, text="Distancia Actual:")
         distance_label.grid(row=1, column=0, padx=10, pady=5, sticky="w")
-        distance_value = ttkb.Label(status_frame, textvariable=self.current_distance, foreground="#00ff00", font=("Consolas", 12, "bold"))
+        distance_value = ttkb.Label(
+            status_frame, textvariable=self.current_distance, foreground="#00ff00", font=("Consolas", 12, "bold")
+        )
         distance_value.grid(row=1, column=1, padx=10, pady=5, sticky="w")
 
         system_status_frame = ttkb.Frame(info_frame)
         system_status_frame.pack(pady=10, fill="x")
-        status_label = ttkb.Label(system_status_frame, text="Estado del Sistema:", font=("Consolas", 12, "bold"))
+
+        status_label = ttkb.Label(
+            system_status_frame, text="Estado del Sistema:", font=("Consolas", 12, "bold")
+        )
         status_label.grid(row=0, column=0, padx=10, pady=5, sticky="w")
-        self.system_status_label = ttkb.Label(system_status_frame, textvariable=self.system_status, foreground="#ff00ff", font=("Consolas", 12, "bold"))
+
+        self.system_status_label = ttkb.Label(
+            system_status_frame,
+            textvariable=self.system_status,
+            foreground="#ff00ff",
+            font=("Consolas", 12, "bold")
+        )
         self.system_status_label.grid(row=0, column=1, padx=10, pady=5, sticky="w")
 
+        # --- Logs ---
         log_frame = ttkb.LabelFrame(right_frame, text="Logs del Sistema", padding=10)
         log_frame.pack(fill="both", expand=True, padx=10, pady=10)
-        self.text_log = tk.Text(log_frame, state='disabled', wrap='word', height=30, bg="#1e1e1e", fg="#ffffff", font=("Consolas", 10, "bold"))
+
+        self.text_log = tk.Text(
+            log_frame,
+            state='disabled',
+            wrap='word',
+            height=30,
+            bg="#1e1e1e",
+            fg="#ffffff",
+            font=("Consolas", 10, "bold")
+        )
         self.text_log.pack(side="left", fill="both", expand=True)
+
         scrollbar = ttkb.Scrollbar(log_frame, orient="vertical", command=self.text_log.yview)
         scrollbar.pack(side="right", fill="y")
         self.text_log.configure(yscrollcommand=scrollbar.set)
 
-        # Invertir las asignaciones de teclas:
-        # La tecla "Up" ahora ejecuta la acción de bajar, y "Down" la de subir.
+        # Invertir la asignación de teclas:
         self.master.bind("<KeyPress-Up>", self.on_down_press)
         self.master.bind("<KeyRelease-Up>", self.on_down_release)
         self.master.bind("<KeyPress-Down>", self.on_up_press)
@@ -270,8 +295,8 @@ class MotorControlGUI:
         finally:
             self.master.after(100, self.process_queue)
 
+    # Invertimos los eventos: la tecla Up => down_pressed
     def on_down_press(self, event: Optional[tk.Event] = None) -> None:
-        # Ahora la tecla Up invoca on_down_press
         if not self.down_pressed:
             self.down_pressed = True
             logger.debug("Down button pressed (via Up key).")
@@ -283,8 +308,8 @@ class MotorControlGUI:
             logger.debug("Down button released (via Up key).")
             self.stop_motor()
 
+    # Invertimos los eventos: la tecla Down => up_pressed
     def on_up_press(self, event: Optional[tk.Event] = None) -> None:
-        # Ahora la tecla Down invoca on_up_press
         if not self.up_pressed:
             self.up_pressed = True
             logger.debug("Up button pressed (via Down key).")
@@ -336,12 +361,23 @@ class MotorControlGUI:
             logger.info("Command 'STOP' sent.")
 
     def update_speed(self, event: Optional[tk.Event] = None) -> None:
-        speed = self.pulse_interval.get()
-        self.speed_display.config(text=f"{int(speed)} μs")
-        success = self.send_command(f"SET_SPEED {int(speed)}")
+        """
+        The slider represents microseconds (pulse interval).
+        We convert to steps/s = 1,000,000 / pulse_interval.
+        Then we send SET_SPEED with that steps/s value.
+        """
+        pulse_interval = self.pulse_interval.get()  # in microseconds
+        if pulse_interval < 1:
+            pulse_interval = 1  # avoid division by zero
+        steps_per_second = int(1_000_000 / pulse_interval)
+
+        # Update label to show the microseconds
+        self.speed_display.config(text=f"{int(pulse_interval)} μs")
+
+        success = self.send_command(f"SET_SPEED {steps_per_second}")
         if success:
-            self.log_message(f"Ajustando velocidad a {int(speed)} μs.", level="INFO")
-            logger.info(f"Command 'SET_SPEED {int(speed)}' sent.")
+            self.log_message(f"Ajustando velocidad a {steps_per_second} pasos/s (Intervalo: {pulse_interval} μs).", level="INFO")
+            logger.info(f"Command 'SET_SPEED {steps_per_second}' sent.")
 
     def handle_serial_data(self, data: str) -> None:
         logger.debug(f"Received data for handling: {data}")
@@ -357,6 +393,7 @@ class MotorControlGUI:
                 logger.error(f"Error parsing distance: {data}")
         elif "Velocidad actual" in data:
             try:
+                # Si en algún momento Arduino llega a reportar la velocidad, se podría parsear aquí.
                 speed_str = data.split(":")[-1].strip().replace(" μs", "")
                 speed = int(speed_str)
                 self.pulse_interval.set(speed)
@@ -450,7 +487,7 @@ class MotorControlGUI:
         while not self.stop_event.is_set():
             try:
                 priority, timestamp, command = self.command_queue.get_nowait()
-                if time.time() - timestamp > 5.0:
+                if (time.time() - timestamp) > 5.0:
                     logger.warning(f"Command '{command}' discarded due to age.")
                     self.log_message(f"Comando '{command}' descartado por antigüedad.", level="WARNING")
                     continue
@@ -469,7 +506,10 @@ class MotorControlGUI:
         memory_info = psutil.virtual_memory()
         if cpu_usage > 80 or memory_info.percent > 80:
             self.system_health = max(0, self.system_health - 10)
-            self.log_message(f"High resource usage detected: CPU {cpu_usage}%, Memory {memory_info.percent}%", level="WARNING")
+            self.log_message(
+                f"High resource usage detected: CPU {cpu_usage}%, Memory {memory_info.percent}%",
+                level="WARNING"
+            )
             logger.warning(f"High resource usage: CPU {cpu_usage}%, Memory {memory_info.percent}%")
         if self.error_count > 5:
             self.system_health = max(0, self.system_health - 10)
