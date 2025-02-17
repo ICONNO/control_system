@@ -17,7 +17,8 @@ const float DISTANCE_UPPER_TARGET = 35.0;
 const float DISTANCE_MARGIN = 0.5;           
 
 // Parámetros para aceleración del motor (usados con AccelStepper)
-const float MOTOR_ACCELERATION = 500.0;   // pasos/s² (ajusta según tu hardware)
+// Aumentamos la aceleración para una rampa más corta
+const float MOTOR_ACCELERATION = 2000.0;   // pasos/s² (ajusta según tu hardware)
 const float MOTOR_MAX_SPEED = 1000.0;       // pasos/s (ajusta según tu sistema)
 
 // Intervalo de lectura del sensor ultrasónico (ms)

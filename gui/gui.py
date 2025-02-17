@@ -7,7 +7,7 @@ import time
 import logging
 import queue
 import psutil
-from typing import Callable, Optional
+from typing import Optional
 from .serial_comm import SerialInterface
 from .styles import set_styles
 
@@ -78,7 +78,6 @@ class CreateToolTip:
 class MotorControlGUI:
     """
     The main class for the motor control graphical user interface.
-
     This class creates the GUI, handles user interactions, communicates with the serial device,
     manages command queues, and monitors system health.
     """
@@ -88,14 +87,13 @@ class MotorControlGUI:
         self.serial.register_callback(self.enqueue_serial_data)
 
         # Apply ttkbootstrap theme
-        self.style = ttkb.Style(theme='superhero')  # Other themes: 'darkly', 'cyborg', etc.
-
+        self.style = ttkb.Style(theme='superhero')
         logger.info("Initializing the GUI interface.")
 
         # State variables
         self.mode = tk.StringVar(value="Manual")
         self.current_distance = tk.StringVar(value="Desconocida")
-        self.pulse_interval = tk.IntVar(value=800)  # Initial slider value in microseconds
+        self.pulse_interval = tk.IntVar(value=800)  # Slider en microsegundos
         self.system_status = tk.StringVar(
             value="Operando en Modo Real" if self.serial.is_connected else "Desconectado"
         )
@@ -115,7 +113,6 @@ class MotorControlGUI:
 
         # Start processing the serial data queue
         self.master.after(100, self.process_queue)
-
         logger.info("GUI interface initialized successfully.")
 
         # Command queue and thread safety
@@ -146,61 +143,49 @@ class MotorControlGUI:
     def create_widgets(self) -> None:
         main_frame = ttkb.Frame(self.master, padding=10)
         main_frame.pack(fill="both", expand=True)
-
         left_frame = ttkb.Frame(main_frame, padding=10)
         left_frame.pack(side="left", fill="both", expand=True, padx=(0, 10))
-
         right_frame = ttkb.Frame(main_frame, width=400, padding=10)
         right_frame.pack(side="right", fill="both", expand=False)
 
         # --- Control Frame ---
         control_frame = ttkb.LabelFrame(left_frame, text="Controles del Motor", padding=20)
         control_frame.pack(padx=10, pady=10, fill="x")
-
         btn_auto = ttkb.Button(control_frame, text="Modo Automático", command=self.activate_auto)
         btn_auto.grid(row=0, column=0, padx=10, pady=10, sticky="ew")
         CreateToolTip(btn_auto, "Activa el modo automático del motor.")
-
         btn_manual = ttkb.Button(control_frame, text="Modo Manual", command=self.activate_manual)
         btn_manual.grid(row=0, column=1, padx=10, pady=10, sticky="ew")
         CreateToolTip(btn_manual, "Activa el modo manual del motor.")
-
         btn_up = ttkb.Button(control_frame, text="Subir")
         btn_up.grid(row=1, column=0, padx=10, pady=10, sticky="ew")
-        # Invertimos: la tecla Up llama a on_down_press
+        # Invertir: la tecla Up llama a on_down_press
         btn_up.bind('<ButtonPress>', self.on_down_press)
         btn_up.bind('<ButtonRelease>', self.on_down_release)
         CreateToolTip(btn_up, "Mueve el motor hacia abajo mientras se mantenga presionado.")
-
         btn_down = ttkb.Button(control_frame, text="Bajar")
         btn_down.grid(row=1, column=1, padx=10, pady=10, sticky="ew")
         # La tecla Down llama a on_up_press
         btn_down.bind('<ButtonPress>', self.on_up_press)
         btn_down.bind('<ButtonRelease>', self.on_up_release)
         CreateToolTip(btn_down, "Mueve el motor hacia arriba mientras se mantenga presionado.")
-
         btn_stop = ttkb.Button(control_frame, text="Detener", command=self.stop_motor)
         btn_stop.grid(row=2, column=0, columnspan=2, padx=10, pady=10, sticky="ew")
         CreateToolTip(btn_stop, "Detiene el motor inmediatamente.")
-
         btn_pump_on = ttkb.Button(control_frame, text="Encender Bomba", command=self.pump_on)
         btn_pump_on.grid(row=3, column=0, padx=10, pady=10, sticky="ew")
         CreateToolTip(btn_pump_on, "Enciende la bomba de vacío.")
-
         btn_pump_off = ttkb.Button(control_frame, text="Apagar Bomba", command=self.pump_off)
         btn_pump_off.grid(row=3, column=1, padx=10, pady=10, sticky="ew")
         CreateToolTip(btn_pump_off, "Apaga la bomba de vacío.")
-
         control_frame.columnconfigure(0, weight=1)
         control_frame.columnconfigure(1, weight=1)
 
         # --- Speed Adjustment Frame ---
         speed_frame = ttkb.LabelFrame(left_frame, text="Ajuste de Velocidad", padding=20)
         speed_frame.pack(padx=10, pady=10, fill="x")
-
         speed_label = ttkb.Label(speed_frame, text="Intervalo de Pulsos (μs):")
         speed_label.pack(side="left", padx=10, pady=10)
-
         self.speed_slider = ttkb.Scale(
             speed_frame,
             from_=20,
@@ -210,67 +195,39 @@ class MotorControlGUI:
             command=self.update_speed
         )
         self.speed_slider.pack(side="left", fill="x", expand=True, padx=10, pady=10)
-
         self.speed_display = ttkb.Label(speed_frame, text=f"{self.pulse_interval.get()} μs")
         self.speed_display.pack(side="left", padx=10, pady=10)
 
         # --- System Info ---
         info_frame = ttkb.LabelFrame(left_frame, text="Información del Sistema", padding=20)
         info_frame.pack(padx=10, pady=10, fill="x")
-
         status_frame = ttkb.Frame(info_frame)
         status_frame.pack(pady=10, fill="x")
-
         mode_label = ttkb.Label(status_frame, text="Modo Actual:")
         mode_label.grid(row=0, column=0, padx=10, pady=5, sticky="w")
-        mode_value = ttkb.Label(
-            status_frame, textvariable=self.mode, foreground="#a020f0", font=("Consolas", 12, "bold")
-        )
+        mode_value = ttkb.Label(status_frame, textvariable=self.mode, foreground="#a020f0", font=("Consolas", 12, "bold"))
         mode_value.grid(row=0, column=1, padx=10, pady=5, sticky="w")
-
         distance_label = ttkb.Label(status_frame, text="Distancia Actual:")
         distance_label.grid(row=1, column=0, padx=10, pady=5, sticky="w")
-        distance_value = ttkb.Label(
-            status_frame, textvariable=self.current_distance, foreground="#00ff00", font=("Consolas", 12, "bold")
-        )
+        distance_value = ttkb.Label(status_frame, textvariable=self.current_distance, foreground="#00ff00", font=("Consolas", 12, "bold"))
         distance_value.grid(row=1, column=1, padx=10, pady=5, sticky="w")
-
         system_status_frame = ttkb.Frame(info_frame)
         system_status_frame.pack(pady=10, fill="x")
-
-        status_label = ttkb.Label(
-            system_status_frame, text="Estado del Sistema:", font=("Consolas", 12, "bold")
-        )
+        status_label = ttkb.Label(system_status_frame, text="Estado del Sistema:", font=("Consolas", 12, "bold"))
         status_label.grid(row=0, column=0, padx=10, pady=5, sticky="w")
-
-        self.system_status_label = ttkb.Label(
-            system_status_frame,
-            textvariable=self.system_status,
-            foreground="#ff00ff",
-            font=("Consolas", 12, "bold")
-        )
+        self.system_status_label = ttkb.Label(system_status_frame, textvariable=self.system_status, foreground="#ff00ff", font=("Consolas", 12, "bold"))
         self.system_status_label.grid(row=0, column=1, padx=10, pady=5, sticky="w")
 
         # --- Logs ---
         log_frame = ttkb.LabelFrame(right_frame, text="Logs del Sistema", padding=10)
         log_frame.pack(fill="both", expand=True, padx=10, pady=10)
-
-        self.text_log = tk.Text(
-            log_frame,
-            state='disabled',
-            wrap='word',
-            height=30,
-            bg="#1e1e1e",
-            fg="#ffffff",
-            font=("Consolas", 10, "bold")
-        )
+        self.text_log = tk.Text(log_frame, state='disabled', wrap='word', height=30, bg="#1e1e1e", fg="#ffffff", font=("Consolas", 10, "bold"))
         self.text_log.pack(side="left", fill="both", expand=True)
-
         scrollbar = ttkb.Scrollbar(log_frame, orient="vertical", command=self.text_log.yview)
         scrollbar.pack(side="right", fill="y")
         self.text_log.configure(yscrollcommand=scrollbar.set)
 
-        # Invertir la asignación de teclas:
+        # Invertir asignación de teclas:
         self.master.bind("<KeyPress-Up>", self.on_down_press)
         self.master.bind("<KeyRelease-Up>", self.on_down_release)
         self.master.bind("<KeyPress-Down>", self.on_up_press)
@@ -368,9 +325,7 @@ class MotorControlGUI:
         if pulse_interval < 1:
             pulse_interval = 1  # avoid division by zero
         steps_per_second = int(1_000_000 / pulse_interval)
-
         self.speed_display.config(text=f"{int(pulse_interval)} μs")
-
         success = self.send_command(f"SET_SPEED {steps_per_second}")
         if success:
             self.log_message(f"Ajustando velocidad a {steps_per_second} pasos/s (Intervalo: {pulse_interval} μs).", level="INFO")
@@ -502,10 +457,7 @@ class MotorControlGUI:
         memory_info = psutil.virtual_memory()
         if cpu_usage > 80 or memory_info.percent > 80:
             self.system_health = max(0, self.system_health - 10)
-            self.log_message(
-                f"High resource usage detected: CPU {cpu_usage}%, Memory {memory_info.percent}%",
-                level="WARNING"
-            )
+            self.log_message(f"High resource usage detected: CPU {cpu_usage}%, Memory {memory_info.percent}%", level="WARNING")
             logger.warning(f"High resource usage: CPU {cpu_usage}%, Memory {memory_info.percent}%")
         if self.error_count > 5:
             self.system_health = max(0, self.system_health - 10)
