@@ -40,8 +40,7 @@ void Logic::update() {
     }
   }
   
-  // Movimiento manual continuo
-  const int deltaSteps = 10;  // Puedes ajustar este valor para mayor respuesta
+  const int deltaSteps = 10;
   if (!autoMode_) {
     if (movingUp) {
       targetPosition += deltaSteps;
@@ -95,13 +94,11 @@ void Logic::handleSerialCommands() {
       currentState_ = MotorState::IDLE;
     }
     else if (command.startsWith(CMD_SET_SPEED)) {
-      // Se espera un solo parámetro: la nueva velocidad máxima (en pasos/s)
       int spaceIndex = command.indexOf(' ');
       if (spaceIndex != -1) {
         String valueStr = command.substring(spaceIndex + 1);
         float newMaxSpeed = valueStr.toFloat();
         if (newMaxSpeed > 0) {
-          // Ajustamos la velocidad y usamos la aceleración configurada
           adjustSpeed(newMaxSpeed, MOTOR_ACCELERATION);
           Serial.print(F("Velocidad máxima ajustada a: "));
           Serial.print(newMaxSpeed);
@@ -121,7 +118,6 @@ void Logic::handleSerialCommands() {
 }
 
 void Logic::transitionState() {
-  // Modo automático (se mantiene sin cambios)
   switch (currentState_) {
     case MotorState::MOVING_DOWN:
       if (currentDistance_ <= DISTANCE_LOWER_TARGET + DISTANCE_MARGIN) {
