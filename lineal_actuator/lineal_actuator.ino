@@ -13,9 +13,8 @@ void setup() {
   Serial.begin(9600);
   LOG_INFO("Sistema de control de cabezal iniciado.");
   
-  // Inicializar el pin del relé para la bomba de vacío
+  // Configurar el pin del relé para la bomba (activo por nivel bajo: HIGH = apagado)
   pinMode(RELAY_PUMP_PIN, OUTPUT);
-  // Asumimos que el relé es activo por nivel bajo: HIGH => bomba apagada
   digitalWrite(RELAY_PUMP_PIN, HIGH);
   
   // Inicializar módulos

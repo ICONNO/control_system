@@ -24,7 +24,7 @@ public:
   // Detiene el movimiento
   void stop();
 
-  // Actualiza el motor (llamar periódicamente desde loop)
+  // Actualiza el motor (llamar periódicamente en loop)
   void update();
 
   // Configura aceleración y velocidad máxima

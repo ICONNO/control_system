@@ -30,11 +30,8 @@ void Logic::update() {
   if (currentMillis - previousDistanceMillis_ >= SENSOR_READ_INTERVAL_MS) {
     previousDistanceMillis_ = currentMillis;
     currentDistance_ = sensor_.readDistance();
-    if (currentDistance_ >= 0.0) {
-      Serial.print(F("Distancia actual: "));
-      Serial.print(currentDistance_);
-      Serial.println(F(" cm"));
-    } else {
+    // Solo imprimir si hay error o si el valor es negativo; de lo contrario, se actualiza el label en el monitor serial
+    if (currentDistance_ < 0.0) {
       Serial.println(F("Error en la lectura del sensor ultrasónico."));
     }
     if (autoMode_) {
@@ -42,7 +39,8 @@ void Logic::update() {
     }
   }
   
-  const int deltaSteps = 10;  // Ajusta este valor para modificar la sensibilidad del movimiento manual
+  // Movimiento manual continuo
+  const int deltaSteps = 10;  // Puedes ajustar este valor según la respuesta deseada
   if (!autoMode_) {
     if (movingUp) {
       targetPosition += deltaSteps;
@@ -101,7 +99,6 @@ void Logic::handleSerialCommands() {
         String valueStr = command.substring(spaceIndex + 1);
         float newMaxSpeed = valueStr.toFloat();
         if (newMaxSpeed > 0) {
-          // Ajustamos la velocidad máxima y usamos la aceleración definida en Config.h
           adjustSpeed(newMaxSpeed, MOTOR_ACCELERATION);
           Serial.print(F("Velocidad máxima ajustada a: "));
           Serial.print(newMaxSpeed);
@@ -116,12 +113,11 @@ void Logic::handleSerialCommands() {
     }
     else if (command.equalsIgnoreCase(CMD_PUMP_ON)) {
       LOG_INFO("Encendiendo bomba de vacío.");
-      // Suponiendo que el relé es activo por nivel bajo:
-      digitalWrite(RELAY_PUMP_PIN, LOW);
+      digitalWrite(RELAY_PUMP_PIN, HIGH);
     }
     else if (command.equalsIgnoreCase(CMD_PUMP_OFF)) {
       LOG_INFO("Apagando bomba de vacío.");
-      digitalWrite(RELAY_PUMP_PIN, HIGH);
+      digitalWrite(RELAY_PUMP_PIN, LOW);
     }
     else {
       LOG_ERROR("Comando no reconocido.");

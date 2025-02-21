@@ -18,9 +18,6 @@ class SerialInterface:
         self.stop_thread = False
 
     def connect(self):
-        """
-        Establece la conexión serial.
-        """
         try:
             self.serial_conn = serial.Serial(self.port, self.baudrate, timeout=1)
             self.is_connected = True
@@ -35,9 +32,6 @@ class SerialInterface:
             return False
 
     def disconnect(self):
-        """
-        Cierra la conexión serial.
-        """
         self.stop_thread = True
         if self.read_thread and self.read_thread.is_alive():
             self.read_thread.join()
@@ -47,15 +41,9 @@ class SerialInterface:
         self.is_connected = False
 
     def register_callback(self, callback):
-        """
-        Registra una función de callback para manejar datos recibidos.
-        """
         self.callback = callback
 
     def read_from_port(self):
-        """
-        Lee datos desde el puerto serial y los envía al callback.
-        """
         while not self.stop_thread:
             try:
                 if self.serial_conn.in_waiting:
@@ -69,9 +57,6 @@ class SerialInterface:
                 break
 
     def send_command(self, command):
-        """
-        Envía un comando al Arduino.
-        """
         if self.is_connected and self.serial_conn:
             try:
                 self.serial_conn.write(f"{command}\n".encode('utf-8'))
@@ -82,5 +67,5 @@ class SerialInterface:
                 self.is_connected = False
                 return False
         else:
-            logging.error("Intento de enviar comando mientras no hay conexión serial.")
+            logging.error("Intento de enviar comando sin conexión serial.")
             return False

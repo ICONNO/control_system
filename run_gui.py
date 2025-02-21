@@ -17,7 +17,6 @@ def setup_logging():
     
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
-
     formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s')
     from logging.handlers import RotatingFileHandler
     handler = RotatingFileHandler("logs/app.log", maxBytes=5*1024*1024, backupCount=5)
@@ -38,7 +37,7 @@ def main():
         logging.error("No se pudo establecer conexión serial. Saliendo.")
         sys.exit(1)
     root = ttkb.Window(themename="superhero")
-    root.title("Control de Motor y Estado de la Máquina")
+    root.title("Control de Motor y Bomba de Vacío")
     app = MotorControlGUI(root, serial_comm)
     root.protocol("WM_DELETE_WINDOW", app.on_closing)
     root.mainloop()
