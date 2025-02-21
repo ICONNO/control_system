@@ -6,6 +6,8 @@ const String CMD_UP = "UP";
 const String CMD_DOWN = "DOWN";
 const String CMD_STOP = "STOP";
 const String CMD_SET_SPEED = "SET_SPEED";
+const String CMD_PUMP_ON = "PUMP_ON";
+const String CMD_PUMP_OFF = "PUMP_OFF";
 
 Logic::Logic(Motor& motor, Sensor& sensor)
   : motor_(motor), sensor_(sensor),
@@ -40,7 +42,7 @@ void Logic::update() {
     }
   }
   
-  const int deltaSteps = 10;
+  const int deltaSteps = 10;  // Ajusta este valor para modificar la sensibilidad del movimiento manual
   if (!autoMode_) {
     if (movingUp) {
       targetPosition += deltaSteps;
@@ -99,6 +101,7 @@ void Logic::handleSerialCommands() {
         String valueStr = command.substring(spaceIndex + 1);
         float newMaxSpeed = valueStr.toFloat();
         if (newMaxSpeed > 0) {
+          // Ajustamos la velocidad máxima y usamos la aceleración definida en Config.h
           adjustSpeed(newMaxSpeed, MOTOR_ACCELERATION);
           Serial.print(F("Velocidad máxima ajustada a: "));
           Serial.print(newMaxSpeed);
@@ -111,6 +114,15 @@ void Logic::handleSerialCommands() {
         LOG_ERROR("Formato de comando incorrecto para SET_SPEED.");
       }
     }
+    else if (command.equalsIgnoreCase(CMD_PUMP_ON)) {
+      LOG_INFO("Encendiendo bomba de vacío.");
+      // Suponiendo que el relé es activo por nivel bajo:
+      digitalWrite(RELAY_PUMP_PIN, LOW);
+    }
+    else if (command.equalsIgnoreCase(CMD_PUMP_OFF)) {
+      LOG_INFO("Apagando bomba de vacío.");
+      digitalWrite(RELAY_PUMP_PIN, HIGH);
+    }
     else {
       LOG_ERROR("Comando no reconocido.");
     }
@@ -118,6 +130,7 @@ void Logic::handleSerialCommands() {
 }
 
 void Logic::transitionState() {
+  // Modo automático: se mueve en función de la lectura del sensor
   switch (currentState_) {
     case MotorState::MOVING_DOWN:
       if (currentDistance_ <= DISTANCE_LOWER_TARGET + DISTANCE_MARGIN) {

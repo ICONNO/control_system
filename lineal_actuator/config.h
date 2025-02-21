@@ -9,6 +9,8 @@ const uint8_t MOTOR_DIR_PIN = 4;        // Pin de DIR (para el motor)
 const uint8_t SENSOR_TRIG_PIN = 9;      // Pin de Trigger del sensor ultrasónico
 const uint8_t SENSOR_ECHO_PIN = 10;     // Pin de Echo del sensor ultrasónico
 // No se usa ENABLE_PIN
+// Pin para el relé que controla la bomba de vacío
+const uint8_t RELAY_PUMP_PIN = 12;
 
 // === Parámetros del Sistema ===
 // Distancias objetivo (en centímetros)
