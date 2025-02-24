@@ -126,7 +126,6 @@ void Logic::handleSerialCommands() {
 }
 
 void Logic::transitionState() {
-  // Modo automático: se mueve en función de la lectura del sensor
   switch (currentState_) {
     case MotorState::MOVING_DOWN:
       if (currentDistance_ <= DISTANCE_LOWER_TARGET + DISTANCE_MARGIN) {
