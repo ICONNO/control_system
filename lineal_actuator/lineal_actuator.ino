@@ -13,9 +13,9 @@ void setup() {
   Serial.begin(9600);
   LOG_INFO("Sistema de control de cabezal iniciado.");
   
-  // Configurar el pin del relé para la bomba (activo por nivel bajo: HIGH = apagado)
+  // Configurar el pin del relé para la bomba (activo por nivel bajo: low = apagado)
   pinMode(RELAY_PUMP_PIN, OUTPUT);
-  digitalWrite(RELAY_PUMP_PIN, HIGH);
+  digitalWrite(RELAY_PUMP_PIN, LOW);
   
   // Inicializar módulos
   motor.initialize();
