@@ -4,7 +4,6 @@
 #include "Sensor.h"
 #include "Logic.h"
 
-// Instanciación de módulos
 Motor motor(MOTOR_PUL_PIN, MOTOR_DIR_PIN);
 Sensor sensor(SENSOR_TRIG_PIN, SENSOR_ECHO_PIN);
 Logic logic(motor, sensor);
@@ -13,11 +12,9 @@ void setup() {
   Serial.begin(9600);
   LOG_INFO("Sistema de control de cabezal iniciado.");
   
-  // Configurar el pin del relé para la bomba (activo por nivel bajo: low = apagado)
   pinMode(RELAY_PUMP_PIN, OUTPUT);
   digitalWrite(RELAY_PUMP_PIN, LOW);
   
-  // Inicializar módulos
   motor.initialize();
   sensor.initialize();
   logic.initialize();

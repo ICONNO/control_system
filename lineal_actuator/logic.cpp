@@ -30,7 +30,6 @@ void Logic::update() {
   if (currentMillis - previousDistanceMillis_ >= SENSOR_READ_INTERVAL_MS) {
     previousDistanceMillis_ = currentMillis;
     currentDistance_ = sensor_.readDistance();
-    // Solo imprimir si hay error o si el valor es negativo; de lo contrario, se actualiza el label en el monitor serial
     if (currentDistance_ < 0.0) {
       Serial.println(F("Error en la lectura del sensor ultrasónico."));
     }
@@ -39,7 +38,6 @@ void Logic::update() {
     }
   }
   
-  // Movimiento manual continuo
   const int deltaSteps = 10;  // Puedes ajustar este valor según la respuesta deseada
   if (!autoMode_) {
     if (movingUp) {
