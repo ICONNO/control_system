@@ -9,14 +9,24 @@ const uint8_t MOTOR_DIR_PIN = 4;        // Pin de DIR (para el motor)
 const uint8_t SENSOR_TRIG_PIN = 9;      // Pin de Trigger del sensor ultrasónico
 const uint8_t SENSOR_ECHO_PIN = 10;     // Pin de Echo del sensor ultrasónico
 const uint8_t RELAY_PUMP_PIN = 12;      // Pin para controlar el relé de la bomba (activo por nivel bajo)
+
+// === Parámetros del Sistema ===
+// Distancias objetivo (en centímetros)
 const float DISTANCE_LOWER_TARGET = 7.0;     
 const float DISTANCE_UPPER_TARGET = 30.0;    
 const float DISTANCE_MARGIN = 0.1;           
+
+// Parámetros para aceleración del motor (usados con AccelStepper)
 const float MOTOR_ACCELERATION = 2000.0;   // pasos/s² (aceleración mayor para rampa corta)
 const float MOTOR_MAX_SPEED = 1000.0;       // pasos/s
+
+// Intervalo de lectura del sensor ultrasónico (ms)
 const unsigned long SENSOR_READ_INTERVAL_MS = 100;
+
+// Timeout para la lectura del sensor ultrasónico (us)
 const unsigned long ULTRASONIC_TIMEOUT_US = 30000;
 
+// === Definición de Estados ===
 enum class MotorState {
   MOVING_DOWN,
   MOVING_UP,

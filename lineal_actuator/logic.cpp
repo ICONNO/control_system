@@ -32,13 +32,18 @@ void Logic::update() {
     currentDistance_ = sensor_.readDistance();
     if (currentDistance_ < 0.0) {
       Serial.println(F("Error en la lectura del sensor ultrasónico."));
+    } else {
+      // Enviar lectura para actualizar la GUI
+      Serial.print(F("Distancia actual: "));
+      Serial.print(currentDistance_);
+      Serial.println(F(" cm"));
     }
     if (autoMode_) {
       processState();
     }
   }
   
-  const int deltaSteps = 10;  // Puedes ajustar este valor según la respuesta deseada
+  const int deltaSteps = 10;  // Ajustable según la respuesta deseada
   if (!autoMode_) {
     if (movingUp) {
       targetPosition += deltaSteps;
