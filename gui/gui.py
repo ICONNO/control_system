@@ -1,3 +1,10 @@
+#!/usr/bin/env python3
+"""
+Interfaz de control para el motor y la bomba de vacío.
+Se muestra información esencial (modo, distancia, estado) y se dispone de controles para
+cambiar modos, mover el motor y controlar la bomba.
+"""
+
 import tkinter as tk
 from tkinter import messagebox
 import ttkbootstrap as ttkb
@@ -11,12 +18,14 @@ from typing import Optional
 from .serial_comm import SerialInterface
 from .styles import set_styles
 
+# ------------------- Logging Configuration -------------------
 logging.basicConfig(
     filename='logs/app.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
+# -------------------------------------------------------------
 
 class CreateToolTip:
     """Clase para crear un tooltip en un widget."""
@@ -74,8 +83,8 @@ class CreateToolTip:
 class MotorControlGUI:
     """
     Interfaz de control para el motor y la bomba de vacío.
-    Muestra información esencial (modo, distancia, velocidad) y proporciona botones
-    para activar los distintos modos de operación, control manual y de la bomba.
+    Muestra información esencial (modo, distancia, estado) y ofrece botones para
+    activar modos de operación, control manual y de la bomba.
     """
     def __init__(self, master: tk.Tk, serial_comm: SerialInterface) -> None:
         self.master = master
@@ -85,9 +94,10 @@ class MotorControlGUI:
         self.style = ttkb.Style(theme='superhero')
         logger.info("Inicializando la interfaz GUI.")
 
+        # Variables de estado
         self.mode = tk.StringVar(value="Manual")
         self.current_distance = tk.StringVar(value="Desconocida")
-        self.pulse_interval = tk.IntVar(value=800)  # en microsegundos (para el slider)
+        self.pulse_interval = tk.IntVar(value=800)  # Valor del slider en microsegundos
         self.system_status = tk.StringVar(
             value="Operando en Modo Real" if self.serial.is_connected else "Desconectado"
         )
@@ -102,6 +112,7 @@ class MotorControlGUI:
         self.master.after(100, self.process_queue)
         logger.info("Interfaz GUI inicializada.")
 
+        # Configuración de la cola de comandos y monitoreo
         self.command_queue = queue.Queue()
         self.command_lock = threading.Lock()
         self.last_command_time = 0.0
@@ -120,72 +131,71 @@ class MotorControlGUI:
         self.master.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def create_widgets(self) -> None:
+        # Diseño simplificado: un panel superior con información, una fila de botones y slider, y área de logs.
         main_frame = ttkb.Frame(self.master, padding=10)
         main_frame.pack(fill="both", expand=True)
 
+        # Panel de información
         info_frame = ttkb.Frame(main_frame)
         info_frame.pack(fill="x", pady=5)
-
         ttkb.Label(info_frame, text="Modo:").pack(side="left", padx=5)
         ttkb.Label(info_frame, textvariable=self.mode, foreground="#a020f0", font=("Consolas", 12, "bold")).pack(side="left", padx=5)
-
         ttkb.Label(info_frame, text="Distancia:").pack(side="left", padx=5)
         ttkb.Label(info_frame, textvariable=self.current_distance, foreground="#00ff00", font=("Consolas", 12, "bold")).pack(side="left", padx=5)
-
         ttkb.Label(info_frame, text="Estado:").pack(side="left", padx=5)
         ttkb.Label(info_frame, textvariable=self.system_status, foreground="#ff00ff", font=("Consolas", 12, "bold")).pack(side="left", padx=5)
 
+        # Panel de botones
         button_frame = ttkb.Frame(main_frame)
         button_frame.pack(fill="x", pady=5)
-
         btn_auto = ttkb.Button(button_frame, text="Modo Automático", command=self.activate_auto)
         btn_auto.pack(side="left", padx=5, pady=5)
         CreateToolTip(btn_auto, "Activa el modo automático del motor.")
-
         btn_manual = ttkb.Button(button_frame, text="Modo Manual", command=self.activate_manual)
         btn_manual.pack(side="left", padx=5, pady=5)
         CreateToolTip(btn_manual, "Activa el modo manual del motor.")
-
         btn_up = ttkb.Button(button_frame, text="Subir")
         btn_up.pack(side="left", padx=5, pady=5)
+        # Invertimos: tecla Up se asocia con acción de bajar (por diseño)
         btn_up.bind('<ButtonPress>', self.on_down_press)
         btn_up.bind('<ButtonRelease>', self.on_down_release)
         CreateToolTip(btn_up, "Mueve el motor hacia abajo mientras se mantiene presionado.")
-
         btn_down = ttkb.Button(button_frame, text="Bajar")
         btn_down.pack(side="left", padx=5, pady=5)
         btn_down.bind('<ButtonPress>', self.on_up_press)
         btn_down.bind('<ButtonRelease>', self.on_up_release)
         CreateToolTip(btn_down, "Mueve el motor hacia arriba mientras se mantiene presionado.")
-
         btn_stop = ttkb.Button(button_frame, text="Detener", command=self.stop_motor)
         btn_stop.pack(side="left", padx=5, pady=5)
         CreateToolTip(btn_stop, "Detiene el motor inmediatamente.")
-
         btn_pump_on = ttkb.Button(button_frame, text="Encender Bomba", command=self.pump_on)
         btn_pump_on.pack(side="left", padx=5, pady=5)
         CreateToolTip(btn_pump_on, "Enciende la bomba de vacío.")
-
         btn_pump_off = ttkb.Button(button_frame, text="Apagar Bomba", command=self.pump_off)
         btn_pump_off.pack(side="left", padx=5, pady=5)
         CreateToolTip(btn_pump_off, "Apaga la bomba de vacío.")
 
+        # Panel del slider de velocidad
         speed_frame = ttkb.Frame(main_frame)
         speed_frame.pack(fill="x", pady=5)
         ttkb.Label(speed_frame, text="Intervalo (μs):").pack(side="left", padx=5)
-        self.speed_slider = ttkb.Scale(speed_frame, from_=20, to=2000, orient="horizontal", variable=self.pulse_interval, command=self.update_speed)
+        self.speed_slider = ttkb.Scale(speed_frame, from_=20, to=2000, orient="horizontal",
+                                        variable=self.pulse_interval, command=self.update_speed)
         self.speed_slider.pack(side="left", fill="x", expand=True, padx=5)
         self.speed_display = ttkb.Label(speed_frame, text=f"{self.pulse_interval.get()} μs")
         self.speed_display.pack(side="left", padx=5)
 
+        # Área de logs: Se muestran eventos y mensajes importantes (no cada lectura del sensor)
         log_frame = ttkb.LabelFrame(main_frame, text="Logs", padding=10)
         log_frame.pack(fill="both", expand=True, pady=5)
-        self.text_log = tk.Text(log_frame, state='disabled', wrap='word', height=10, bg="#1e1e1e", fg="#ffffff", font=("Consolas", 10))
+        self.text_log = tk.Text(log_frame, state='disabled', wrap='word', height=10,
+                                 bg="#1e1e1e", fg="#ffffff", font=("Consolas", 10))
         self.text_log.pack(side="left", fill="both", expand=True)
         scrollbar = ttkb.Scrollbar(log_frame, orient="vertical", command=self.text_log.yview)
         scrollbar.pack(side="right", fill="y")
         self.text_log.configure(yscrollcommand=scrollbar.set)
 
+        # Asignación de teclas (invertida para la lógica de movimiento)
         self.master.bind("<KeyPress-Up>", self.on_down_press)
         self.master.bind("<KeyRelease-Up>", self.on_down_release)
         self.master.bind("<KeyPress-Down>", self.on_up_press)
@@ -209,6 +219,7 @@ class MotorControlGUI:
         finally:
             self.master.after(100, self.process_queue)
 
+    # Inversión de eventos: Tecla Up => acción para bajar, Tecla Down => acción para subir
     def on_down_press(self, event: Optional[tk.Event] = None) -> None:
         if not self.down_pressed:
             self.down_pressed = True
@@ -271,6 +282,7 @@ class MotorControlGUI:
             logger.info("Comando 'STOP' enviado.")
 
     def update_speed(self, event: Optional[tk.Event] = None) -> None:
+        # Conversión: steps/s = 1,000,000 / pulse_interval (μs)
         pulse_interval = self.pulse_interval.get()
         if pulse_interval < 1:
             pulse_interval = 1
@@ -282,7 +294,7 @@ class MotorControlGUI:
             logger.info(f"Comando 'SET_SPEED {steps_per_second}' enviado.")
 
     def handle_serial_data(self, data: str) -> None:
-        # Filtramos los logs del sensor para evitar saturación; actualizamos etiquetas sin loguear cada lectura
+        # Actualizar la etiqueta de distancia sin agregarla al log de la GUI.
         logger.debug(f"Mensaje recibido: {data}")
         if "Distancia actual" in data:
             try:
@@ -318,6 +330,7 @@ class MotorControlGUI:
             logger.debug(f"Mensaje sin clasificar: {data}")
 
     def log_message(self, message: str, level: str = "INFO") -> None:
+        # Solo se muestran mensajes de INFO, WARNING y ERROR en la interfaz.
         if level in ["DEBUG"]:
             return
         color_map = {
@@ -383,7 +396,6 @@ class MotorControlGUI:
                 success = self.serial.send_command(command)
                 if not success:
                     self.log_message(f"Error enviando '{command}'", level="ERROR")
-                # No es necesario registrar cada comando exitoso en el log de la GUI
             except queue.Empty:
                 pass
             except Exception as e:
@@ -440,4 +452,3 @@ class MotorControlGUI:
         else:
             self.log_message("Límite de reintentos alcanzado.", level="ERROR")
             logger.error("Límite de reintentos alcanzado.")
-
