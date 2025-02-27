@@ -7,31 +7,20 @@
 #include "Config.h"
 
 /**
- * Clase que maneja la lógica del sistema.
- * Procesa comandos seriales, actualiza el estado del motor según la lectura del sensor,
- * y administra tanto un modo automático como un modo manual continuo basado en banderas.
+ * Logic class.
+ * Processes serial commands, updates motor state based on sensor readings,
+ * and manages auto and manual modes.
  */
 class Logic {
 public:
     Logic(Motor& motor, Sensor& sensor);
     
-    // Inicializa la lógica del sistema
-    void initialize();
-    
-    // Actualiza la lógica (se debe llamar periódicamente en loop)
-    void update();
-    
-    // Procesa los comandos recibidos por Serial
-    void handleSerialCommands();
-    
-    // Cambia entre modo automático y manual
+    void initialize();      // Initialize logic
+    void update();          // Update logic periodically (called in loop)
+    void handleSerialCommands();  // Process serial commands
     void setAutoMode(bool mode);
-    
-    // Ajusta parámetros del motor (velocidad y aceleración)
     void adjustSpeed(float maxSpeed, float acceleration);
-    
-    // Mueve la cabeza a una posición (bloqueante)
-    bool move_to(long pos);
+    bool move_to(long pos); // Blocking move
     
 private:
     Motor& motor_;
@@ -41,8 +30,6 @@ private:
     MotorState previousState_;
     
     bool autoMode_;
-    
-    // Variables para control continuo manual
     bool movingUp;
     bool movingDown;
     long targetPosition;
@@ -50,11 +37,8 @@ private:
     unsigned long previousDistanceMillis_;
     float currentDistance_;
     
-    // Realiza la transición de estados (modo automático)
-    void transitionState();
-    
-    // Procesa el estado actual llamando a transitionState()
-    void processState();
+    void transitionState();  // Auto mode state transition
+    void processState();     // Process state in auto mode
 };
 
-#endif // LOGIC_H
+#endif  // LOGIC_H

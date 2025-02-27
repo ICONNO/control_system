@@ -5,9 +5,7 @@ import time
 import logging
 
 class SerialInterface:
-    """
-    Clase para manejar la comunicación serial con el Arduino.
-    """
+    """Handles serial communication with the Arduino."""
     def __init__(self, port='COM3', baudrate=9600):
         self.port = port
         self.baudrate = baudrate
@@ -24,10 +22,10 @@ class SerialInterface:
             self.stop_thread = False
             self.read_thread = threading.Thread(target=self.read_from_port, daemon=True)
             self.read_thread.start()
-            logging.info(f"Conectado al puerto serial {self.port} a {self.baudrate} bps.")
+            logging.info(f"Connected to serial port {self.port} at {self.baudrate} bps.")
             return True
         except serial.SerialException as e:
-            logging.error(f"Error al conectar al puerto serial {self.port}: {e}")
+            logging.error(f"Serial connection error on {self.port}: {e}")
             self.is_connected = False
             return False
 
@@ -37,7 +35,7 @@ class SerialInterface:
             self.read_thread.join()
         if self.serial_conn and self.serial_conn.is_open:
             self.serial_conn.close()
-            logging.info(f"Conexión serial {self.port} cerrada.")
+            logging.info(f"Serial port {self.port} closed.")
         self.is_connected = False
 
     def register_callback(self, callback):
@@ -52,7 +50,7 @@ class SerialInterface:
                         self.callback(data)
                 time.sleep(0.1)
             except Exception as e:
-                logging.error(f"Error al leer desde el puerto serial: {e}")
+                logging.error(f"Serial read error: {e}")
                 self.is_connected = False
                 break
 
@@ -60,12 +58,12 @@ class SerialInterface:
         if self.is_connected and self.serial_conn:
             try:
                 self.serial_conn.write(f"{command}\n".encode('utf-8'))
-                logging.debug(f"Comando enviado: {command}")
+                logging.debug(f"Command sent: {command}")
                 return True
             except Exception as e:
-                logging.error(f"Error al enviar comando '{command}': {e}")
+                logging.error(f"Error sending command '{command}': {e}")
                 self.is_connected = False
                 return False
         else:
-            logging.error("Intento de enviar comando sin conexión serial.")
+            logging.error("Attempt to send command without serial connection.")
             return False

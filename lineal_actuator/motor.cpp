@@ -10,7 +10,7 @@ void Motor::initialize() {
   stepper.setAcceleration(MOTOR_ACCELERATION);
   stepper.setMaxSpeed(MOTOR_MAX_SPEED);
   stepper.setCurrentPosition(0);
-  LOG_INFO("Motor inicializado con aceleración y velocidad máximas.");
+  LOG_INFO("Motor initialized with set acceleration and max speed.");
 }
 
 void Motor::moveTo(long absolutePosition) {

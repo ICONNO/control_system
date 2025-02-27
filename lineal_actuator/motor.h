@@ -6,36 +6,21 @@
 
 class Motor {
 public:
-  // Constructor: usa el modo DRIVER (STEP/DIR)
+  // Constructor using DRIVER mode (STEP/DIR)
   Motor(uint8_t stepPin, uint8_t dirPin);
 
-  // Inicializa el hardware y configura aceleración y velocidad máxima
-  void initialize();
-
-  // Mueve el motor a una posición absoluta (no bloqueante)
-  void moveTo(long absolutePosition);
-
-  // Movimiento bloqueante hacia una posición
-  void moveToBlocking(long absolutePosition);
-
-  // Movimiento relativo bloqueante (en pasos)
-  void moveStepsBlocking(long steps);
-
-  // Detiene el movimiento
-  void stop();
-
-  // Actualiza el motor (llamar periódicamente en loop)
-  void update();
-
-  // Configura aceleración y velocidad máxima
+  void initialize();            // Initialize motor hardware
+  void moveTo(long absolutePosition);       // Non-blocking move
+  void moveToBlocking(long absolutePosition);  // Blocking move
+  void moveStepsBlocking(long steps);       // Move relative in blocking mode
+  void stop();                  // Stop motor
+  void update();                // Must be called in loop
   void setAcceleration(float acceleration);
   void setMaxSpeed(float speed);
-
-  // Devuelve la posición actual (en pasos)
   long currentPosition();
 
 private:
   AccelStepper stepper;
 };
 
-#endif // MOTOR_H
+#endif  // MOTOR_H

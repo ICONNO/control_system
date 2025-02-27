@@ -4,16 +4,16 @@
 #include "Sensor.h"
 #include "Logic.h"
 
-// Instanciación de módulos
-Motor motor(MOTOR_PUL_PIN, MOTOR_DIR_PIN);
+// Instantiate modules
+Motor motor(MOTOR_STEP_PIN, MOTOR_DIR_PIN);
 Sensor sensor(SENSOR_TRIG_PIN, SENSOR_ECHO_PIN);
 Logic logic(motor, sensor);
 
 void setup() {
   Serial.begin(9600);
-  LOG_INFO("Sistema de control de cabezal iniciado.");
+  LOG_INFO("Head control system started.");
   
-  // Configurar el relé para la bomba: Bomba apagada por defecto (según la lógica de tu sistema)
+  // Set pump relay pin (pump off by default)
   pinMode(RELAY_PUMP_PIN, OUTPUT);
   digitalWrite(RELAY_PUMP_PIN, LOW);
   

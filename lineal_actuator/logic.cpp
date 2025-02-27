@@ -1,13 +1,13 @@
 #include "Logic.h"
 
-// Comandos Seriales
-const String CMD_AUTO = "AUTO";
-const String CMD_UP = "UP";
-const String CMD_DOWN = "DOWN";
-const String CMD_STOP = "STOP";
+// Serial command definitions
+const String CMD_AUTO      = "AUTO";
+const String CMD_UP        = "UP";
+const String CMD_DOWN      = "DOWN";
+const String CMD_STOP      = "STOP";
 const String CMD_SET_SPEED = "SET_SPEED";
-const String CMD_PUMP_ON = "PUMP_ON";
-const String CMD_PUMP_OFF = "PUMP_OFF";
+const String CMD_PUMP_ON   = "PUMP_ON";
+const String CMD_PUMP_OFF  = "PUMP_OFF";
 
 Logic::Logic(Motor& motor, Sensor& sensor)
   : motor_(motor), sensor_(sensor),
@@ -22,19 +22,18 @@ Logic::Logic(Motor& motor, Sensor& sensor)
 void Logic::initialize() {
   currentState_ = MotorState::IDLE;
   previousState_ = MotorState::IDLE;
-  LOG_INFO("Lógica del sistema inicializada.");
+  LOG_INFO("System logic initialized.");
 }
 
 void Logic::update() {
-  unsigned long currentMillis = millis();
-  if (currentMillis - previousDistanceMillis_ >= SENSOR_READ_INTERVAL_MS) {
-    previousDistanceMillis_ = currentMillis;
+  unsigned long now = millis();
+  if (now - previousDistanceMillis_ >= SENSOR_READ_INTERVAL_MS) {
+    previousDistanceMillis_ = now;
     currentDistance_ = sensor_.readDistance();
     if (currentDistance_ < 0.0) {
-      Serial.println(F("Error en la lectura del sensor ultrasónico."));
+      Serial.println(F("Ultrasonic sensor error."));
     } else {
-      // Enviar lectura para actualizar la GUI
-      Serial.print(F("Distancia actual: "));
+      Serial.print(F("Current distance: "));
       Serial.print(currentDistance_);
       Serial.println(F(" cm"));
     }
@@ -43,7 +42,7 @@ void Logic::update() {
     }
   }
   
-  const int deltaSteps = 10;  // Ajustable según la respuesta deseada
+  const int deltaSteps = 10;  // Step increment for manual control
   if (!autoMode_) {
     if (movingUp) {
       targetPosition += deltaSteps;
@@ -60,13 +59,13 @@ void Logic::update() {
 
 void Logic::handleSerialCommands() {
   while (Serial.available() > 0) {
-    String command = Serial.readStringUntil('\n');
-    command.trim();
-    Serial.print(F("Comando recibido: "));
-    Serial.println(command);
+    String cmd = Serial.readStringUntil('\n');
+    cmd.trim();
+    Serial.print(F("Command received: "));
+    Serial.println(cmd);
 
-    if (command.equalsIgnoreCase(CMD_AUTO)) {
-      LOG_INFO("Activando modo automático.");
+    if (cmd.equalsIgnoreCase(CMD_AUTO)) {
+      LOG_INFO("Auto mode activated.");
       setAutoMode(true);
       motor_.moveToBlocking(10000);
       currentState_ = MotorState::MOVING_DOWN;
@@ -75,55 +74,55 @@ void Logic::handleSerialCommands() {
       movingDown = false;
       targetPosition = motor_.currentPosition();
     }
-    else if (command.equalsIgnoreCase(CMD_UP)) {
-      LOG_INFO("Modo manual: Activando subida continua.");
+    else if (cmd.equalsIgnoreCase(CMD_UP)) {
+      LOG_INFO("Manual mode: Continuous up.");
       setAutoMode(false);
       movingUp = true;
       movingDown = false;
       targetPosition = motor_.currentPosition();
     }
-    else if (command.equalsIgnoreCase(CMD_DOWN)) {
-      LOG_INFO("Modo manual: Activando bajada continua.");
+    else if (cmd.equalsIgnoreCase(CMD_DOWN)) {
+      LOG_INFO("Manual mode: Continuous down.");
       setAutoMode(false);
       movingDown = true;
       movingUp = false;
       targetPosition = motor_.currentPosition();
     }
-    else if (command.equalsIgnoreCase(CMD_STOP)) {
-      LOG_INFO("Deteniendo movimiento manual.");
+    else if (cmd.equalsIgnoreCase(CMD_STOP)) {
+      LOG_INFO("Stopping manual motion.");
       movingUp = false;
       movingDown = false;
       motor_.stop();
       currentState_ = MotorState::IDLE;
     }
-    else if (command.startsWith(CMD_SET_SPEED)) {
-      int spaceIndex = command.indexOf(' ');
-      if (spaceIndex != -1) {
-        String valueStr = command.substring(spaceIndex + 1);
-        float newMaxSpeed = valueStr.toFloat();
-        if (newMaxSpeed > 0) {
-          adjustSpeed(newMaxSpeed, MOTOR_ACCELERATION);
-          Serial.print(F("Velocidad máxima ajustada a: "));
-          Serial.print(newMaxSpeed);
-          Serial.println(F(" pasos/s."));
+    else if (cmd.startsWith(CMD_SET_SPEED)) {
+      int spaceIdx = cmd.indexOf(' ');
+      if (spaceIdx != -1) {
+        String valStr = cmd.substring(spaceIdx + 1);
+        float newSpeed = valStr.toFloat();
+        if (newSpeed > 0) {
+          adjustSpeed(newSpeed, MOTOR_ACCELERATION);
+          Serial.print(F("Max speed set to: "));
+          Serial.print(newSpeed);
+          Serial.println(F(" steps/s."));
         } else {
-          LOG_ERROR("Valor de velocidad inválido.");
+          LOG_ERROR("Invalid speed value.");
         }
       }
       else {
-        LOG_ERROR("Formato de comando incorrecto para SET_SPEED.");
+        LOG_ERROR("Incorrect SET_SPEED format.");
       }
     }
-    else if (command.equalsIgnoreCase(CMD_PUMP_ON)) {
-      LOG_INFO("Encendiendo bomba de vacío.");
+    else if (cmd.equalsIgnoreCase(CMD_PUMP_ON)) {
+      LOG_INFO("Vacuum pump ON.");
       digitalWrite(RELAY_PUMP_PIN, HIGH);
     }
-    else if (command.equalsIgnoreCase(CMD_PUMP_OFF)) {
-      LOG_INFO("Apagando bomba de vacío.");
+    else if (cmd.equalsIgnoreCase(CMD_PUMP_OFF)) {
+      LOG_INFO("Vacuum pump OFF.");
       digitalWrite(RELAY_PUMP_PIN, LOW);
     }
     else {
-      LOG_ERROR("Comando no reconocido.");
+      LOG_ERROR("Unknown command.");
     }
   }
 }
@@ -131,16 +130,16 @@ void Logic::handleSerialCommands() {
 void Logic::transitionState() {
   switch (currentState_) {
     case MotorState::MOVING_DOWN:
-      if (currentDistance_ <= DISTANCE_LOWER_TARGET + DISTANCE_MARGIN) {
+      if (currentDistance_ <= DIST_LOWER_TARGET + DIST_MARGIN) {
         motor_.stop();
-        LOG_INFO("¡Distancia inferior alcanzada! Deteniendo motor.");
+        LOG_INFO("Lower limit reached. Stopping motor.");
         currentState_ = MotorState::IDLE;
       }
       break;
     case MotorState::MOVING_UP:
-      if (currentDistance_ >= DISTANCE_UPPER_TARGET - DISTANCE_MARGIN) {
+      if (currentDistance_ >= DIST_UPPER_TARGET - DIST_MARGIN) {
         motor_.stop();
-        LOG_INFO("¡Distancia superior alcanzada! Deteniendo motor.");
+        LOG_INFO("Upper limit reached. Stopping motor.");
         currentState_ = MotorState::IDLE;
       }
       break;

@@ -9,7 +9,7 @@ Sensor::Sensor(uint8_t trigPin, uint8_t echoPin)
 void Sensor::initialize() {
   pinMode(trigPin_, OUTPUT);
   pinMode(echoPin_, INPUT);
-  LOG_INFO("Sensor ultrasónico inicializado.");
+  LOG_INFO("Ultrasonic sensor initialized.");
 }
 
 float Sensor::readDistance() {
@@ -21,10 +21,10 @@ float Sensor::readDistance() {
 
   long duration = pulseIn(echoPin_, HIGH, ULTRASONIC_TIMEOUT_US);
   if (duration == 0) {
-    LOG_ERROR("Timeout en la lectura del sensor ultrasónico.");
+    LOG_ERROR("Ultrasonic sensor timeout.");
     return -1.0;
   }
   float distance = (duration * 0.0343) / 2.0;
-  LOG_DEBUG(("Distancia leída: " + String(distance) + " cm").c_str());
+  LOG_DEBUG(("Distance read: " + String(distance) + " cm").c_str());
   return distance;
 }
