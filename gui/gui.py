@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-Motor and Vacuum Pump Control GUI.
+Motor and Vacuum Pump Control GUI
+
 Displays mode, current distance, and system status.
-Provides buttons for auto/manual operation and pump control.
+Provides buttons for auto/manual operation, pump control, and remote image capture.
 """
 
 import tkinter as tk
@@ -17,14 +18,16 @@ import psutil
 from typing import Optional
 from .serial_comm import SerialInterface
 from .styles import set_styles
+from remote_capture import capture_images  # Make sure remote_capture.py is in your project root
 
-# Logging config
+# Logging configuration
 logging.basicConfig(
     filename='logs/app.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
+
 
 class CreateToolTip:
     """Simple tooltip for a widget."""
@@ -79,8 +82,9 @@ class CreateToolTip:
             self.tw.destroy()
             self.tw = None
 
+
 class MotorControlGUI:
-    """GUI for motor and pump control."""
+    """GUI for motor and vacuum pump control."""
     def __init__(self, master: tk.Tk, serial_comm: SerialInterface) -> None:
         self.master = master
         self.serial = serial_comm
@@ -106,7 +110,7 @@ class MotorControlGUI:
         self.master.after(100, self.process_queue)
         logger.info("GUI initialized.")
 
-        # Command queue and resource monitoring
+        # Command queue and monitoring variables
         self.command_queue = queue.Queue()
         self.command_lock = threading.Lock()
         self.last_command_time = 0.0
@@ -127,7 +131,7 @@ class MotorControlGUI:
         main_frame = ttkb.Frame(self.master, padding=10)
         main_frame.pack(fill="both", expand=True)
 
-        # Top info panel
+        # Info panel
         info_frame = ttkb.Frame(main_frame)
         info_frame.pack(fill="x", pady=5)
         ttkb.Label(info_frame, text="Mode:").pack(side="left", padx=5)
@@ -148,12 +152,13 @@ class MotorControlGUI:
         CreateToolTip(btn_manual, "Activate manual mode.")
         btn_up = ttkb.Button(button_frame, text="Up")
         btn_up.pack(side="left", padx=5, pady=5)
-        # Inversion: Up key triggers 'down' action
+        # Inverted: Up button triggers move_down
         btn_up.bind('<ButtonPress>', self.on_down_press)
         btn_up.bind('<ButtonRelease>', self.on_down_release)
         CreateToolTip(btn_up, "Move motor down while pressed.")
         btn_down = ttkb.Button(button_frame, text="Down")
         btn_down.pack(side="left", padx=5, pady=5)
+        # Inverted: Down button triggers move_up
         btn_down.bind('<ButtonPress>', self.on_up_press)
         btn_down.bind('<ButtonRelease>', self.on_up_release)
         CreateToolTip(btn_down, "Move motor up while pressed.")
@@ -166,6 +171,10 @@ class MotorControlGUI:
         btn_pump_off = ttkb.Button(button_frame, text="Pump Off", command=self.pump_off)
         btn_pump_off.pack(side="left", padx=5, pady=5)
         CreateToolTip(btn_pump_off, "Turn vacuum pump off.")
+        # New Capture button
+        btn_capture = ttkb.Button(button_frame, text="Capture Image", command=self.trigger_capture)
+        btn_capture.pack(side="left", padx=5, pady=5)
+        CreateToolTip(btn_capture, "Trigger remote image capture.")
 
         # Speed slider panel
         speed_frame = ttkb.Frame(main_frame)
@@ -187,13 +196,21 @@ class MotorControlGUI:
         scrollbar.pack(side="right", fill="y")
         self.text_log.configure(yscrollcommand=scrollbar.set)
 
-        # Key bindings (inverted for our movement logic)
+        # Key bindings (inverted for movement logic)
         self.master.bind("<KeyPress-Up>", self.on_down_press)
         self.master.bind("<KeyRelease-Up>", self.on_down_release)
         self.master.bind("<KeyPress-Down>", self.on_up_press)
         self.master.bind("<KeyRelease-Down>", self.on_up_release)
         self.master.focus_set()
         logger.info("Widgets created and arranged.")
+
+    def trigger_capture(self) -> None:
+        """Trigger remote image capture via SSH."""
+        raspberry_ip = "192.168.1.96"
+        if capture_images(raspberry_ip):
+            self.log_message("Remote capture succeeded.", level="INFO")
+        else:
+            self.log_message("Remote capture failed.", level="ERROR")
 
     def enqueue_serial_data(self, data: str) -> None:
         self.queue.put(data)
@@ -312,7 +329,6 @@ class MotorControlGUI:
             logger.debug(f"Unclassified: {data}")
 
     def log_message(self, message: str, level: str = "INFO") -> None:
-        # Only show INFO, WARNING, and ERROR messages in the GUI log
         if level == "DEBUG":
             return
         color_map = {"INFO": "#ffffff", "WARNING": "#ffa500", "ERROR": "#ff0000"}

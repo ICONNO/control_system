@@ -1,0 +1,1131 @@
+2025-02-28 11:26:16,315 [INFO] Connecting to serial port COM3.
+2025-02-28 11:26:16,316 [ERROR] Serial connection error on COM3: could not open port 'COM3': FileNotFoundError(2, 'El sistema no puede encontrar el archivo especificado.', None, 2)
+2025-02-28 11:26:16,316 [ERROR] Failed to connect to serial. Exiting.
+2025-02-28 11:26:34,116 [INFO] Connecting to serial port COM3.
+2025-02-28 11:26:34,119 [INFO] Connected to serial port COM3 at 9600 bps.
+2025-02-28 11:26:37,549 [INFO] Initializing GUI.
+2025-02-28 11:26:45,090 [INFO] Connecting to serial port COM3.
+2025-02-28 11:26:45,093 [INFO] Connected to serial port COM3 at 9600 bps.
+2025-02-28 11:26:45,142 [INFO] Initializing GUI.
+2025-02-28 11:41:22,240 [INFO] Connecting to serial port COM3.
+2025-02-28 11:41:22,244 [INFO] Connected to serial port COM3 at 9600 bps.
+2025-02-28 11:41:22,317 [INFO] Initializing GUI.
+2025-02-28 11:41:22,400 [INFO] Widgets created and arranged.
+2025-02-28 11:41:22,402 [INFO] GUI initialized.
+2025-02-28 11:41:24,646 [INFO] Executing remote command: sshpass -p admin0 ssh dev@192.168.1.96 "python3 /home/dev/Desktop/automata/capture_both_cameras.py"
+2025-02-28 11:41:24,691 [ERROR] Capture failed. Error output:
+2025-02-28 11:41:24,692 [ERROR] "sshpass" no se reconoce como un comando interno o externo,
+programa o archivo por lotes ejecutable.
+
+2025-02-28 11:41:24,693 [INFO] Log: Remote capture failed.
+2025-02-28 11:41:27,422 [INFO] Log: High usage: CPU 2.2%, Memory 86.5%
+2025-02-28 11:41:27,422 [WARNING] High usage: CPU 2.2%, Memory 86.5%
+2025-02-28 11:41:32,434 [INFO] Log: High usage: CPU 2.5%, Memory 90.5%
+2025-02-28 11:41:32,435 [WARNING] High usage: CPU 2.5%, Memory 90.5%
+2025-02-28 11:41:37,451 [INFO] Log: High usage: CPU 2.5%, Memory 90.7%
+2025-02-28 11:41:37,452 [WARNING] High usage: CPU 2.5%, Memory 90.7%
+2025-02-28 11:41:42,470 [INFO] Log: High usage: CPU 1.8%, Memory 90.4%
+2025-02-28 11:41:42,471 [WARNING] High usage: CPU 1.8%, Memory 90.4%
+2025-02-28 11:41:47,491 [INFO] Log: High usage: CPU 1.2%, Memory 90.4%
+2025-02-28 11:41:47,492 [WARNING] High usage: CPU 1.2%, Memory 90.4%
+2025-02-28 11:41:52,501 [INFO] Log: High usage: CPU 0.9%, Memory 90.4%
+2025-02-28 11:41:52,502 [WARNING] High usage: CPU 0.9%, Memory 90.4%
+2025-02-28 11:41:57,511 [INFO] Log: High usage: CPU 0.7%, Memory 90.3%
+2025-02-28 11:41:57,512 [WARNING] High usage: CPU 0.7%, Memory 90.3%
+2025-02-28 11:42:02,540 [INFO] Log: High usage: CPU 1.7%, Memory 90.8%
+2025-02-28 11:42:02,541 [WARNING] High usage: CPU 1.7%, Memory 90.8%
+2025-02-28 11:42:07,549 [INFO] Log: High usage: CPU 1.2%, Memory 90.9%
+2025-02-28 11:42:07,550 [WARNING] High usage: CPU 1.2%, Memory 90.9%
+2025-02-28 11:42:12,565 [INFO] Log: High usage: CPU 1.1%, Memory 90.9%
+2025-02-28 11:42:12,566 [WARNING] High usage: CPU 1.1%, Memory 90.9%
+2025-02-28 11:42:17,575 [INFO] Log: High usage: CPU 1.3%, Memory 90.7%
+2025-02-28 11:42:17,576 [WARNING] High usage: CPU 1.3%, Memory 90.7%
+2025-02-28 11:42:22,592 [INFO] Log: High usage: CPU 1.3%, Memory 90.5%
+2025-02-28 11:42:22,593 [WARNING] High usage: CPU 1.3%, Memory 90.5%
+2025-02-28 11:42:27,606 [INFO] Log: High usage: CPU 1.0%, Memory 90.6%
+2025-02-28 11:42:27,606 [WARNING] High usage: CPU 1.0%, Memory 90.6%
+2025-02-28 11:42:32,632 [INFO] Log: High usage: CPU 1.4%, Memory 91.8%
+2025-02-28 11:42:32,633 [WARNING] High usage: CPU 1.4%, Memory 91.8%
+2025-02-28 11:42:37,648 [INFO] Log: High usage: CPU 1.3%, Memory 89.3%
+2025-02-28 11:42:37,648 [WARNING] High usage: CPU 1.3%, Memory 89.3%
+2025-02-28 11:42:42,667 [INFO] Log: High usage: CPU 1.3%, Memory 89.3%
+2025-02-28 11:42:42,668 [WARNING] High usage: CPU 1.3%, Memory 89.3%
+2025-02-28 11:42:47,679 [INFO] Log: High usage: CPU 1.3%, Memory 89.4%
+2025-02-28 11:42:47,680 [WARNING] High usage: CPU 1.3%, Memory 89.4%
+2025-02-28 11:42:52,695 [INFO] Log: High usage: CPU 1.0%, Memory 89.3%
+2025-02-28 11:42:52,696 [WARNING] High usage: CPU 1.0%, Memory 89.3%
+2025-02-28 11:42:57,717 [INFO] Log: High usage: CPU 0.8%, Memory 89.3%
+2025-02-28 11:42:57,718 [WARNING] High usage: CPU 0.8%, Memory 89.3%
+2025-02-28 11:43:02,737 [INFO] Log: High usage: CPU 2.7%, Memory 87.7%
+2025-02-28 11:43:02,737 [WARNING] High usage: CPU 2.7%, Memory 87.7%
+2025-02-28 11:43:07,747 [INFO] Log: High usage: CPU 0.9%, Memory 87.7%
+2025-02-28 11:43:07,748 [WARNING] High usage: CPU 0.9%, Memory 87.7%
+2025-02-28 11:43:12,758 [INFO] Log: High usage: CPU 0.9%, Memory 87.5%
+2025-02-28 11:43:12,759 [WARNING] High usage: CPU 0.9%, Memory 87.5%
+2025-02-28 11:43:17,769 [INFO] Log: High usage: CPU 1.6%, Memory 87.8%
+2025-02-28 11:43:17,770 [WARNING] High usage: CPU 1.6%, Memory 87.8%
+2025-02-28 11:43:22,784 [INFO] Log: High usage: CPU 2.2%, Memory 88.9%
+2025-02-28 11:43:22,785 [WARNING] High usage: CPU 2.2%, Memory 88.9%
+2025-02-28 11:43:27,803 [INFO] Log: High usage: CPU 2.7%, Memory 90.0%
+2025-02-28 11:43:27,805 [WARNING] High usage: CPU 2.7%, Memory 90.0%
+2025-02-28 11:43:32,828 [INFO] Log: High usage: CPU 3.6%, Memory 91.7%
+2025-02-28 11:43:32,829 [WARNING] High usage: CPU 3.6%, Memory 91.7%
+2025-02-28 11:43:37,845 [INFO] Log: High usage: CPU 2.0%, Memory 91.8%
+2025-02-28 11:43:37,846 [WARNING] High usage: CPU 2.0%, Memory 91.8%
+2025-02-28 11:43:42,863 [INFO] Log: High usage: CPU 2.8%, Memory 93.0%
+2025-02-28 11:43:42,864 [WARNING] High usage: CPU 2.8%, Memory 93.0%
+2025-02-28 11:43:47,873 [INFO] Log: High usage: CPU 8.3%, Memory 93.0%
+2025-02-28 11:43:47,874 [WARNING] High usage: CPU 8.3%, Memory 93.0%
+2025-02-28 11:43:52,897 [INFO] Log: High usage: CPU 2.3%, Memory 92.4%
+2025-02-28 11:43:52,897 [WARNING] High usage: CPU 2.3%, Memory 92.4%
+2025-02-28 11:43:57,920 [INFO] Log: High usage: CPU 4.0%, Memory 93.4%
+2025-02-28 11:43:57,921 [WARNING] High usage: CPU 4.0%, Memory 93.4%
+2025-02-28 11:44:02,937 [INFO] Log: High usage: CPU 1.3%, Memory 93.2%
+2025-02-28 11:44:02,938 [WARNING] High usage: CPU 1.3%, Memory 93.2%
+2025-02-28 11:44:07,949 [INFO] Log: High usage: CPU 1.9%, Memory 93.0%
+2025-02-28 11:44:07,950 [WARNING] High usage: CPU 1.9%, Memory 93.0%
+2025-02-28 11:44:12,965 [INFO] Log: High usage: CPU 1.3%, Memory 92.9%
+2025-02-28 11:44:12,966 [WARNING] High usage: CPU 1.3%, Memory 92.9%
+2025-02-28 11:44:17,973 [INFO] Log: High usage: CPU 3.3%, Memory 93.5%
+2025-02-28 11:44:17,973 [WARNING] High usage: CPU 3.3%, Memory 93.5%
+2025-02-28 11:44:22,998 [INFO] Log: High usage: CPU 3.9%, Memory 93.7%
+2025-02-28 11:44:22,999 [WARNING] High usage: CPU 3.9%, Memory 93.7%
+2025-02-28 11:44:28,015 [INFO] Log: High usage: CPU 4.6%, Memory 94.0%
+2025-02-28 11:44:28,016 [WARNING] High usage: CPU 4.6%, Memory 94.0%
+2025-02-28 11:44:33,034 [INFO] Log: High usage: CPU 3.9%, Memory 91.3%
+2025-02-28 11:44:33,035 [WARNING] High usage: CPU 3.9%, Memory 91.3%
+2025-02-28 11:44:38,045 [INFO] Log: High usage: CPU 5.5%, Memory 91.4%
+2025-02-28 11:44:38,046 [WARNING] High usage: CPU 5.5%, Memory 91.4%
+2025-02-28 11:44:43,068 [INFO] Log: High usage: CPU 4.4%, Memory 91.5%
+2025-02-28 11:44:43,069 [WARNING] High usage: CPU 4.4%, Memory 91.5%
+2025-02-28 11:44:48,093 [INFO] Log: High usage: CPU 4.9%, Memory 93.4%
+2025-02-28 11:44:48,094 [WARNING] High usage: CPU 4.9%, Memory 93.4%
+2025-02-28 11:44:53,104 [INFO] Log: High usage: CPU 6.2%, Memory 92.6%
+2025-02-28 11:44:53,106 [WARNING] High usage: CPU 6.2%, Memory 92.6%
+2025-02-28 11:44:58,118 [INFO] Log: High usage: CPU 5.2%, Memory 94.0%
+2025-02-28 11:44:58,119 [WARNING] High usage: CPU 5.2%, Memory 94.0%
+2025-02-28 11:45:03,133 [INFO] Log: High usage: CPU 5.3%, Memory 93.9%
+2025-02-28 11:45:03,134 [WARNING] High usage: CPU 5.3%, Memory 93.9%
+2025-02-28 11:45:08,149 [INFO] Log: High usage: CPU 4.8%, Memory 93.8%
+2025-02-28 11:45:08,150 [WARNING] High usage: CPU 4.8%, Memory 93.8%
+2025-02-28 11:45:13,164 [INFO] Log: High usage: CPU 6.2%, Memory 93.8%
+2025-02-28 11:45:13,165 [WARNING] High usage: CPU 6.2%, Memory 93.8%
+2025-02-28 11:45:18,178 [INFO] Log: High usage: CPU 5.8%, Memory 93.9%
+2025-02-28 11:45:18,179 [WARNING] High usage: CPU 5.8%, Memory 93.9%
+2025-02-28 11:45:23,198 [INFO] Log: High usage: CPU 4.7%, Memory 94.0%
+2025-02-28 11:45:23,209 [WARNING] High usage: CPU 4.7%, Memory 94.0%
+2025-02-28 11:45:28,229 [INFO] Log: High usage: CPU 5.6%, Memory 94.6%
+2025-02-28 11:45:28,230 [WARNING] High usage: CPU 5.6%, Memory 94.6%
+2025-02-28 11:45:33,245 [INFO] Log: High usage: CPU 7.9%, Memory 94.5%
+2025-02-28 11:45:33,245 [WARNING] High usage: CPU 7.9%, Memory 94.5%
+2025-02-28 11:45:38,260 [INFO] Log: High usage: CPU 7.6%, Memory 94.9%
+2025-02-28 11:45:38,262 [WARNING] High usage: CPU 7.6%, Memory 94.9%
+2025-02-28 11:45:43,274 [INFO] Log: High usage: CPU 1.9%, Memory 94.8%
+2025-02-28 11:45:43,275 [WARNING] High usage: CPU 1.9%, Memory 94.8%
+2025-02-28 11:45:48,293 [INFO] Log: High usage: CPU 4.0%, Memory 87.2%
+2025-02-28 11:45:48,294 [WARNING] High usage: CPU 4.0%, Memory 87.2%
+2025-02-28 11:45:53,304 [INFO] Log: High usage: CPU 3.2%, Memory 87.1%
+2025-02-28 11:45:53,305 [WARNING] High usage: CPU 3.2%, Memory 87.1%
+2025-02-28 11:45:58,316 [INFO] Log: High usage: CPU 2.0%, Memory 87.1%
+2025-02-28 11:45:58,316 [WARNING] High usage: CPU 2.0%, Memory 87.1%
+2025-02-28 11:46:03,328 [INFO] Log: High usage: CPU 2.3%, Memory 86.7%
+2025-02-28 11:46:03,328 [WARNING] High usage: CPU 2.3%, Memory 86.7%
+2025-02-28 11:46:08,347 [INFO] Log: High usage: CPU 5.5%, Memory 87.1%
+2025-02-28 11:46:08,347 [WARNING] High usage: CPU 5.5%, Memory 87.1%
+2025-02-28 11:46:13,360 [INFO] Log: High usage: CPU 4.2%, Memory 87.3%
+2025-02-28 11:46:13,361 [WARNING] High usage: CPU 4.2%, Memory 87.3%
+2025-02-28 11:46:18,381 [INFO] Log: High usage: CPU 4.3%, Memory 87.7%
+2025-02-28 11:46:18,382 [WARNING] High usage: CPU 4.3%, Memory 87.7%
+2025-02-28 11:46:23,393 [INFO] Log: High usage: CPU 5.7%, Memory 87.8%
+2025-02-28 11:46:23,393 [WARNING] High usage: CPU 5.7%, Memory 87.8%
+2025-02-28 11:46:28,410 [INFO] Log: High usage: CPU 4.9%, Memory 87.8%
+2025-02-28 11:46:28,411 [WARNING] High usage: CPU 4.9%, Memory 87.8%
+2025-02-28 11:46:33,442 [INFO] Log: High usage: CPU 5.6%, Memory 87.4%
+2025-02-28 11:46:33,442 [WARNING] High usage: CPU 5.6%, Memory 87.4%
+2025-02-28 11:46:38,472 [INFO] Log: High usage: CPU 11.3%, Memory 87.5%
+2025-02-28 11:46:38,473 [WARNING] High usage: CPU 11.3%, Memory 87.5%
+2025-02-28 11:46:43,483 [INFO] Log: High usage: CPU 11.8%, Memory 87.6%
+2025-02-28 11:46:43,484 [WARNING] High usage: CPU 11.8%, Memory 87.6%
+2025-02-28 11:46:48,503 [INFO] Log: High usage: CPU 9.3%, Memory 87.5%
+2025-02-28 11:46:48,504 [WARNING] High usage: CPU 9.3%, Memory 87.5%
+2025-02-28 11:46:53,530 [INFO] Log: High usage: CPU 9.3%, Memory 87.6%
+2025-02-28 11:46:53,531 [WARNING] High usage: CPU 9.3%, Memory 87.6%
+2025-02-28 11:46:58,544 [INFO] Log: High usage: CPU 9.5%, Memory 87.7%
+2025-02-28 11:46:58,545 [WARNING] High usage: CPU 9.5%, Memory 87.7%
+2025-02-28 11:47:03,560 [INFO] Log: High usage: CPU 12.4%, Memory 87.9%
+2025-02-28 11:47:03,562 [WARNING] High usage: CPU 12.4%, Memory 87.9%
+2025-02-28 11:47:08,583 [INFO] Log: High usage: CPU 11.6%, Memory 88.0%
+2025-02-28 11:47:08,584 [WARNING] High usage: CPU 11.6%, Memory 88.0%
+2025-02-28 11:47:13,610 [INFO] Log: High usage: CPU 11.6%, Memory 88.3%
+2025-02-28 11:47:13,611 [WARNING] High usage: CPU 11.6%, Memory 88.3%
+2025-02-28 11:47:18,621 [INFO] Log: High usage: CPU 12.7%, Memory 88.3%
+2025-02-28 11:47:18,622 [WARNING] High usage: CPU 12.7%, Memory 88.3%
+2025-02-28 11:47:23,639 [INFO] Log: High usage: CPU 11.7%, Memory 88.4%
+2025-02-28 11:47:23,640 [WARNING] High usage: CPU 11.7%, Memory 88.4%
+2025-02-28 11:47:28,659 [INFO] Log: High usage: CPU 16.6%, Memory 88.7%
+2025-02-28 11:47:28,660 [WARNING] High usage: CPU 16.6%, Memory 88.7%
+2025-02-28 11:47:33,667 [INFO] Log: High usage: CPU 16.2%, Memory 89.5%
+2025-02-28 11:47:33,669 [WARNING] High usage: CPU 16.2%, Memory 89.5%
+2025-02-28 11:47:38,690 [INFO] Log: High usage: CPU 6.0%, Memory 90.1%
+2025-02-28 11:47:38,691 [WARNING] High usage: CPU 6.0%, Memory 90.1%
+2025-02-28 11:47:43,709 [INFO] Log: High usage: CPU 1.1%, Memory 90.0%
+2025-02-28 11:47:43,710 [WARNING] High usage: CPU 1.1%, Memory 90.0%
+2025-02-28 11:47:48,732 [INFO] Log: High usage: CPU 0.8%, Memory 90.2%
+2025-02-28 11:47:48,733 [WARNING] High usage: CPU 0.8%, Memory 90.2%
+2025-02-28 11:47:53,742 [INFO] Log: High usage: CPU 1.0%, Memory 90.3%
+2025-02-28 11:47:53,743 [WARNING] High usage: CPU 1.0%, Memory 90.3%
+2025-02-28 11:47:58,766 [INFO] Log: High usage: CPU 1.1%, Memory 90.1%
+2025-02-28 11:47:58,766 [WARNING] High usage: CPU 1.1%, Memory 90.1%
+2025-02-28 11:48:03,780 [INFO] Log: High usage: CPU 4.3%, Memory 86.4%
+2025-02-28 11:48:03,781 [WARNING] High usage: CPU 4.3%, Memory 86.4%
+2025-02-28 11:48:08,808 [INFO] Log: High usage: CPU 0.9%, Memory 86.3%
+2025-02-28 11:48:08,809 [WARNING] High usage: CPU 0.9%, Memory 86.3%
+2025-02-28 11:48:13,823 [INFO] Log: High usage: CPU 1.0%, Memory 86.3%
+2025-02-28 11:48:13,823 [WARNING] High usage: CPU 1.0%, Memory 86.3%
+2025-02-28 11:48:18,831 [INFO] Log: High usage: CPU 3.0%, Memory 86.5%
+2025-02-28 11:48:18,832 [WARNING] High usage: CPU 3.0%, Memory 86.5%
+2025-02-28 11:48:23,853 [INFO] Log: High usage: CPU 3.4%, Memory 86.7%
+2025-02-28 11:48:23,854 [WARNING] High usage: CPU 3.4%, Memory 86.7%
+2025-02-28 11:48:28,873 [INFO] Log: High usage: CPU 2.7%, Memory 87.0%
+2025-02-28 11:48:28,874 [WARNING] High usage: CPU 2.7%, Memory 87.0%
+2025-02-28 11:48:33,898 [INFO] Log: High usage: CPU 1.2%, Memory 86.5%
+2025-02-28 11:48:33,899 [WARNING] High usage: CPU 1.2%, Memory 86.5%
+2025-02-28 11:48:38,910 [INFO] Log: High usage: CPU 1.3%, Memory 86.6%
+2025-02-28 11:48:38,911 [WARNING] High usage: CPU 1.3%, Memory 86.6%
+2025-02-28 11:48:43,929 [INFO] Log: High usage: CPU 1.1%, Memory 86.2%
+2025-02-28 11:48:43,929 [WARNING] High usage: CPU 1.1%, Memory 86.2%
+2025-02-28 11:48:48,947 [INFO] Log: High usage: CPU 1.0%, Memory 86.2%
+2025-02-28 11:48:48,948 [WARNING] High usage: CPU 1.0%, Memory 86.2%
+2025-02-28 11:48:53,959 [INFO] Log: High usage: CPU 1.4%, Memory 86.2%
+2025-02-28 11:48:53,960 [WARNING] High usage: CPU 1.4%, Memory 86.2%
+2025-02-28 11:48:58,972 [INFO] Log: High usage: CPU 1.1%, Memory 86.1%
+2025-02-28 11:48:58,973 [WARNING] High usage: CPU 1.1%, Memory 86.1%
+2025-02-28 11:49:03,992 [INFO] Log: High usage: CPU 1.2%, Memory 86.1%
+2025-02-28 11:49:03,993 [WARNING] High usage: CPU 1.2%, Memory 86.1%
+2025-02-28 11:49:09,005 [INFO] Log: High usage: CPU 0.5%, Memory 86.1%
+2025-02-28 11:49:09,006 [WARNING] High usage: CPU 0.5%, Memory 86.1%
+2025-02-28 11:49:14,015 [INFO] Log: High usage: CPU 1.4%, Memory 86.1%
+2025-02-28 11:49:14,015 [WARNING] High usage: CPU 1.4%, Memory 86.1%
+2025-02-28 11:49:19,038 [INFO] Log: High usage: CPU 0.9%, Memory 86.1%
+2025-02-28 11:49:19,039 [WARNING] High usage: CPU 0.9%, Memory 86.1%
+2025-02-28 11:49:24,051 [INFO] Log: High usage: CPU 1.4%, Memory 86.1%
+2025-02-28 11:49:24,052 [WARNING] High usage: CPU 1.4%, Memory 86.1%
+2025-02-28 11:49:29,066 [INFO] Log: High usage: CPU 1.1%, Memory 86.2%
+2025-02-28 11:49:29,067 [WARNING] High usage: CPU 1.1%, Memory 86.2%
+2025-02-28 11:49:34,077 [INFO] Log: High usage: CPU 3.0%, Memory 86.4%
+2025-02-28 11:49:34,078 [WARNING] High usage: CPU 3.0%, Memory 86.4%
+2025-02-28 11:49:39,093 [INFO] Log: High usage: CPU 2.2%, Memory 86.6%
+2025-02-28 11:49:39,094 [WARNING] High usage: CPU 2.2%, Memory 86.6%
+2025-02-28 11:49:44,108 [INFO] Log: High usage: CPU 3.5%, Memory 84.1%
+2025-02-28 11:49:44,109 [WARNING] High usage: CPU 3.5%, Memory 84.1%
+2025-02-28 11:49:49,121 [INFO] Log: High usage: CPU 8.5%, Memory 91.7%
+2025-02-28 11:49:49,122 [WARNING] High usage: CPU 8.5%, Memory 91.7%
+2025-02-28 11:49:54,139 [INFO] Log: High usage: CPU 3.0%, Memory 91.7%
+2025-02-28 11:49:54,139 [WARNING] High usage: CPU 3.0%, Memory 91.7%
+2025-02-28 11:49:59,155 [INFO] Log: High usage: CPU 1.2%, Memory 90.8%
+2025-02-28 11:49:59,155 [WARNING] High usage: CPU 1.2%, Memory 90.8%
+2025-02-28 11:50:04,167 [INFO] Log: High usage: CPU 2.2%, Memory 91.1%
+2025-02-28 11:50:04,168 [WARNING] High usage: CPU 2.2%, Memory 91.1%
+2025-02-28 11:50:09,180 [INFO] Log: High usage: CPU 1.3%, Memory 91.0%
+2025-02-28 11:50:09,181 [WARNING] High usage: CPU 1.3%, Memory 91.0%
+2025-02-28 11:50:14,196 [INFO] Log: High usage: CPU 1.0%, Memory 90.7%
+2025-02-28 11:50:14,197 [WARNING] High usage: CPU 1.0%, Memory 90.7%
+2025-02-28 11:50:19,211 [INFO] Log: High usage: CPU 4.0%, Memory 90.8%
+2025-02-28 11:50:19,212 [WARNING] High usage: CPU 4.0%, Memory 90.8%
+2025-02-28 11:50:24,227 [INFO] Log: High usage: CPU 7.1%, Memory 91.9%
+2025-02-28 11:50:24,228 [WARNING] High usage: CPU 7.1%, Memory 91.9%
+2025-02-28 11:50:27,741 [INFO] Serial port COM3 closed.
+2025-02-28 11:50:27,742 [INFO] Application closed by user.
+2025-02-28 11:50:27,817 [INFO] Application closed successfully.
+2025-02-28 11:50:33,928 [INFO] Connecting to serial port COM3.
+2025-02-28 11:50:33,931 [INFO] Connected to serial port COM3 at 9600 bps.
+2025-02-28 11:50:34,019 [INFO] Initializing GUI.
+2025-02-28 11:50:34,042 [INFO] Widgets created and arranged.
+2025-02-28 11:50:34,043 [INFO] GUI initialized.
+2025-02-28 11:50:35,618 [INFO] Connecting to 192.168.1.96 as dev...
+2025-02-28 11:50:35,757 [INFO] Connected (version 2.0, client OpenSSH_9.2p1)
+2025-02-28 11:50:35,970 [INFO] Authentication (password) successful!
+2025-02-28 11:50:35,972 [INFO] Executing remote command: python3 /home/dev/Desktop/automata/capture_both_cameras.py
+2025-02-28 11:50:48,058 [ERROR] Capture error: 2025-02-28 11:50:34 [INFO] Inicio del proceso de captura de fotos simultáneas con autofocus.
+2025-02-28 11:50:34 [INFO] Iniciando captura en cámara 0 con autofocus.
+2025-02-28 11:50:34 [INFO] Proceso de captura iniciado para cámara 0 con salida /home/dev/Pictures/camara0/cam0_20250228-115034.jpg
+2025-02-28 11:50:34 [INFO] Iniciando captura en cámara 1 con autofocus.
+2025-02-28 11:50:34 [INFO] Proceso de captura iniciado para cámara 1 con salida /home/dev/Pictures/camara1/cam1_20250228-115034.jpg
+[1:23:09.094462270] [2706] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:327 [0mlibcamera v0.4.0+78-818d45eb-dirty (2025-02-14T02:03:07GMT)
+[1:23:09.094463029] [2704] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:327 [0mlibcamera v0.4.0+78-818d45eb-dirty (2025-02-14T02:03:07GMT)
+[1:23:09.106826023] [2712] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.1.0 e7974a156008 27-01-2025 (21:50:51)
+[1:23:09.106826060] [2711] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.1.0 e7974a156008 27-01-2025 (21:50:51)
+[1:23:09.129985496] [2711] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1180 [0mRegistered camera /base/axi/pcie@120000/rp1/i2c@88000/arducam_64mp@1a to CFE device /dev/media2 and ISP device /dev/media0 using PiSP variant BCM2712_C0
+[1:23:09.129985422] [2712] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1180 [0mRegistered camera /base/axi/pcie@120000/rp1/i2c@88000/arducam_64mp@1a to CFE device /dev/media2 and ISP device /dev/media0 using PiSP variant BCM2712_C0
+[1:23:09.130081070] [2711] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.1.0 e7974a156008 27-01-2025 (21:50:51)
+[1:23:09.130310829] [2712] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.1.0 e7974a156008 27-01-2025 (21:50:51)
+[1:23:09.139327274] [2712] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1180 [0mRegistered camera /base/axi/pcie@120000/rp1/i2c@80000/arducam_64mp@1a to CFE device /dev/media4 and ISP device /dev/media1 using PiSP variant BCM2712_C0
+[1:23:09.139327292] [2711] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1180 [0mRegistered camera /base/axi/pcie@120000/rp1/i2c@80000/arducam_64mp@1a to CFE device /dev/media4 and ISP device /dev/media1 using PiSP variant BCM2712_C0
+Mode selection for Mode selection for 4576:3472:12:P4576:3472:12:P
+
+        SRGGB10_CSI2P,1280x720/0SRGGB10_CSI2P,1280x720/0 - Score:  - Score: 13268.413268.4
+
+        SRGGB10_CSI2P,1920x1080/0SRGGB10_CSI2P,1920x1080/0 - Score:  - Score: 11268.411268.4
+
+        SRGGB10_CSI2P,2312x1736/0SRGGB10_CSI2P,2312x1736/0 - Score:  - Score: 9005.189005.18
+
+        SRGGB10_CSI2P,3840x2160/0SRGGB10_CSI2P,3840x2160/0 - Score:  - Score: 5268.435268.43
+
+        SRGGB10_CSI2P,4624x3472/0SRGGB10_CSI2P,4624x3472/0 - Score:  - Score: 1017.181017.18
+
+        SRGGB10_CSI2P,8000x6000/0SRGGB10_CSI2P,8000x6000/0 - Score:  - Score: 2493.762493.76
+
+        SRGGB10_CSI2P,9152x6944/0 - Score: 3012
+SRGGB10_CSI2P,9152x6944/0 - Score: 3012
+Stream configuration adjustedStream configuration adjusted
+
+[1:23:09.140296383] [2704] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1202 [0mconfiguring streams: (0) 4576x3472-YUV420 (1) 4624x3472-RGGB_PISP_COMP1
+[1:23:09.140299828] [2706] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1202 [0mconfiguring streams: (0) 4576x3472-YUV420 (1) 4624x3472-RGGB_PISP_COMP1
+[1:23:09.140387346] [2711] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1485 [0mSensor: /base/axi/pcie@120000/rp1/i2c@80000/arducam_64mp@1a - Selected sensor format: 4624x3472-SRGGB10_1X10 - Selected CFE format: 4624x3472-PC1R
+[1:23:09.140422346] [2712] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1485 [0mSensor: /base/axi/pcie@120000/rp1/i2c@88000/arducam_64mp@1a - Selected sensor format: 4624x3472-SRGGB10_1X10 - Selected CFE format: 4624x3472-PC1R
+Mode selection for 9152:6944:12:P
+    SRGGB10_CSI2P,1280x720/0 - Score: 29364.4
+    SRGGB10_CSI2P,1920x1080/0 - Score: 27364.4
+    SRGGB10_CSI2P,2312x1736/0 - Score: 25101.2
+    SRGGB10_CSI2P,3840x2160/0 - Score: 21364.4
+    SRGGB10_CSI2P,4624x3472/0 - Score: 17005.2
+    SRGGB10_CSI2P,8000x6000/0 - Score: 5197.76
+    SRGGB10_CSI2P,9152x6944/0 - Score: 1000
+Stream configuration adjusted
+[1:23:16.773129176] [2706] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1202 [0mconfiguring streams: (0) 9152x6944-YUV420 (1) 9152x6944-RGGB_PISP_COMP1
+[1:23:16.786110446] [2711] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1485 [0mSensor: /base/axi/pcie@120000/rp1/i2c@80000/arducam_64mp@1a - Selected sensor format: 9152x6944-SRGGB10_1X10 - Selected CFE format: 9152x6944-PC1R
+Still capture image received
+Mode selection for 9152:6944:12:P
+    SRGGB10_CSI2P,1280x720/0 - Score: 29364.4
+    SRGGB10_CSI2P,1920x1080/0 - Score: 27364.4
+    SRGGB10_CSI2P,2312x1736/0 - Score: 25101.2
+    SRGGB10_CSI2P,3840x2160/0 - Score: 21364.4
+    SRGGB10_CSI2P,4624x3472/0 - Score: 17005.2
+    SRGGB10_CSI2P,8000x6000/0 - Score: 5197.76
+    SRGGB10_CSI2P,9152x6944/0 - Score: 1000
+Stream configuration adjusted
+[1:23:18.264393394] [2704] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1202 [0mconfiguring streams: (0) 9152x6944-YUV420 (1) 9152x6944-RGGB_PISP_COMP1
+[1:23:18.272671914] [2712] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1485 [0mSensor: /base/axi/pcie@120000/rp1/i2c@88000/arducam_64mp@1a - Selected sensor format: 9152x6944-SRGGB10_1X10 - Selected CFE format: 9152x6944-PC1R
+2025-02-28 11:50:43 [INFO] Foto capturada en /home/dev/Pictures/camara1/cam1_20250228-115034.jpg.
+Still capture image received
+2025-02-28 11:50:45 [INFO] Foto capturada en /home/dev/Pictures/camara0/cam0_20250228-115034.jpg.
+2025-02-28 11:50:46 [INFO] Fotos capturadas exitosamente: cam0_20250228-115034.jpg, cam1_20250228-115034.jpg
+2025-02-28 11:50:46 [INFO] Proceso de captura finalizado.
+2025-02-28 11:50:48,071 [INFO] Log: Remote capture succeeded.
+2025-02-28 11:50:48,082 [INFO] Log: High usage: CPU 1.9%, Memory 93.6%
+2025-02-28 11:50:48,083 [WARNING] High usage: CPU 1.9%, Memory 93.6%
+2025-02-28 11:50:53,098 [INFO] Log: High usage: CPU 1.3%, Memory 93.6%
+2025-02-28 11:50:53,099 [WARNING] High usage: CPU 1.3%, Memory 93.6%
+2025-02-28 11:50:58,114 [INFO] Log: High usage: CPU 1.1%, Memory 93.4%
+2025-02-28 11:50:58,115 [WARNING] High usage: CPU 1.1%, Memory 93.4%
+2025-02-28 11:51:03,129 [INFO] Log: High usage: CPU 0.9%, Memory 93.5%
+2025-02-28 11:51:03,130 [WARNING] High usage: CPU 0.9%, Memory 93.5%
+2025-02-28 11:51:08,152 [INFO] Log: High usage: CPU 1.0%, Memory 93.5%
+2025-02-28 11:51:08,153 [WARNING] High usage: CPU 1.0%, Memory 93.5%
+2025-02-28 11:51:13,172 [INFO] Log: High usage: CPU 0.8%, Memory 93.5%
+2025-02-28 11:51:13,173 [WARNING] High usage: CPU 0.8%, Memory 93.5%
+2025-02-28 11:51:18,183 [INFO] Log: High usage: CPU 0.8%, Memory 93.4%
+2025-02-28 11:51:18,184 [WARNING] High usage: CPU 0.8%, Memory 93.4%
+2025-02-28 11:51:23,207 [INFO] Log: High usage: CPU 1.0%, Memory 93.6%
+2025-02-28 11:51:23,208 [WARNING] High usage: CPU 1.0%, Memory 93.6%
+2025-02-28 11:51:28,221 [INFO] Log: High usage: CPU 0.8%, Memory 93.5%
+2025-02-28 11:51:28,222 [WARNING] High usage: CPU 0.8%, Memory 93.5%
+2025-02-28 11:51:33,234 [INFO] Log: High usage: CPU 1.1%, Memory 93.5%
+2025-02-28 11:51:33,235 [WARNING] High usage: CPU 1.1%, Memory 93.5%
+2025-02-28 11:51:38,258 [INFO] Log: High usage: CPU 0.7%, Memory 93.5%
+2025-02-28 11:51:38,259 [WARNING] High usage: CPU 0.7%, Memory 93.5%
+2025-02-28 11:51:43,269 [INFO] Log: High usage: CPU 1.0%, Memory 93.5%
+2025-02-28 11:51:43,270 [WARNING] High usage: CPU 1.0%, Memory 93.5%
+2025-02-28 11:51:48,292 [INFO] Log: High usage: CPU 2.2%, Memory 89.9%
+2025-02-28 11:51:48,293 [WARNING] High usage: CPU 2.2%, Memory 89.9%
+2025-02-28 11:51:53,312 [INFO] Log: High usage: CPU 1.0%, Memory 90.0%
+2025-02-28 11:51:53,313 [WARNING] High usage: CPU 1.0%, Memory 90.0%
+2025-02-28 11:51:58,333 [INFO] Log: High usage: CPU 1.1%, Memory 90.0%
+2025-02-28 11:51:58,333 [WARNING] High usage: CPU 1.1%, Memory 90.0%
+2025-02-28 11:52:03,352 [INFO] Log: High usage: CPU 1.6%, Memory 90.0%
+2025-02-28 11:52:03,353 [WARNING] High usage: CPU 1.6%, Memory 90.0%
+2025-02-28 11:52:08,375 [INFO] Log: High usage: CPU 3.3%, Memory 90.0%
+2025-02-28 11:52:08,376 [WARNING] High usage: CPU 3.3%, Memory 90.0%
+2025-02-28 11:52:13,385 [INFO] Log: High usage: CPU 3.7%, Memory 90.1%
+2025-02-28 11:52:13,385 [WARNING] High usage: CPU 3.7%, Memory 90.1%
+2025-02-28 11:52:18,407 [INFO] Log: High usage: CPU 1.8%, Memory 90.1%
+2025-02-28 11:52:18,408 [WARNING] High usage: CPU 1.8%, Memory 90.1%
+2025-02-28 11:52:23,424 [INFO] Log: High usage: CPU 2.9%, Memory 90.2%
+2025-02-28 11:52:23,425 [WARNING] High usage: CPU 2.9%, Memory 90.2%
+2025-02-28 11:52:28,434 [INFO] Log: High usage: CPU 2.5%, Memory 90.3%
+2025-02-28 11:52:28,434 [WARNING] High usage: CPU 2.5%, Memory 90.3%
+2025-02-28 11:52:33,450 [INFO] Log: High usage: CPU 3.4%, Memory 90.2%
+2025-02-28 11:52:33,450 [WARNING] High usage: CPU 3.4%, Memory 90.2%
+2025-02-28 11:52:38,467 [INFO] Log: High usage: CPU 2.1%, Memory 90.4%
+2025-02-28 11:52:38,468 [WARNING] High usage: CPU 2.1%, Memory 90.4%
+2025-02-28 11:52:43,480 [INFO] Log: High usage: CPU 3.4%, Memory 90.4%
+2025-02-28 11:52:43,480 [WARNING] High usage: CPU 3.4%, Memory 90.4%
+2025-02-28 11:52:48,495 [INFO] Log: High usage: CPU 3.7%, Memory 90.4%
+2025-02-28 11:52:48,496 [WARNING] High usage: CPU 3.7%, Memory 90.4%
+2025-02-28 11:52:53,510 [INFO] Log: High usage: CPU 3.2%, Memory 90.5%
+2025-02-28 11:52:53,511 [WARNING] High usage: CPU 3.2%, Memory 90.5%
+2025-02-28 11:52:58,528 [INFO] Log: High usage: CPU 3.8%, Memory 90.7%
+2025-02-28 11:52:58,529 [WARNING] High usage: CPU 3.8%, Memory 90.7%
+2025-02-28 11:53:03,547 [INFO] Log: High usage: CPU 3.1%, Memory 87.8%
+2025-02-28 11:53:03,547 [WARNING] High usage: CPU 3.1%, Memory 87.8%
+2025-02-28 11:53:08,556 [INFO] Log: High usage: CPU 5.0%, Memory 87.8%
+2025-02-28 11:53:08,557 [WARNING] High usage: CPU 5.0%, Memory 87.8%
+2025-02-28 11:53:13,571 [INFO] Log: High usage: CPU 2.2%, Memory 87.9%
+2025-02-28 11:53:13,571 [WARNING] High usage: CPU 2.2%, Memory 87.9%
+2025-02-28 11:53:18,583 [INFO] Log: High usage: CPU 7.1%, Memory 87.9%
+2025-02-28 11:53:18,584 [WARNING] High usage: CPU 7.1%, Memory 87.9%
+2025-02-28 11:53:23,601 [INFO] Log: High usage: CPU 7.9%, Memory 87.9%
+2025-02-28 11:53:23,602 [WARNING] High usage: CPU 7.9%, Memory 87.9%
+2025-02-28 11:53:28,614 [INFO] Log: High usage: CPU 7.6%, Memory 87.9%
+2025-02-28 11:53:28,615 [WARNING] High usage: CPU 7.6%, Memory 87.9%
+2025-02-28 11:53:33,629 [INFO] Log: High usage: CPU 14.0%, Memory 88.1%
+2025-02-28 11:53:33,630 [WARNING] High usage: CPU 14.0%, Memory 88.1%
+2025-02-28 11:53:38,653 [INFO] Log: High usage: CPU 13.0%, Memory 88.0%
+2025-02-28 11:53:38,654 [WARNING] High usage: CPU 13.0%, Memory 88.0%
+2025-02-28 11:53:43,673 [INFO] Log: High usage: CPU 10.9%, Memory 88.1%
+2025-02-28 11:53:43,674 [WARNING] High usage: CPU 10.9%, Memory 88.1%
+2025-02-28 11:53:48,690 [INFO] Log: High usage: CPU 10.5%, Memory 88.1%
+2025-02-28 11:53:48,691 [WARNING] High usage: CPU 10.5%, Memory 88.1%
+2025-02-28 11:53:53,713 [INFO] Log: High usage: CPU 11.0%, Memory 88.0%
+2025-02-28 11:53:53,714 [WARNING] High usage: CPU 11.0%, Memory 88.0%
+2025-02-28 11:53:58,737 [INFO] Log: High usage: CPU 2.5%, Memory 88.0%
+2025-02-28 11:53:58,738 [WARNING] High usage: CPU 2.5%, Memory 88.0%
+2025-02-28 11:54:03,747 [INFO] Log: High usage: CPU 0.8%, Memory 88.0%
+2025-02-28 11:54:03,748 [WARNING] High usage: CPU 0.8%, Memory 88.0%
+2025-02-28 11:54:08,769 [INFO] Log: High usage: CPU 0.6%, Memory 88.0%
+2025-02-28 11:54:08,770 [WARNING] High usage: CPU 0.6%, Memory 88.0%
+2025-02-28 11:54:13,785 [INFO] Log: High usage: CPU 0.8%, Memory 88.0%
+2025-02-28 11:54:13,786 [WARNING] High usage: CPU 0.8%, Memory 88.0%
+2025-02-28 11:54:18,797 [INFO] Log: High usage: CPU 0.6%, Memory 88.1%
+2025-02-28 11:54:18,797 [WARNING] High usage: CPU 0.6%, Memory 88.1%
+2025-02-28 11:54:23,804 [INFO] Log: High usage: CPU 0.5%, Memory 88.0%
+2025-02-28 11:54:23,805 [WARNING] High usage: CPU 0.5%, Memory 88.0%
+2025-02-28 11:54:28,828 [INFO] Log: High usage: CPU 0.8%, Memory 88.1%
+2025-02-28 11:54:28,828 [WARNING] High usage: CPU 0.8%, Memory 88.1%
+2025-02-28 11:54:33,838 [INFO] Log: High usage: CPU 1.0%, Memory 88.0%
+2025-02-28 11:54:33,839 [WARNING] High usage: CPU 1.0%, Memory 88.0%
+2025-02-28 11:54:38,855 [INFO] Log: High usage: CPU 1.3%, Memory 88.0%
+2025-02-28 11:54:38,855 [WARNING] High usage: CPU 1.3%, Memory 88.0%
+2025-02-28 11:54:43,870 [INFO] Log: High usage: CPU 1.8%, Memory 86.9%
+2025-02-28 11:54:43,871 [WARNING] High usage: CPU 1.8%, Memory 86.9%
+2025-02-28 11:54:48,890 [INFO] Log: High usage: CPU 1.3%, Memory 86.9%
+2025-02-28 11:54:48,891 [WARNING] High usage: CPU 1.3%, Memory 86.9%
+2025-02-28 11:54:53,903 [INFO] Log: High usage: CPU 1.1%, Memory 86.7%
+2025-02-28 11:54:53,903 [WARNING] High usage: CPU 1.1%, Memory 86.7%
+2025-02-28 11:54:58,922 [INFO] Log: High usage: CPU 1.3%, Memory 86.8%
+2025-02-28 11:54:58,923 [WARNING] High usage: CPU 1.3%, Memory 86.8%
+2025-02-28 11:55:03,940 [INFO] Log: High usage: CPU 1.2%, Memory 86.8%
+2025-02-28 11:55:03,941 [WARNING] High usage: CPU 1.2%, Memory 86.8%
+2025-02-28 11:55:08,954 [INFO] Log: High usage: CPU 1.3%, Memory 86.8%
+2025-02-28 11:55:08,955 [WARNING] High usage: CPU 1.3%, Memory 86.8%
+2025-02-28 11:55:13,973 [INFO] Log: High usage: CPU 0.8%, Memory 86.8%
+2025-02-28 11:55:13,974 [WARNING] High usage: CPU 0.8%, Memory 86.8%
+2025-02-28 11:55:18,987 [INFO] Log: High usage: CPU 1.1%, Memory 86.8%
+2025-02-28 11:55:18,988 [WARNING] High usage: CPU 1.1%, Memory 86.8%
+2025-02-28 11:55:24,007 [INFO] Log: High usage: CPU 1.0%, Memory 87.0%
+2025-02-28 11:55:24,008 [WARNING] High usage: CPU 1.0%, Memory 87.0%
+2025-02-28 11:55:29,016 [INFO] Log: High usage: CPU 1.0%, Memory 86.9%
+2025-02-28 11:55:29,017 [WARNING] High usage: CPU 1.0%, Memory 86.9%
+2025-02-28 11:55:34,038 [INFO] Log: High usage: CPU 1.2%, Memory 86.9%
+2025-02-28 11:55:34,038 [WARNING] High usage: CPU 1.2%, Memory 86.9%
+2025-02-28 11:55:39,049 [INFO] Log: High usage: CPU 1.2%, Memory 86.9%
+2025-02-28 11:55:39,050 [WARNING] High usage: CPU 1.2%, Memory 86.9%
+2025-02-28 11:55:44,073 [INFO] Log: High usage: CPU 1.0%, Memory 86.9%
+2025-02-28 11:55:44,074 [WARNING] High usage: CPU 1.0%, Memory 86.9%
+2025-02-28 11:55:49,095 [INFO] Log: High usage: CPU 1.3%, Memory 86.9%
+2025-02-28 11:55:49,095 [WARNING] High usage: CPU 1.3%, Memory 86.9%
+2025-02-28 11:55:54,114 [INFO] Log: High usage: CPU 0.8%, Memory 87.0%
+2025-02-28 11:55:54,115 [WARNING] High usage: CPU 0.8%, Memory 87.0%
+2025-02-28 11:55:59,127 [INFO] Log: High usage: CPU 1.2%, Memory 86.9%
+2025-02-28 11:55:59,128 [WARNING] High usage: CPU 1.2%, Memory 86.9%
+2025-02-28 11:56:04,151 [INFO] Log: High usage: CPU 1.4%, Memory 87.0%
+2025-02-28 11:56:04,151 [WARNING] High usage: CPU 1.4%, Memory 87.0%
+2025-02-28 11:56:09,178 [INFO] Log: High usage: CPU 1.0%, Memory 87.0%
+2025-02-28 11:56:09,178 [WARNING] High usage: CPU 1.0%, Memory 87.0%
+2025-02-28 11:56:14,194 [INFO] Log: High usage: CPU 1.0%, Memory 87.0%
+2025-02-28 11:56:14,196 [WARNING] High usage: CPU 1.0%, Memory 87.0%
+2025-02-28 11:56:19,203 [INFO] Log: High usage: CPU 1.1%, Memory 87.0%
+2025-02-28 11:56:19,204 [WARNING] High usage: CPU 1.1%, Memory 87.0%
+2025-02-28 11:56:24,212 [INFO] Log: High usage: CPU 1.1%, Memory 87.0%
+2025-02-28 11:56:24,213 [WARNING] High usage: CPU 1.1%, Memory 87.0%
+2025-02-28 11:56:29,234 [INFO] Log: High usage: CPU 1.1%, Memory 87.2%
+2025-02-28 11:56:29,234 [WARNING] High usage: CPU 1.1%, Memory 87.2%
+2025-02-28 11:56:34,259 [INFO] Log: High usage: CPU 0.9%, Memory 87.1%
+2025-02-28 11:56:34,259 [WARNING] High usage: CPU 0.9%, Memory 87.1%
+2025-02-28 11:56:39,281 [INFO] Log: High usage: CPU 1.2%, Memory 87.0%
+2025-02-28 11:56:39,281 [WARNING] High usage: CPU 1.2%, Memory 87.0%
+2025-02-28 11:56:44,292 [INFO] Log: High usage: CPU 1.4%, Memory 86.9%
+2025-02-28 11:56:44,293 [WARNING] High usage: CPU 1.4%, Memory 86.9%
+2025-02-28 11:56:49,310 [INFO] Log: High usage: CPU 2.2%, Memory 87.0%
+2025-02-28 11:56:49,311 [WARNING] High usage: CPU 2.2%, Memory 87.0%
+2025-02-28 11:56:54,320 [INFO] Log: High usage: CPU 1.2%, Memory 87.0%
+2025-02-28 11:56:54,321 [WARNING] High usage: CPU 1.2%, Memory 87.0%
+2025-02-28 11:56:59,331 [INFO] Log: High usage: CPU 1.2%, Memory 87.0%
+2025-02-28 11:56:59,332 [WARNING] High usage: CPU 1.2%, Memory 87.0%
+2025-02-28 11:57:04,355 [INFO] Log: High usage: CPU 1.3%, Memory 87.0%
+2025-02-28 11:57:04,355 [WARNING] High usage: CPU 1.3%, Memory 87.0%
+2025-02-28 11:57:09,375 [INFO] Log: High usage: CPU 0.8%, Memory 87.1%
+2025-02-28 11:57:09,376 [WARNING] High usage: CPU 0.8%, Memory 87.1%
+2025-02-28 11:57:14,386 [INFO] Log: High usage: CPU 1.1%, Memory 87.1%
+2025-02-28 11:57:14,386 [WARNING] High usage: CPU 1.1%, Memory 87.1%
+2025-02-28 11:57:19,405 [INFO] Log: High usage: CPU 1.1%, Memory 87.1%
+2025-02-28 11:57:19,406 [WARNING] High usage: CPU 1.1%, Memory 87.1%
+2025-02-28 11:57:24,419 [INFO] Log: High usage: CPU 1.3%, Memory 87.1%
+2025-02-28 11:57:24,420 [WARNING] High usage: CPU 1.3%, Memory 87.1%
+2025-02-28 11:57:29,435 [INFO] Log: High usage: CPU 1.3%, Memory 87.1%
+2025-02-28 11:57:29,436 [WARNING] High usage: CPU 1.3%, Memory 87.1%
+2025-02-28 11:57:34,446 [INFO] Log: High usage: CPU 1.0%, Memory 87.1%
+2025-02-28 11:57:34,447 [WARNING] High usage: CPU 1.0%, Memory 87.1%
+2025-02-28 11:57:39,471 [INFO] Log: High usage: CPU 1.2%, Memory 87.1%
+2025-02-28 11:57:39,472 [WARNING] High usage: CPU 1.2%, Memory 87.1%
+2025-02-28 11:57:44,490 [INFO] Log: High usage: CPU 1.0%, Memory 87.2%
+2025-02-28 11:57:44,491 [WARNING] High usage: CPU 1.0%, Memory 87.2%
+2025-02-28 11:57:49,502 [INFO] Log: High usage: CPU 1.1%, Memory 87.2%
+2025-02-28 11:57:49,502 [WARNING] High usage: CPU 1.1%, Memory 87.2%
+2025-02-28 11:57:54,518 [INFO] Log: High usage: CPU 2.0%, Memory 87.8%
+2025-02-28 11:57:54,519 [WARNING] High usage: CPU 2.0%, Memory 87.8%
+2025-02-28 11:57:59,535 [INFO] Log: High usage: CPU 2.6%, Memory 86.5%
+2025-02-28 11:57:59,536 [WARNING] High usage: CPU 2.6%, Memory 86.5%
+2025-02-28 11:58:04,553 [INFO] Log: High usage: CPU 1.6%, Memory 85.8%
+2025-02-28 11:58:04,553 [WARNING] High usage: CPU 1.6%, Memory 85.8%
+2025-02-28 11:58:09,565 [INFO] Log: High usage: CPU 0.4%, Memory 85.9%
+2025-02-28 11:58:09,566 [WARNING] High usage: CPU 0.4%, Memory 85.9%
+2025-02-28 11:58:14,585 [INFO] Log: High usage: CPU 0.7%, Memory 85.9%
+2025-02-28 11:58:14,596 [WARNING] High usage: CPU 0.7%, Memory 85.9%
+2025-02-28 11:58:19,612 [INFO] Log: High usage: CPU 0.5%, Memory 85.9%
+2025-02-28 11:58:19,613 [WARNING] High usage: CPU 0.5%, Memory 85.9%
+2025-02-28 11:58:24,634 [INFO] Log: High usage: CPU 0.6%, Memory 85.9%
+2025-02-28 11:58:24,635 [WARNING] High usage: CPU 0.6%, Memory 85.9%
+2025-02-28 11:58:29,647 [INFO] Log: High usage: CPU 0.7%, Memory 86.1%
+2025-02-28 11:58:29,648 [WARNING] High usage: CPU 0.7%, Memory 86.1%
+2025-02-28 11:58:34,664 [INFO] Log: High usage: CPU 0.9%, Memory 86.1%
+2025-02-28 11:58:34,664 [WARNING] High usage: CPU 0.9%, Memory 86.1%
+2025-02-28 11:58:39,674 [INFO] Log: High usage: CPU 0.6%, Memory 86.1%
+2025-02-28 11:58:39,674 [WARNING] High usage: CPU 0.6%, Memory 86.1%
+2025-02-28 11:58:44,682 [INFO] Log: High usage: CPU 0.5%, Memory 86.1%
+2025-02-28 11:58:44,683 [WARNING] High usage: CPU 0.5%, Memory 86.1%
+2025-02-28 11:58:49,703 [INFO] Log: High usage: CPU 0.7%, Memory 86.1%
+2025-02-28 11:58:49,704 [WARNING] High usage: CPU 0.7%, Memory 86.1%
+2025-02-28 11:58:54,728 [INFO] Log: High usage: CPU 0.6%, Memory 86.0%
+2025-02-28 11:58:54,728 [WARNING] High usage: CPU 0.6%, Memory 86.0%
+2025-02-28 11:58:59,747 [INFO] Log: High usage: CPU 0.7%, Memory 85.9%
+2025-02-28 11:58:59,747 [WARNING] High usage: CPU 0.7%, Memory 85.9%
+2025-02-28 11:59:04,757 [INFO] Log: High usage: CPU 0.8%, Memory 86.0%
+2025-02-28 11:59:04,768 [WARNING] High usage: CPU 0.8%, Memory 86.0%
+2025-02-28 11:59:09,780 [INFO] Log: High usage: CPU 0.5%, Memory 86.0%
+2025-02-28 11:59:09,781 [WARNING] High usage: CPU 0.5%, Memory 86.0%
+2025-02-28 11:59:14,792 [INFO] Log: High usage: CPU 0.9%, Memory 86.0%
+2025-02-28 11:59:14,792 [WARNING] High usage: CPU 0.9%, Memory 86.0%
+2025-02-28 11:59:19,813 [INFO] Log: High usage: CPU 0.7%, Memory 86.0%
+2025-02-28 11:59:19,814 [WARNING] High usage: CPU 0.7%, Memory 86.0%
+2025-02-28 11:59:24,823 [INFO] Log: High usage: CPU 0.6%, Memory 86.0%
+2025-02-28 11:59:24,823 [WARNING] High usage: CPU 0.6%, Memory 86.0%
+2025-02-28 11:59:29,843 [INFO] Log: High usage: CPU 0.6%, Memory 86.0%
+2025-02-28 11:59:29,844 [WARNING] High usage: CPU 0.6%, Memory 86.0%
+2025-02-28 11:59:34,856 [INFO] Log: High usage: CPU 1.2%, Memory 85.7%
+2025-02-28 11:59:34,857 [WARNING] High usage: CPU 1.2%, Memory 85.7%
+2025-02-28 11:59:39,893 [INFO] Log: High usage: CPU 0.7%, Memory 85.9%
+2025-02-28 11:59:39,894 [WARNING] High usage: CPU 0.7%, Memory 85.9%
+2025-02-28 11:59:44,914 [INFO] Log: High usage: CPU 0.8%, Memory 85.9%
+2025-02-28 11:59:44,915 [WARNING] High usage: CPU 0.8%, Memory 85.9%
+2025-02-28 11:59:49,937 [INFO] Log: High usage: CPU 0.6%, Memory 85.9%
+2025-02-28 11:59:49,937 [WARNING] High usage: CPU 0.6%, Memory 85.9%
+2025-02-28 11:59:54,947 [INFO] Log: High usage: CPU 0.8%, Memory 85.9%
+2025-02-28 11:59:54,947 [WARNING] High usage: CPU 0.8%, Memory 85.9%
+2025-02-28 11:59:59,953 [INFO] Log: High usage: CPU 0.5%, Memory 85.9%
+2025-02-28 11:59:59,954 [WARNING] High usage: CPU 0.5%, Memory 85.9%
+2025-02-28 12:00:04,961 [INFO] Log: High usage: CPU 0.9%, Memory 86.0%
+2025-02-28 12:00:04,962 [WARNING] High usage: CPU 0.9%, Memory 86.0%
+2025-02-28 12:00:09,983 [INFO] Log: High usage: CPU 0.5%, Memory 86.1%
+2025-02-28 12:00:09,984 [WARNING] High usage: CPU 0.5%, Memory 86.1%
+2025-02-28 12:00:15,007 [INFO] Log: High usage: CPU 0.6%, Memory 86.1%
+2025-02-28 12:00:15,008 [WARNING] High usage: CPU 0.6%, Memory 86.1%
+2025-02-28 12:00:20,016 [INFO] Log: High usage: CPU 0.6%, Memory 86.1%
+2025-02-28 12:00:20,017 [WARNING] High usage: CPU 0.6%, Memory 86.1%
+2025-02-28 12:00:25,038 [INFO] Log: High usage: CPU 0.8%, Memory 86.1%
+2025-02-28 12:00:25,039 [WARNING] High usage: CPU 0.8%, Memory 86.1%
+2025-02-28 12:00:30,056 [INFO] Log: High usage: CPU 0.7%, Memory 86.1%
+2025-02-28 12:00:30,057 [WARNING] High usage: CPU 0.7%, Memory 86.1%
+2025-02-28 12:00:35,071 [INFO] Log: High usage: CPU 0.9%, Memory 86.1%
+2025-02-28 12:00:35,072 [WARNING] High usage: CPU 0.9%, Memory 86.1%
+2025-02-28 12:00:40,083 [INFO] Log: High usage: CPU 0.7%, Memory 86.1%
+2025-02-28 12:00:40,084 [WARNING] High usage: CPU 0.7%, Memory 86.1%
+2025-02-28 12:00:45,100 [INFO] Log: High usage: CPU 0.9%, Memory 86.1%
+2025-02-28 12:00:45,101 [WARNING] High usage: CPU 0.9%, Memory 86.1%
+2025-02-28 12:00:50,113 [INFO] Log: High usage: CPU 0.6%, Memory 86.1%
+2025-02-28 12:00:50,114 [WARNING] High usage: CPU 0.6%, Memory 86.1%
+2025-02-28 12:00:55,131 [INFO] Log: High usage: CPU 0.6%, Memory 86.3%
+2025-02-28 12:00:55,132 [WARNING] High usage: CPU 0.6%, Memory 86.3%
+2025-02-28 12:01:00,143 [INFO] Log: High usage: CPU 0.8%, Memory 86.4%
+2025-02-28 12:01:00,144 [WARNING] High usage: CPU 0.8%, Memory 86.4%
+2025-02-28 12:01:05,161 [INFO] Log: High usage: CPU 0.8%, Memory 86.6%
+2025-02-28 12:01:05,171 [WARNING] High usage: CPU 0.8%, Memory 86.6%
+2025-02-28 12:01:10,191 [INFO] Log: High usage: CPU 0.5%, Memory 86.5%
+2025-02-28 12:01:10,191 [WARNING] High usage: CPU 0.5%, Memory 86.5%
+2025-02-28 12:01:15,212 [INFO] Log: High usage: CPU 0.5%, Memory 86.5%
+2025-02-28 12:01:15,213 [WARNING] High usage: CPU 0.5%, Memory 86.5%
+2025-02-28 12:01:20,222 [INFO] Log: High usage: CPU 0.6%, Memory 86.5%
+2025-02-28 12:01:20,223 [WARNING] High usage: CPU 0.6%, Memory 86.5%
+2025-02-28 12:01:25,245 [INFO] Log: High usage: CPU 0.3%, Memory 86.5%
+2025-02-28 12:01:25,245 [WARNING] High usage: CPU 0.3%, Memory 86.5%
+2025-02-28 12:01:30,264 [INFO] Log: High usage: CPU 0.6%, Memory 86.5%
+2025-02-28 12:01:30,265 [WARNING] High usage: CPU 0.6%, Memory 86.5%
+2025-02-28 12:01:35,275 [INFO] Log: High usage: CPU 0.5%, Memory 86.5%
+2025-02-28 12:01:35,276 [WARNING] High usage: CPU 0.5%, Memory 86.5%
+2025-02-28 12:01:40,296 [INFO] Log: High usage: CPU 0.9%, Memory 86.5%
+2025-02-28 12:01:40,297 [WARNING] High usage: CPU 0.9%, Memory 86.5%
+2025-02-28 12:01:45,306 [INFO] Log: High usage: CPU 0.5%, Memory 86.5%
+2025-02-28 12:01:45,307 [WARNING] High usage: CPU 0.5%, Memory 86.5%
+2025-02-28 12:01:50,328 [INFO] Log: High usage: CPU 0.6%, Memory 86.5%
+2025-02-28 12:01:50,328 [WARNING] High usage: CPU 0.6%, Memory 86.5%
+2025-02-28 12:01:55,340 [INFO] Log: High usage: CPU 0.8%, Memory 86.3%
+2025-02-28 12:01:55,341 [WARNING] High usage: CPU 0.8%, Memory 86.3%
+2025-02-28 12:02:00,358 [INFO] Log: High usage: CPU 0.7%, Memory 86.2%
+2025-02-28 12:02:00,358 [WARNING] High usage: CPU 0.7%, Memory 86.2%
+2025-02-28 12:02:05,370 [INFO] Log: High usage: CPU 1.2%, Memory 86.9%
+2025-02-28 12:02:05,371 [WARNING] High usage: CPU 1.2%, Memory 86.9%
+2025-02-28 12:02:10,390 [INFO] Log: High usage: CPU 0.7%, Memory 86.9%
+2025-02-28 12:02:10,390 [WARNING] High usage: CPU 0.7%, Memory 86.9%
+2025-02-28 12:02:15,404 [INFO] Log: High usage: CPU 3.6%, Memory 90.5%
+2025-02-28 12:02:15,404 [WARNING] High usage: CPU 3.6%, Memory 90.5%
+2025-02-28 12:02:20,423 [INFO] Log: High usage: CPU 1.4%, Memory 88.3%
+2025-02-28 12:02:20,424 [WARNING] High usage: CPU 1.4%, Memory 88.3%
+2025-02-28 12:02:25,448 [INFO] Log: High usage: CPU 1.0%, Memory 88.5%
+2025-02-28 12:02:25,449 [WARNING] High usage: CPU 1.0%, Memory 88.5%
+2025-02-28 12:02:30,471 [INFO] Log: High usage: CPU 0.7%, Memory 88.5%
+2025-02-28 12:02:30,472 [WARNING] High usage: CPU 0.7%, Memory 88.5%
+2025-02-28 12:02:35,495 [INFO] Log: High usage: CPU 0.9%, Memory 88.4%
+2025-02-28 12:02:35,496 [WARNING] High usage: CPU 0.9%, Memory 88.4%
+2025-02-28 12:02:40,512 [INFO] Log: High usage: CPU 1.7%, Memory 89.7%
+2025-02-28 12:02:40,513 [WARNING] High usage: CPU 1.7%, Memory 89.7%
+2025-02-28 12:02:45,525 [INFO] Log: High usage: CPU 0.6%, Memory 89.8%
+2025-02-28 12:02:45,526 [WARNING] High usage: CPU 0.6%, Memory 89.8%
+2025-02-28 12:02:50,540 [INFO] Log: High usage: CPU 4.1%, Memory 91.7%
+2025-02-28 12:02:50,541 [WARNING] High usage: CPU 4.1%, Memory 91.7%
+2025-02-28 12:02:55,577 [INFO] Log: High usage: CPU 2.6%, Memory 93.2%
+2025-02-28 12:02:55,578 [WARNING] High usage: CPU 2.6%, Memory 93.2%
+2025-02-28 12:03:00,614 [INFO] Log: High usage: CPU 24.1%, Memory 98.8%
+2025-02-28 12:03:00,616 [WARNING] High usage: CPU 24.1%, Memory 98.8%
+2025-02-28 12:03:05,635 [INFO] Log: High usage: CPU 5.0%, Memory 90.1%
+2025-02-28 12:03:05,636 [WARNING] High usage: CPU 5.0%, Memory 90.1%
+2025-02-28 12:03:10,652 [INFO] Log: High usage: CPU 2.9%, Memory 90.2%
+2025-02-28 12:03:10,653 [WARNING] High usage: CPU 2.9%, Memory 90.2%
+2025-02-28 12:03:15,671 [INFO] Log: High usage: CPU 2.5%, Memory 89.9%
+2025-02-28 12:03:15,672 [WARNING] High usage: CPU 2.5%, Memory 89.9%
+2025-02-28 12:03:20,692 [INFO] Log: High usage: CPU 2.4%, Memory 89.9%
+2025-02-28 12:03:20,693 [WARNING] High usage: CPU 2.4%, Memory 89.9%
+2025-02-28 12:03:25,706 [INFO] Log: High usage: CPU 2.8%, Memory 90.3%
+2025-02-28 12:03:25,706 [WARNING] High usage: CPU 2.8%, Memory 90.3%
+2025-02-28 12:03:30,727 [INFO] Log: High usage: CPU 2.6%, Memory 90.0%
+2025-02-28 12:03:30,728 [WARNING] High usage: CPU 2.6%, Memory 90.0%
+2025-02-28 12:03:35,749 [INFO] Log: High usage: CPU 0.5%, Memory 90.1%
+2025-02-28 12:03:35,749 [WARNING] High usage: CPU 0.5%, Memory 90.1%
+2025-02-28 12:03:40,764 [INFO] Log: High usage: CPU 0.7%, Memory 90.0%
+2025-02-28 12:03:40,765 [WARNING] High usage: CPU 0.7%, Memory 90.0%
+2025-02-28 12:03:45,787 [INFO] Log: High usage: CPU 0.2%, Memory 89.8%
+2025-02-28 12:03:45,788 [WARNING] High usage: CPU 0.2%, Memory 89.8%
+2025-02-28 12:03:50,799 [INFO] Log: High usage: CPU 0.5%, Memory 89.8%
+2025-02-28 12:03:50,799 [WARNING] High usage: CPU 0.5%, Memory 89.8%
+2025-02-28 12:03:55,817 [INFO] Log: High usage: CPU 0.6%, Memory 89.8%
+2025-02-28 12:03:55,817 [WARNING] High usage: CPU 0.6%, Memory 89.8%
+2025-02-28 12:04:00,837 [INFO] Log: High usage: CPU 1.0%, Memory 90.0%
+2025-02-28 12:04:00,838 [WARNING] High usage: CPU 1.0%, Memory 90.0%
+2025-02-28 12:04:05,852 [INFO] Log: High usage: CPU 2.0%, Memory 89.7%
+2025-02-28 12:04:05,852 [WARNING] High usage: CPU 2.0%, Memory 89.7%
+2025-02-28 12:04:10,861 [INFO] Log: High usage: CPU 1.1%, Memory 89.4%
+2025-02-28 12:04:10,862 [WARNING] High usage: CPU 1.1%, Memory 89.4%
+2025-02-28 12:04:15,875 [INFO] Log: High usage: CPU 0.4%, Memory 89.3%
+2025-02-28 12:04:15,877 [WARNING] High usage: CPU 0.4%, Memory 89.3%
+2025-02-28 12:04:20,901 [INFO] Log: High usage: CPU 0.7%, Memory 89.4%
+2025-02-28 12:04:20,902 [WARNING] High usage: CPU 0.7%, Memory 89.4%
+2025-02-28 12:04:25,921 [INFO] Log: High usage: CPU 0.7%, Memory 89.4%
+2025-02-28 12:04:25,922 [WARNING] High usage: CPU 0.7%, Memory 89.4%
+2025-02-28 12:04:30,931 [INFO] Log: High usage: CPU 1.1%, Memory 89.4%
+2025-02-28 12:04:30,932 [WARNING] High usage: CPU 1.1%, Memory 89.4%
+2025-02-28 12:04:35,950 [INFO] Log: High usage: CPU 1.9%, Memory 89.4%
+2025-02-28 12:04:35,951 [WARNING] High usage: CPU 1.9%, Memory 89.4%
+2025-02-28 12:04:40,961 [INFO] Log: High usage: CPU 0.5%, Memory 89.4%
+2025-02-28 12:04:40,962 [WARNING] High usage: CPU 0.5%, Memory 89.4%
+2025-02-28 12:04:45,979 [INFO] Log: High usage: CPU 0.8%, Memory 89.4%
+2025-02-28 12:04:45,979 [WARNING] High usage: CPU 0.8%, Memory 89.4%
+2025-02-28 12:04:50,993 [INFO] Log: High usage: CPU 1.1%, Memory 89.5%
+2025-02-28 12:04:50,994 [WARNING] High usage: CPU 1.1%, Memory 89.5%
+2025-02-28 12:04:56,030 [INFO] Log: High usage: CPU 0.6%, Memory 89.6%
+2025-02-28 12:04:56,031 [WARNING] High usage: CPU 0.6%, Memory 89.6%
+2025-02-28 12:05:01,046 [INFO] Log: High usage: CPU 2.4%, Memory 91.5%
+2025-02-28 12:05:01,047 [WARNING] High usage: CPU 2.4%, Memory 91.5%
+2025-02-28 12:05:06,065 [INFO] Log: High usage: CPU 2.1%, Memory 91.7%
+2025-02-28 12:05:06,066 [WARNING] High usage: CPU 2.1%, Memory 91.7%
+2025-02-28 12:05:11,080 [INFO] Log: High usage: CPU 1.9%, Memory 91.6%
+2025-02-28 12:05:11,081 [WARNING] High usage: CPU 1.9%, Memory 91.6%
+2025-02-28 12:05:16,099 [INFO] Log: High usage: CPU 2.4%, Memory 91.6%
+2025-02-28 12:05:16,100 [WARNING] High usage: CPU 2.4%, Memory 91.6%
+2025-02-28 12:05:21,121 [INFO] Log: High usage: CPU 3.1%, Memory 92.1%
+2025-02-28 12:05:21,121 [WARNING] High usage: CPU 3.1%, Memory 92.1%
+2025-02-28 12:05:26,144 [INFO] Log: High usage: CPU 1.1%, Memory 92.3%
+2025-02-28 12:05:26,145 [WARNING] High usage: CPU 1.1%, Memory 92.3%
+2025-02-28 12:05:31,159 [INFO] Log: High usage: CPU 1.4%, Memory 92.4%
+2025-02-28 12:05:31,160 [WARNING] High usage: CPU 1.4%, Memory 92.4%
+2025-02-28 12:05:36,168 [INFO] Log: High usage: CPU 1.8%, Memory 92.7%
+2025-02-28 12:05:36,169 [WARNING] High usage: CPU 1.8%, Memory 92.7%
+2025-02-28 12:05:41,182 [INFO] Log: High usage: CPU 1.5%, Memory 92.8%
+2025-02-28 12:05:41,183 [WARNING] High usage: CPU 1.5%, Memory 92.8%
+2025-02-28 12:05:46,205 [INFO] Log: High usage: CPU 0.7%, Memory 92.9%
+2025-02-28 12:05:46,206 [WARNING] High usage: CPU 0.7%, Memory 92.9%
+2025-02-28 12:05:51,223 [INFO] Log: High usage: CPU 0.9%, Memory 92.8%
+2025-02-28 12:05:51,223 [WARNING] High usage: CPU 0.9%, Memory 92.8%
+2025-02-28 12:05:56,234 [INFO] Log: High usage: CPU 0.6%, Memory 92.8%
+2025-02-28 12:05:56,234 [WARNING] High usage: CPU 0.6%, Memory 92.8%
+2025-02-28 12:06:01,256 [INFO] Log: High usage: CPU 0.7%, Memory 93.0%
+2025-02-28 12:06:01,257 [WARNING] High usage: CPU 0.7%, Memory 93.0%
+2025-02-28 12:06:06,273 [INFO] Log: High usage: CPU 0.8%, Memory 92.9%
+2025-02-28 12:06:06,274 [WARNING] High usage: CPU 0.8%, Memory 92.9%
+2025-02-28 12:06:11,283 [INFO] Log: High usage: CPU 0.7%, Memory 92.7%
+2025-02-28 12:06:11,284 [WARNING] High usage: CPU 0.7%, Memory 92.7%
+2025-02-28 12:06:16,294 [INFO] Log: High usage: CPU 0.3%, Memory 92.7%
+2025-02-28 12:06:16,295 [WARNING] High usage: CPU 0.3%, Memory 92.7%
+2025-02-28 12:06:21,307 [INFO] Log: High usage: CPU 1.7%, Memory 92.9%
+2025-02-28 12:06:21,308 [WARNING] High usage: CPU 1.7%, Memory 92.9%
+2025-02-28 12:06:26,321 [INFO] Log: High usage: CPU 2.6%, Memory 93.2%
+2025-02-28 12:06:26,322 [WARNING] High usage: CPU 2.6%, Memory 93.2%
+2025-02-28 12:06:31,334 [INFO] Log: High usage: CPU 1.1%, Memory 93.3%
+2025-02-28 12:06:31,334 [WARNING] High usage: CPU 1.1%, Memory 93.3%
+2025-02-28 12:06:36,357 [INFO] Log: High usage: CPU 1.5%, Memory 93.4%
+2025-02-28 12:06:36,358 [WARNING] High usage: CPU 1.5%, Memory 93.4%
+2025-02-28 12:06:41,380 [INFO] Log: High usage: CPU 1.0%, Memory 93.4%
+2025-02-28 12:06:41,381 [WARNING] High usage: CPU 1.0%, Memory 93.4%
+2025-02-28 12:06:46,401 [INFO] Log: High usage: CPU 1.3%, Memory 93.4%
+2025-02-28 12:06:46,401 [WARNING] High usage: CPU 1.3%, Memory 93.4%
+2025-02-28 12:06:51,411 [INFO] Log: High usage: CPU 2.0%, Memory 93.6%
+2025-02-28 12:06:51,412 [WARNING] High usage: CPU 2.0%, Memory 93.6%
+2025-02-28 12:06:56,421 [INFO] Log: High usage: CPU 2.5%, Memory 94.8%
+2025-02-28 12:06:56,422 [WARNING] High usage: CPU 2.5%, Memory 94.8%
+2025-02-28 12:07:01,430 [INFO] Log: High usage: CPU 2.2%, Memory 94.5%
+2025-02-28 12:07:01,431 [WARNING] High usage: CPU 2.2%, Memory 94.5%
+2025-02-28 12:07:06,446 [INFO] Log: High usage: CPU 1.9%, Memory 95.3%
+2025-02-28 12:07:06,447 [WARNING] High usage: CPU 1.9%, Memory 95.3%
+2025-02-28 12:07:11,464 [INFO] Log: High usage: CPU 2.0%, Memory 94.8%
+2025-02-28 12:07:11,465 [WARNING] High usage: CPU 2.0%, Memory 94.8%
+2025-02-28 12:07:16,487 [INFO] Log: High usage: CPU 0.5%, Memory 94.4%
+2025-02-28 12:07:16,487 [WARNING] High usage: CPU 0.5%, Memory 94.4%
+2025-02-28 12:07:21,503 [INFO] Log: High usage: CPU 0.7%, Memory 94.3%
+2025-02-28 12:07:21,504 [WARNING] High usage: CPU 0.7%, Memory 94.3%
+2025-02-28 12:07:26,527 [INFO] Log: High usage: CPU 0.4%, Memory 94.2%
+2025-02-28 12:07:26,528 [WARNING] High usage: CPU 0.4%, Memory 94.2%
+2025-02-28 12:07:31,536 [INFO] Log: High usage: CPU 0.6%, Memory 94.3%
+2025-02-28 12:07:31,537 [WARNING] High usage: CPU 0.6%, Memory 94.3%
+2025-02-28 12:07:36,548 [INFO] Log: High usage: CPU 0.4%, Memory 94.3%
+2025-02-28 12:07:36,549 [WARNING] High usage: CPU 0.4%, Memory 94.3%
+2025-02-28 12:07:41,559 [INFO] Log: High usage: CPU 0.3%, Memory 94.3%
+2025-02-28 12:07:41,560 [WARNING] High usage: CPU 0.3%, Memory 94.3%
+2025-02-28 12:07:46,586 [INFO] Log: High usage: CPU 0.3%, Memory 94.3%
+2025-02-28 12:07:46,586 [WARNING] High usage: CPU 0.3%, Memory 94.3%
+2025-02-28 12:07:51,603 [INFO] Log: High usage: CPU 0.6%, Memory 94.2%
+2025-02-28 12:07:51,604 [WARNING] High usage: CPU 0.6%, Memory 94.2%
+2025-02-28 12:07:56,620 [INFO] Log: High usage: CPU 1.6%, Memory 94.5%
+2025-02-28 12:07:56,620 [WARNING] High usage: CPU 1.6%, Memory 94.5%
+2025-02-28 12:08:01,636 [INFO] Log: High usage: CPU 0.9%, Memory 94.7%
+2025-02-28 12:08:01,637 [WARNING] High usage: CPU 0.9%, Memory 94.7%
+2025-02-28 12:08:06,656 [INFO] Log: High usage: CPU 1.9%, Memory 87.1%
+2025-02-28 12:08:06,657 [WARNING] High usage: CPU 1.9%, Memory 87.1%
+2025-02-28 12:08:11,675 [INFO] Log: High usage: CPU 0.8%, Memory 87.2%
+2025-02-28 12:08:11,675 [WARNING] High usage: CPU 0.8%, Memory 87.2%
+2025-02-28 12:08:16,686 [INFO] Log: High usage: CPU 0.5%, Memory 87.2%
+2025-02-28 12:08:16,686 [WARNING] High usage: CPU 0.5%, Memory 87.2%
+2025-02-28 12:08:21,705 [INFO] Log: High usage: CPU 0.8%, Memory 87.2%
+2025-02-28 12:08:21,706 [WARNING] High usage: CPU 0.8%, Memory 87.2%
+2025-02-28 12:08:26,728 [INFO] Log: High usage: CPU 0.9%, Memory 87.2%
+2025-02-28 12:08:26,728 [WARNING] High usage: CPU 0.9%, Memory 87.2%
+2025-02-28 12:08:31,750 [INFO] Log: High usage: CPU 0.5%, Memory 87.3%
+2025-02-28 12:08:31,750 [WARNING] High usage: CPU 0.5%, Memory 87.3%
+2025-02-28 12:08:36,770 [INFO] Log: High usage: CPU 0.4%, Memory 87.4%
+2025-02-28 12:08:36,770 [WARNING] High usage: CPU 0.4%, Memory 87.4%
+2025-02-28 12:08:41,790 [INFO] Log: High usage: CPU 0.5%, Memory 87.2%
+2025-02-28 12:08:41,791 [WARNING] High usage: CPU 0.5%, Memory 87.2%
+2025-02-28 12:08:46,802 [INFO] Log: High usage: CPU 0.6%, Memory 87.3%
+2025-02-28 12:08:46,803 [WARNING] High usage: CPU 0.6%, Memory 87.3%
+2025-02-28 12:08:51,825 [INFO] Log: High usage: CPU 0.6%, Memory 87.4%
+2025-02-28 12:08:51,826 [WARNING] High usage: CPU 0.6%, Memory 87.4%
+2025-02-28 12:08:56,836 [INFO] Log: High usage: CPU 0.8%, Memory 87.1%
+2025-02-28 12:08:56,837 [WARNING] High usage: CPU 0.8%, Memory 87.1%
+2025-02-28 12:09:01,851 [INFO] Log: High usage: CPU 0.7%, Memory 87.1%
+2025-02-28 12:09:01,851 [WARNING] High usage: CPU 0.7%, Memory 87.1%
+2025-02-28 12:09:06,873 [INFO] Log: High usage: CPU 1.1%, Memory 87.2%
+2025-02-28 12:09:06,873 [WARNING] High usage: CPU 1.1%, Memory 87.2%
+2025-02-28 12:09:11,882 [INFO] Log: High usage: CPU 0.7%, Memory 87.1%
+2025-02-28 12:09:11,883 [WARNING] High usage: CPU 0.7%, Memory 87.1%
+2025-02-28 12:09:16,907 [INFO] Log: High usage: CPU 0.4%, Memory 87.2%
+2025-02-28 12:09:16,908 [WARNING] High usage: CPU 0.4%, Memory 87.2%
+2025-02-28 12:09:21,915 [INFO] Log: High usage: CPU 0.7%, Memory 87.2%
+2025-02-28 12:09:21,916 [WARNING] High usage: CPU 0.7%, Memory 87.2%
+2025-02-28 12:09:26,933 [INFO] Log: High usage: CPU 0.8%, Memory 87.2%
+2025-02-28 12:09:26,934 [WARNING] High usage: CPU 0.8%, Memory 87.2%
+2025-02-28 12:09:31,953 [INFO] Log: High usage: CPU 0.7%, Memory 87.3%
+2025-02-28 12:09:31,953 [WARNING] High usage: CPU 0.7%, Memory 87.3%
+2025-02-28 12:09:36,968 [INFO] Log: High usage: CPU 0.3%, Memory 87.1%
+2025-02-28 12:09:36,969 [WARNING] High usage: CPU 0.3%, Memory 87.1%
+2025-02-28 12:09:41,986 [INFO] Log: High usage: CPU 0.7%, Memory 87.2%
+2025-02-28 12:09:41,987 [WARNING] High usage: CPU 0.7%, Memory 87.2%
+2025-02-28 12:09:46,996 [INFO] Log: High usage: CPU 0.6%, Memory 87.2%
+2025-02-28 12:09:46,997 [WARNING] High usage: CPU 0.6%, Memory 87.2%
+2025-02-28 12:09:52,009 [INFO] Log: High usage: CPU 0.1%, Memory 87.2%
+2025-02-28 12:09:52,010 [WARNING] High usage: CPU 0.1%, Memory 87.2%
+2025-02-28 12:09:57,028 [INFO] Log: High usage: CPU 0.2%, Memory 87.2%
+2025-02-28 12:09:57,028 [WARNING] High usage: CPU 0.2%, Memory 87.2%
+2025-02-28 12:10:02,050 [INFO] Log: High usage: CPU 1.0%, Memory 87.3%
+2025-02-28 12:10:02,051 [WARNING] High usage: CPU 1.0%, Memory 87.3%
+2025-02-28 12:10:07,070 [INFO] Log: High usage: CPU 0.7%, Memory 87.2%
+2025-02-28 12:10:07,070 [WARNING] High usage: CPU 0.7%, Memory 87.2%
+2025-02-28 12:10:12,080 [INFO] Log: High usage: CPU 0.5%, Memory 87.2%
+2025-02-28 12:10:12,081 [WARNING] High usage: CPU 0.5%, Memory 87.2%
+2025-02-28 12:10:17,091 [INFO] Log: High usage: CPU 0.5%, Memory 87.2%
+2025-02-28 12:10:17,091 [WARNING] High usage: CPU 0.5%, Memory 87.2%
+2025-02-28 12:10:22,112 [INFO] Log: High usage: CPU 0.6%, Memory 87.3%
+2025-02-28 12:10:22,113 [WARNING] High usage: CPU 0.6%, Memory 87.3%
+2025-02-28 12:10:27,136 [INFO] Log: High usage: CPU 1.1%, Memory 87.3%
+2025-02-28 12:10:27,137 [WARNING] High usage: CPU 1.1%, Memory 87.3%
+2025-02-28 12:10:32,159 [INFO] Log: High usage: CPU 0.7%, Memory 87.3%
+2025-02-28 12:10:32,159 [WARNING] High usage: CPU 0.7%, Memory 87.3%
+2025-02-28 12:10:37,172 [INFO] Log: High usage: CPU 1.0%, Memory 87.4%
+2025-02-28 12:10:37,173 [WARNING] High usage: CPU 1.0%, Memory 87.4%
+2025-02-28 12:10:42,183 [INFO] Log: High usage: CPU 1.7%, Memory 87.5%
+2025-02-28 12:10:42,184 [WARNING] High usage: CPU 1.7%, Memory 87.5%
+2025-02-28 12:10:47,200 [INFO] Log: High usage: CPU 2.1%, Memory 87.3%
+2025-02-28 12:10:47,201 [WARNING] High usage: CPU 2.1%, Memory 87.3%
+2025-02-28 12:10:52,216 [INFO] Log: High usage: CPU 1.6%, Memory 87.4%
+2025-02-28 12:10:52,217 [WARNING] High usage: CPU 1.6%, Memory 87.4%
+2025-02-28 12:10:57,231 [INFO] Log: High usage: CPU 1.3%, Memory 87.0%
+2025-02-28 12:10:57,232 [WARNING] High usage: CPU 1.3%, Memory 87.0%
+2025-02-28 12:11:02,246 [INFO] Log: High usage: CPU 0.9%, Memory 87.3%
+2025-02-28 12:11:02,246 [WARNING] High usage: CPU 0.9%, Memory 87.3%
+2025-02-28 12:11:07,268 [INFO] Log: High usage: CPU 0.8%, Memory 87.3%
+2025-02-28 12:11:07,269 [WARNING] High usage: CPU 0.8%, Memory 87.3%
+2025-02-28 12:11:12,291 [INFO] Log: High usage: CPU 0.7%, Memory 87.5%
+2025-02-28 12:11:12,291 [WARNING] High usage: CPU 0.7%, Memory 87.5%
+2025-02-28 12:11:17,310 [INFO] Log: High usage: CPU 0.8%, Memory 87.6%
+2025-02-28 12:11:17,310 [WARNING] High usage: CPU 0.8%, Memory 87.6%
+2025-02-28 12:11:22,320 [INFO] Log: High usage: CPU 1.9%, Memory 87.9%
+2025-02-28 12:11:22,321 [WARNING] High usage: CPU 1.9%, Memory 87.9%
+2025-02-28 12:11:27,343 [INFO] Log: High usage: CPU 2.3%, Memory 86.8%
+2025-02-28 12:11:27,343 [WARNING] High usage: CPU 2.3%, Memory 86.8%
+2025-02-28 12:11:32,360 [INFO] Log: High usage: CPU 2.8%, Memory 86.6%
+2025-02-28 12:11:32,361 [WARNING] High usage: CPU 2.8%, Memory 86.6%
+2025-02-28 12:11:37,385 [INFO] Log: High usage: CPU 2.7%, Memory 86.3%
+2025-02-28 12:11:37,386 [WARNING] High usage: CPU 2.7%, Memory 86.3%
+2025-02-28 12:11:42,407 [INFO] Log: High usage: CPU 1.0%, Memory 86.4%
+2025-02-28 12:11:42,407 [WARNING] High usage: CPU 1.0%, Memory 86.4%
+2025-02-28 12:11:47,421 [INFO] Log: High usage: CPU 0.6%, Memory 86.4%
+2025-02-28 12:11:47,422 [WARNING] High usage: CPU 0.6%, Memory 86.4%
+2025-02-28 12:11:52,443 [INFO] Log: High usage: CPU 1.8%, Memory 87.8%
+2025-02-28 12:11:52,443 [WARNING] High usage: CPU 1.8%, Memory 87.8%
+2025-02-28 12:11:57,451 [INFO] Log: High usage: CPU 4.2%, Memory 93.4%
+2025-02-28 12:11:57,451 [WARNING] High usage: CPU 4.2%, Memory 93.4%
+2025-02-28 12:12:02,461 [INFO] Log: High usage: CPU 1.8%, Memory 93.1%
+2025-02-28 12:12:02,462 [WARNING] High usage: CPU 1.8%, Memory 93.1%
+2025-02-28 12:12:07,470 [INFO] Log: High usage: CPU 1.7%, Memory 92.9%
+2025-02-28 12:12:07,471 [WARNING] High usage: CPU 1.7%, Memory 92.9%
+2025-02-28 12:12:12,487 [INFO] Log: High usage: CPU 2.8%, Memory 94.7%
+2025-02-28 12:12:12,488 [WARNING] High usage: CPU 2.8%, Memory 94.7%
+2025-02-28 12:12:17,505 [INFO] Log: High usage: CPU 1.3%, Memory 93.8%
+2025-02-28 12:12:17,507 [WARNING] High usage: CPU 1.3%, Memory 93.8%
+2025-02-28 12:12:22,526 [INFO] Log: High usage: CPU 2.3%, Memory 93.3%
+2025-02-28 12:12:22,527 [WARNING] High usage: CPU 2.3%, Memory 93.3%
+2025-02-28 12:12:27,536 [INFO] Log: High usage: CPU 5.5%, Memory 95.0%
+2025-02-28 12:12:27,537 [WARNING] High usage: CPU 5.5%, Memory 95.0%
+2025-02-28 12:12:32,558 [INFO] Log: High usage: CPU 3.2%, Memory 93.0%
+2025-02-28 12:12:32,558 [WARNING] High usage: CPU 3.2%, Memory 93.0%
+2025-02-28 12:12:37,567 [INFO] Log: High usage: CPU 2.0%, Memory 91.6%
+2025-02-28 12:12:37,568 [WARNING] High usage: CPU 2.0%, Memory 91.6%
+2025-02-28 12:12:42,580 [INFO] Log: High usage: CPU 2.5%, Memory 92.0%
+2025-02-28 12:12:42,580 [WARNING] High usage: CPU 2.5%, Memory 92.0%
+2025-02-28 12:12:47,605 [INFO] Log: High usage: CPU 2.2%, Memory 91.9%
+2025-02-28 12:12:47,606 [WARNING] High usage: CPU 2.2%, Memory 91.9%
+2025-02-28 12:12:52,625 [INFO] Log: High usage: CPU 1.8%, Memory 92.5%
+2025-02-28 12:12:52,626 [WARNING] High usage: CPU 1.8%, Memory 92.5%
+2025-02-28 12:12:57,645 [INFO] Log: High usage: CPU 1.9%, Memory 92.9%
+2025-02-28 12:12:57,646 [WARNING] High usage: CPU 1.9%, Memory 92.9%
+2025-02-28 12:13:02,658 [INFO] Log: High usage: CPU 2.4%, Memory 93.3%
+2025-02-28 12:13:02,659 [WARNING] High usage: CPU 2.4%, Memory 93.3%
+2025-02-28 12:13:07,680 [INFO] Log: High usage: CPU 4.5%, Memory 88.5%
+2025-02-28 12:13:07,681 [WARNING] High usage: CPU 4.5%, Memory 88.5%
+2025-02-28 12:13:12,697 [INFO] Log: High usage: CPU 1.9%, Memory 88.5%
+2025-02-28 12:13:12,698 [WARNING] High usage: CPU 1.9%, Memory 88.5%
+2025-02-28 12:13:17,714 [INFO] Log: High usage: CPU 1.7%, Memory 89.0%
+2025-02-28 12:13:17,715 [WARNING] High usage: CPU 1.7%, Memory 89.0%
+2025-02-28 12:13:22,723 [INFO] Log: High usage: CPU 0.5%, Memory 88.8%
+2025-02-28 12:13:22,724 [WARNING] High usage: CPU 0.5%, Memory 88.8%
+2025-02-28 12:13:27,748 [INFO] Log: High usage: CPU 1.1%, Memory 87.8%
+2025-02-28 12:13:27,749 [WARNING] High usage: CPU 1.1%, Memory 87.8%
+2025-02-28 12:13:32,762 [INFO] Log: High usage: CPU 0.5%, Memory 87.6%
+2025-02-28 12:13:32,763 [WARNING] High usage: CPU 0.5%, Memory 87.6%
+2025-02-28 12:13:37,787 [INFO] Log: High usage: CPU 1.3%, Memory 87.8%
+2025-02-28 12:13:37,788 [WARNING] High usage: CPU 1.3%, Memory 87.8%
+2025-02-28 12:13:42,809 [INFO] Log: High usage: CPU 0.8%, Memory 87.8%
+2025-02-28 12:13:42,810 [WARNING] High usage: CPU 0.8%, Memory 87.8%
+2025-02-28 12:13:47,823 [INFO] Log: High usage: CPU 0.8%, Memory 87.9%
+2025-02-28 12:13:47,824 [WARNING] High usage: CPU 0.8%, Memory 87.9%
+2025-02-28 12:13:52,840 [INFO] Log: High usage: CPU 0.4%, Memory 87.7%
+2025-02-28 12:13:52,841 [WARNING] High usage: CPU 0.4%, Memory 87.7%
+2025-02-28 12:13:57,859 [INFO] Log: High usage: CPU 0.7%, Memory 87.7%
+2025-02-28 12:13:57,860 [WARNING] High usage: CPU 0.7%, Memory 87.7%
+2025-02-28 12:14:02,882 [INFO] Log: High usage: CPU 0.6%, Memory 87.7%
+2025-02-28 12:14:02,882 [WARNING] High usage: CPU 0.6%, Memory 87.7%
+2025-02-28 12:14:07,896 [INFO] Log: High usage: CPU 0.5%, Memory 87.7%
+2025-02-28 12:14:07,897 [WARNING] High usage: CPU 0.5%, Memory 87.7%
+2025-02-28 12:14:12,916 [INFO] Log: High usage: CPU 1.0%, Memory 88.8%
+2025-02-28 12:14:12,917 [WARNING] High usage: CPU 1.0%, Memory 88.8%
+2025-02-28 12:14:17,932 [INFO] Log: High usage: CPU 2.0%, Memory 89.5%
+2025-02-28 12:14:17,933 [WARNING] High usage: CPU 2.0%, Memory 89.5%
+2025-02-28 12:14:22,962 [INFO] Log: High usage: CPU 2.1%, Memory 90.1%
+2025-02-28 12:14:22,963 [WARNING] High usage: CPU 2.1%, Memory 90.1%
+2025-02-28 12:14:27,985 [INFO] Log: High usage: CPU 1.5%, Memory 89.9%
+2025-02-28 12:14:27,986 [WARNING] High usage: CPU 1.5%, Memory 89.9%
+2025-02-28 12:14:33,002 [INFO] Log: High usage: CPU 1.2%, Memory 90.0%
+2025-02-28 12:14:33,003 [WARNING] High usage: CPU 1.2%, Memory 90.0%
+2025-02-28 12:14:38,018 [INFO] Log: High usage: CPU 7.6%, Memory 89.7%
+2025-02-28 12:14:38,019 [WARNING] High usage: CPU 7.6%, Memory 89.7%
+2025-02-28 12:14:43,041 [INFO] Log: High usage: CPU 2.4%, Memory 90.3%
+2025-02-28 12:14:43,042 [WARNING] High usage: CPU 2.4%, Memory 90.3%
+2025-02-28 12:14:48,052 [INFO] Log: High usage: CPU 2.1%, Memory 90.3%
+2025-02-28 12:14:48,053 [WARNING] High usage: CPU 2.1%, Memory 90.3%
+2025-02-28 12:14:53,065 [INFO] Log: High usage: CPU 1.7%, Memory 90.3%
+2025-02-28 12:14:53,065 [WARNING] High usage: CPU 1.7%, Memory 90.3%
+2025-02-28 12:14:58,081 [INFO] Log: High usage: CPU 1.7%, Memory 90.5%
+2025-02-28 12:14:58,082 [WARNING] High usage: CPU 1.7%, Memory 90.5%
+2025-02-28 12:15:03,099 [INFO] Log: High usage: CPU 0.9%, Memory 89.9%
+2025-02-28 12:15:03,100 [WARNING] High usage: CPU 0.9%, Memory 89.9%
+2025-02-28 12:15:08,112 [INFO] Log: High usage: CPU 0.5%, Memory 89.9%
+2025-02-28 12:15:08,113 [WARNING] High usage: CPU 0.5%, Memory 89.9%
+2025-02-28 12:15:13,139 [INFO] Log: High usage: CPU 1.3%, Memory 90.7%
+2025-02-28 12:15:13,140 [WARNING] High usage: CPU 1.3%, Memory 90.7%
+2025-02-28 12:15:18,155 [INFO] Log: High usage: CPU 2.0%, Memory 91.5%
+2025-02-28 12:15:18,156 [WARNING] High usage: CPU 2.0%, Memory 91.5%
+2025-02-28 12:15:23,174 [INFO] Log: High usage: CPU 3.3%, Memory 92.4%
+2025-02-28 12:15:23,175 [WARNING] High usage: CPU 3.3%, Memory 92.4%
+2025-02-28 12:15:28,185 [INFO] Log: High usage: CPU 1.8%, Memory 91.7%
+2025-02-28 12:15:28,186 [WARNING] High usage: CPU 1.8%, Memory 91.7%
+2025-02-28 12:15:33,200 [INFO] Log: High usage: CPU 2.2%, Memory 90.9%
+2025-02-28 12:15:33,201 [WARNING] High usage: CPU 2.2%, Memory 90.9%
+2025-02-28 12:15:38,212 [INFO] Log: High usage: CPU 5.5%, Memory 92.5%
+2025-02-28 12:15:38,213 [WARNING] High usage: CPU 5.5%, Memory 92.5%
+2025-02-28 12:15:43,225 [INFO] Log: High usage: CPU 1.8%, Memory 92.5%
+2025-02-28 12:15:43,226 [WARNING] High usage: CPU 1.8%, Memory 92.5%
+2025-02-28 12:15:48,248 [INFO] Log: High usage: CPU 5.6%, Memory 93.3%
+2025-02-28 12:15:48,249 [WARNING] High usage: CPU 5.6%, Memory 93.3%
+2025-02-28 12:15:53,260 [INFO] Log: High usage: CPU 1.4%, Memory 92.7%
+2025-02-28 12:15:53,261 [WARNING] High usage: CPU 1.4%, Memory 92.7%
+2025-02-28 12:15:58,272 [INFO] Log: High usage: CPU 0.6%, Memory 92.4%
+2025-02-28 12:15:58,272 [WARNING] High usage: CPU 0.6%, Memory 92.4%
+2025-02-28 12:16:03,285 [INFO] Log: High usage: CPU 0.9%, Memory 92.4%
+2025-02-28 12:16:03,286 [WARNING] High usage: CPU 0.9%, Memory 92.4%
+2025-02-28 12:16:08,302 [INFO] Log: High usage: CPU 1.1%, Memory 92.6%
+2025-02-28 12:16:08,303 [WARNING] High usage: CPU 1.1%, Memory 92.6%
+2025-02-28 12:16:13,314 [INFO] Log: High usage: CPU 0.5%, Memory 92.5%
+2025-02-28 12:16:13,315 [WARNING] High usage: CPU 0.5%, Memory 92.5%
+2025-02-28 12:16:18,330 [INFO] Log: High usage: CPU 1.0%, Memory 92.5%
+2025-02-28 12:16:18,331 [WARNING] High usage: CPU 1.0%, Memory 92.5%
+2025-02-28 12:16:23,344 [INFO] Log: High usage: CPU 0.4%, Memory 92.5%
+2025-02-28 12:16:23,345 [WARNING] High usage: CPU 0.4%, Memory 92.5%
+2025-02-28 12:16:28,359 [INFO] Log: High usage: CPU 0.4%, Memory 92.4%
+2025-02-28 12:16:28,360 [WARNING] High usage: CPU 0.4%, Memory 92.4%
+2025-02-28 12:16:33,370 [INFO] Log: High usage: CPU 0.6%, Memory 92.5%
+2025-02-28 12:16:33,370 [WARNING] High usage: CPU 0.6%, Memory 92.5%
+2025-02-28 12:16:38,388 [INFO] Log: High usage: CPU 0.6%, Memory 92.3%
+2025-02-28 12:16:38,389 [WARNING] High usage: CPU 0.6%, Memory 92.3%
+2025-02-28 12:16:43,399 [INFO] Log: High usage: CPU 1.8%, Memory 92.8%
+2025-02-28 12:16:43,400 [WARNING] High usage: CPU 1.8%, Memory 92.8%
+2025-02-28 12:16:48,415 [INFO] Log: High usage: CPU 1.5%, Memory 92.2%
+2025-02-28 12:16:48,416 [WARNING] High usage: CPU 1.5%, Memory 92.2%
+2025-02-28 12:16:53,430 [INFO] Log: High usage: CPU 0.3%, Memory 91.9%
+2025-02-28 12:16:53,431 [WARNING] High usage: CPU 0.3%, Memory 91.9%
+2025-02-28 12:16:58,447 [INFO] Log: High usage: CPU 1.4%, Memory 91.7%
+2025-02-28 12:16:58,448 [WARNING] High usage: CPU 1.4%, Memory 91.7%
+2025-02-28 12:17:03,460 [INFO] Log: High usage: CPU 0.9%, Memory 92.0%
+2025-02-28 12:17:03,461 [WARNING] High usage: CPU 0.9%, Memory 92.0%
+2025-02-28 12:17:08,477 [INFO] Log: High usage: CPU 0.6%, Memory 92.1%
+2025-02-28 12:17:08,477 [WARNING] High usage: CPU 0.6%, Memory 92.1%
+2025-02-28 12:17:13,485 [INFO] Log: High usage: CPU 1.5%, Memory 92.3%
+2025-02-28 12:17:13,486 [WARNING] High usage: CPU 1.5%, Memory 92.3%
+2025-02-28 12:17:18,502 [INFO] Log: High usage: CPU 0.8%, Memory 92.4%
+2025-02-28 12:17:18,502 [WARNING] High usage: CPU 0.8%, Memory 92.4%
+2025-02-28 12:17:23,511 [INFO] Log: High usage: CPU 0.8%, Memory 92.5%
+2025-02-28 12:17:23,512 [WARNING] High usage: CPU 0.8%, Memory 92.5%
+2025-02-28 12:17:28,524 [INFO] Log: High usage: CPU 0.8%, Memory 93.8%
+2025-02-28 12:17:28,525 [WARNING] High usage: CPU 0.8%, Memory 93.8%
+2025-02-28 12:17:33,547 [INFO] Log: High usage: CPU 0.9%, Memory 93.9%
+2025-02-28 12:17:33,547 [WARNING] High usage: CPU 0.9%, Memory 93.9%
+2025-02-28 12:17:38,566 [INFO] Log: High usage: CPU 1.1%, Memory 93.7%
+2025-02-28 12:17:38,567 [WARNING] High usage: CPU 1.1%, Memory 93.7%
+2025-02-28 12:17:43,584 [INFO] Log: High usage: CPU 1.1%, Memory 94.0%
+2025-02-28 12:17:43,584 [WARNING] High usage: CPU 1.1%, Memory 94.0%
+2025-02-28 12:17:48,594 [INFO] Log: High usage: CPU 0.4%, Memory 94.4%
+2025-02-28 12:17:48,595 [WARNING] High usage: CPU 0.4%, Memory 94.4%
+2025-02-28 12:17:53,611 [INFO] Log: High usage: CPU 0.5%, Memory 94.5%
+2025-02-28 12:17:53,611 [WARNING] High usage: CPU 0.5%, Memory 94.5%
+2025-02-28 12:17:58,633 [INFO] Log: High usage: CPU 0.9%, Memory 94.5%
+2025-02-28 12:17:58,633 [WARNING] High usage: CPU 0.9%, Memory 94.5%
+2025-02-28 12:18:03,653 [INFO] Log: High usage: CPU 0.6%, Memory 94.5%
+2025-02-28 12:18:03,654 [WARNING] High usage: CPU 0.6%, Memory 94.5%
+2025-02-28 12:18:08,671 [INFO] Log: High usage: CPU 1.7%, Memory 87.8%
+2025-02-28 12:18:08,672 [WARNING] High usage: CPU 1.7%, Memory 87.8%
+2025-02-28 12:18:13,684 [INFO] Log: High usage: CPU 1.0%, Memory 87.7%
+2025-02-28 12:18:13,684 [WARNING] High usage: CPU 1.0%, Memory 87.7%
+2025-02-28 12:18:18,707 [INFO] Log: High usage: CPU 0.3%, Memory 88.0%
+2025-02-28 12:18:18,708 [WARNING] High usage: CPU 0.3%, Memory 88.0%
+2025-02-28 12:18:23,728 [INFO] Log: High usage: CPU 0.2%, Memory 87.5%
+2025-02-28 12:18:23,729 [WARNING] High usage: CPU 0.2%, Memory 87.5%
+2025-02-28 12:18:28,744 [INFO] Log: High usage: CPU 0.6%, Memory 87.5%
+2025-02-28 12:18:28,744 [WARNING] High usage: CPU 0.6%, Memory 87.5%
+2025-02-28 12:18:33,758 [INFO] Log: High usage: CPU 0.8%, Memory 87.7%
+2025-02-28 12:18:33,759 [WARNING] High usage: CPU 0.8%, Memory 87.7%
+2025-02-28 12:18:38,774 [INFO] Log: High usage: CPU 0.7%, Memory 87.7%
+2025-02-28 12:18:38,775 [WARNING] High usage: CPU 0.7%, Memory 87.7%
+2025-02-28 12:18:43,792 [INFO] Log: High usage: CPU 0.6%, Memory 87.7%
+2025-02-28 12:18:43,793 [WARNING] High usage: CPU 0.6%, Memory 87.7%
+2025-02-28 12:18:48,809 [INFO] Log: High usage: CPU 0.8%, Memory 87.7%
+2025-02-28 12:18:48,810 [WARNING] High usage: CPU 0.8%, Memory 87.7%
+2025-02-28 12:18:53,817 [INFO] Log: High usage: CPU 0.4%, Memory 87.2%
+2025-02-28 12:18:53,818 [WARNING] High usage: CPU 0.4%, Memory 87.2%
+2025-02-28 12:18:58,839 [INFO] Log: High usage: CPU 0.9%, Memory 87.2%
+2025-02-28 12:18:58,840 [WARNING] High usage: CPU 0.9%, Memory 87.2%
+2025-02-28 12:19:03,849 [INFO] Log: High usage: CPU 0.3%, Memory 87.2%
+2025-02-28 12:19:03,850 [WARNING] High usage: CPU 0.3%, Memory 87.2%
+2025-02-28 12:19:08,859 [INFO] Log: High usage: CPU 0.7%, Memory 87.2%
+2025-02-28 12:19:08,859 [WARNING] High usage: CPU 0.7%, Memory 87.2%
+2025-02-28 12:19:13,870 [INFO] Log: High usage: CPU 0.4%, Memory 87.2%
+2025-02-28 12:19:13,871 [WARNING] High usage: CPU 0.4%, Memory 87.2%
+2025-02-28 12:19:18,891 [INFO] Log: High usage: CPU 0.7%, Memory 87.2%
+2025-02-28 12:19:18,891 [WARNING] High usage: CPU 0.7%, Memory 87.2%
+2025-02-28 12:19:23,913 [INFO] Log: High usage: CPU 0.8%, Memory 87.2%
+2025-02-28 12:19:23,914 [WARNING] High usage: CPU 0.8%, Memory 87.2%
+2025-02-28 12:19:28,936 [INFO] Log: High usage: CPU 0.8%, Memory 87.2%
+2025-02-28 12:19:28,937 [WARNING] High usage: CPU 0.8%, Memory 87.2%
+2025-02-28 12:19:33,955 [INFO] Log: High usage: CPU 0.5%, Memory 87.2%
+2025-02-28 12:19:33,956 [WARNING] High usage: CPU 0.5%, Memory 87.2%
+2025-02-28 12:19:38,973 [INFO] Log: High usage: CPU 0.6%, Memory 87.2%
+2025-02-28 12:19:38,974 [WARNING] High usage: CPU 0.6%, Memory 87.2%
+2025-02-28 12:19:43,988 [INFO] Log: High usage: CPU 0.9%, Memory 87.2%
+2025-02-28 12:19:43,989 [WARNING] High usage: CPU 0.9%, Memory 87.2%
+2025-02-28 12:19:48,996 [INFO] Log: High usage: CPU 1.3%, Memory 87.3%
+2025-02-28 12:19:48,997 [WARNING] High usage: CPU 1.3%, Memory 87.3%
+2025-02-28 12:19:54,008 [INFO] Log: High usage: CPU 0.4%, Memory 87.5%
+2025-02-28 12:19:54,009 [WARNING] High usage: CPU 0.4%, Memory 87.5%
+2025-02-28 12:19:59,034 [INFO] Log: High usage: CPU 0.8%, Memory 87.3%
+2025-02-28 12:19:59,034 [WARNING] High usage: CPU 0.8%, Memory 87.3%
+2025-02-28 12:20:04,051 [INFO] Log: High usage: CPU 0.8%, Memory 87.4%
+2025-02-28 12:20:04,052 [WARNING] High usage: CPU 0.8%, Memory 87.4%
+2025-02-28 12:20:09,067 [INFO] Log: High usage: CPU 0.8%, Memory 87.3%
+2025-02-28 12:20:09,068 [WARNING] High usage: CPU 0.8%, Memory 87.3%
+2025-02-28 12:20:14,090 [INFO] Log: High usage: CPU 1.1%, Memory 87.4%
+2025-02-28 12:20:14,091 [WARNING] High usage: CPU 1.1%, Memory 87.4%
+2025-02-28 12:20:19,113 [INFO] Log: High usage: CPU 0.6%, Memory 87.5%
+2025-02-28 12:20:19,114 [WARNING] High usage: CPU 0.6%, Memory 87.5%
+2025-02-28 12:20:24,126 [INFO] Log: High usage: CPU 0.7%, Memory 87.4%
+2025-02-28 12:20:24,126 [WARNING] High usage: CPU 0.7%, Memory 87.4%
+2025-02-28 12:20:29,145 [INFO] Log: High usage: CPU 0.5%, Memory 87.4%
+2025-02-28 12:20:29,146 [WARNING] High usage: CPU 0.5%, Memory 87.4%
+2025-02-28 12:20:34,164 [INFO] Log: High usage: CPU 0.6%, Memory 87.3%
+2025-02-28 12:20:34,164 [WARNING] High usage: CPU 0.6%, Memory 87.3%
+2025-02-28 12:20:39,188 [INFO] Log: High usage: CPU 0.7%, Memory 87.4%
+2025-02-28 12:20:39,189 [WARNING] High usage: CPU 0.7%, Memory 87.4%
+2025-02-28 12:20:44,202 [INFO] Log: High usage: CPU 0.6%, Memory 87.2%
+2025-02-28 12:20:44,203 [WARNING] High usage: CPU 0.6%, Memory 87.2%
+2025-02-28 12:20:49,226 [INFO] Log: High usage: CPU 1.1%, Memory 87.8%
+2025-02-28 12:20:49,226 [WARNING] High usage: CPU 1.1%, Memory 87.8%
+2025-02-28 12:20:54,237 [INFO] Log: High usage: CPU 0.5%, Memory 87.8%
+2025-02-28 12:20:54,238 [WARNING] High usage: CPU 0.5%, Memory 87.8%
+2025-02-28 12:20:59,259 [INFO] Log: High usage: CPU 0.6%, Memory 87.8%
+2025-02-28 12:20:59,260 [WARNING] High usage: CPU 0.6%, Memory 87.8%
+2025-02-28 12:21:04,274 [INFO] Log: High usage: CPU 3.4%, Memory 87.0%
+2025-02-28 12:21:04,275 [WARNING] High usage: CPU 3.4%, Memory 87.0%
+2025-02-28 12:21:09,294 [INFO] Log: High usage: CPU 0.4%, Memory 87.0%
+2025-02-28 12:21:09,295 [WARNING] High usage: CPU 0.4%, Memory 87.0%
+2025-02-28 12:21:14,306 [INFO] Log: High usage: CPU 0.7%, Memory 87.1%
+2025-02-28 12:21:14,306 [WARNING] High usage: CPU 0.7%, Memory 87.1%
+2025-02-28 12:21:19,331 [INFO] Log: High usage: CPU 0.3%, Memory 87.1%
+2025-02-28 12:21:19,331 [WARNING] High usage: CPU 0.3%, Memory 87.1%
+2025-02-28 12:21:24,352 [INFO] Log: High usage: CPU 0.4%, Memory 87.1%
+2025-02-28 12:21:24,353 [WARNING] High usage: CPU 0.4%, Memory 87.1%
+2025-02-28 12:21:29,368 [INFO] Log: High usage: CPU 0.4%, Memory 87.1%
+2025-02-28 12:21:29,369 [WARNING] High usage: CPU 0.4%, Memory 87.1%
+2025-02-28 12:21:34,378 [INFO] Log: High usage: CPU 2.3%, Memory 87.9%
+2025-02-28 12:21:34,379 [WARNING] High usage: CPU 2.3%, Memory 87.9%
+2025-02-28 12:21:39,397 [INFO] Log: High usage: CPU 1.2%, Memory 88.2%
+2025-02-28 12:21:39,398 [WARNING] High usage: CPU 1.2%, Memory 88.2%
+2025-02-28 12:21:44,405 [INFO] Log: High usage: CPU 1.0%, Memory 88.1%
+2025-02-28 12:21:44,406 [WARNING] High usage: CPU 1.0%, Memory 88.1%
+2025-02-28 12:21:49,418 [INFO] Log: High usage: CPU 1.0%, Memory 88.0%
+2025-02-28 12:21:49,419 [WARNING] High usage: CPU 1.0%, Memory 88.0%
+2025-02-28 12:21:54,462 [INFO] Log: High usage: CPU 6.6%, Memory 89.8%
+2025-02-28 12:21:54,463 [WARNING] High usage: CPU 6.6%, Memory 89.8%
+2025-02-28 12:21:59,477 [INFO] Log: High usage: CPU 3.4%, Memory 85.8%
+2025-02-28 12:21:59,478 [WARNING] High usage: CPU 3.4%, Memory 85.8%
+2025-02-28 12:22:04,496 [INFO] Log: High usage: CPU 2.0%, Memory 85.8%
+2025-02-28 12:22:04,497 [WARNING] High usage: CPU 2.0%, Memory 85.8%
+2025-02-28 12:22:09,516 [INFO] Log: High usage: CPU 2.0%, Memory 85.6%
+2025-02-28 12:22:09,517 [WARNING] High usage: CPU 2.0%, Memory 85.6%
+2025-02-28 12:22:14,530 [INFO] Log: High usage: CPU 1.0%, Memory 85.6%
+2025-02-28 12:22:14,531 [WARNING] High usage: CPU 1.0%, Memory 85.6%
+2025-02-28 12:22:19,546 [INFO] Log: High usage: CPU 1.0%, Memory 85.6%
+2025-02-28 12:22:19,547 [WARNING] High usage: CPU 1.0%, Memory 85.6%
+2025-02-28 12:22:24,563 [INFO] Log: High usage: CPU 0.8%, Memory 85.6%
+2025-02-28 12:22:24,564 [WARNING] High usage: CPU 0.8%, Memory 85.6%
+2025-02-28 12:22:29,575 [INFO] Log: High usage: CPU 0.5%, Memory 85.8%
+2025-02-28 12:22:29,576 [WARNING] High usage: CPU 0.5%, Memory 85.8%
+2025-02-28 12:22:34,600 [INFO] Log: High usage: CPU 0.2%, Memory 85.5%
+2025-02-28 12:22:34,601 [WARNING] High usage: CPU 0.2%, Memory 85.5%
+2025-02-28 12:22:39,615 [INFO] Log: High usage: CPU 0.4%, Memory 85.2%
+2025-02-28 12:22:39,616 [WARNING] High usage: CPU 0.4%, Memory 85.2%
+2025-02-28 12:22:44,627 [INFO] Log: High usage: CPU 0.9%, Memory 85.3%
+2025-02-28 12:22:44,628 [WARNING] High usage: CPU 0.9%, Memory 85.3%
+2025-02-28 12:22:49,637 [INFO] Log: High usage: CPU 0.7%, Memory 85.7%
+2025-02-28 12:22:49,638 [WARNING] High usage: CPU 0.7%, Memory 85.7%
+2025-02-28 12:22:54,658 [INFO] Log: High usage: CPU 0.5%, Memory 85.6%
+2025-02-28 12:22:54,658 [WARNING] High usage: CPU 0.5%, Memory 85.6%
+2025-02-28 12:22:59,668 [INFO] Log: High usage: CPU 0.8%, Memory 85.5%
+2025-02-28 12:22:59,669 [WARNING] High usage: CPU 0.8%, Memory 85.5%
+2025-02-28 12:23:04,690 [INFO] Log: High usage: CPU 0.9%, Memory 85.3%
+2025-02-28 12:23:04,691 [WARNING] High usage: CPU 0.9%, Memory 85.3%
+2025-02-28 12:23:09,712 [INFO] Log: High usage: CPU 1.3%, Memory 82.9%
+2025-02-28 12:23:09,713 [WARNING] High usage: CPU 1.3%, Memory 82.9%
+2025-02-28 12:23:14,735 [INFO] Log: High usage: CPU 0.7%, Memory 82.9%
+2025-02-28 12:23:14,736 [WARNING] High usage: CPU 0.7%, Memory 82.9%
+2025-02-28 12:23:19,759 [INFO] Log: High usage: CPU 0.5%, Memory 82.9%
+2025-02-28 12:23:19,759 [WARNING] High usage: CPU 0.5%, Memory 82.9%
+2025-02-28 12:23:24,767 [INFO] Log: High usage: CPU 0.6%, Memory 82.8%
+2025-02-28 12:23:24,768 [WARNING] High usage: CPU 0.6%, Memory 82.8%
+2025-02-28 12:23:29,780 [INFO] Log: High usage: CPU 0.5%, Memory 82.8%
+2025-02-28 12:23:29,781 [WARNING] High usage: CPU 0.5%, Memory 82.8%
+2025-02-28 12:23:34,792 [INFO] Log: High usage: CPU 0.6%, Memory 82.8%
+2025-02-28 12:23:34,793 [WARNING] High usage: CPU 0.6%, Memory 82.8%
+2025-02-28 12:23:39,807 [INFO] Log: High usage: CPU 0.6%, Memory 82.8%
+2025-02-28 12:23:39,807 [WARNING] High usage: CPU 0.6%, Memory 82.8%
+2025-02-28 12:23:44,825 [INFO] Log: High usage: CPU 0.2%, Memory 82.8%
+2025-02-28 12:23:44,826 [WARNING] High usage: CPU 0.2%, Memory 82.8%
+2025-02-28 12:23:49,836 [INFO] Log: High usage: CPU 0.5%, Memory 82.5%
+2025-02-28 12:23:49,837 [WARNING] High usage: CPU 0.5%, Memory 82.5%
+2025-02-28 12:23:54,845 [INFO] Log: High usage: CPU 0.7%, Memory 82.7%
+2025-02-28 12:23:54,846 [WARNING] High usage: CPU 0.7%, Memory 82.7%
+2025-02-28 12:23:59,869 [INFO] Log: High usage: CPU 0.8%, Memory 82.5%
+2025-02-28 12:23:59,870 [WARNING] High usage: CPU 0.8%, Memory 82.5%
+2025-02-28 12:24:04,891 [INFO] Log: High usage: CPU 0.4%, Memory 82.6%
+2025-02-28 12:24:04,892 [WARNING] High usage: CPU 0.4%, Memory 82.6%
+2025-02-28 12:24:09,903 [INFO] Log: High usage: CPU 1.1%, Memory 82.6%
+2025-02-28 12:24:09,904 [WARNING] High usage: CPU 1.1%, Memory 82.6%
+2025-02-28 12:24:14,924 [INFO] Log: High usage: CPU 0.6%, Memory 82.6%
+2025-02-28 12:24:14,925 [WARNING] High usage: CPU 0.6%, Memory 82.6%
+2025-02-28 12:24:19,938 [INFO] Log: High usage: CPU 0.5%, Memory 82.6%
+2025-02-28 12:24:19,938 [WARNING] High usage: CPU 0.5%, Memory 82.6%
+2025-02-28 12:24:24,961 [INFO] Log: High usage: CPU 0.8%, Memory 82.6%
+2025-02-28 12:24:24,962 [WARNING] High usage: CPU 0.8%, Memory 82.6%
+2025-02-28 12:24:29,974 [INFO] Log: High usage: CPU 0.6%, Memory 82.8%
+2025-02-28 12:24:29,975 [WARNING] High usage: CPU 0.6%, Memory 82.8%
+2025-02-28 12:24:34,998 [INFO] Log: High usage: CPU 0.5%, Memory 82.6%
+2025-02-28 12:24:34,998 [WARNING] High usage: CPU 0.5%, Memory 82.6%
+2025-02-28 12:24:40,022 [INFO] Log: High usage: CPU 0.7%, Memory 82.6%
+2025-02-28 12:24:40,022 [WARNING] High usage: CPU 0.7%, Memory 82.6%
+2025-02-28 12:24:45,030 [INFO] Log: High usage: CPU 1.9%, Memory 83.0%
+2025-02-28 12:24:45,031 [WARNING] High usage: CPU 1.9%, Memory 83.0%
+2025-02-28 12:24:47,266 [INFO] Serial port COM3 closed.
+2025-02-28 12:24:47,267 [INFO] Application closed by user.
+2025-02-28 12:24:47,362 [INFO] Application closed successfully.
