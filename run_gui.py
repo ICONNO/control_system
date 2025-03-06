@@ -31,7 +31,6 @@ def main():
     parser = argparse.ArgumentParser(description="Stepper Motor Control GUI")
     parser.add_argument('--port', type=str, default='COM3', help="Serial port for Arduino (e.g., COM3)")
     args = parser.parse_args()
-    
     serial_comm = SerialInterface(port=args.port)
     logging.info(f"Connecting to serial port {serial_comm.port}.")
     if not serial_comm.connect():

@@ -1129,3 +1129,24 @@ Still capture image received
 2025-02-28 12:24:47,266 [INFO] Serial port COM3 closed.
 2025-02-28 12:24:47,267 [INFO] Application closed by user.
 2025-02-28 12:24:47,362 [INFO] Application closed successfully.
+2025-03-06 15:43:25,808 [INFO] Connecting to serial port COM3.
+2025-03-06 15:43:25,813 [INFO] Connected to serial port COM3 at 9600 bps.
+2025-03-06 15:43:26,415 [INFO] Initializing GUI.
+2025-03-06 15:43:26,493 [INFO] Widgets created and arranged.
+2025-03-06 15:43:26,493 [INFO] GUI initialized.
+2025-03-06 15:43:30,132 [INFO] Log: Moving down.
+2025-03-06 15:43:30,132 [INFO] Command 'DOWN' sent.
+2025-03-06 15:43:31,511 [INFO] Log: High usage: CPU 3.8%, Memory 80.6%
+2025-03-06 15:43:31,511 [WARNING] High usage: CPU 3.8%, Memory 80.6%
+2025-03-06 15:43:36,528 [INFO] Log: High usage: CPU 1.9%, Memory 80.2%
+2025-03-06 15:43:36,529 [WARNING] High usage: CPU 1.9%, Memory 80.2%
+2025-03-06 15:43:40,781 [INFO] Log: Motor stopped.
+2025-03-06 15:43:40,781 [INFO] Command 'STOP' sent.
+2025-03-06 15:43:41,547 [INFO] Log: High usage: CPU 1.7%, Memory 80.1%
+2025-03-06 15:43:41,550 [WARNING] High usage: CPU 1.7%, Memory 80.1%
+2025-03-06 15:43:46,559 [INFO] Log: High usage: CPU 1.2%, Memory 80.1%
+2025-03-06 15:43:46,560 [WARNING] High usage: CPU 1.2%, Memory 80.1%
+2025-03-06 15:44:01,606 [INFO] Log: High usage: CPU 0.3%, Memory 80.1%
+2025-03-06 15:44:01,607 [WARNING] High usage: CPU 0.3%, Memory 80.1%
+2025-03-06 15:51:12,706 [INFO] Log: High usage: CPU 2.8%, Memory 80.1%
+2025-03-06 15:51:12,707 [WARNING] High usage: CPU 2.8%, Memory 80.1%
