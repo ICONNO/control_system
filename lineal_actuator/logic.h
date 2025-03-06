@@ -6,11 +6,6 @@
 #include "Sensor.h"
 #include "Config.h"
 
-/**
- * Logic class.
- * Processes serial commands, updates motor state based on sensor readings,
- * and manages auto and manual modes.
- */
 class Logic {
 public:
     Logic(Motor& motor, Sensor& sensor);
@@ -41,4 +36,4 @@ private:
     void processState();     // Process state in auto mode
 };
 
-#endif  // LOGIC_H
+#endif
