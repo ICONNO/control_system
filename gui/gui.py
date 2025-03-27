@@ -3,7 +3,8 @@
 Motor and Vacuum Pump Control GUI
 
 Displays mode, current distance, and system status.
-Provides buttons for auto/manual operation, pump control, and remote image capture.
+Provides buttons for auto/manual operation, pump control, remote image capture,
+and discrete pulse interval selection for 100, 200, 300, and 500 µs.
 """
 
 import tkinter as tk
@@ -18,8 +19,9 @@ import psutil
 from typing import Optional
 from .serial_comm import SerialInterface
 from .styles import set_styles
-from remote_capture import capture_images
+from remote_capture import capture_images  # Ensure remote_capture.py is in your project root
 
+# Logging configuration
 logging.basicConfig(
     filename='logs/app.log',
     level=logging.INFO,
@@ -95,10 +97,12 @@ class MotorControlGUI:
         # State variables
         self.mode = tk.StringVar(value="Manual")
         self.current_distance = tk.StringVar(value="Unknown")
-        self.pulse_interval = tk.IntVar(value=800)  # in microseconds
         self.system_status = tk.StringVar(
             value="Real Mode" if self.serial.is_connected else "Disconnected"
         )
+
+        # Variable for discrete pulse interval selection (values: "100", "200", "300", "500")
+        self.pulse_interval_choice = tk.StringVar(value="100")
 
         self.up_pressed = False
         self.down_pressed = False
@@ -170,20 +174,24 @@ class MotorControlGUI:
         btn_pump_off = ttkb.Button(button_frame, text="Pump Off", command=self.pump_off)
         btn_pump_off.pack(side="left", padx=5, pady=5)
         CreateToolTip(btn_pump_off, "Turn vacuum pump off.")
-        # New Capture button
+        # Capture button
         btn_capture = ttkb.Button(button_frame, text="Capture Image", command=self.trigger_capture)
         btn_capture.pack(side="left", padx=5, pady=5)
         CreateToolTip(btn_capture, "Trigger remote image capture.")
 
-        # Speed slider panel
+        # Speed selection panel using discrete pulse intervals (100, 200, 300, 500 µs)
         speed_frame = ttkb.Frame(main_frame)
         speed_frame.pack(fill="x", pady=5)
         ttkb.Label(speed_frame, text="Pulse Interval (μs):").pack(side="left", padx=5)
-        self.speed_slider = ttkb.Scale(speed_frame, from_=20, to=2000, orient="horizontal",
-                                        variable=self.pulse_interval, command=self.update_speed)
-        self.speed_slider.pack(side="left", fill="x", expand=True, padx=5)
-        self.speed_display = ttkb.Label(speed_frame, text=f"{self.pulse_interval.get()} μs")
-        self.speed_display.pack(side="left", padx=5)
+        for interval in ["100", "200", "300", "500"]:
+            r = ttkb.Radiobutton(
+                speed_frame,
+                text=f"{interval} μs",
+                value=interval,
+                variable=self.pulse_interval_choice,
+                command=self.update_discrete_speed
+            )
+            r.pack(side="left", padx=5)
 
         # Log area
         log_frame = ttkb.LabelFrame(main_frame, text="Logs", padding=10)
@@ -202,6 +210,17 @@ class MotorControlGUI:
         self.master.bind("<KeyRelease-Down>", self.on_up_release)
         self.master.focus_set()
         logger.info("Widgets created and arranged.")
+
+    def update_discrete_speed(self) -> None:
+        # Get the selected pulse interval as an integer.
+        pulse_interval = int(self.pulse_interval_choice.get())
+        # Calculate steps per second from the pulse interval.
+        steps_per_second = int(1_000_000 / pulse_interval)
+        # Send the speed command to the controller.
+        success = self.send_command(f"SET_SPEED {steps_per_second}")
+        if success:
+            self.log_message(f"Speed set to: {steps_per_second} steps/s (Pulse interval: {pulse_interval} μs).", level="INFO")
+            logger.info(f"Command 'SET_SPEED {steps_per_second}' sent.")
 
     def trigger_capture(self) -> None:
         """Trigger remote image capture via SSH."""
@@ -290,15 +309,8 @@ class MotorControlGUI:
             logger.info("Command 'STOP' sent.")
 
     def update_speed(self, event: Optional[tk.Event] = None) -> None:
-        pulse_interval = self.pulse_interval.get()
-        if pulse_interval < 1:
-            pulse_interval = 1
-        steps_per_second = int(1_000_000 / pulse_interval)
-        self.speed_display.config(text=f"{int(pulse_interval)} μs")
-        success = self.send_command(f"SET_SPEED {steps_per_second}")
-        if success:
-            self.log_message(f"Speed set to: {steps_per_second} steps/s (Interval: {pulse_interval} μs).", level="INFO")
-            logger.info(f"Command 'SET_SPEED {steps_per_second}' sent.")
+        # Not used since we replaced the slider.
+        pass
 
     def handle_serial_data(self, data: str) -> None:
         logger.debug(f"Received: {data}")
@@ -309,9 +321,6 @@ class MotorControlGUI:
                 self.current_distance.set(f"{d_val} cm")
             except ValueError:
                 self.log_message(f"Distance parse error: {data}", level="ERROR")
-        elif "CAPTURE_IMAGE" in data:
-            self.log_message("Auto mode: Triggering remote capture.", level="INFO")
-            self.trigger_capture()
         elif "Motor stopped" in data:
             self.mode.set("Manual")
             self.log_message("Motor stopped (from Arduino).", level="INFO")
@@ -327,6 +336,9 @@ class MotorControlGUI:
             self.log_message("Vacuum pump turned on.", level="INFO")
         elif "Vacuum pump off" in data:
             self.log_message("Vacuum pump turned off.", level="INFO")
+        elif "CAPTURE" in data:
+            self.log_message("Capture command received from Arduino.", level="INFO")
+            self.trigger_capture()
         else:
             logger.debug(f"Unclassified: {data}")
 

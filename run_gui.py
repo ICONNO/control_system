@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-"""
-Main entry point for the Stepper Motor Control GUI
-"""
-
 import argparse
 import sys
 import tkinter as tk

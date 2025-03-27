@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/misdocumentos.dev/Desktop/Proyecto",
-      "program": "c:/Users/misdocumentos.dev/Desktop/Proyecto/build/Debug/outDebug",
+      "cwd": "c:/Users/misdocumentos.dev/Desktop/control_system-1f2008bf5a712f8dc7061a1ec94dd26f62865420/lineal_actuator",
+      "program": "c:/Users/misdocumentos.dev/Desktop/control_system-1f2008bf5a712f8dc7061a1ec94dd26f62865420/lineal_actuator/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

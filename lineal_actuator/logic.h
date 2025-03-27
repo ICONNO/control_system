@@ -10,12 +10,12 @@ class Logic {
 public:
     Logic(Motor& motor, Sensor& sensor);
     
-    void initialize();
-    void update();
-    void handleSerialCommands();
+    void initialize();            // Initialize logic
+    void update();                // Update logic periodically (called in loop)
+    void handleSerialCommands();  // Process serial commands
     void setAutoMode(bool mode);
     void adjustSpeed(float maxSpeed, float acceleration);
-    bool move_to(long pos); 
+    bool move_to(long pos);       // Blocking move for manual control
     
 private:
     Motor& motor_;
@@ -32,8 +32,8 @@ private:
     unsigned long previousDistanceMillis_;
     float currentDistance_;
     
-    void transitionState();
-    void processState();
+    void transitionState();  // Auto mode state transition
+    void processState();     // Process state in auto mode
 };
 
 #endif  // LOGIC_H

@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
 Remote Capture Trigger using Paramiko
+
+This script connects to the Raspberry Pi via SSH using Paramiko,
+automatically supplies the password, and executes the capture script.
 """
 
 import paramiko

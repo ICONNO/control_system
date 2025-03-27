@@ -1,5 +1,4 @@
 #include "Logic.h"
-#include "Config.h"
 
 // Serial command definitions
 const String CMD_AUTO      = "AUTO";
@@ -43,8 +42,7 @@ void Logic::update() {
     }
   }
   
-  // En modo manual se permite la actualización según las teclas (no se modifica aquí)
-  const int deltaSteps = 10;  // Incremento en pasos para control manual
+  const int deltaSteps = 10;  // Step increment for manual control
   if (!autoMode_) {
     if (movingUp) {
       targetPosition += deltaSteps;
@@ -69,7 +67,8 @@ void Logic::handleSerialCommands() {
     if (cmd.equalsIgnoreCase(CMD_AUTO)) {
       LOG_INFO("Auto mode activated.");
       setAutoMode(true);
-      // Al activar el auto mode, iniciamos moviendo hacia abajo
+      // Start by commanding a long downward move (increasing the distance)
+      motor_.moveTo(10000);
       currentState_ = MotorState::MOVING_DOWN;
       previousState_ = MotorState::MOVING_DOWN;
       movingUp = false;
@@ -130,39 +129,46 @@ void Logic::handleSerialCommands() {
 }
 
 void Logic::transitionState() {
-  // Aquí se usa un pequeño incremento para mover gradualmente el motor.
-  const long stepIncrement = 10; // Ajusta según tu sistema
-  if (currentState_ == MotorState::MOVING_DOWN) {
-    if (currentDistance_ <= DIST_LOWER_TARGET + DIST_MARGIN) {
-      // Se ha alcanzado o superado el límite inferior.
-      motor_.stop();
-      LOG_INFO("Lower limit reached. Stopping motor and waiting 5 seconds...");
-      delay(5000);  // Espera 5 segundos para la captura
-      Serial.println("CAPTURE_IMAGE"); // Envía comando de captura remota.
-      // Ahora se inicia el movimiento hacia arriba.
-      currentState_ = MotorState::MOVING_UP;
-      previousState_ = MotorState::MOVING_UP;
-    } else {
-      // Si no se ha alcanzado, continúa moviendo hacia abajo.
-      long newPos = motor_.currentPosition() - stepIncrement;
-      motor_.moveTo(newPos);
-    }
-  }
-  else if (currentState_ == MotorState::MOVING_UP) {
-    if (currentDistance_ >= DIST_UPPER_TARGET - DIST_MARGIN) {
-      // Se ha alcanzado el límite superior.
-      motor_.stop();
-      LOG_INFO("Upper limit reached. Stopping motor.");
-      currentState_ = MotorState::IDLE;
-    } else {
-      // Si no se ha alcanzado, continúa moviendo hacia arriba.
-      long newPos = motor_.currentPosition() + stepIncrement;
-      motor_.moveTo(newPos);
-    }
-  }
-  else if (currentState_ == MotorState::IDLE) {
-    // En estado IDLE en modo automático, se puede elegir iniciar un nuevo ciclo
-    // o quedarse en reposo. Aquí dejamos al usuario activar nuevamente.
+  switch (currentState_) {
+    case MotorState::MOVING_DOWN:
+      // When we reach the lower limit (distance too small), we need to move UP.
+      if (currentDistance_ <= DIST_LOWER_TARGET + DIST_MARGIN) {
+        motor_.stop();
+        LOG_INFO("Lower limit reached. Stopping for 5 seconds for capture, then moving up.");
+        // Send a signal for remote capture (your remote_capture.py should listen for this)
+        Serial.println("CAPTURE");
+        delay(10000);
+        // Command a long upward move (negative target)
+        motor_.moveTo(-100000000000);
+        currentState_ = MotorState::MOVING_UP;
+        previousState_ = MotorState::MOVING_UP;
+      }
+      break;
+    case MotorState::MOVING_UP:
+      // When we reach the upper limit (distance too large), we need to move DOWN.
+      if (currentDistance_ >= DIST_UPPER_TARGET - DIST_MARGIN) {
+        motor_.stop();
+        LOG_INFO("Upper limit reached. Moving down.");
+        // Command a long downward move (positive target)
+        motor_.moveTo(100000000000);
+        currentState_ = MotorState::MOVING_DOWN;
+        previousState_ = MotorState::MOVING_DOWN;
+      }
+      break;
+    case MotorState::IDLE:
+      if (autoMode_) {
+        if (previousState_ == MotorState::MOVING_DOWN) {
+          motor_.moveTo(-100000000000);
+          currentState_ = MotorState::MOVING_UP;
+          previousState_ = MotorState::MOVING_UP;
+        }
+        else if (previousState_ == MotorState::MOVING_UP) {
+          motor_.moveTo(100000000000);
+          currentState_ = MotorState::MOVING_DOWN;
+          previousState_ = MotorState::MOVING_DOWN;
+        }
+      }
+      break;
   }
 }
 
