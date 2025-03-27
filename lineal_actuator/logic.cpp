@@ -43,6 +43,7 @@ void Logic::update() {
     }
   }
   
+  // En modo manual se permite la actualización según las teclas (no se modifica aquí)
   const int deltaSteps = 10;  // Incremento en pasos para control manual
   if (!autoMode_) {
     if (movingUp) {
@@ -68,7 +69,7 @@ void Logic::handleSerialCommands() {
     if (cmd.equalsIgnoreCase(CMD_AUTO)) {
       LOG_INFO("Auto mode activated.");
       setAutoMode(true);
-      // Inicia en el estado MOVING_DOWN
+      // Al activar el auto mode, iniciamos moviendo hacia abajo
       currentState_ = MotorState::MOVING_DOWN;
       previousState_ = MotorState::MOVING_DOWN;
       movingUp = false;
@@ -129,31 +130,39 @@ void Logic::handleSerialCommands() {
 }
 
 void Logic::transitionState() {
-  switch (currentState_) {
-    case MotorState::MOVING_DOWN:
-      if (currentDistance_ <= DIST_LOWER_TARGET + DIST_MARGIN) {
-        motor_.stop();
-        LOG_INFO("Lower limit reached. Stopping motor and waiting 5 seconds...");
-        delay(5000);  // Espera 5 segundos para capturar imágenes
-        Serial.println("CAPTURE_IMAGE"); // Comando para disparar captura remota
-        // Mueve el motor hacia arriba un número fijo de pasos (ajustar según necesidades)
-        long stepsUp = 200;  
-        motor_.moveToBlocking(motor_.currentPosition() + stepsUp);
-        currentState_ = MotorState::MOVING_UP;
-        previousState_ = MotorState::MOVING_UP;
-      }
-      break;
-    case MotorState::MOVING_UP:
-      if (currentDistance_ >= DIST_UPPER_TARGET - DIST_MARGIN) {
-        motor_.stop();
-        LOG_INFO("Upper limit reached. Stopping motor.");
-        currentState_ = MotorState::IDLE;
-      }
-      break;
-    case MotorState::IDLE:
-      // En modo automático, se podría implementar una transición según el estado anterior,
-      // pero en este ejemplo se mantiene en reposo.
-      break;
+  // Aquí se usa un pequeño incremento para mover gradualmente el motor.
+  const long stepIncrement = 10; // Ajusta según tu sistema
+  if (currentState_ == MotorState::MOVING_DOWN) {
+    if (currentDistance_ <= DIST_LOWER_TARGET + DIST_MARGIN) {
+      // Se ha alcanzado o superado el límite inferior.
+      motor_.stop();
+      LOG_INFO("Lower limit reached. Stopping motor and waiting 5 seconds...");
+      delay(5000);  // Espera 5 segundos para la captura
+      Serial.println("CAPTURE_IMAGE"); // Envía comando de captura remota.
+      // Ahora se inicia el movimiento hacia arriba.
+      currentState_ = MotorState::MOVING_UP;
+      previousState_ = MotorState::MOVING_UP;
+    } else {
+      // Si no se ha alcanzado, continúa moviendo hacia abajo.
+      long newPos = motor_.currentPosition() - stepIncrement;
+      motor_.moveTo(newPos);
+    }
+  }
+  else if (currentState_ == MotorState::MOVING_UP) {
+    if (currentDistance_ >= DIST_UPPER_TARGET - DIST_MARGIN) {
+      // Se ha alcanzado el límite superior.
+      motor_.stop();
+      LOG_INFO("Upper limit reached. Stopping motor.");
+      currentState_ = MotorState::IDLE;
+    } else {
+      // Si no se ha alcanzado, continúa moviendo hacia arriba.
+      long newPos = motor_.currentPosition() + stepIncrement;
+      motor_.moveTo(newPos);
+    }
+  }
+  else if (currentState_ == MotorState::IDLE) {
+    // En estado IDLE en modo automático, se puede elegir iniciar un nuevo ciclo
+    // o quedarse en reposo. Aquí dejamos al usuario activar nuevamente.
   }
 }
 

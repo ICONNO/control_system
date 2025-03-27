@@ -17479,3 +17479,182 @@ Still capture image received
 2025-03-27 10:34:22,518 [INFO] Serial port COM3 closed.
 2025-03-27 10:34:22,519 [INFO] Application closed by user.
 2025-03-27 10:34:22,575 [INFO] Application closed successfully.
+2025-03-27 10:41:37,820 [INFO] Connecting to serial port COM3.
+2025-03-27 10:41:37,823 [INFO] Connected to serial port COM3 at 9600 bps.
+2025-03-27 10:41:37,871 [INFO] Initializing GUI.
+2025-03-27 10:41:37,903 [INFO] Widgets created and arranged.
+2025-03-27 10:41:37,904 [INFO] GUI initialized.
+2025-03-27 10:41:42,936 [INFO] Log: High usage: CPU 3.3%, Memory 81.5%
+2025-03-27 10:41:42,937 [WARNING] High usage: CPU 3.3%, Memory 81.5%
+2025-03-27 10:41:47,944 [INFO] Log: High usage: CPU 1.0%, Memory 81.4%
+2025-03-27 10:41:47,945 [WARNING] High usage: CPU 1.0%, Memory 81.4%
+2025-03-27 10:41:52,965 [INFO] Log: High usage: CPU 0.5%, Memory 81.3%
+2025-03-27 10:41:52,966 [WARNING] High usage: CPU 0.5%, Memory 81.3%
+2025-03-27 10:41:57,982 [INFO] Log: High usage: CPU 2.2%, Memory 81.3%
+2025-03-27 10:41:57,983 [WARNING] High usage: CPU 2.2%, Memory 81.3%
+2025-03-27 10:42:02,991 [INFO] Log: High usage: CPU 2.7%, Memory 81.3%
+2025-03-27 10:42:02,992 [WARNING] High usage: CPU 2.7%, Memory 81.3%
+2025-03-27 10:42:08,011 [INFO] Log: High usage: CPU 3.7%, Memory 81.3%
+2025-03-27 10:42:08,012 [WARNING] High usage: CPU 3.7%, Memory 81.3%
+2025-03-27 10:42:11,268 [INFO] Serial port COM3 closed.
+2025-03-27 10:42:11,269 [INFO] Application closed by user.
+2025-03-27 10:42:11,315 [INFO] Application closed successfully.
+2025-03-27 10:43:04,859 [INFO] Connecting to serial port COM3.
+2025-03-27 10:43:04,862 [INFO] Connected to serial port COM3 at 9600 bps.
+2025-03-27 10:43:04,904 [INFO] Initializing GUI.
+2025-03-27 10:43:04,929 [INFO] Widgets created and arranged.
+2025-03-27 10:43:04,930 [INFO] GUI initialized.
+2025-03-27 10:43:10,717 [INFO] Log: Moving down.
+2025-03-27 10:43:10,718 [INFO] Command 'DOWN' sent.
+2025-03-27 10:43:11,130 [INFO] Log: Motor stopped.
+2025-03-27 10:43:11,131 [INFO] Command 'STOP' sent.
+2025-03-27 10:43:11,346 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:43:12,143 [INFO] Log: Moving down.
+2025-03-27 10:43:12,143 [INFO] Command 'DOWN' sent.
+2025-03-27 10:43:12,325 [INFO] Log: Motor stopped.
+2025-03-27 10:43:12,326 [INFO] Command 'STOP' sent.
+2025-03-27 10:43:13,226 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:43:21,253 [INFO] Log: Moving down.
+2025-03-27 10:43:21,254 [INFO] Command 'DOWN' sent.
+2025-03-27 10:43:22,840 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:43:36,256 [INFO] Log: Motor stopped.
+2025-03-27 10:43:36,256 [INFO] Command 'STOP' sent.
+2025-03-27 10:43:39,181 [INFO] Log: Moving down.
+2025-03-27 10:43:39,182 [INFO] Command 'DOWN' sent.
+2025-03-27 10:43:41,380 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:43:52,902 [INFO] Log: Motor stopped.
+2025-03-27 10:43:52,903 [INFO] Command 'STOP' sent.
+2025-03-27 10:44:03,991 [INFO] Log: Moving down.
+2025-03-27 10:44:03,991 [INFO] Command 'DOWN' sent.
+2025-03-27 10:44:06,882 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:44:16,218 [INFO] Log: Motor stopped.
+2025-03-27 10:44:16,219 [INFO] Command 'STOP' sent.
+2025-03-27 10:44:17,705 [INFO] Log: Moving down.
+2025-03-27 10:44:17,706 [INFO] Command 'DOWN' sent.
+2025-03-27 10:44:18,590 [INFO] Log: Motor stopped.
+2025-03-27 10:44:18,591 [INFO] Command 'STOP' sent.
+2025-03-27 10:44:19,374 [INFO] Log: Moving down.
+2025-03-27 10:44:19,375 [INFO] Command 'DOWN' sent.
+2025-03-27 10:44:19,725 [INFO] Log: Motor stopped.
+2025-03-27 10:44:19,726 [INFO] Command 'STOP' sent.
+2025-03-27 10:44:20,443 [INFO] Log: Moving down.
+2025-03-27 10:44:20,444 [INFO] Command 'DOWN' sent.
+2025-03-27 10:44:20,925 [INFO] Log: Motor stopped.
+2025-03-27 10:44:20,926 [INFO] Command 'STOP' sent.
+2025-03-27 10:44:21,092 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:44:21,147 [INFO] Log: Moving up.
+2025-03-27 10:44:21,148 [INFO] Command 'UP' sent.
+2025-03-27 10:44:21,228 [WARNING] Command 'STOP' throttled.
+2025-03-27 10:44:21,229 [INFO] Log: Command 'STOP' throttled.
+2025-03-27 10:44:22,952 [INFO] Log: Moving down.
+2025-03-27 10:44:22,953 [INFO] Command 'DOWN' sent.
+2025-03-27 10:44:23,023 [WARNING] Command 'STOP' throttled.
+2025-03-27 10:44:23,024 [INFO] Log: Command 'STOP' throttled.
+2025-03-27 10:44:23,093 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:44:23,390 [INFO] Log: Moving up.
+2025-03-27 10:44:23,391 [INFO] Command 'UP' sent.
+2025-03-27 10:44:23,476 [WARNING] Command 'STOP' throttled.
+2025-03-27 10:44:23,476 [INFO] Log: Command 'STOP' throttled.
+2025-03-27 10:44:23,981 [INFO] Log: Moving up.
+2025-03-27 10:44:23,981 [INFO] Command 'UP' sent.
+2025-03-27 10:44:24,040 [WARNING] Command 'STOP' throttled.
+2025-03-27 10:44:24,041 [INFO] Log: Command 'STOP' throttled.
+2025-03-27 10:44:24,307 [INFO] Log: Moving down.
+2025-03-27 10:44:24,308 [INFO] Command 'DOWN' sent.
+2025-03-27 10:44:24,390 [WARNING] Command 'STOP' throttled.
+2025-03-27 10:44:24,392 [INFO] Log: Command 'STOP' throttled.
+2025-03-27 10:44:24,480 [INFO] Log: Moving down.
+2025-03-27 10:44:24,481 [INFO] Command 'DOWN' sent.
+2025-03-27 10:44:24,530 [WARNING] Command 'STOP' throttled.
+2025-03-27 10:44:24,531 [INFO] Log: Command 'STOP' throttled.
+2025-03-27 10:44:24,608 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:44:24,796 [INFO] Log: Moving up.
+2025-03-27 10:44:24,797 [INFO] Command 'UP' sent.
+2025-03-27 10:44:24,855 [WARNING] Command 'STOP' throttled.
+2025-03-27 10:44:24,856 [INFO] Log: Command 'STOP' throttled.
+2025-03-27 10:44:25,367 [INFO] Log: Moving up.
+2025-03-27 10:44:25,367 [INFO] Command 'UP' sent.
+2025-03-27 10:44:25,429 [WARNING] Command 'STOP' throttled.
+2025-03-27 10:44:25,430 [INFO] Log: Command 'STOP' throttled.
+2025-03-27 10:44:25,688 [INFO] Log: Moving down.
+2025-03-27 10:44:25,688 [INFO] Command 'DOWN' sent.
+2025-03-27 10:44:25,690 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:44:25,780 [WARNING] Command 'STOP' throttled.
+2025-03-27 10:44:25,781 [INFO] Log: Command 'STOP' throttled.
+2025-03-27 10:44:26,065 [INFO] Log: Moving up.
+2025-03-27 10:44:26,066 [INFO] Command 'UP' sent.
+2025-03-27 10:44:26,177 [INFO] Log: Motor stopped.
+2025-03-27 10:44:26,178 [INFO] Command 'STOP' sent.
+2025-03-27 10:44:27,770 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:44:28,431 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:44:29,213 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:44:29,756 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:44:30,084 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:44:30,635 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:44:31,396 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:44:32,025 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:44:32,537 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:44:33,842 [INFO] Serial port COM3 closed.
+2025-03-27 10:44:33,843 [INFO] Application closed by user.
+2025-03-27 10:44:33,909 [INFO] Application closed successfully.
+2025-03-27 10:45:32,760 [INFO] Connecting to serial port COM3.
+2025-03-27 10:45:32,763 [INFO] Connected to serial port COM3 at 9600 bps.
+2025-03-27 10:45:32,799 [INFO] Initializing GUI.
+2025-03-27 10:45:32,821 [INFO] Widgets created and arranged.
+2025-03-27 10:45:32,821 [INFO] GUI initialized.
+2025-03-27 10:45:36,808 [INFO] Log: Moving up.
+2025-03-27 10:45:36,809 [INFO] Command 'UP' sent.
+2025-03-27 10:45:37,518 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:45:40,002 [INFO] Log: Motor stopped.
+2025-03-27 10:45:40,003 [INFO] Command 'STOP' sent.
+2025-03-27 10:45:49,682 [INFO] Log: Moving up.
+2025-03-27 10:45:49,683 [INFO] Command 'UP' sent.
+2025-03-27 10:45:50,925 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:45:53,252 [INFO] Log: Motor stopped.
+2025-03-27 10:45:53,253 [INFO] Command 'STOP' sent.
+2025-03-27 10:45:55,178 [INFO] Log: Auto mode activated.
+2025-03-27 10:45:55,179 [INFO] Auto mode activated.
+2025-03-27 10:45:56,913 [INFO] Log: Auto mode activated (from Arduino).
+2025-03-27 10:45:58,700 [INFO] Log: Auto mode activated.
+2025-03-27 10:45:58,701 [INFO] Auto mode activated.
+2025-03-27 10:46:00,675 [INFO] Log: Auto mode activated (from Arduino).
+2025-03-27 10:46:04,493 [INFO] Serial port COM3 closed.
+2025-03-27 10:46:04,494 [INFO] Application closed by user.
+2025-03-27 10:46:04,546 [INFO] Application closed successfully.
+2025-03-27 10:46:07,712 [INFO] Connecting to serial port COM3.
+2025-03-27 10:46:07,715 [INFO] Connected to serial port COM3 at 9600 bps.
+2025-03-27 10:46:07,756 [INFO] Initializing GUI.
+2025-03-27 10:46:07,780 [INFO] Widgets created and arranged.
+2025-03-27 10:46:07,781 [INFO] GUI initialized.
+2025-03-27 10:46:10,128 [INFO] Log: Auto mode activated.
+2025-03-27 10:46:10,128 [INFO] Auto mode activated.
+2025-03-27 10:46:10,815 [INFO] Log: Auto mode activated (from Arduino).
+2025-03-27 10:46:14,565 [INFO] Log: Moving up.
+2025-03-27 10:46:14,566 [INFO] Command 'UP' sent.
+2025-03-27 10:46:14,762 [INFO] Log: Motor stopped.
+2025-03-27 10:46:14,763 [INFO] Command 'STOP' sent.
+2025-03-27 10:46:15,425 [INFO] Log: Manual mode activated (from Arduino).
+2025-03-27 10:46:15,975 [INFO] Log: Auto mode activated.
+2025-03-27 10:46:15,976 [INFO] Auto mode activated.
+2025-03-27 10:46:17,279 [INFO] Log: Auto mode activated (from Arduino).
+2025-03-27 10:46:17,358 [INFO] Log: Auto mode activated.
+2025-03-27 10:46:17,358 [INFO] Auto mode activated.
+2025-03-27 10:46:17,640 [INFO] Log: Auto mode activated.
+2025-03-27 10:46:17,640 [INFO] Auto mode activated.
+2025-03-27 10:46:17,811 [INFO] Log: Auto mode activated.
+2025-03-27 10:46:17,811 [INFO] Auto mode activated.
+2025-03-27 10:46:17,930 [INFO] Log: Auto mode activated.
+2025-03-27 10:46:17,931 [INFO] Auto mode activated.
+2025-03-27 10:46:18,072 [INFO] Log: Auto mode activated.
+2025-03-27 10:46:18,073 [INFO] Auto mode activated.
+2025-03-27 10:46:18,184 [INFO] Log: Auto mode activated.
+2025-03-27 10:46:18,184 [INFO] Auto mode activated.
+2025-03-27 10:46:18,903 [INFO] Log: Auto mode activated (from Arduino).
+2025-03-27 10:46:19,340 [INFO] Log: Auto mode activated (from Arduino).
+2025-03-27 10:46:19,664 [INFO] Log: Auto mode activated (from Arduino).
+2025-03-27 10:46:19,980 [INFO] Log: Auto mode activated (from Arduino).
+2025-03-27 10:46:20,386 [INFO] Log: Auto mode activated (from Arduino).
+2025-03-27 10:46:20,711 [INFO] Log: Auto mode activated (from Arduino).
+2025-03-27 10:46:22,776 [INFO] Serial port COM3 closed.
+2025-03-27 10:46:22,777 [INFO] Application closed by user.
+2025-03-27 10:46:22,832 [INFO] Application closed successfully.

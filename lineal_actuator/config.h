@@ -11,8 +11,8 @@ const uint8_t SENSOR_ECHO_PIN    = 10;   // Echo pin for the ultrasonic sensor
 const uint8_t RELAY_PUMP_PIN     = 12;   // Relay pin for the vacuum pump (active-high)
 
 // System parameters (units in cm, steps, etc.)
-const float DIST_LOWER_TARGET    = 7.0;  // Lower distance target
-const float DIST_UPPER_TARGET    = 30.0; // Upper distance target
+const float DIST_LOWER_TARGET    = 8.0;  // Lower distance target
+const float DIST_UPPER_TARGET    = 25.0; // Upper distance target
 const float DIST_MARGIN          = 0.1;  // Margin for distance measurement
 
 // Motor parameters (for AccelStepper)
