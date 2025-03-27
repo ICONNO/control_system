@@ -1,7 +1,5 @@
-#!/usr/bin/env python3
 """
 Motor and Vacuum Pump Control GUI
-
 Displays mode, current distance, and system status.
 Provides buttons for auto/manual operation, pump control, and remote image capture.
 """
@@ -18,9 +16,8 @@ import psutil
 from typing import Optional
 from .serial_comm import SerialInterface
 from .styles import set_styles
-from remote_capture import capture_images  # Make sure remote_capture.py is in your project root
+from remote_capture import capture_images
 
-# Logging configuration
 logging.basicConfig(
     filename='logs/app.log',
     level=logging.INFO,

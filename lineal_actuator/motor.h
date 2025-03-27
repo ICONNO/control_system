@@ -6,7 +6,6 @@
 
 class Motor {
 public:
-  // Constructor using DRIVER mode (STEP/DIR)
   Motor(uint8_t stepPin, uint8_t dirPin);
 
   void initialize();            // Initialize motor hardware
