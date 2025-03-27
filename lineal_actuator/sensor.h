@@ -13,4 +13,4 @@ private:
   uint8_t echoPin_;
 };
 
-#endif
+#endif  // SENSOR_H

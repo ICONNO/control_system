@@ -1,5 +1,7 @@
+#!/usr/bin/env python3
 """
 Motor and Vacuum Pump Control GUI
+
 Displays mode, current distance, and system status.
 Provides buttons for auto/manual operation, pump control, and remote image capture.
 """
@@ -307,6 +309,9 @@ class MotorControlGUI:
                 self.current_distance.set(f"{d_val} cm")
             except ValueError:
                 self.log_message(f"Distance parse error: {data}", level="ERROR")
+        elif "CAPTURE_IMAGE" in data:
+            self.log_message("Auto mode: Triggering remote capture.", level="INFO")
+            self.trigger_capture()
         elif "Motor stopped" in data:
             self.mode.set("Manual")
             self.log_message("Motor stopped (from Arduino).", level="INFO")

@@ -17057,3 +17057,425 @@ Still capture image received
 2025-03-26 16:14:52,443 [INFO] Serial port COM3 closed.
 2025-03-26 16:14:52,443 [INFO] Application closed by user.
 2025-03-26 16:14:52,493 [INFO] Application closed successfully.
+2025-03-27 09:39:24,215 [INFO] Connecting to serial port COM3.
+2025-03-27 09:39:24,218 [INFO] Connected to serial port COM3 at 9600 bps.
+2025-03-27 09:39:24,869 [INFO] Initializing GUI.
+2025-03-27 09:39:24,968 [INFO] Widgets created and arranged.
+2025-03-27 09:39:24,969 [INFO] GUI initialized.
+2025-03-27 09:39:27,565 [INFO] Log: Moving down.
+2025-03-27 09:39:27,566 [INFO] Command 'DOWN' sent.
+2025-03-27 09:39:34,136 [INFO] Log: Motor stopped.
+2025-03-27 09:39:34,137 [INFO] Command 'STOP' sent.
+2025-03-27 09:39:35,009 [INFO] Log: Moving down.
+2025-03-27 09:39:35,010 [INFO] Command 'DOWN' sent.
+2025-03-27 09:39:40,975 [INFO] Log: Motor stopped.
+2025-03-27 09:39:40,975 [INFO] Command 'STOP' sent.
+2025-03-27 09:40:59,004 [INFO] Log: Moving up.
+2025-03-27 09:40:59,006 [INFO] Command 'UP' sent.
+2025-03-27 09:41:00,201 [INFO] Log: Motor stopped.
+2025-03-27 09:41:00,202 [INFO] Command 'STOP' sent.
+2025-03-27 09:42:28,754 [INFO] Log: Moving up.
+2025-03-27 09:42:28,755 [INFO] Command 'UP' sent.
+2025-03-27 09:42:29,299 [INFO] Log: Motor stopped.
+2025-03-27 09:42:29,300 [INFO] Command 'STOP' sent.
+2025-03-27 09:42:29,796 [INFO] Log: Moving up.
+2025-03-27 09:42:29,797 [INFO] Command 'UP' sent.
+2025-03-27 09:42:31,132 [INFO] Log: Motor stopped.
+2025-03-27 09:42:31,133 [INFO] Command 'STOP' sent.
+2025-03-27 09:42:31,618 [INFO] Log: Moving up.
+2025-03-27 09:42:31,619 [INFO] Command 'UP' sent.
+2025-03-27 09:42:32,735 [INFO] Log: Motor stopped.
+2025-03-27 09:42:32,736 [INFO] Command 'STOP' sent.
+2025-03-27 09:43:06,657 [ERROR] Serial read error: 'utf-8' codec can't decode byte 0xc3 in position 37: invalid continuation byte
+2025-03-27 09:43:10,485 [INFO] Log: Attempting reconnect...
+2025-03-27 09:43:10,485 [INFO] Attempting reconnect to serial.
+2025-03-27 09:43:10,487 [ERROR] Serial connection error on COM3: could not open port 'COM3': PermissionError(13, 'Acceso denegado.', None, 5)
+2025-03-27 09:43:10,490 [INFO] Log: Reconnect failed, attempt 1/3.
+2025-03-27 09:43:10,490 [WARNING] Reconnect failed, attempt 1/3.
+2025-03-27 09:43:15,507 [INFO] Log: Attempting reconnect...
+2025-03-27 09:43:15,508 [INFO] Attempting reconnect to serial.
+2025-03-27 09:43:15,508 [ERROR] Serial connection error on COM3: could not open port 'COM3': PermissionError(13, 'Acceso denegado.', None, 5)
+2025-03-27 09:43:15,509 [INFO] Log: Reconnect failed, attempt 2/3.
+2025-03-27 09:43:15,509 [WARNING] Reconnect failed, attempt 2/3.
+2025-03-27 09:43:20,527 [INFO] Log: Attempting reconnect...
+2025-03-27 09:43:20,528 [INFO] Attempting reconnect to serial.
+2025-03-27 09:43:20,529 [ERROR] Serial connection error on COM3: could not open port 'COM3': PermissionError(13, 'Acceso denegado.', None, 5)
+2025-03-27 09:43:20,530 [INFO] Log: Reconnect failed, attempt 3/3.
+2025-03-27 09:43:20,530 [WARNING] Reconnect failed, attempt 3/3.
+2025-03-27 09:43:25,550 [INFO] Log: Max reconnection attempts reached.
+2025-03-27 09:43:25,551 [ERROR] Max reconnection attempts reached.
+2025-03-27 09:43:30,559 [INFO] Log: Max reconnection attempts reached.
+2025-03-27 09:43:30,560 [ERROR] Max reconnection attempts reached.
+2025-03-27 09:43:35,568 [INFO] Log: Max reconnection attempts reached.
+2025-03-27 09:43:35,568 [ERROR] Max reconnection attempts reached.
+2025-03-27 09:43:40,579 [INFO] Log: Max reconnection attempts reached.
+2025-03-27 09:43:40,580 [ERROR] Max reconnection attempts reached.
+2025-03-27 09:43:45,586 [INFO] Log: Max reconnection attempts reached.
+2025-03-27 09:43:45,587 [ERROR] Max reconnection attempts reached.
+2025-03-27 09:43:50,606 [INFO] Log: Max reconnection attempts reached.
+2025-03-27 09:43:50,606 [ERROR] Max reconnection attempts reached.
+2025-03-27 09:43:55,616 [INFO] Log: Max reconnection attempts reached.
+2025-03-27 09:43:55,616 [ERROR] Max reconnection attempts reached.
+2025-03-27 09:44:00,632 [INFO] Log: Max reconnection attempts reached.
+2025-03-27 09:44:00,633 [ERROR] Max reconnection attempts reached.
+2025-03-27 09:44:05,644 [INFO] Log: Max reconnection attempts reached.
+2025-03-27 09:44:05,645 [ERROR] Max reconnection attempts reached.
+2025-03-27 09:44:10,663 [INFO] Log: Max reconnection attempts reached.
+2025-03-27 09:44:10,664 [ERROR] Max reconnection attempts reached.
+2025-03-27 09:44:15,679 [INFO] Log: Max reconnection attempts reached.
+2025-03-27 09:44:15,680 [ERROR] Max reconnection attempts reached.
+2025-03-27 09:44:17,239 [INFO] Log: Vacuum pump turned on.
+2025-03-27 09:44:17,240 [INFO] Command 'PUMP_ON' sent.
+2025-03-27 09:44:17,246 [ERROR] Attempt to send command without serial connection.
+2025-03-27 09:44:17,251 [INFO] Log: Error sending 'PUMP_ON'
+2025-03-27 09:44:19,228 [INFO] Serial port COM3 closed.
+2025-03-27 09:44:19,229 [INFO] Application closed by user.
+2025-03-27 09:44:19,290 [INFO] Application closed successfully.
+2025-03-27 09:44:20,974 [INFO] Connecting to serial port COM3.
+2025-03-27 09:44:20,976 [INFO] Connected to serial port COM3 at 9600 bps.
+2025-03-27 09:44:21,012 [INFO] Initializing GUI.
+2025-03-27 09:44:21,033 [INFO] Widgets created and arranged.
+2025-03-27 09:44:21,033 [INFO] GUI initialized.
+2025-03-27 09:44:24,175 [INFO] Log: Vacuum pump turned on.
+2025-03-27 09:44:24,175 [INFO] Command 'PUMP_ON' sent.
+2025-03-27 09:45:04,924 [INFO] Command 'SET_SPEED 1262' sent.
+2025-03-27 09:45:04,929 [WARNING] Command 'SET_SPEED 1253' throttled.
+2025-03-27 09:45:04,930 [INFO] Log: Command 'SET_SPEED 1253' throttled.
+2025-03-27 09:45:05,130 [INFO] Command 'SET_SPEED 1253' sent.
+2025-03-27 09:45:05,168 [WARNING] Command 'SET_SPEED 1253' throttled.
+2025-03-27 09:45:05,169 [INFO] Log: Command 'SET_SPEED 1253' throttled.
+2025-03-27 09:45:06,426 [INFO] Log: Moving down.
+2025-03-27 09:45:06,426 [INFO] Command 'DOWN' sent.
+2025-03-27 09:45:06,531 [INFO] Log: Motor stopped.
+2025-03-27 09:45:06,532 [INFO] Command 'STOP' sent.
+2025-03-27 09:45:07,020 [INFO] Log: Moving down.
+2025-03-27 09:45:07,020 [INFO] Command 'DOWN' sent.
+2025-03-27 09:45:09,397 [INFO] Log: Motor stopped.
+2025-03-27 09:45:09,398 [INFO] Command 'STOP' sent.
+2025-03-27 09:45:16,296 [INFO] Log: Vacuum pump turned off.
+2025-03-27 09:45:16,297 [INFO] Command 'PUMP_OFF' sent.
+2025-03-27 09:51:30,853 [ERROR] Serial read error: 'utf-8' codec can't decode byte 0xb3 in position 26: invalid start byte
+2025-03-27 09:51:32,277 [INFO] Log: Attempting reconnect...
+2025-03-27 09:51:32,278 [INFO] Attempting reconnect to serial.
+2025-03-27 09:51:32,279 [ERROR] Serial connection error on COM3: could not open port 'COM3': PermissionError(13, 'Acceso denegado.', None, 5)
+2025-03-27 09:51:32,280 [INFO] Log: Reconnect failed, attempt 1/3.
+2025-03-27 09:51:32,280 [WARNING] Reconnect failed, attempt 1/3.
+2025-03-27 09:51:36,776 [INFO] Serial port COM3 closed.
+2025-03-27 09:51:36,776 [INFO] Application closed by user.
+2025-03-27 09:51:36,802 [INFO] Application closed successfully.
+2025-03-27 10:25:02,787 [INFO] Connecting to serial port COM3.
+2025-03-27 10:25:02,791 [INFO] Connected to serial port COM3 at 9600 bps.
+2025-03-27 10:25:02,829 [INFO] Initializing GUI.
+2025-03-27 10:25:02,850 [INFO] Widgets created and arranged.
+2025-03-27 10:25:02,850 [INFO] GUI initialized.
+2025-03-27 10:25:05,188 [INFO] Log: Auto mode activated.
+2025-03-27 10:25:05,189 [INFO] Auto mode activated.
+2025-03-27 10:25:07,871 [INFO] Log: High usage: CPU 1.3%, Memory 84.4%
+2025-03-27 10:25:07,872 [WARNING] High usage: CPU 1.3%, Memory 84.4%
+2025-03-27 10:25:08,127 [ERROR] Serial read error: ClearCommError failed (PermissionError(13, 'El dispositivo no reconoce el comando.', None, 22))
+2025-03-27 10:25:12,886 [INFO] Log: High usage: CPU 1.8%, Memory 86.0%
+2025-03-27 10:25:12,887 [WARNING] High usage: CPU 1.8%, Memory 86.0%
+2025-03-27 10:25:12,887 [INFO] Log: Attempting reconnect...
+2025-03-27 10:25:12,887 [INFO] Attempting reconnect to serial.
+2025-03-27 10:25:12,889 [INFO] Connected to serial port COM3 at 9600 bps.
+2025-03-27 10:25:12,890 [INFO] Log: Reconnect successful.
+2025-03-27 10:25:12,891 [INFO] Reconnect successful.
+2025-03-27 10:25:15,074 [INFO] Log: Manual mode activated; motor stopped.
+2025-03-27 10:25:15,075 [INFO] Manual mode activated.
+2025-03-27 10:25:17,900 [INFO] Log: High usage: CPU 1.7%, Memory 86.1%
+2025-03-27 10:25:17,901 [WARNING] High usage: CPU 1.7%, Memory 86.1%
+2025-03-27 10:25:22,913 [INFO] Log: High usage: CPU 1.5%, Memory 85.1%
+2025-03-27 10:25:22,913 [WARNING] High usage: CPU 1.5%, Memory 85.1%
+2025-03-27 10:25:27,925 [INFO] Log: High usage: CPU 0.7%, Memory 84.9%
+2025-03-27 10:25:27,925 [WARNING] High usage: CPU 0.7%, Memory 84.9%
+2025-03-27 10:25:32,943 [INFO] Log: High usage: CPU 0.9%, Memory 84.9%
+2025-03-27 10:25:32,943 [WARNING] High usage: CPU 0.9%, Memory 84.9%
+2025-03-27 10:25:37,962 [INFO] Log: High usage: CPU 0.4%, Memory 84.9%
+2025-03-27 10:25:37,962 [WARNING] High usage: CPU 0.4%, Memory 84.9%
+2025-03-27 10:25:42,400 [INFO] Log: Vacuum pump turned on.
+2025-03-27 10:25:42,401 [INFO] Command 'PUMP_ON' sent.
+2025-03-27 10:25:42,972 [INFO] Log: High usage: CPU 0.9%, Memory 84.9%
+2025-03-27 10:25:42,973 [WARNING] High usage: CPU 0.9%, Memory 84.9%
+2025-03-27 10:25:43,112 [INFO] Log: Vacuum pump turned off.
+2025-03-27 10:25:43,113 [INFO] Command 'PUMP_OFF' sent.
+2025-03-27 10:25:47,989 [INFO] Log: High usage: CPU 0.9%, Memory 85.0%
+2025-03-27 10:25:47,990 [WARNING] High usage: CPU 0.9%, Memory 85.0%
+2025-03-27 10:25:53,005 [INFO] Log: High usage: CPU 0.6%, Memory 85.0%
+2025-03-27 10:25:53,005 [WARNING] High usage: CPU 0.6%, Memory 85.0%
+2025-03-27 10:25:58,012 [INFO] Log: High usage: CPU 0.5%, Memory 85.0%
+2025-03-27 10:25:58,012 [WARNING] High usage: CPU 0.5%, Memory 85.0%
+2025-03-27 10:26:03,028 [INFO] Log: High usage: CPU 0.5%, Memory 85.1%
+2025-03-27 10:26:03,028 [WARNING] High usage: CPU 0.5%, Memory 85.1%
+2025-03-27 10:26:08,043 [INFO] Log: High usage: CPU 0.5%, Memory 85.0%
+2025-03-27 10:26:08,044 [WARNING] High usage: CPU 0.5%, Memory 85.0%
+2025-03-27 10:26:13,064 [INFO] Log: High usage: CPU 0.3%, Memory 84.8%
+2025-03-27 10:26:13,065 [WARNING] High usage: CPU 0.3%, Memory 84.8%
+2025-03-27 10:26:18,082 [INFO] Log: High usage: CPU 0.5%, Memory 85.1%
+2025-03-27 10:26:18,083 [WARNING] High usage: CPU 0.5%, Memory 85.1%
+2025-03-27 10:26:23,090 [INFO] Log: High usage: CPU 0.5%, Memory 85.2%
+2025-03-27 10:26:23,091 [WARNING] High usage: CPU 0.5%, Memory 85.2%
+2025-03-27 10:26:28,100 [INFO] Log: High usage: CPU 0.5%, Memory 85.2%
+2025-03-27 10:26:28,100 [WARNING] High usage: CPU 0.5%, Memory 85.2%
+2025-03-27 10:26:33,111 [INFO] Log: High usage: CPU 0.6%, Memory 85.2%
+2025-03-27 10:26:33,111 [WARNING] High usage: CPU 0.6%, Memory 85.2%
+2025-03-27 10:26:38,128 [INFO] Log: High usage: CPU 0.4%, Memory 85.2%
+2025-03-27 10:26:38,128 [WARNING] High usage: CPU 0.4%, Memory 85.2%
+2025-03-27 10:26:43,136 [INFO] Log: High usage: CPU 0.3%, Memory 85.3%
+2025-03-27 10:26:43,137 [WARNING] High usage: CPU 0.3%, Memory 85.3%
+2025-03-27 10:26:48,148 [INFO] Log: High usage: CPU 0.7%, Memory 85.0%
+2025-03-27 10:26:48,149 [WARNING] High usage: CPU 0.7%, Memory 85.0%
+2025-03-27 10:26:53,165 [INFO] Log: High usage: CPU 0.6%, Memory 85.1%
+2025-03-27 10:26:53,166 [WARNING] High usage: CPU 0.6%, Memory 85.1%
+2025-03-27 10:26:58,176 [INFO] Log: High usage: CPU 0.6%, Memory 85.1%
+2025-03-27 10:26:58,176 [WARNING] High usage: CPU 0.6%, Memory 85.1%
+2025-03-27 10:27:03,189 [INFO] Log: High usage: CPU 1.2%, Memory 85.3%
+2025-03-27 10:27:03,190 [WARNING] High usage: CPU 1.2%, Memory 85.3%
+2025-03-27 10:27:08,211 [INFO] Log: High usage: CPU 0.9%, Memory 85.3%
+2025-03-27 10:27:08,212 [WARNING] High usage: CPU 0.9%, Memory 85.3%
+2025-03-27 10:27:13,231 [INFO] Log: High usage: CPU 0.7%, Memory 85.3%
+2025-03-27 10:27:13,232 [WARNING] High usage: CPU 0.7%, Memory 85.3%
+2025-03-27 10:27:16,170 [INFO] Serial port COM3 closed.
+2025-03-27 10:27:16,171 [INFO] Application closed by user.
+2025-03-27 10:27:16,237 [INFO] Application closed successfully.
+2025-03-27 10:27:18,170 [INFO] Connecting to serial port COM3.
+2025-03-27 10:27:18,173 [INFO] Connected to serial port COM3 at 9600 bps.
+2025-03-27 10:27:18,210 [INFO] Initializing GUI.
+2025-03-27 10:27:18,230 [INFO] Widgets created and arranged.
+2025-03-27 10:27:18,231 [INFO] GUI initialized.
+2025-03-27 10:27:23,247 [INFO] Log: High usage: CPU 1.1%, Memory 85.5%
+2025-03-27 10:27:23,247 [WARNING] High usage: CPU 1.1%, Memory 85.5%
+2025-03-27 10:27:26,125 [INFO] Connecting to 192.168.1.96 as dev...
+2025-03-27 10:27:26,200 [INFO] Connected (version 2.0, client OpenSSH_9.2p1)
+2025-03-27 10:27:26,403 [INFO] Authentication (password) successful!
+2025-03-27 10:27:26,404 [INFO] Executing remote command: python3 /home/dev/Desktop/automata/capture_both_cameras.py
+2025-03-27 10:27:38,503 [ERROR] Capture error: 2025-03-27 10:27:26 [INFO] Inicio del proceso de captura de fotos simultáneas con autofocus.
+2025-03-27 10:27:26 [INFO] Iniciando captura en cámara 0 con autofocus.
+2025-03-27 10:27:26 [INFO] Proceso de captura iniciado para cámara 0 con salida /home/dev/Pictures/camara0/cam0_20250327-102726.jpg
+2025-03-27 10:27:26 [INFO] Iniciando captura en cámara 1 con autofocus.
+2025-03-27 10:27:26 [INFO] Proceso de captura iniciado para cámara 1 con salida /home/dev/Pictures/camara1/cam1_20250327-102726.jpg
+[0:12:45.635698444] [2531] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:327 [0mlibcamera v0.4.0+78-818d45eb-dirty (2025-02-14T02:03:07GMT)
+[0:12:45.635698463] [2533] [1;32m INFO [1;37mCamera [1;34mcamera_manager.cpp:327 [0mlibcamera v0.4.0+78-818d45eb-dirty (2025-02-14T02:03:07GMT)
+[0:12:45.648023884] [2539] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.1.0 e7974a156008 27-01-2025 (21:50:51)
+[0:12:45.648040754] [2538] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.1.0 e7974a156008 27-01-2025 (21:50:51)
+[0:12:45.670860580] [2539] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1180 [0mRegistered camera /base/axi/pcie@120000/rp1/i2c@88000/arducam_64mp@1a to CFE device /dev/media0 and ISP device /dev/media3 using PiSP variant BCM2712_C0
+[0:12:45.670860562] [2538] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1180 [0mRegistered camera /base/axi/pcie@120000/rp1/i2c@88000/arducam_64mp@1a to CFE device /dev/media0 and ISP device /dev/media3 using PiSP variant BCM2712_C0
+[0:12:45.670970172] [2538] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.1.0 e7974a156008 27-01-2025 (21:50:51)
+[0:12:45.670970098] [2539] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:720 [0mlibpisp version v1.1.0 e7974a156008 27-01-2025 (21:50:51)
+[0:12:45.680517235] [2538] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1180 [0mRegistered camera /base/axi/pcie@120000/rp1/i2c@80000/arducam_64mp@1a to CFE device /dev/media1 and ISP device /dev/media4 using PiSP variant BCM2712_C0
+[0:12:45.680517290] [2539] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1180 [0mRegistered camera /base/axi/pcie@120000/rp1/i2c@80000/arducam_64mp@1a to CFE device /dev/media1 and ISP device /dev/media4 using PiSP variant BCM2712_C0
+Mode selection for Mode selection for 4576:3472:12:P4576:3472:12:P
+
+        SRGGB10_CSI2P,1280x720/0SRGGB10_CSI2P,1280x720/0 - Score:  - Score: 13268.413268.4
+
+        SRGGB10_CSI2P,1920x1080/0SRGGB10_CSI2P,1920x1080/0 - Score:  - Score: 11268.411268.4
+
+        SRGGB10_CSI2P,2312x1736/0SRGGB10_CSI2P,2312x1736/0 - Score:  - Score: 9005.189005.18
+
+        SRGGB10_CSI2P,3840x2160/0SRGGB10_CSI2P,3840x2160/0 - Score:  - Score: 5268.435268.43
+
+        SRGGB10_CSI2P,4624x3472/0SRGGB10_CSI2P,4624x3472/0 - Score:  - Score: 1017.181017.18
+
+        SRGGB10_CSI2P,8000x6000/0 - Score: SRGGB10_CSI2P,8000x6000/0 - Score: 2493.762493.76
+
+        SRGGB10_CSI2P,9152x6944/0 - Score: SRGGB10_CSI2P,9152x6944/0 - Score: 3012
+3012
+Stream configuration adjusted
+Stream configuration adjusted
+[0:12:45.681364170] [2533] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1202 [0mconfiguring streams: (0) 4576x3472-YUV420 (1) 4624x3472-RGGB_PISP_COMP1
+[0:12:45.681393836] [2531] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1202 [0mconfiguring streams: (0) 4576x3472-YUV420 (1) 4624x3472-RGGB_PISP_COMP1
+[0:12:45.681447299] [2539] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1485 [0mSensor: /base/axi/pcie@120000/rp1/i2c@80000/arducam_64mp@1a - Selected sensor format: 4624x3472-SRGGB10_1X10 - Selected CFE format: 4624x3472-PC1R
+[0:12:45.681486520] [2538] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1485 [0mSensor: /base/axi/pcie@120000/rp1/i2c@88000/arducam_64mp@1a - Selected sensor format: 4624x3472-SRGGB10_1X10 - Selected CFE format: 4624x3472-PC1R
+Mode selection for 9152:6944:12:P
+    SRGGB10_CSI2P,1280x720/0 - Score: 29364.4
+    SRGGB10_CSI2P,1920x1080/0 - Score: 27364.4
+    SRGGB10_CSI2P,2312x1736/0 - Score: 25101.2
+    SRGGB10_CSI2P,3840x2160/0 - Score: 21364.4
+    SRGGB10_CSI2P,4624x3472/0 - Score: 17005.2
+    SRGGB10_CSI2P,8000x6000/0 - Score: 5197.76
+    SRGGB10_CSI2P,9152x6944/0 - Score: 1000
+Stream configuration adjusted
+[0:12:53.307043483] [2533] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1202 [0mconfiguring streams: (0) 9152x6944-YUV420 (1) 9152x6944-RGGB_PISP_COMP1
+[0:12:53.320123322] [2539] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1485 [0mSensor: /base/axi/pcie@120000/rp1/i2c@80000/arducam_64mp@1a - Selected sensor format: 9152x6944-SRGGB10_1X10 - Selected CFE format: 9152x6944-PC1R
+Still capture image received
+Mode selection for 9152:6944:12:P
+    SRGGB10_CSI2P,1280x720/0 - Score: 29364.4
+    SRGGB10_CSI2P,1920x1080/0 - Score: 27364.4
+    SRGGB10_CSI2P,2312x1736/0 - Score: 25101.2
+    SRGGB10_CSI2P,3840x2160/0 - Score: 21364.4
+    SRGGB10_CSI2P,4624x3472/0 - Score: 17005.2
+    SRGGB10_CSI2P,8000x6000/0 - Score: 5197.76
+    SRGGB10_CSI2P,9152x6944/0 - Score: 1000
+Stream configuration adjusted
+[0:12:54.798374357] [2531] [1;32m INFO [1;37mCamera [1;34mcamera.cpp:1202 [0mconfiguring streams: (0) 9152x6944-YUV420 (1) 9152x6944-RGGB_PISP_COMP1
+[0:12:54.806591120] [2538] [1;32m INFO [1;37mRPI [1;34mpisp.cpp:1485 [0mSensor: /base/axi/pcie@120000/rp1/i2c@88000/arducam_64mp@1a - Selected sensor format: 9152x6944-SRGGB10_1X10 - Selected CFE format: 9152x6944-PC1R
+2025-03-27 10:27:36 [INFO] Foto capturada en /home/dev/Pictures/camara1/cam1_20250327-102726.jpg.
+Still capture image received
+2025-03-27 10:27:37 [INFO] Foto capturada en /home/dev/Pictures/camara0/cam0_20250327-102726.jpg.
+2025-03-27 10:27:38 [INFO] Fotos capturadas exitosamente: cam0_20250327-102726.jpg, cam1_20250327-102726.jpg
+2025-03-27 10:27:38 [INFO] Proceso de captura finalizado.
+2025-03-27 10:27:38,517 [INFO] Log: Remote capture succeeded.
+2025-03-27 10:27:38,528 [INFO] Log: High usage: CPU 1.6%, Memory 86.3%
+2025-03-27 10:27:38,529 [WARNING] High usage: CPU 1.6%, Memory 86.3%
+2025-03-27 10:27:43,546 [INFO] Log: High usage: CPU 1.0%, Memory 86.0%
+2025-03-27 10:27:43,547 [WARNING] High usage: CPU 1.0%, Memory 86.0%
+2025-03-27 10:27:48,556 [INFO] Log: High usage: CPU 1.1%, Memory 86.0%
+2025-03-27 10:27:48,557 [WARNING] High usage: CPU 1.1%, Memory 86.0%
+2025-03-27 10:27:53,572 [INFO] Log: High usage: CPU 1.0%, Memory 86.0%
+2025-03-27 10:27:53,575 [WARNING] High usage: CPU 1.0%, Memory 86.0%
+2025-03-27 10:27:58,583 [INFO] Log: High usage: CPU 0.7%, Memory 85.5%
+2025-03-27 10:27:58,584 [WARNING] High usage: CPU 0.7%, Memory 85.5%
+2025-03-27 10:28:03,605 [INFO] Log: High usage: CPU 0.3%, Memory 85.6%
+2025-03-27 10:28:03,606 [WARNING] High usage: CPU 0.3%, Memory 85.6%
+2025-03-27 10:28:08,610 [INFO] Log: High usage: CPU 0.7%, Memory 85.6%
+2025-03-27 10:28:08,611 [WARNING] High usage: CPU 0.7%, Memory 85.6%
+2025-03-27 10:28:13,624 [INFO] Log: High usage: CPU 1.0%, Memory 85.6%
+2025-03-27 10:28:13,625 [WARNING] High usage: CPU 1.0%, Memory 85.6%
+2025-03-27 10:28:18,629 [INFO] Log: High usage: CPU 0.9%, Memory 85.6%
+2025-03-27 10:28:18,630 [WARNING] High usage: CPU 0.9%, Memory 85.6%
+2025-03-27 10:28:23,642 [INFO] Log: High usage: CPU 1.1%, Memory 85.7%
+2025-03-27 10:28:23,642 [WARNING] High usage: CPU 1.1%, Memory 85.7%
+2025-03-27 10:28:28,654 [INFO] Log: High usage: CPU 1.0%, Memory 85.6%
+2025-03-27 10:28:28,655 [WARNING] High usage: CPU 1.0%, Memory 85.6%
+2025-03-27 10:28:33,667 [INFO] Log: High usage: CPU 0.9%, Memory 85.6%
+2025-03-27 10:28:33,668 [WARNING] High usage: CPU 0.9%, Memory 85.6%
+2025-03-27 10:28:38,684 [INFO] Log: High usage: CPU 0.4%, Memory 85.6%
+2025-03-27 10:28:38,684 [WARNING] High usage: CPU 0.4%, Memory 85.6%
+2025-03-27 10:28:43,703 [INFO] Log: High usage: CPU 1.4%, Memory 85.6%
+2025-03-27 10:28:43,704 [WARNING] High usage: CPU 1.4%, Memory 85.6%
+2025-03-27 10:28:48,715 [INFO] Log: High usage: CPU 0.9%, Memory 85.6%
+2025-03-27 10:28:48,716 [WARNING] High usage: CPU 0.9%, Memory 85.6%
+2025-03-27 10:28:53,724 [INFO] Log: High usage: CPU 0.2%, Memory 85.6%
+2025-03-27 10:28:53,724 [WARNING] High usage: CPU 0.2%, Memory 85.6%
+2025-03-27 10:28:58,738 [INFO] Log: High usage: CPU 0.5%, Memory 85.7%
+2025-03-27 10:28:58,739 [WARNING] High usage: CPU 0.5%, Memory 85.7%
+2025-03-27 10:29:03,761 [INFO] Log: High usage: CPU 0.4%, Memory 85.6%
+2025-03-27 10:29:03,762 [WARNING] High usage: CPU 0.4%, Memory 85.6%
+2025-03-27 10:29:08,785 [INFO] Log: High usage: CPU 0.5%, Memory 85.6%
+2025-03-27 10:29:08,785 [WARNING] High usage: CPU 0.5%, Memory 85.6%
+2025-03-27 10:29:13,793 [INFO] Log: High usage: CPU 2.4%, Memory 86.2%
+2025-03-27 10:29:13,794 [WARNING] High usage: CPU 2.4%, Memory 86.2%
+2025-03-27 10:29:18,803 [INFO] Log: High usage: CPU 1.1%, Memory 86.0%
+2025-03-27 10:29:18,805 [WARNING] High usage: CPU 1.1%, Memory 86.0%
+2025-03-27 10:29:23,821 [INFO] Log: High usage: CPU 0.2%, Memory 85.6%
+2025-03-27 10:29:23,822 [WARNING] High usage: CPU 0.2%, Memory 85.6%
+2025-03-27 10:29:28,834 [INFO] Log: High usage: CPU 0.9%, Memory 85.5%
+2025-03-27 10:29:28,835 [WARNING] High usage: CPU 0.9%, Memory 85.5%
+2025-03-27 10:29:33,846 [INFO] Log: High usage: CPU 1.8%, Memory 85.7%
+2025-03-27 10:29:33,847 [WARNING] High usage: CPU 1.8%, Memory 85.7%
+2025-03-27 10:29:38,860 [INFO] Log: High usage: CPU 3.4%, Memory 85.5%
+2025-03-27 10:29:38,861 [WARNING] High usage: CPU 3.4%, Memory 85.5%
+2025-03-27 10:29:43,879 [INFO] Log: High usage: CPU 1.9%, Memory 85.6%
+2025-03-27 10:29:43,880 [WARNING] High usage: CPU 1.9%, Memory 85.6%
+2025-03-27 10:29:48,892 [INFO] Log: High usage: CPU 0.8%, Memory 85.4%
+2025-03-27 10:29:48,893 [WARNING] High usage: CPU 0.8%, Memory 85.4%
+2025-03-27 10:29:53,915 [INFO] Log: High usage: CPU 1.9%, Memory 85.5%
+2025-03-27 10:29:53,916 [WARNING] High usage: CPU 1.9%, Memory 85.5%
+2025-03-27 10:29:58,928 [INFO] Log: High usage: CPU 1.6%, Memory 85.5%
+2025-03-27 10:29:58,928 [WARNING] High usage: CPU 1.6%, Memory 85.5%
+2025-03-27 10:30:03,944 [INFO] Log: High usage: CPU 1.5%, Memory 85.3%
+2025-03-27 10:30:03,945 [WARNING] High usage: CPU 1.5%, Memory 85.3%
+2025-03-27 10:30:08,958 [INFO] Log: High usage: CPU 0.4%, Memory 85.3%
+2025-03-27 10:30:08,959 [WARNING] High usage: CPU 0.4%, Memory 85.3%
+2025-03-27 10:30:13,967 [INFO] Log: High usage: CPU 0.5%, Memory 85.3%
+2025-03-27 10:30:13,968 [WARNING] High usage: CPU 0.5%, Memory 85.3%
+2025-03-27 10:30:18,975 [INFO] Log: High usage: CPU 1.2%, Memory 85.2%
+2025-03-27 10:30:18,976 [WARNING] High usage: CPU 1.2%, Memory 85.2%
+2025-03-27 10:30:23,982 [INFO] Log: High usage: CPU 1.9%, Memory 84.7%
+2025-03-27 10:30:23,983 [WARNING] High usage: CPU 1.9%, Memory 84.7%
+2025-03-27 10:30:29,002 [INFO] Log: High usage: CPU 1.0%, Memory 84.5%
+2025-03-27 10:30:29,003 [WARNING] High usage: CPU 1.0%, Memory 84.5%
+2025-03-27 10:30:34,014 [INFO] Log: High usage: CPU 0.6%, Memory 84.4%
+2025-03-27 10:30:34,014 [WARNING] High usage: CPU 0.6%, Memory 84.4%
+2025-03-27 10:30:39,025 [INFO] Log: High usage: CPU 0.5%, Memory 84.4%
+2025-03-27 10:30:39,025 [WARNING] High usage: CPU 0.5%, Memory 84.4%
+2025-03-27 10:30:44,033 [INFO] Log: High usage: CPU 0.5%, Memory 84.4%
+2025-03-27 10:30:44,034 [WARNING] High usage: CPU 0.5%, Memory 84.4%
+2025-03-27 10:30:49,045 [INFO] Log: High usage: CPU 0.7%, Memory 84.6%
+2025-03-27 10:30:49,046 [WARNING] High usage: CPU 0.7%, Memory 84.6%
+2025-03-27 10:30:54,061 [INFO] Log: High usage: CPU 1.0%, Memory 84.4%
+2025-03-27 10:30:54,061 [WARNING] High usage: CPU 1.0%, Memory 84.4%
+2025-03-27 10:30:59,084 [INFO] Log: High usage: CPU 1.2%, Memory 84.5%
+2025-03-27 10:30:59,085 [WARNING] High usage: CPU 1.2%, Memory 84.5%
+2025-03-27 10:31:04,099 [INFO] Log: High usage: CPU 4.7%, Memory 84.8%
+2025-03-27 10:31:04,100 [WARNING] High usage: CPU 4.7%, Memory 84.8%
+2025-03-27 10:31:09,111 [INFO] Log: High usage: CPU 3.8%, Memory 83.8%
+2025-03-27 10:31:09,112 [WARNING] High usage: CPU 3.8%, Memory 83.8%
+2025-03-27 10:31:14,122 [INFO] Log: High usage: CPU 3.7%, Memory 84.1%
+2025-03-27 10:31:14,122 [WARNING] High usage: CPU 3.7%, Memory 84.1%
+2025-03-27 10:31:19,132 [INFO] Log: High usage: CPU 3.6%, Memory 84.2%
+2025-03-27 10:31:19,133 [WARNING] High usage: CPU 3.6%, Memory 84.2%
+2025-03-27 10:31:24,142 [INFO] Log: High usage: CPU 3.7%, Memory 84.2%
+2025-03-27 10:31:24,143 [WARNING] High usage: CPU 3.7%, Memory 84.2%
+2025-03-27 10:31:29,155 [INFO] Log: High usage: CPU 3.3%, Memory 84.4%
+2025-03-27 10:31:29,156 [WARNING] High usage: CPU 3.3%, Memory 84.4%
+2025-03-27 10:31:34,163 [INFO] Log: High usage: CPU 3.4%, Memory 84.2%
+2025-03-27 10:31:34,164 [WARNING] High usage: CPU 3.4%, Memory 84.2%
+2025-03-27 10:31:39,182 [INFO] Log: High usage: CPU 3.7%, Memory 84.1%
+2025-03-27 10:31:39,182 [WARNING] High usage: CPU 3.7%, Memory 84.1%
+2025-03-27 10:31:44,195 [INFO] Log: High usage: CPU 3.7%, Memory 84.2%
+2025-03-27 10:31:44,195 [WARNING] High usage: CPU 3.7%, Memory 84.2%
+2025-03-27 10:31:49,213 [INFO] Log: High usage: CPU 3.9%, Memory 84.3%
+2025-03-27 10:31:49,213 [WARNING] High usage: CPU 3.9%, Memory 84.3%
+2025-03-27 10:31:54,220 [INFO] Log: High usage: CPU 3.3%, Memory 84.2%
+2025-03-27 10:31:54,221 [WARNING] High usage: CPU 3.3%, Memory 84.2%
+2025-03-27 10:31:59,228 [INFO] Log: High usage: CPU 4.6%, Memory 84.3%
+2025-03-27 10:31:59,229 [WARNING] High usage: CPU 4.6%, Memory 84.3%
+2025-03-27 10:32:04,249 [INFO] Log: High usage: CPU 3.1%, Memory 85.4%
+2025-03-27 10:32:04,250 [WARNING] High usage: CPU 3.1%, Memory 85.4%
+2025-03-27 10:32:09,263 [INFO] Log: High usage: CPU 4.2%, Memory 85.4%
+2025-03-27 10:32:09,264 [WARNING] High usage: CPU 4.2%, Memory 85.4%
+2025-03-27 10:32:14,277 [INFO] Log: High usage: CPU 1.5%, Memory 85.5%
+2025-03-27 10:32:14,278 [WARNING] High usage: CPU 1.5%, Memory 85.5%
+2025-03-27 10:32:19,296 [INFO] Log: High usage: CPU 2.0%, Memory 85.4%
+2025-03-27 10:32:19,297 [WARNING] High usage: CPU 2.0%, Memory 85.4%
+2025-03-27 10:32:24,305 [INFO] Log: High usage: CPU 1.2%, Memory 85.3%
+2025-03-27 10:32:24,306 [WARNING] High usage: CPU 1.2%, Memory 85.3%
+2025-03-27 10:32:29,326 [INFO] Log: High usage: CPU 1.5%, Memory 85.3%
+2025-03-27 10:32:29,327 [WARNING] High usage: CPU 1.5%, Memory 85.3%
+2025-03-27 10:32:34,342 [INFO] Log: High usage: CPU 0.5%, Memory 85.3%
+2025-03-27 10:32:34,343 [WARNING] High usage: CPU 0.5%, Memory 85.3%
+2025-03-27 10:32:39,350 [INFO] Log: High usage: CPU 0.7%, Memory 85.3%
+2025-03-27 10:32:39,351 [WARNING] High usage: CPU 0.7%, Memory 85.3%
+2025-03-27 10:32:44,369 [INFO] Log: High usage: CPU 2.0%, Memory 85.3%
+2025-03-27 10:32:44,370 [WARNING] High usage: CPU 2.0%, Memory 85.3%
+2025-03-27 10:32:49,382 [INFO] Log: High usage: CPU 1.9%, Memory 85.1%
+2025-03-27 10:32:49,383 [WARNING] High usage: CPU 1.9%, Memory 85.1%
+2025-03-27 10:32:54,400 [INFO] Log: High usage: CPU 1.7%, Memory 85.1%
+2025-03-27 10:32:54,401 [WARNING] High usage: CPU 1.7%, Memory 85.1%
+2025-03-27 10:32:59,411 [INFO] Log: High usage: CPU 1.1%, Memory 84.9%
+2025-03-27 10:32:59,412 [WARNING] High usage: CPU 1.1%, Memory 84.9%
+2025-03-27 10:33:04,420 [INFO] Log: High usage: CPU 1.9%, Memory 85.0%
+2025-03-27 10:33:04,421 [WARNING] High usage: CPU 1.9%, Memory 85.0%
+2025-03-27 10:33:09,447 [INFO] Log: High usage: CPU 2.7%, Memory 85.1%
+2025-03-27 10:33:09,449 [WARNING] High usage: CPU 2.7%, Memory 85.1%
+2025-03-27 10:33:14,459 [INFO] Log: High usage: CPU 2.2%, Memory 85.2%
+2025-03-27 10:33:14,460 [WARNING] High usage: CPU 2.2%, Memory 85.2%
+2025-03-27 10:33:19,474 [INFO] Log: High usage: CPU 1.4%, Memory 85.2%
+2025-03-27 10:33:19,475 [WARNING] High usage: CPU 1.4%, Memory 85.2%
+2025-03-27 10:33:24,486 [INFO] Log: High usage: CPU 1.4%, Memory 85.3%
+2025-03-27 10:33:24,487 [WARNING] High usage: CPU 1.4%, Memory 85.3%
+2025-03-27 10:33:29,502 [INFO] Log: High usage: CPU 1.8%, Memory 85.3%
+2025-03-27 10:33:29,513 [WARNING] High usage: CPU 1.8%, Memory 85.3%
+2025-03-27 10:33:34,527 [INFO] Log: High usage: CPU 0.9%, Memory 85.3%
+2025-03-27 10:33:34,527 [WARNING] High usage: CPU 0.9%, Memory 85.3%
+2025-03-27 10:33:39,539 [INFO] Log: High usage: CPU 0.5%, Memory 85.5%
+2025-03-27 10:33:39,540 [WARNING] High usage: CPU 0.5%, Memory 85.5%
+2025-03-27 10:33:44,550 [INFO] Log: High usage: CPU 0.3%, Memory 85.5%
+2025-03-27 10:33:44,550 [WARNING] High usage: CPU 0.3%, Memory 85.5%
+2025-03-27 10:33:49,557 [INFO] Log: High usage: CPU 0.3%, Memory 85.6%
+2025-03-27 10:33:49,558 [WARNING] High usage: CPU 0.3%, Memory 85.6%
+2025-03-27 10:33:54,572 [INFO] Log: High usage: CPU 0.9%, Memory 85.5%
+2025-03-27 10:33:54,572 [WARNING] High usage: CPU 0.9%, Memory 85.5%
+2025-03-27 10:33:59,591 [INFO] Log: High usage: CPU 0.7%, Memory 85.5%
+2025-03-27 10:33:59,591 [WARNING] High usage: CPU 0.7%, Memory 85.5%
+2025-03-27 10:34:04,597 [INFO] Log: High usage: CPU 1.6%, Memory 85.6%
+2025-03-27 10:34:04,598 [WARNING] High usage: CPU 1.6%, Memory 85.6%
+2025-03-27 10:34:09,608 [INFO] Log: High usage: CPU 0.5%, Memory 85.3%
+2025-03-27 10:34:09,609 [WARNING] High usage: CPU 0.5%, Memory 85.3%
+2025-03-27 10:34:14,619 [INFO] Log: High usage: CPU 1.2%, Memory 85.3%
+2025-03-27 10:34:14,620 [WARNING] High usage: CPU 1.2%, Memory 85.3%
+2025-03-27 10:34:19,634 [INFO] Log: High usage: CPU 1.7%, Memory 85.5%
+2025-03-27 10:34:19,635 [WARNING] High usage: CPU 1.7%, Memory 85.5%
+2025-03-27 10:34:22,518 [INFO] Serial port COM3 closed.
+2025-03-27 10:34:22,519 [INFO] Application closed by user.
+2025-03-27 10:34:22,575 [INFO] Application closed successfully.

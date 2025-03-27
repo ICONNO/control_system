@@ -36,4 +36,4 @@ private:
     void processState();
 };
 
-#endif
+#endif  // LOGIC_H

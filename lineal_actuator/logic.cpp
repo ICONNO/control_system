@@ -1,4 +1,5 @@
 #include "Logic.h"
+#include "Config.h"
 
 // Serial command definitions
 const String CMD_AUTO      = "AUTO";
@@ -42,7 +43,7 @@ void Logic::update() {
     }
   }
   
-  const int deltaSteps = 10;  // Step increment for manual control
+  const int deltaSteps = 10;  // Incremento en pasos para control manual
   if (!autoMode_) {
     if (movingUp) {
       targetPosition += deltaSteps;
@@ -67,7 +68,7 @@ void Logic::handleSerialCommands() {
     if (cmd.equalsIgnoreCase(CMD_AUTO)) {
       LOG_INFO("Auto mode activated.");
       setAutoMode(true);
-      motor_.moveToBlocking(10000);
+      // Inicia en el estado MOVING_DOWN
       currentState_ = MotorState::MOVING_DOWN;
       previousState_ = MotorState::MOVING_DOWN;
       movingUp = false;
@@ -132,8 +133,14 @@ void Logic::transitionState() {
     case MotorState::MOVING_DOWN:
       if (currentDistance_ <= DIST_LOWER_TARGET + DIST_MARGIN) {
         motor_.stop();
-        LOG_INFO("Lower limit reached. Stopping motor.");
-        currentState_ = MotorState::IDLE;
+        LOG_INFO("Lower limit reached. Stopping motor and waiting 5 seconds...");
+        delay(5000);  // Espera 5 segundos para capturar imágenes
+        Serial.println("CAPTURE_IMAGE"); // Comando para disparar captura remota
+        // Mueve el motor hacia arriba un número fijo de pasos (ajustar según necesidades)
+        long stepsUp = 200;  
+        motor_.moveToBlocking(motor_.currentPosition() + stepsUp);
+        currentState_ = MotorState::MOVING_UP;
+        previousState_ = MotorState::MOVING_UP;
       }
       break;
     case MotorState::MOVING_UP:
@@ -144,18 +151,8 @@ void Logic::transitionState() {
       }
       break;
     case MotorState::IDLE:
-      if (autoMode_) {
-        if (previousState_ == MotorState::MOVING_DOWN) {
-          motor_.moveToBlocking(motor_.currentPosition() + 200);
-          currentState_ = MotorState::MOVING_UP;
-          previousState_ = MotorState::MOVING_UP;
-        }
-        else if (previousState_ == MotorState::MOVING_UP) {
-          motor_.moveToBlocking(motor_.currentPosition() - 200);
-          currentState_ = MotorState::MOVING_DOWN;
-          previousState_ = MotorState::MOVING_DOWN;
-        }
-      }
+      // En modo automático, se podría implementar una transición según el estado anterior,
+      // pero en este ejemplo se mantiene en reposo.
       break;
   }
 }
