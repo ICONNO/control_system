@@ -4,7 +4,7 @@ title: Estilos de la GUI
 sidebar_position: 3
 ---
 
-# GUI Styles
+# GUI styles
 
 El módulo **Styles** define la apariencia visual de la interfaz utilizando el paquete **ttkbootstrap**.
 

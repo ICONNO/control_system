@@ -1,10 +1,10 @@
 ---
 id: la_sensor
-title: Módulo del Sensor
+title: Módulo del sensor
 sidebar_position: 4
 ---
 
-# Módulo del Sensor
+# Módulo del sensor
 
 El subsistema del sensor proporciona la retroalimentación primordial para la lógica de control del actuador lineal, ofreciendo mediciones de distancia o proximidad necesarias para garantizar la precisión en la ejecución de órdenes y la adherencia a los límites de seguridad establecidos. Este componente realiza lecturas periódicas, descarta valores espurios y transmite resultados consolidados a la capa lógica, donde se decide la continuidad o interrupción de los movimientos.
 

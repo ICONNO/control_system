@@ -1,6 +1,6 @@
 ---
 id: la_motor
-title: Control del Motor
+title: Control del motor
 sidebar_position: 3
 ---
 

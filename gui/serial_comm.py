@@ -1,3 +1,13 @@
+"""
+Serial Communication Module
+
+Handles the serial communication between the GUI and the Arduino.
+Provides functions for connecting, disconnecting, reading, and sending commands.
+
+Classes:
+    SerialInterface: Manages the serial connection and communication.
+"""
+
 import serial
 import serial.tools.list_ports
 import threading
@@ -5,8 +15,25 @@ import time
 import logging
 
 class SerialInterface:
-    """Handles serial communication with the Arduino."""
+    """
+    Handles serial communication with the Arduino.
+
+    Attributes:
+        port (str): The serial port identifier (e.g., "COM3").
+        baudrate (int): The communication speed in baud.
+        serial_conn: The serial connection object.
+        is_connected (bool): Connection status.
+        callback: Function to call when new data is received.
+        read_thread: Thread for continuously reading data.
+        stop_thread (bool): Flag to stop the reading thread.
+    """
     def __init__(self, port='COM3', baudrate=9600):
+        """
+        Initializes the SerialInterface with the given port and baudrate.
+
+        :param port: Serial port identifier.
+        :param baudrate: Communication baud rate.
+        """
         self.port = port
         self.baudrate = baudrate
         self.serial_conn = None
@@ -16,6 +43,11 @@ class SerialInterface:
         self.stop_thread = False
 
     def connect(self):
+        """
+        Establishes a serial connection to the specified port.
+
+        :return: True if connected successfully, False otherwise.
+        """
         try:
             self.serial_conn = serial.Serial(self.port, self.baudrate, timeout=1)
             self.is_connected = True
@@ -30,6 +62,9 @@ class SerialInterface:
             return False
 
     def disconnect(self):
+        """
+        Closes the serial connection and stops the reading thread.
+        """
         self.stop_thread = True
         if self.read_thread and self.read_thread.is_alive():
             self.read_thread.join()
@@ -39,9 +74,17 @@ class SerialInterface:
         self.is_connected = False
 
     def register_callback(self, callback):
+        """
+        Registers a callback function to be called upon receiving serial data.
+
+        :param callback: Function that takes a string argument.
+        """
         self.callback = callback
 
     def read_from_port(self):
+        """
+        Continuously reads data from the serial port and invokes the callback.
+        """
         while not self.stop_thread:
             try:
                 if self.serial_conn.in_waiting:
@@ -55,6 +98,12 @@ class SerialInterface:
                 break
 
     def send_command(self, command):
+        """
+        Sends a command string to the Arduino via the serial port.
+
+        :param command: Command string to send.
+        :return: True if the command is sent successfully, False otherwise.
+        """
         if self.is_connected and self.serial_conn:
             try:
                 self.serial_conn.write(f"{command}\n".encode('utf-8'))

@@ -2,14 +2,14 @@
 """
 Remote Capture Trigger using Paramiko
 
-This script connects to the Raspberry Pi via SSH using Paramiko,
-automatically supplies the password, and executes the capture script.
+This script connects to a Raspberry Pi via SSH using the Paramiko library,
+automatically supplies the password, and executes a remote capture script.
 """
 
 import paramiko
 import logging
 
-# Configure logging
+# Configure logging at module level.
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [%(levelname)s] %(message)s'
@@ -18,13 +18,16 @@ logger = logging.getLogger(__name__)
 
 def capture_images(pi_ip: str, username: str = "dev", password: str = "admin0", script_path: str = "/home/dev/Desktop/automata/capture_both_cameras.py") -> bool:
     """
-    Executes the capture_both_cameras.py script on the Raspberry Pi via SSH.
+    Executes the capture script on the Raspberry Pi via SSH.
+
+    Connects to the specified Raspberry Pi using SSH credentials, then executes
+    the capture_both_cameras.py script located at the given path.
 
     :param pi_ip: IP address of the Raspberry Pi.
-    :param username: SSH username (default "dev").
-    :param password: SSH password (default "admin0").
-    :param script_path: Full path to the capture script on the Pi.
-    :return: True if the command succeeds, False otherwise.
+    :param username: SSH username (default is "dev").
+    :param password: SSH password (default is "admin0").
+    :param script_path: Full path to the capture script on the Raspberry Pi.
+    :return: True if the command executed successfully, False otherwise.
     """
     client = paramiko.SSHClient()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -52,7 +55,7 @@ def capture_images(pi_ip: str, username: str = "dev", password: str = "admin0", 
         client.close()
 
 if __name__ == "__main__":
-    raspberry_ip = "192.168.1.96"  # Replace with your Pi's IP
+    raspberry_ip = "192.168.1.96"  # Replace with your Raspberry Pi's IP address.
     if capture_images(raspberry_ip):
         logger.info("Images captured successfully.")
     else:

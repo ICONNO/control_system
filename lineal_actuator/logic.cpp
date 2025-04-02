@@ -1,13 +1,21 @@
 #include "Logic.h"
 
+/**
+ * @file logic.cpp
+ * @brief Implements the system control logic for the linear actuator.
+ *
+ * This file defines the methods for processing serial commands, updating the system state,
+ * and transitioning between different motor states (e.g., moving up, moving down, idle).
+ */
+
 // Serial command definitions
-const String CMD_AUTO      = "AUTO";
-const String CMD_UP        = "UP";
-const String CMD_DOWN      = "DOWN";
-const String CMD_STOP      = "STOP";
-const String CMD_SET_SPEED = "SET_SPEED";
-const String CMD_PUMP_ON   = "PUMP_ON";
-const String CMD_PUMP_OFF  = "PUMP_OFF";
+const String CMD_AUTO      = "AUTO";       ///< Command to activate automatic mode.
+const String CMD_UP        = "UP";         ///< Command for manual upward movement.
+const String CMD_DOWN      = "DOWN";       ///< Command for manual downward movement.
+const String CMD_STOP      = "STOP";       ///< Command to stop movement.
+const String CMD_SET_SPEED = "SET_SPEED";  ///< Command to set motor speed.
+const String CMD_PUMP_ON   = "PUMP_ON";    ///< Command to activate the vacuum pump.
+const String CMD_PUMP_OFF  = "PUMP_OFF";   ///< Command to deactivate the vacuum pump.
 
 Logic::Logic(Motor& motor, Sensor& sensor)
   : motor_(motor), sensor_(sensor),
@@ -16,15 +24,27 @@ Logic::Logic(Motor& motor, Sensor& sensor)
     currentDistance_(0.0),
     movingUp(false), movingDown(false), targetPosition(0)
 {
+    // Set the initial target position to the current motor position.
     targetPosition = motor_.currentPosition();
 }
 
+/**
+ * @brief Initializes the control logic.
+ *
+ * Sets the motor state to idle and logs initialization.
+ */
 void Logic::initialize() {
   currentState_ = MotorState::IDLE;
   previousState_ = MotorState::IDLE;
   LOG_INFO("System logic initialized.");
 }
 
+/**
+ * @brief Periodically updates the system state.
+ *
+ * Reads sensor data at defined intervals, processes commands,
+ * and updates motor movement accordingly.
+ */
 void Logic::update() {
   unsigned long now = millis();
   if (now - previousDistanceMillis_ >= SENSOR_READ_INTERVAL_MS) {
@@ -42,7 +62,7 @@ void Logic::update() {
     }
   }
   
-  const int deltaSteps = 10;  // Step increment for manual control
+  const int deltaSteps = 10;  // Step increment for manual control.
   if (!autoMode_) {
     if (movingUp) {
       targetPosition += deltaSteps;
@@ -57,6 +77,12 @@ void Logic::update() {
   motor_.update();
 }
 
+/**
+ * @brief Processes incoming serial commands.
+ *
+ * Reads commands from the serial port and adjusts system behavior
+ * (switching modes, moving motor, adjusting speed, etc.) accordingly.
+ */
 void Logic::handleSerialCommands() {
   while (Serial.available() > 0) {
     String cmd = Serial.readStringUntil('\n');
@@ -67,8 +93,7 @@ void Logic::handleSerialCommands() {
     if (cmd.equalsIgnoreCase(CMD_AUTO)) {
       LOG_INFO("Auto mode activated.");
       setAutoMode(true);
-      // Start by commanding a long downward move (increasing the distance)
-      motor_.moveTo(10000);
+      motor_.moveTo(10000); // Command a long downward move.
       currentState_ = MotorState::MOVING_DOWN;
       previousState_ = MotorState::MOVING_DOWN;
       movingUp = false;
@@ -128,28 +153,29 @@ void Logic::handleSerialCommands() {
   }
 }
 
+/**
+ * @brief Transitions the motor state based on sensor readings.
+ *
+ * When certain distance thresholds are reached, stops the motor,
+ * triggers remote capture if needed, and commands the motor to change direction.
+ */
 void Logic::transitionState() {
   switch (currentState_) {
     case MotorState::MOVING_DOWN:
-      // When we reach the lower limit (distance too small), we need to move UP.
       if (currentDistance_ <= DIST_LOWER_TARGET + DIST_MARGIN) {
         motor_.stop();
         LOG_INFO("Lower limit reached. Stopping for 5 seconds for capture, then moving up.");
-        // Send a signal for remote capture (your remote_capture.py should listen for this)
         Serial.println("CAPTURE");
-        delay(10000);
-        // Command a long upward move (negative target)
+        delay(10000);  // Wait for 10 seconds (adjustable as needed)
         motor_.moveTo(-100000000000);
         currentState_ = MotorState::MOVING_UP;
         previousState_ = MotorState::MOVING_UP;
       }
       break;
     case MotorState::MOVING_UP:
-      // When we reach the upper limit (distance too large), we need to move DOWN.
       if (currentDistance_ >= DIST_UPPER_TARGET - DIST_MARGIN) {
         motor_.stop();
         LOG_INFO("Upper limit reached. Moving down.");
-        // Command a long downward move (positive target)
         motor_.moveTo(100000000000);
         currentState_ = MotorState::MOVING_DOWN;
         previousState_ = MotorState::MOVING_DOWN;
@@ -172,12 +198,22 @@ void Logic::transitionState() {
   }
 }
 
+/**
+ * @brief Processes the current state if auto mode is active.
+ */
 void Logic::processState() {
   if (autoMode_) {
     transitionState();
   }
 }
 
+/**
+ * @brief Sets the auto mode for the system.
+ *
+ * Disables manual movement flags when auto mode is activated.
+ *
+ * @param mode True to enable auto mode; False to disable.
+ */
 void Logic::setAutoMode(bool mode) {
   autoMode_ = mode;
   if (mode) {
@@ -186,11 +222,25 @@ void Logic::setAutoMode(bool mode) {
   }
 }
 
+/**
+ * @brief Adjusts the motor speed and acceleration.
+ *
+ * Updates the motor's maximum speed and acceleration settings.
+ *
+ * @param maxSpeed New maximum speed (steps/s).
+ * @param acceleration New acceleration (steps/s²).
+ */
 void Logic::adjustSpeed(float maxSpeed, float acceleration) {
   motor_.setMaxSpeed(maxSpeed);
   motor_.setAcceleration(acceleration);
 }
 
+/**
+ * @brief Blocking move command to move the motor to a specific position.
+ *
+ * @param pos Target position in steps.
+ * @return true after completion.
+ */
 bool Logic::move_to(long pos) {
   motor_.moveToBlocking(pos);
   return true;

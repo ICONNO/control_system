@@ -4,7 +4,7 @@ title: Comunicación Serial
 sidebar_position: 2
 ---
 
-# Comunicación Serial
+# Comunicación serial
 
 El módulo de **Serial Communication** se encarga de gestionar la comunicación entre la GUI y el controlador Arduino.
 

@@ -1,10 +1,12 @@
 ---
 id: control_system_overview
-title: Visión Global del Subsistema de Control
+title: "Overview del Control System"
+sidebar_label: "Sistema de control"
 sidebar_position: 1
 ---
 
-# Visión Global del Subsistema de Control
+
+# Visión global del subsistema de control 
 
 El subsistema de control integra las rutinas de gobierno lógico y la configuración de parámetros operativos que regulan las interacciones entre el hardware de actuación lineal, los elementos de sensorización y la interfaz de usuario (GUI). Esta sección describe los objetivos funcionales, los componentes parametrizables y la naturaleza de los procesos de supervisión y sincronización inherentes a la plataforma.
 

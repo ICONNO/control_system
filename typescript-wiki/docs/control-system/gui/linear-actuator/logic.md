@@ -1,6 +1,6 @@
 ---
 id: la_logic
-title: Lógica del Actuador
+title: Lógica del actuador
 sidebar_position: 2
 ---
 

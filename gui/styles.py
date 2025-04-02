@@ -1,7 +1,19 @@
+"""
+Styles Module
+
+Defines custom styles for GUI widgets using ttk.
+"""
+
 from tkinter import ttk
 
 def set_styles():
-    """Apply custom styles to GUI widgets."""
+    """
+    Applies custom styles to the GUI widgets.
+
+    Configures fonts, padding, and theme settings for buttons, labels, and frames.
+    
+    :return: None
+    """
     style = ttk.Style()
     style.theme_use('clam')
     style.configure('TButton', font=('Helvetica', 12), padding=10)

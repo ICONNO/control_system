@@ -1,10 +1,10 @@
 ---
 id: la_overview
-title: Visión General del Actuador Lineal
+title: Visión general del actuador lineal
 sidebar_position: 1
 ---
 
-# Visión General del Actuador Lineal
+# Visión general del actuador lineal
 
 El presente módulo del actuador lineal constituye una subsistema integrado, cuyo diseño implica la convergencia de principios electromecánicos avanzados y algoritmos de control en tiempo real, permitiendo la manipulación precisa de variables cinemáticas en entornos industriales críticos. El sistema, orquestado a través de un microcontrolador basado en Arduino, se erige sobre una arquitectura jerárquica en la cual la interacción entre componentes analógicos y digitales se optimiza mediante la aplicación de técnicas de modulación de pulsos y la retroalimentación sensorial, facilitando la obtención de posicionamientos con una tolerancia marginal mínima.
 

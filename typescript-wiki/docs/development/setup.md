@@ -1,10 +1,10 @@
 ---
 id: development_setup
-title: Configuración del Entorno de Desarrollo
+title: Configuración del entorno de desarrollo
 sidebar_position: 5
 ---
 
-# Configuración del Entorno de Desarrollo
+# Configuración del entorno de desarrollo 
 
 Este documento especifica los pasos y las dependencias necesarias para la instauración y posterior mantenimiento del ecosistema de desarrollo en torno al subsistema de control de actuadores lineales, comprendiendo tanto el firmware basado en Arduino como la interfaz gráfica en Python y cualquier utilidad complementaria (por ejemplo, captura remota).
 

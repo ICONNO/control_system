@@ -4,7 +4,7 @@ title: Arquitectura de la Interfaz Gráfica
 sidebar_position: 3
 ---
 
-# Arquitectura de la Interfaz Gráfica (GUI)
+# Arquitectura de la interfaz gráfica (GUI) 
 
 El módulo de interfaz gráfica (GUI) representa el punto de interacción esencial entre los operadores del sistema y el subsistema de control que rige el movimiento del actuador lineal, la configuración de parámetros y la captura de datos externos. Se fundamenta en un modelo de ventanas y eventos sincronizados mediante hilos de gestión de procesos concurrentes, y coordina la comunicación con la capa de firmware mediante un canal de intercambio serial.
 
