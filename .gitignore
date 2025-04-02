@@ -1,0 +1,37 @@
+# Node modules (para Docusaurus y otras dependencias)
+node_modules/
+
+# Directorios generados por Docusaurus
+.docusaurus/
+build/
+
+# Caché de Python
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de logs y directorios de logs
+logs/
+**/logs/
+*.log
+
+# Configuración de editores
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos generados por VS Code o Theia (en el firmware)
+lineal_actuator/build/
+lineal_actuator/.theia/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Otros archivos temporales
+tmp/
+temp/
+
+# Si tienes archivos de compilación de TypeScript (opcional)
+dist/
