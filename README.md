@@ -1,39 +1,36 @@
 # Control System Project
 
-This repository contains the source code and documentation for the Control System project, which controls linear actuators using an Arduino-based firmware, a Python-based GUI, and remote capture utilities.
+Este repositorio contiene el firmware para Arduino, la GUI en Python y la documentación (wiki) del Control System.
 
-## Table of Contents
+## Contenido
 
-- [Overview](#overview)
-- [Usage](#usage)
-- [Running the Wiki](#running-the-wiki)
-- [Project Structure](#project-structure)
-- [Future Improvements](#future-improvements)
+- **Firmware (lineal_actuator):** Control del motor, sensores y lógica.
+- **GUI (gui):** Interfaz gráfica para control manual/automático y monitoreo.
+- **Wiki (typescript-wiki):** Documentación completa con Docusaurus.
 
-## Overview
+## Requisitos
 
-The Control System is designed to provide precise control over linear actuators. It integrates multiple subsystems, including:
-- **Firmware (Arduino):** Manages motor control, sensor readings, and system logic.
-- **GUI (Python):** Provides a graphical user interface for manual/auto control and system monitoring.
-- **Remote Capture:** Allows remote image capture via SSH.
-- **Hardware Components:** Detailed in the documentation.
+- **Hardware:** Arduino UNO R3, motor paso a paso con driver TB6560, sensor ultrasónico, bomba VN-CE, fuente LRS-350-12, Raspberry Pi 5, cámaras ARDUCAM Hawkeye.
+- **Software:** Arduino IDE, Python 3.11+, Node.js y npm.
 
-For more details, see our [Wiki](./typescript-wiki/docs/intro.md).
-
-## Usage
+## Uso
 
 ### Firmware
-
-1. **Setup Hardware:**  
-   Connect the components as specified in `lineal_actuator/config.h`.
-2. **Compile and Upload:**  
-   Open `lineal_actuator/lineal_actuator.ino` in the Arduino IDE, install required libraries (e.g., AccelStepper), compile, and upload the firmware to the Arduino UNO R3.
+1. Conecta el hardware según `lineal_actuator/config.h`.
+2. Abre `lineal_actuator/lineal_actuator.ino` en el Arduino IDE, compila y sube.
 
 ### GUI
-
-1. **Setup Python Environment:**  
-   Ensure you have Python 3.11 or later installed.
-2. **Install Dependencies:**  
-   Navigate to the `gui/` directory and run:
+1. Navega a la carpeta `gui/` y ejecuta:
    ```bash
    pip install -r requirements.txt
+   python run_gui.py --port COM3
+
+
+### Wiki
+1. Navega a la carpeta `typescript-wiki/` y ejecuta:
+   ```bash
+   npm install
+   npm start
+   ```
+2. Abre `http://localhost:3000` en tu navegador web.
+
