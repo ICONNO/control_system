@@ -1,0 +1,4 @@
+ttkbootstrap==1.6.1
+psutil==5.9.4
+pyserial==3.5
+paramiko==2.12.0
